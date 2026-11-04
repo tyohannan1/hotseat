@@ -22,38 +22,32 @@ def path(d, col=INK, w=3, fill="none", dash=None, op=1):
     return f"<path d='{d}' stroke='{col}' stroke-width='{w}' fill='{fill}' stroke-linejoin='round' stroke-linecap='round'{ds} opacity='{op}'/>"
 
 # ------------------------------------------------------------------ lymphoma regions
-def regions(w=1060, h=900, standalone=True):
-    """Lugano / Ann Arbor regions: body silhouette and the 17 region names used by the PET/CT workbench. Nothing else."""
+def regions(w=1580, h=1190, standalone=True):
+    """The Augmented Workstation's lymphoma body diagram (luganoRegions.ts, 230 x 287 silhouette, 17 region dots,
+    diaphragm at y 127), scaled 4x, with the region names on either side. Nothing else."""
+    K = 4; ox, oy = 330, 20
+    BODY = ("M 76 0 L 76 17 C 76 23, 88 27, 92 29 L 92 41 L 50 47 C 30 47, 22 63, 24 83 C 30 93, 52 93, 68 83 L 75 119 L 72 137 L 64 189 "
+            "L 60 239 L 68 269 C 68 277, 80 281, 92 281 C 102 281, 110 277, 110 269 L 112 239 L 115 234 L 118 239 L 120 269 C 120 277, 128 281, 138 281 "
+            "C 150 281, 162 277, 162 269 L 170 239 L 166 189 L 158 137 L 155 119 L 162 83 C 178 93, 200 93, 206 83 C 208 63, 200 47, 180 47 L 138 41 "
+            "L 138 29 C 142 27, 154 23, 154 17 L 154 0 Z")
+    REG = [(1, "Waldeyer's ring", 115, 13, "r", 13), (2, "Right neck", 103, 33, "l", 33), (3, "Left neck", 127, 33, "r", 33),
+           (5, "Right infraclavicular", 90, 53, "l", 53), (6, "Left infraclavicular", 140, 53, "r", 53),
+           (4, "Right axillary", 76, 75, "l", 75), (7, "Left axillary", 154, 75, "r", 75), (8, "Mediastinal", 115, 72, "r", 64),
+           (9, "Right hilar", 100, 97, "l", 97), (10, "Left hilar", 130, 97, "r", 97), (11, "Spleen", 140, 142, "r", 142),
+           (12, "Mesenteric", 115, 157, "l", 157), (13, "Para-aortic", 115, 182, "r", 182), (14, "Right iliac", 100, 207, "l", 207),
+           (15, "Left iliac", 130, 207, "r", 207), (16, "Right inguinal", 95, 232, "l", 232), (17, "Left inguinal", 135, 232, "r", 232)]
     b = []
-    cx = 530
-    b.append(T(cx, 60, "Lugano / Ann Arbor regions", 36, INK, "middle", 700))
-    # body silhouette
-    b.append(f"<circle cx='{cx}' cy='{150}' r='46' fill='none' stroke='{MUTE}' stroke-width='3'/>")
-    b.append(path(f"M{cx-30} 193 L{cx-30} 215 L{cx-150} 240 L{cx-215} 495 L{cx-170} 505 L{cx-125} 325 L{cx-125} 545 L{cx-135} 855 L{cx-75} 855 L{cx-35} 585 L{cx+35} 585 L{cx+75} 855 L{cx+135} 855 L{cx+125} 545 L{cx+125} 325 L{cx+170} 505 L{cx+215} 495 L{cx+150} 240 L{cx+30} 215 L{cx+30} 193 Z", MUTE, 3))
-    # diaphragm
-    b.append(line(cx-130, 425, cx+130, 425, TEAL, 3, "10 8"))
-    b.append(T(cx+228, 432, "diaphragm", 18, TEAL, "start", 400, True))
-    # (x, y, rx, ry, label, label side); patient's right on the viewer's left
-    R = [
-        (cx, 178, 26, 14, "Waldeyer's ring", "r"),
-        (cx-62, 212, 26, 18, "Right neck", "l"), (cx+62, 212, 26, 18, "Left neck", "r"),
-        (cx-85, 262, 22, 12, "Right infraclavicular", "l"), (cx+85, 262, 22, 12, "Left infraclavicular", "r"),
-        (cx-135, 300, 22, 22, "Right axillary", "l"), (cx+135, 300, 22, 22, "Left axillary", "r"),
-        (cx, 305, 30, 42, "Mediastinal", "r2"),
-        (cx-48, 352, 16, 16, "Right hilar", "l"), (cx+48, 352, 16, 16, "Left hilar", "r"),
-        (cx+70, 468, 28, 22, "Spleen", "r"),
-        (cx, 505, 20, 40, "Para-aortic", "r2"),
-        (cx-40, 535, 26, 20, "Mesenteric", "l"),
-        (cx-55, 598, 18, 26, "Right iliac", "l"), (cx+55, 598, 18, 26, "Left iliac", "r"),
-        (cx-75, 668, 20, 20, "Right inguinal", "l"), (cx+75, 668, 20, 20, "Left inguinal", "r"),
-    ]
-    for x, y, rx, ry, lab, side in R:
-        b.append(f"<ellipse cx='{x}' cy='{y}' rx='{rx}' ry='{ry}' fill='{NODE}' fill-opacity='0.3' stroke='{NODE}' stroke-width='2.5'/>")
-        if side == "l": b.append(line(x-rx-4, y, cx-222, y, DIM, 1.5)); b.append(T(cx-228, y+7, lab, 21, INK, "end"))
-        elif side == "r": b.append(line(x+rx+4, y, cx+222, y, DIM, 1.5)); b.append(T(cx+228, y+7, lab, 21, INK, "start"))
-        else:  # central structure: label to the right, line drops below the paired labels
-            yy = y + 95 if lab == "Mediastinal" else y + 50
-            b.append(line(x+rx+4, yy, cx+222, yy, DIM, 1.5)); b.append(line(x+rx+4, y, x+rx+4, yy, DIM, 1.5)); b.append(T(cx+228, yy+7, lab, 21, INK, "start"))
+    b.append(f"<g transform='translate({ox} {oy}) scale({K})'><path d='{BODY}' fill='none' stroke='{MUTE}' stroke-width='0.9' stroke-linejoin='round'/>"
+             f"<line x1='50' y1='127' x2='180' y2='127' stroke='{TEAL}' stroke-width='0.8' stroke-dasharray='3 2.5'/></g>")
+    XL, XR = ox - 40, ox + 230 * K + 40
+    for rid, name, x, y, side, ly in REG:
+        px, py, pyl = ox + x * K, oy + y * K, oy + ly * K
+        b.append(f"<circle cx='{px}' cy='{py}' r='15' fill='{NODE}' fill-opacity='0.9' stroke='#0e2841' stroke-width='3'/>")
+        if side == "l":
+            b.append(line(px - 18, py, XL + 60, pyl, DIM, 1.5)); b.append(line(XL + 60, pyl, XL, pyl, DIM, 1.5)); b.append(T(XL - 8, pyl + 8, name, 24, INK, "end"))
+        else:
+            b.append(line(px + 18, py, XR - 60, pyl, DIM, 1.5)); b.append(line(XR - 60, pyl, XR, pyl, DIM, 1.5)); b.append(T(XR + 8, pyl + 8, name, 24, INK, "start"))
+    b.append(T(XR + 8, oy + 127 * K + 8, "diaphragm", 20, TEAL, "start", 400, True))
     return svg(w, h, "\n".join(b), None)
 
 # ------------------------------------------------------------------ pelvis: common iliac bifurcation

@@ -1,61 +1,73 @@
-<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1060 900' width='1060' height='900' font-family='Helvetica Neue, Helvetica, Arial, sans-serif'>
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1580 1190' width='1580' height='1190' font-family='Helvetica Neue, Helvetica, Arial, sans-serif'>
 
-<text x='530' y='60' font-size='36' fill='#e8eef5' text-anchor='middle' font-weight='700'>Lugano / Ann Arbor regions</text>
-<circle cx='530' cy='150' r='46' fill='none' stroke='#5d7288' stroke-width='3'/>
-<path d='M500 193 L500 215 L380 240 L315 495 L360 505 L405 325 L405 545 L395 855 L455 855 L495 585 L565 585 L605 855 L665 855 L655 545 L655 325 L700 505 L745 495 L680 240 L560 215 L560 193 Z' stroke='#5d7288' stroke-width='3' fill='none' stroke-linejoin='round' stroke-linecap='round' opacity='1'/>
-<line x1='400' y1='425' x2='660' y2='425' stroke='#18A3AC' stroke-width='3' stroke-linecap='round' stroke-dasharray='10 8'/>
-<text x='758' y='432' font-size='18' fill='#18A3AC' text-anchor='start' font-weight='400' font-style='italic'>diaphragm</text>
-<ellipse cx='530' cy='178' rx='26' ry='14' fill='#ffb000' fill-opacity='0.3' stroke='#ffb000' stroke-width='2.5'/>
-<line x1='560' y1='178' x2='752' y2='178' stroke='#9fb3c8' stroke-width='1.5' stroke-linecap='round'/>
-<text x='758' y='185' font-size='21' fill='#e8eef5' text-anchor='start' font-weight='400'>Waldeyer's ring</text>
-<ellipse cx='468' cy='212' rx='26' ry='18' fill='#ffb000' fill-opacity='0.3' stroke='#ffb000' stroke-width='2.5'/>
-<line x1='438' y1='212' x2='308' y2='212' stroke='#9fb3c8' stroke-width='1.5' stroke-linecap='round'/>
-<text x='302' y='219' font-size='21' fill='#e8eef5' text-anchor='end' font-weight='400'>Right neck</text>
-<ellipse cx='592' cy='212' rx='26' ry='18' fill='#ffb000' fill-opacity='0.3' stroke='#ffb000' stroke-width='2.5'/>
-<line x1='622' y1='212' x2='752' y2='212' stroke='#9fb3c8' stroke-width='1.5' stroke-linecap='round'/>
-<text x='758' y='219' font-size='21' fill='#e8eef5' text-anchor='start' font-weight='400'>Left neck</text>
-<ellipse cx='445' cy='262' rx='22' ry='12' fill='#ffb000' fill-opacity='0.3' stroke='#ffb000' stroke-width='2.5'/>
-<line x1='419' y1='262' x2='308' y2='262' stroke='#9fb3c8' stroke-width='1.5' stroke-linecap='round'/>
-<text x='302' y='269' font-size='21' fill='#e8eef5' text-anchor='end' font-weight='400'>Right infraclavicular</text>
-<ellipse cx='615' cy='262' rx='22' ry='12' fill='#ffb000' fill-opacity='0.3' stroke='#ffb000' stroke-width='2.5'/>
-<line x1='641' y1='262' x2='752' y2='262' stroke='#9fb3c8' stroke-width='1.5' stroke-linecap='round'/>
-<text x='758' y='269' font-size='21' fill='#e8eef5' text-anchor='start' font-weight='400'>Left infraclavicular</text>
-<ellipse cx='395' cy='300' rx='22' ry='22' fill='#ffb000' fill-opacity='0.3' stroke='#ffb000' stroke-width='2.5'/>
-<line x1='369' y1='300' x2='308' y2='300' stroke='#9fb3c8' stroke-width='1.5' stroke-linecap='round'/>
-<text x='302' y='307' font-size='21' fill='#e8eef5' text-anchor='end' font-weight='400'>Right axillary</text>
-<ellipse cx='665' cy='300' rx='22' ry='22' fill='#ffb000' fill-opacity='0.3' stroke='#ffb000' stroke-width='2.5'/>
-<line x1='691' y1='300' x2='752' y2='300' stroke='#9fb3c8' stroke-width='1.5' stroke-linecap='round'/>
-<text x='758' y='307' font-size='21' fill='#e8eef5' text-anchor='start' font-weight='400'>Left axillary</text>
-<ellipse cx='530' cy='305' rx='30' ry='42' fill='#ffb000' fill-opacity='0.3' stroke='#ffb000' stroke-width='2.5'/>
-<line x1='564' y1='400' x2='752' y2='400' stroke='#9fb3c8' stroke-width='1.5' stroke-linecap='round'/>
-<line x1='564' y1='305' x2='564' y2='400' stroke='#9fb3c8' stroke-width='1.5' stroke-linecap='round'/>
-<text x='758' y='407' font-size='21' fill='#e8eef5' text-anchor='start' font-weight='400'>Mediastinal</text>
-<ellipse cx='482' cy='352' rx='16' ry='16' fill='#ffb000' fill-opacity='0.3' stroke='#ffb000' stroke-width='2.5'/>
-<line x1='462' y1='352' x2='308' y2='352' stroke='#9fb3c8' stroke-width='1.5' stroke-linecap='round'/>
-<text x='302' y='359' font-size='21' fill='#e8eef5' text-anchor='end' font-weight='400'>Right hilar</text>
-<ellipse cx='578' cy='352' rx='16' ry='16' fill='#ffb000' fill-opacity='0.3' stroke='#ffb000' stroke-width='2.5'/>
-<line x1='598' y1='352' x2='752' y2='352' stroke='#9fb3c8' stroke-width='1.5' stroke-linecap='round'/>
-<text x='758' y='359' font-size='21' fill='#e8eef5' text-anchor='start' font-weight='400'>Left hilar</text>
-<ellipse cx='600' cy='468' rx='28' ry='22' fill='#ffb000' fill-opacity='0.3' stroke='#ffb000' stroke-width='2.5'/>
-<line x1='632' y1='468' x2='752' y2='468' stroke='#9fb3c8' stroke-width='1.5' stroke-linecap='round'/>
-<text x='758' y='475' font-size='21' fill='#e8eef5' text-anchor='start' font-weight='400'>Spleen</text>
-<ellipse cx='530' cy='505' rx='20' ry='40' fill='#ffb000' fill-opacity='0.3' stroke='#ffb000' stroke-width='2.5'/>
-<line x1='554' y1='555' x2='752' y2='555' stroke='#9fb3c8' stroke-width='1.5' stroke-linecap='round'/>
-<line x1='554' y1='505' x2='554' y2='555' stroke='#9fb3c8' stroke-width='1.5' stroke-linecap='round'/>
-<text x='758' y='562' font-size='21' fill='#e8eef5' text-anchor='start' font-weight='400'>Para-aortic</text>
-<ellipse cx='490' cy='535' rx='26' ry='20' fill='#ffb000' fill-opacity='0.3' stroke='#ffb000' stroke-width='2.5'/>
-<line x1='460' y1='535' x2='308' y2='535' stroke='#9fb3c8' stroke-width='1.5' stroke-linecap='round'/>
-<text x='302' y='542' font-size='21' fill='#e8eef5' text-anchor='end' font-weight='400'>Mesenteric</text>
-<ellipse cx='475' cy='598' rx='18' ry='26' fill='#ffb000' fill-opacity='0.3' stroke='#ffb000' stroke-width='2.5'/>
-<line x1='453' y1='598' x2='308' y2='598' stroke='#9fb3c8' stroke-width='1.5' stroke-linecap='round'/>
-<text x='302' y='605' font-size='21' fill='#e8eef5' text-anchor='end' font-weight='400'>Right iliac</text>
-<ellipse cx='585' cy='598' rx='18' ry='26' fill='#ffb000' fill-opacity='0.3' stroke='#ffb000' stroke-width='2.5'/>
-<line x1='607' y1='598' x2='752' y2='598' stroke='#9fb3c8' stroke-width='1.5' stroke-linecap='round'/>
-<text x='758' y='605' font-size='21' fill='#e8eef5' text-anchor='start' font-weight='400'>Left iliac</text>
-<ellipse cx='455' cy='668' rx='20' ry='20' fill='#ffb000' fill-opacity='0.3' stroke='#ffb000' stroke-width='2.5'/>
-<line x1='431' y1='668' x2='308' y2='668' stroke='#9fb3c8' stroke-width='1.5' stroke-linecap='round'/>
-<text x='302' y='675' font-size='21' fill='#e8eef5' text-anchor='end' font-weight='400'>Right inguinal</text>
-<ellipse cx='605' cy='668' rx='20' ry='20' fill='#ffb000' fill-opacity='0.3' stroke='#ffb000' stroke-width='2.5'/>
-<line x1='629' y1='668' x2='752' y2='668' stroke='#9fb3c8' stroke-width='1.5' stroke-linecap='round'/>
-<text x='758' y='675' font-size='21' fill='#e8eef5' text-anchor='start' font-weight='400'>Left inguinal</text>
+<g transform='translate(330 20) scale(4)'><path d='M 76 0 L 76 17 C 76 23, 88 27, 92 29 L 92 41 L 50 47 C 30 47, 22 63, 24 83 C 30 93, 52 93, 68 83 L 75 119 L 72 137 L 64 189 L 60 239 L 68 269 C 68 277, 80 281, 92 281 C 102 281, 110 277, 110 269 L 112 239 L 115 234 L 118 239 L 120 269 C 120 277, 128 281, 138 281 C 150 281, 162 277, 162 269 L 170 239 L 166 189 L 158 137 L 155 119 L 162 83 C 178 93, 200 93, 206 83 C 208 63, 200 47, 180 47 L 138 41 L 138 29 C 142 27, 154 23, 154 17 L 154 0 Z' fill='none' stroke='#5d7288' stroke-width='0.9' stroke-linejoin='round'/><line x1='50' y1='127' x2='180' y2='127' stroke='#18A3AC' stroke-width='0.8' stroke-dasharray='3 2.5'/></g>
+<circle cx='790' cy='72' r='15' fill='#ffb000' fill-opacity='0.9' stroke='#0e2841' stroke-width='3'/>
+<line x1='808' y1='72' x2='1230' y2='72' stroke='#9fb3c8' stroke-width='1.5' stroke-linecap='round'/>
+<line x1='1230' y1='72' x2='1290' y2='72' stroke='#9fb3c8' stroke-width='1.5' stroke-linecap='round'/>
+<text x='1298' y='80' font-size='24' fill='#e8eef5' text-anchor='start' font-weight='400'>Waldeyer's ring</text>
+<circle cx='742' cy='152' r='15' fill='#ffb000' fill-opacity='0.9' stroke='#0e2841' stroke-width='3'/>
+<line x1='724' y1='152' x2='350' y2='152' stroke='#9fb3c8' stroke-width='1.5' stroke-linecap='round'/>
+<line x1='350' y1='152' x2='290' y2='152' stroke='#9fb3c8' stroke-width='1.5' stroke-linecap='round'/>
+<text x='282' y='160' font-size='24' fill='#e8eef5' text-anchor='end' font-weight='400'>Right neck</text>
+<circle cx='838' cy='152' r='15' fill='#ffb000' fill-opacity='0.9' stroke='#0e2841' stroke-width='3'/>
+<line x1='856' y1='152' x2='1230' y2='152' stroke='#9fb3c8' stroke-width='1.5' stroke-linecap='round'/>
+<line x1='1230' y1='152' x2='1290' y2='152' stroke='#9fb3c8' stroke-width='1.5' stroke-linecap='round'/>
+<text x='1298' y='160' font-size='24' fill='#e8eef5' text-anchor='start' font-weight='400'>Left neck</text>
+<circle cx='690' cy='232' r='15' fill='#ffb000' fill-opacity='0.9' stroke='#0e2841' stroke-width='3'/>
+<line x1='672' y1='232' x2='350' y2='232' stroke='#9fb3c8' stroke-width='1.5' stroke-linecap='round'/>
+<line x1='350' y1='232' x2='290' y2='232' stroke='#9fb3c8' stroke-width='1.5' stroke-linecap='round'/>
+<text x='282' y='240' font-size='24' fill='#e8eef5' text-anchor='end' font-weight='400'>Right infraclavicular</text>
+<circle cx='890' cy='232' r='15' fill='#ffb000' fill-opacity='0.9' stroke='#0e2841' stroke-width='3'/>
+<line x1='908' y1='232' x2='1230' y2='232' stroke='#9fb3c8' stroke-width='1.5' stroke-linecap='round'/>
+<line x1='1230' y1='232' x2='1290' y2='232' stroke='#9fb3c8' stroke-width='1.5' stroke-linecap='round'/>
+<text x='1298' y='240' font-size='24' fill='#e8eef5' text-anchor='start' font-weight='400'>Left infraclavicular</text>
+<circle cx='634' cy='320' r='15' fill='#ffb000' fill-opacity='0.9' stroke='#0e2841' stroke-width='3'/>
+<line x1='616' y1='320' x2='350' y2='320' stroke='#9fb3c8' stroke-width='1.5' stroke-linecap='round'/>
+<line x1='350' y1='320' x2='290' y2='320' stroke='#9fb3c8' stroke-width='1.5' stroke-linecap='round'/>
+<text x='282' y='328' font-size='24' fill='#e8eef5' text-anchor='end' font-weight='400'>Right axillary</text>
+<circle cx='946' cy='320' r='15' fill='#ffb000' fill-opacity='0.9' stroke='#0e2841' stroke-width='3'/>
+<line x1='964' y1='320' x2='1230' y2='320' stroke='#9fb3c8' stroke-width='1.5' stroke-linecap='round'/>
+<line x1='1230' y1='320' x2='1290' y2='320' stroke='#9fb3c8' stroke-width='1.5' stroke-linecap='round'/>
+<text x='1298' y='328' font-size='24' fill='#e8eef5' text-anchor='start' font-weight='400'>Left axillary</text>
+<circle cx='790' cy='308' r='15' fill='#ffb000' fill-opacity='0.9' stroke='#0e2841' stroke-width='3'/>
+<line x1='808' y1='308' x2='1230' y2='276' stroke='#9fb3c8' stroke-width='1.5' stroke-linecap='round'/>
+<line x1='1230' y1='276' x2='1290' y2='276' stroke='#9fb3c8' stroke-width='1.5' stroke-linecap='round'/>
+<text x='1298' y='284' font-size='24' fill='#e8eef5' text-anchor='start' font-weight='400'>Mediastinal</text>
+<circle cx='730' cy='408' r='15' fill='#ffb000' fill-opacity='0.9' stroke='#0e2841' stroke-width='3'/>
+<line x1='712' y1='408' x2='350' y2='408' stroke='#9fb3c8' stroke-width='1.5' stroke-linecap='round'/>
+<line x1='350' y1='408' x2='290' y2='408' stroke='#9fb3c8' stroke-width='1.5' stroke-linecap='round'/>
+<text x='282' y='416' font-size='24' fill='#e8eef5' text-anchor='end' font-weight='400'>Right hilar</text>
+<circle cx='850' cy='408' r='15' fill='#ffb000' fill-opacity='0.9' stroke='#0e2841' stroke-width='3'/>
+<line x1='868' y1='408' x2='1230' y2='408' stroke='#9fb3c8' stroke-width='1.5' stroke-linecap='round'/>
+<line x1='1230' y1='408' x2='1290' y2='408' stroke='#9fb3c8' stroke-width='1.5' stroke-linecap='round'/>
+<text x='1298' y='416' font-size='24' fill='#e8eef5' text-anchor='start' font-weight='400'>Left hilar</text>
+<circle cx='890' cy='588' r='15' fill='#ffb000' fill-opacity='0.9' stroke='#0e2841' stroke-width='3'/>
+<line x1='908' y1='588' x2='1230' y2='588' stroke='#9fb3c8' stroke-width='1.5' stroke-linecap='round'/>
+<line x1='1230' y1='588' x2='1290' y2='588' stroke='#9fb3c8' stroke-width='1.5' stroke-linecap='round'/>
+<text x='1298' y='596' font-size='24' fill='#e8eef5' text-anchor='start' font-weight='400'>Spleen</text>
+<circle cx='790' cy='648' r='15' fill='#ffb000' fill-opacity='0.9' stroke='#0e2841' stroke-width='3'/>
+<line x1='772' y1='648' x2='350' y2='648' stroke='#9fb3c8' stroke-width='1.5' stroke-linecap='round'/>
+<line x1='350' y1='648' x2='290' y2='648' stroke='#9fb3c8' stroke-width='1.5' stroke-linecap='round'/>
+<text x='282' y='656' font-size='24' fill='#e8eef5' text-anchor='end' font-weight='400'>Mesenteric</text>
+<circle cx='790' cy='748' r='15' fill='#ffb000' fill-opacity='0.9' stroke='#0e2841' stroke-width='3'/>
+<line x1='808' y1='748' x2='1230' y2='748' stroke='#9fb3c8' stroke-width='1.5' stroke-linecap='round'/>
+<line x1='1230' y1='748' x2='1290' y2='748' stroke='#9fb3c8' stroke-width='1.5' stroke-linecap='round'/>
+<text x='1298' y='756' font-size='24' fill='#e8eef5' text-anchor='start' font-weight='400'>Para-aortic</text>
+<circle cx='730' cy='848' r='15' fill='#ffb000' fill-opacity='0.9' stroke='#0e2841' stroke-width='3'/>
+<line x1='712' y1='848' x2='350' y2='848' stroke='#9fb3c8' stroke-width='1.5' stroke-linecap='round'/>
+<line x1='350' y1='848' x2='290' y2='848' stroke='#9fb3c8' stroke-width='1.5' stroke-linecap='round'/>
+<text x='282' y='856' font-size='24' fill='#e8eef5' text-anchor='end' font-weight='400'>Right iliac</text>
+<circle cx='850' cy='848' r='15' fill='#ffb000' fill-opacity='0.9' stroke='#0e2841' stroke-width='3'/>
+<line x1='868' y1='848' x2='1230' y2='848' stroke='#9fb3c8' stroke-width='1.5' stroke-linecap='round'/>
+<line x1='1230' y1='848' x2='1290' y2='848' stroke='#9fb3c8' stroke-width='1.5' stroke-linecap='round'/>
+<text x='1298' y='856' font-size='24' fill='#e8eef5' text-anchor='start' font-weight='400'>Left iliac</text>
+<circle cx='710' cy='948' r='15' fill='#ffb000' fill-opacity='0.9' stroke='#0e2841' stroke-width='3'/>
+<line x1='692' y1='948' x2='350' y2='948' stroke='#9fb3c8' stroke-width='1.5' stroke-linecap='round'/>
+<line x1='350' y1='948' x2='290' y2='948' stroke='#9fb3c8' stroke-width='1.5' stroke-linecap='round'/>
+<text x='282' y='956' font-size='24' fill='#e8eef5' text-anchor='end' font-weight='400'>Right inguinal</text>
+<circle cx='870' cy='948' r='15' fill='#ffb000' fill-opacity='0.9' stroke='#0e2841' stroke-width='3'/>
+<line x1='888' y1='948' x2='1230' y2='948' stroke='#9fb3c8' stroke-width='1.5' stroke-linecap='round'/>
+<line x1='1230' y1='948' x2='1290' y2='948' stroke='#9fb3c8' stroke-width='1.5' stroke-linecap='round'/>
+<text x='1298' y='956' font-size='24' fill='#e8eef5' text-anchor='start' font-weight='400'>Left inguinal</text>
+<text x='1298' y='536' font-size='20' fill='#18A3AC' text-anchor='start' font-weight='400' font-style='italic'>diaphragm</text>
 </svg>

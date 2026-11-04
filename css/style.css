@@ -222,8 +222,8 @@ body.notes{overflow:auto;padding:16px}
 body.present .slide.titlecard h2{font-size:clamp(3rem,6vw,5.6rem)}
 
 /* build slides: lines appear one keypress at a time, space reserved so nothing jumps */
-.frag{opacity:0;transform:translateY(8px);transition:opacity .4s ease,transform .4s ease}
-.frag.shown{opacity:1;transform:none}
+.frag{opacity:0;transform:translateY(8px);transition:none}
+.frag.shown{opacity:1;transform:none;transition:opacity .4s ease,transform .4s ease}
 
 /* build slides: full width, bullets with sub-bullets */
 .slide.textonly .s-body.build{max-width:none}
