@@ -122,8 +122,8 @@
       <div class="jump" id="jump"></div>
     </div>
   </div>
-  <p class="keys" id="keys-q"><kbd>Space</kbd> pick · <kbd>A</kbd>–<kbd>D</kbd> hot seat answer · <kbd>O</kbd> open · <kbd>X</kbd> close · <kbd>R</kbd> reveal · <kbd>←</kbd> <kbd>→</kbd> prev/next · <kbd>Z</kbd> zoom image · <kbd>C</kbd> circles <span class="circ-state">off</span> · <kbd>F</kbd> present · <kbd>Esc</kbd> clear hot seat</p>
-  <p class="keys hidden" id="keys-s"><kbd>←</kbd> <kbd>→</kbd> prev/next · <kbd>Z</kbd> zoom image · <kbd>C</kbd> circles <span class="circ-state">off</span> · <kbd>F</kbd> present · <kbd>V</kbd> pre/post</p>
+  <p class="keys" id="keys-q"><kbd>Space</kbd> pick · <kbd>A</kbd>–<kbd>D</kbd> hot seat answer · <kbd>O</kbd> open · <kbd>X</kbd> close · <kbd>R</kbd> reveal · <kbd>←</kbd> <kbd>→</kbd> prev/next · <kbd>Z</kbd> zoom image · <kbd>L</kbd> circles <span class="circ-state">off</span> · <kbd>F</kbd> present · <kbd>Esc</kbd> clear hot seat</p>
+  <p class="keys hidden" id="keys-s"><kbd>←</kbd> <kbd>→</kbd> prev/next · <kbd>Z</kbd> zoom image · <kbd>L</kbd> circles <span class="circ-state">off</span> · <kbd>F</kbd> present · <kbd>V</kbd> pre/post</p>
 </section>
 
 <!-- PRE/POST REVEAL: one pair per screen, projector sized -->
@@ -507,7 +507,7 @@
     if ($("v-run").classList.contains("hidden")) return;
     if (e.key === "Escape" && zoomOpen()) { zoomClose(); return; }
     if (e.key === "z" || e.key === "Z") { zoomToggle(); return; }
-    if (e.key === "c" || e.key === "C") { toggleCircles(); return; }
+    if (e.key === "l" || e.key === "L") { toggleCircles(); return; }
     if (e.key === "v" || e.key === "V") { showReveal(0); return; }
     if (e.key === "ArrowRight") { zoomClose(); $("btn-next").click(); return; }
     if (e.key === "ArrowLeft") { zoomClose(); $("btn-prev").click(); return; }
