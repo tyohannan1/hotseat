@@ -310,8 +310,10 @@
     const head = t.head ? `<tr>${t.head.map(h => `<th>${inline(h)}</th>`).join("")}</tr>` : "";
     return `<table class="s-table">${head}${t.rows.map(r => `<tr>${r.map(c => `<td>${inline(c)}</td>`).join("")}</tr>`).join("")}</table>`;
   }
+  const ASSET_V = "20261104e";   // bump when an image or diagram changes under the same file name
   function imgTag(src, cls) {
-    return `<img class="${cls || ""}" src="${esc(src)}" alt="" title="Click or Z to zoom" onclick="window.hsZoom(this.src)" onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'placeholder',textContent:'Image missing: ${esc(src)}'}))">`;
+    const v = src.includes("?") ? "" : "?v=" + ASSET_V;
+    return `<img class="${cls || ""}" src="${esc(src)}${v}" alt="" title="Click or Z to zoom" onclick="window.hsZoom(this.src)" onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'placeholder',textContent:'Image missing: ${esc(src)}'}))">`;
   }
   // ---- image zoom: full-bleed overlay of the current image (Z, click, or Esc to close)
   function zoomSrc() {
