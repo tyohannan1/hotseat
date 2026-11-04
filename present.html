@@ -336,7 +336,10 @@
     const s = curItem();
     $("s-eyebrow").textContent = s.eyebrow || "";
     $("s-title").textContent = s.title || "";
-    $("s-body").innerHTML = s.tableFirst ? tableHtml(s.table) + bodyHtml(s.body) : bodyHtml(s.body) + tableHtml(s.table);
+    $("s-body").innerHTML = s.kind === "title"
+      ? `<p class="t-sub">${esc(s.subtitle || "")}</p><p class="t-by">${esc(s.byline || "")}</p>`
+      : (s.tableFirst ? tableHtml(s.table) + bodyHtml(s.body) : bodyHtml(s.body) + tableHtml(s.table));
+    $("slideview").classList.toggle("titlecard", s.kind === "title");
     $("s-caption").textContent = s.caption || "";
     const nccn = Array.isArray(s.nccn) ? s.nccn : (s.nccn ? [s.nccn] : []);
     let media = "";

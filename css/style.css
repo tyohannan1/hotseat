@@ -211,3 +211,12 @@ body.notes{overflow:auto;padding:16px}
 .n-answer{font-family:var(--display);font-weight:600;font-size:1.3rem;color:var(--ok)}
 .n-big{font-family:var(--display);font-weight:600;font-size:1.8rem;font-variant-numeric:tabular-nums}
 .n-warn{color:#ffb4a8}
+
+/* title card */
+.slide.titlecard .s-text{justify-content:center;align-items:center;text-align:center;gap:10px}
+.slide.titlecard .eyebrow{color:var(--teal);margin-bottom:1.2em}
+.slide.titlecard h2{font-size:clamp(2.6rem,5vw,4.6rem);max-width:18ch;font-weight:700}
+.slide.titlecard .s-body{max-width:none}
+.slide.titlecard .t-sub{font-family:var(--display);font-size:clamp(1.4rem,2.6vw,2.4rem);color:var(--fg);opacity:.9;margin:0 0 1.6em}
+.slide.titlecard .t-by{font-size:clamp(1.1rem,1.9vw,1.7rem);color:var(--muted);letter-spacing:.02em;margin:0}
+body.present .slide.titlecard h2{font-size:clamp(3rem,6vw,5.6rem)}

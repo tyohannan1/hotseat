@@ -3,6 +3,8 @@
 import { test, expect } from "@playwright/test";
 
 test("lecture runs end to end: slides, pretest, hot seat, quick check reveal, zoom, present mode, notes, posttest, pre/post reveal, summary", async ({ page, context }) => {
+  // the smoke test always runs in local test mode: block config.js even when a real one exists
+  await context.route("**/config.js", r => r.abort());
   // presenter: start a session
   await page.goto("/present.html");
   await expect(page.locator("#h-mode")).toHaveText("local test mode");
@@ -24,8 +26,11 @@ test("lecture runs end to end: slides, pretest, hot seat, quick check reveal, zo
   await expect(page.locator("#slideview")).toBeVisible();
   await expect(page.locator("#runner")).toBeHidden();
   await expect(page.locator("#q-controls")).toBeHidden();
-  await expect(page.locator("#s-title")).toContainText("Ask what disease");
+  await expect(page.locator("#s-title")).toHaveText("Disease-Specific Reporting");
+  await expect(page.locator("#s-body .t-by")).toHaveText("Thomas Yohannan, MD");
   await expect(phone.locator("#s-wait")).toBeVisible();
+  await page.keyboard.press("ArrowRight");
+  await expect(page.locator("#s-title")).toContainText("Ask what disease");
 
   // arrow keys move through items in order; second slide, then pre1
   await page.keyboard.press("ArrowRight");
