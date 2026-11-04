@@ -112,12 +112,7 @@
    "from": "c2-lazy"
   },
   {
-   "label": "Case 3 · inguinal",
-   "minutes": 8,
-   "from": "c3-lazy"
-  },
-  {
-   "label": "Case 4 · axilla",
+   "label": "Case 3 · axilla",
    "minutes": 8,
    "from": "c4-lazy"
   },
@@ -190,20 +185,6 @@
    "explain": "Same side as the tumor (4L), the surgeon may still operate; opposite side (4R), surgery is off the table and the patient gets chemoradiation.",
    "source": "AutoPET PETCT_442a09f90e, 2002-03-16, Lung Cancer. CT series 5.000000-GK p.v.2-46154, PET series 9.000000-PET corr.-11580. A: lesion #9 (3.2 mL, SUVmax 5.8, z 174 mm); B: lesion #3 (19.9 mL, SUVmax 7.9, z 147 mm).",
    "imageClean": "img/pre2-chest-fdg-clean.png"
-  },
-  {
-   "type": "question",
-   "id": "pre3",
-   "kind": "pretest",
-   "pairedWith": "post3",
-   "hotSeat": "afterPoll",
-   "image": "img/pre3-pelvis-fdg.png",
-   "imageCaption": "FDG PET/CT pelvis, two patients. A: right pelvic sidewall mass behind the external iliac vessels. B: right groin, at the femoral head.",
-   "disease": "Anal canal squamous cell carcinoma",
-   "correct": 0,
-   "explain": "Both nodes count as regional for anal cancer and both are already inside the standard radiation field.",
-   "source": "AutoPET PETCT_cbbc9e2879, 2006-01-16, Lymphoma. CT series 4.000000-GK p.v.3 s-53013, PET series 8.000000-PET corr.-60905. A: lesion #2 (58.0 mL, SUVmax 16.2, z -889 mm). AutoPET PETCT_335a00191d, 2001-02-16, Lung Cancer. CT series 8.000000-GK p.v.2-14948, PET series 9.000000-PET corr.-84524. B: lesion #10 (7.4 mL, SUVmax 14.3, z -913 mm).",
-   "imageClean": "img/pre3-pelvis-fdg-clean.png"
   },
   {
    "type": "question",
@@ -490,116 +471,8 @@
   },
   {
    "type": "slide",
-   "id": "c3-lazy",
-   "eyebrow": "Case 3 · The inguinal node",
-   "title": "The lazy sentence",
-   "body": [
-    "> FDG-avid pelvic and inguinal adenopathy.",
-    "",
-    "For an anal primary, a complete report.",
-    "For a rectal primary, a stage IV diagnosis hidden in a phrase. The surgeon goes back to the images to find out which nodes you meant."
-   ],
-   "notes": [
-    "For an anal primary that is a complete report. For a rectal primary it is a stage IV diagnosis hidden in a phrase, and the colorectal surgeon has to go back to the images to find out which nodes you meant."
-   ]
-  },
-  {
-   "type": "slide",
-   "id": "c3-line",
-   "eyebrow": "Case 3 · The inguinal node",
-   "title": "The lines: the dentate line and the mesorectal fascia",
-   "image": "img/dx/line3-anorectal.svg",
-   "caption": "Coronal schematic. Gold line = dentate line; dashed teal = mesorectal fascia.",
-   "body": [
-    "- Anal canal SCC: inguinal, mesorectal and internal iliac are N1a; external iliac is N1b. All regional, all in the field.",
-    "- Rectal adenocarcinoma: mesorectal, internal iliac and obturator are regional. External and common iliac are M1.",
-    "- Inguinal is regional for rectal cancer only if the tumor reaches below the dentate line.",
-    "- Same node, different primary, different page."
-   ],
-   "notes": [
-    "This case flips the pattern: the node stays, the primary moves. Teach both lists before the image.",
-    "Anal cancer drains to the groin, so an inguinal node is part of the disease and already inside the radiation field; external iliac is still regional (N1b).",
-    "Rectal cancer above the dentate line: inguinal and external iliac nodes are distant. The quick check (anal cancer, external iliac node) is answerable from the first list."
-   ]
-  },
-  {
-   "type": "slide",
-   "id": "c3-pair",
-   "eyebrow": "Case 3 · The inguinal node",
-   "title": "Internal iliac vs inguinal",
-   "image": "img/case3-pelvis-fdg.png",
-   "caption": "Fresh FDG PET/CT pelvis, two patients. Top: a right pelvic sidewall mass behind the external iliac vessels, abutting the bladder. Bottom: left inguinal nodes in front of the femoral head. Now move the primary.",
-   "body": [
-    "# Lymphoma",
-    "Pelvis and groin are different regions, but a single node in either is the same stage and the same treatment.",
-    "# Anal cancer",
-    "The groin is where anal cancer drains. An inguinal node is part of the disease and already inside the radiation field. Dose changes, plan does not.",
-    "# Rectal cancer",
-    "The same inguinal node means the cancer has left the pelvis. Treated as metastatic. The curative surgery conversation changes.",
-    "The dentate line, a centimeter of primary location, decides which sentence the report supports."
-   ],
-   "notes": [
-    "Fresh FDG PET/CT pelvis with a low primary, two patients stacked: top, a right pelvic sidewall mass; bottom, left inguinal nodes at the femoral head, in the groin fat beside the femoral vessels. This case flips the pattern: here the node is the same and the primary moves.",
-    "**Lymphoma:** the pelvic nodes and the groin nodes are different regions, but a single node in either is the same stage and the same treatment.",
-    "**Anal cancer:** the groin is where anal cancer drains, so an inguinal node is part of the disease and already inside the radiation field. The report changes the dose, not the plan.",
-    "**Rectal cancer:** the same inguinal node means the cancer has left the pelvis. The patient is treated as metastatic and the curative surgery conversation changes. The dentate line, a centimeter of primary location, decides which of those two sentences the report supports."
-   ],
-   "source": "AutoPET PETCT_d5103c8fbf, 2006-04-14, Melanoma. CT series 6.000000-GK p.v.3 s-60673, PET series 4.000000-PET corr.-56571. A: lesion #1 (119.7 mL, SUVmax 31.6, z 556 mm). AutoPET PETCT_1285b86bea, 2006-02-24, Melanoma. CT series 4.000000-GK p.v.3 s-80878, PET series 9.000000-PET corr.-99271. B: lesion #87 (4.3 mL, SUVmax 47.1, z -956 mm).",
-   "imageClean": "img/case3-pelvis-fdg-clean.png"
-  },
-  {
-   "type": "slide",
-   "id": "c3-nccn",
-   "eyebrow": "Case 3 · The inguinal node",
-   "title": "Two tables, one node",
-   "caption": "NCCN Anal Carcinoma v3.2026 ST-1 · NCCN Rectal Cancer v2.2026 REC-A",
-   "nccn": [
-    "img/nccn/anal-nodes.png",
-    "img/nccn/rectal-nodes.png"
-   ],
-   "body": [
-    "- **Anal**: inguinal and internal iliac are N1a, external iliac is N1b. All regional, all in the field.",
-    "- **Rectal**: internal iliac, obturator and mesorectal are regional. Common and external iliac are distant. Inguinal is regional only below the dentate line."
-   ],
-   "notes": [
-    "Anal and rectal nodal definitions side by side, inguinal highlighted on each. No regimens; the two tables are the slide.",
-    "Note the rectal staging table itself never names regional nodes; the definition on the slide is from the pelvic MRI reporting principles (REC-A): internal iliac, obturator, mesorectal regional; common and external iliac distant; inguinal regional only below the dentate line."
-   ]
-  },
-  {
-   "type": "question",
-   "id": "qc3",
-   "kind": "quick",
-   "hotSeat": "beforePoll",
-   "image": null,
-   "stem": "Anal cancer, FDG-avid external iliac node. In the plan or out?",
-   "options": [
-    "In; regional, inside the field",
-    "Out; counted as metastatic",
-    "In for anal, in for rectal",
-    "Depends on size"
-   ],
-   "correct": 0,
-   "explain": "External iliac is N1b for anal cancer, still regional and in the field. For a rectal primary above the dentate line the same node is staged as distant."
-  },
-  {
-   "type": "slide",
-   "id": "c3-size",
-   "eyebrow": "Case 3 · Optional",
-   "title": "Regional nodes need a size, not just a location",
-   "body": [
-    "Rectal cancer: pelvic sidewall nodes above about 7 mm short axis change whether the surgeon extends the dissection.",
-    "- Location puts the node in or out of the plan",
-    "- Size decides what the surgeon does inside it"
-   ],
-   "notes": [
-    "Optional. For rectal cancer, pelvic sidewall nodes above about 7 mm short axis change whether the surgeon extends the dissection, so regional nodes need a measurement, not just a location. (Ogura 2019 figures still to verify: 7 mm threshold, 19.5% vs 5.7% lateral local recurrence.)"
-   ]
-  },
-  {
-   "type": "slide",
    "id": "c4-lazy",
-   "eyebrow": "Case 4 · The axilla",
+   "eyebrow": "Case 3 · The axilla",
    "title": "The lazy sentence",
    "body": [
     "> FDG-avid left axillary lymph node, 1.4 cm.",
@@ -614,7 +487,7 @@
   {
    "type": "slide",
    "id": "c4-line",
-   "eyebrow": "Case 4 · The axilla",
+   "eyebrow": "Case 3 · The axilla",
    "title": "The line: the pectoralis minor",
    "image": "img/dx/line4-axilla.svg",
    "caption": "Axial schematic of the left axilla. Gold = pectoralis minor; levels are named by their relation to it.",
@@ -633,7 +506,7 @@
   {
    "type": "slide",
    "id": "c4-map",
-   "eyebrow": "Case 4 · The axilla",
+   "eyebrow": "Case 3 · The axilla",
    "title": "One image, two pairs",
    "image": "img/case4-axilla-fdg.png",
    "caption": "Fresh FDG PET/CT axilla. Draw the pectoralis minor, then place the levels.",
@@ -652,7 +525,7 @@
   {
    "type": "slide",
    "id": "c4-pair1",
-   "eyebrow": "Case 4 · The axilla",
+   "eyebrow": "Case 3 · The axilla",
    "title": "Rotter's vs level II",
    "body": [
     "# Lymphoma",
@@ -671,7 +544,7 @@
   {
    "type": "slide",
    "id": "c4-pair2",
-   "eyebrow": "Case 4 · The axilla",
+   "eyebrow": "Case 3 · The axilla",
    "title": "Level II vs level III",
    "body": [
     "# Lymphoma",
@@ -690,7 +563,7 @@
   {
    "type": "slide",
    "id": "c4-plus",
-   "eyebrow": "Case 4 · The axilla",
+   "eyebrow": "Case 3 · The axilla",
    "title": "Versus is not plus: II and III together",
    "body": [
     "Now both diseases care, for different reasons.",
@@ -707,7 +580,7 @@
   {
    "type": "slide",
    "id": "c4-nccn",
-   "eyebrow": "Case 4 · The axilla",
+   "eyebrow": "Case 3 · The axilla",
    "title": "cN3 goes to systemic therapy first",
    "caption": "NCCN Invasive Breast Cancer v9.2026, BINV-L and ST-2",
    "nccn": [
@@ -743,7 +616,7 @@
   {
    "type": "slide",
    "id": "c4-aside",
-   "eyebrow": "Case 4 · Aside, cut if behind",
+   "eyebrow": "Case 3 · Aside, cut if behind",
    "title": "Even lymphoma has more than one map",
    "body": [
     "The Hodgkin trial groups count nodal areas differently from the standard regions. The same axilla can be one area on one scheme and two on another.",
@@ -860,20 +733,6 @@
    "explain": "Same side as the tumor (4L), the surgeon may still operate; opposite side (4R), surgery is off the table and the patient gets chemoradiation.",
    "source": "AutoPET PETCT_442a09f90e, 2002-03-16, Lung Cancer. CT series 5.000000-GK p.v.2-46154, PET series 9.000000-PET corr.-11580. A: lesion #9 (3.2 mL, SUVmax 5.8, z 174 mm); B: lesion #3 (19.9 mL, SUVmax 7.9, z 147 mm).",
    "imageClean": "img/pre2-chest-fdg-clean.png"
-  },
-  {
-   "type": "question",
-   "id": "post3",
-   "kind": "posttest",
-   "pairedWith": "pre3",
-   "hotSeat": "none",
-   "image": "img/pre3-pelvis-fdg.png",
-   "imageCaption": "FDG PET/CT pelvis, two patients. A: right pelvic sidewall mass behind the external iliac vessels. B: right groin, at the femoral head.",
-   "disease": "Anal canal squamous cell carcinoma",
-   "correct": 0,
-   "explain": "Both nodes count as regional for anal cancer and both are already inside the standard radiation field.",
-   "source": "AutoPET PETCT_cbbc9e2879, 2006-01-16, Lymphoma. CT series 4.000000-GK p.v.3 s-53013, PET series 8.000000-PET corr.-60905. A: lesion #2 (58.0 mL, SUVmax 16.2, z -889 mm). AutoPET PETCT_335a00191d, 2001-02-16, Lung Cancer. CT series 8.000000-GK p.v.2-14948, PET series 9.000000-PET corr.-84524. B: lesion #10 (7.4 mL, SUVmax 14.3, z -913 mm).",
-   "imageClean": "img/pre3-pelvis-fdg-clean.png"
   },
   {
    "type": "question",

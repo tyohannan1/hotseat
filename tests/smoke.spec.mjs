@@ -69,7 +69,7 @@ test("lecture runs end to end: slides, pretest, hot seat, quick check reveal, zo
 
 
   // pre2..pre4, then the opening slides
-  for (let k = 0; k < 3; k++) await page.keyboard.press("ArrowRight");
+  for (let k = 0; k < 2; k++) await page.keyboard.press("ArrowRight");
   await expect(page.locator("#q-kind")).toContainText("Pretest");
   await page.keyboard.press("ArrowRight");
   await expect(page.locator("#s-title")).toContainText("ask what disease");
