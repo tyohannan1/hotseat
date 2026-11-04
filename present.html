@@ -245,14 +245,13 @@
     if (!lecture || i < 0 || i >= lecture.items.length) return;
     iIndex = i; stepShown = 0;
     const it = lecture.items[i];
-    await store.updateSession(sid, {
-      current: { itemId: it.id, questionId: it.type === "question" ? it.id : null, open: false, revealed: false },
-      hotSeat: { __set: null }
-    });
+    const upd = { current: { itemId: it.id, questionId: it.type === "question" ? it.id : null, open: false, revealed: false } };
+    if (!it.keepHotSeat) upd.hotSeat = { __set: null };   // sub-questions of one case keep the same resident
+    await store.updateSession(sid, upd);
     show("v-run"); render();
   }
   let stepShown = 0;   // build slides: how many body lines are revealed
-  const buildLen = it => (it && it.type === "slide" && it.build && Array.isArray(it.body)) ? it.body.length + (it.buildTitle ? 1 : 0) : 0;
+  const buildLen = it => (it && it.type === "slide" && it.build) ? Math.max(Array.isArray(it.body) ? it.body.length + (it.buildTitle ? 1 : 0) : 0, Array.isArray(it.frames) ? it.frames.length - 1 : 0) : 0;
   $("btn-prev").addEventListener("click", () => {
     if (buildLen(curItem()) && stepShown > 0) { stepShown--; renderSlide(); return; }
     goTo(iIndex - 1);
@@ -368,7 +367,8 @@
       : (s.caption || "");
     const nccn = Array.isArray(s.nccn) ? s.nccn : (s.nccn ? [s.nccn] : []);
     let media = "";
-    if (s.image) media += `<div class="imgbox">${imgTag(imgSrcFor(s))}</div>`;
+    if (Array.isArray(s.frames) && s.frames.length) media += `<div class="imgbox">${imgTag(s.frames[Math.min(stepShown, s.frames.length - 1)])}</div>`;
+    else if (s.image) media += `<div class="imgbox">${imgTag(imgSrcFor(s))}</div>`;
     nccn.forEach(p => media += `<div class="nccn">${imgTag(p)}</div>`);
     $("s-media").innerHTML = media;
     $("slideview").classList.toggle("nomedia", !media);

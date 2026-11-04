@@ -198,7 +198,8 @@
    "explain": "B sits on the common iliac just below where the aorta splits: above the edge of the pelvis, counted as metastatic for prostate.",
    "imageClean": "img/pre1-pelvis-fdg-clean.png",
    "imageBare": "img/pre1-pelvis-fdg-bare.png",
-   "source": "AutoPET PETCT_d9da6129f8, 2002-04-14, Melanoma. CT series 4.000000-GK p.v.3-98719, PET series 5.000000-PET corr.-53940. A: lesion #4 (3.7 mL, SUVmax 34.9, z 630 mm); B: lesion #6 (1.2 mL, SUVmax 12.6, z 669 mm)."
+   "source": "AutoPET PETCT_d9da6129f8, 2002-04-14, Melanoma. CT series 4.000000-GK p.v.3-98719, PET series 5.000000-PET corr.-53940. A: lesion #4 (3.7 mL, SUVmax 34.9, z 630 mm); B: lesion #6 (1.2 mL, SUVmax 12.6, z 669 mm).",
+   "keepHotSeat": true
   },
   {
    "type": "question",
@@ -219,7 +220,8 @@
    "explain": "A is pelvic and radiated with the prostate. B is a common iliac node, counted as metastatic: hormones and drugs instead of curative radiation.",
    "imageClean": "img/pre1-pelvis-fdg-clean.png",
    "imageBare": "img/pre1-pelvis-fdg-bare.png",
-   "source": "AutoPET PETCT_d9da6129f8, 2002-04-14, Melanoma. CT series 4.000000-GK p.v.3-98719, PET series 5.000000-PET corr.-53940. A: lesion #4 (3.7 mL, SUVmax 34.9, z 630 mm); B: lesion #6 (1.2 mL, SUVmax 12.6, z 669 mm)."
+   "source": "AutoPET PETCT_d9da6129f8, 2002-04-14, Melanoma. CT series 4.000000-GK p.v.3-98719, PET series 5.000000-PET corr.-53940. A: lesion #4 (3.7 mL, SUVmax 34.9, z 630 mm); B: lesion #6 (1.2 mL, SUVmax 12.6, z 669 mm).",
+   "keepHotSeat": true
   },
   {
    "type": "question",
@@ -240,7 +242,8 @@
    "explain": "For lymphoma the whole iliac chain on one side is one region: left iliac.",
    "imageClean": "img/pre1-pelvis-fdg-clean.png",
    "imageBare": "img/pre1-pelvis-fdg-bare.png",
-   "source": "AutoPET PETCT_d9da6129f8, 2002-04-14, Melanoma. CT series 4.000000-GK p.v.3-98719, PET series 5.000000-PET corr.-53940. A: lesion #4 (3.7 mL, SUVmax 34.9, z 630 mm); B: lesion #6 (1.2 mL, SUVmax 12.6, z 669 mm)."
+   "source": "AutoPET PETCT_d9da6129f8, 2002-04-14, Melanoma. CT series 4.000000-GK p.v.3-98719, PET series 5.000000-PET corr.-53940. A: lesion #4 (3.7 mL, SUVmax 34.9, z 630 mm); B: lesion #6 (1.2 mL, SUVmax 12.6, z 669 mm).",
+   "keepHotSeat": true
   },
   {
    "type": "question",
@@ -261,7 +264,8 @@
    "explain": "Still left iliac. Above or below the bifurcation changes nothing for Lugano.",
    "imageClean": "img/pre1-pelvis-fdg-clean.png",
    "imageBare": "img/pre1-pelvis-fdg-bare.png",
-   "source": "AutoPET PETCT_d9da6129f8, 2002-04-14, Melanoma. CT series 4.000000-GK p.v.3-98719, PET series 5.000000-PET corr.-53940. A: lesion #4 (3.7 mL, SUVmax 34.9, z 630 mm); B: lesion #6 (1.2 mL, SUVmax 12.6, z 669 mm)."
+   "source": "AutoPET PETCT_d9da6129f8, 2002-04-14, Melanoma. CT series 4.000000-GK p.v.3-98719, PET series 5.000000-PET corr.-53940. A: lesion #4 (3.7 mL, SUVmax 34.9, z 630 mm); B: lesion #6 (1.2 mL, SUVmax 12.6, z 669 mm).",
+   "keepHotSeat": true
   },
   {
    "type": "question",
@@ -282,7 +286,8 @@
    "explain": "Both nodes are in the same region, left iliac. One region, same stage, same treatment.",
    "imageClean": "img/pre1-pelvis-fdg-clean.png",
    "imageBare": "img/pre1-pelvis-fdg-bare.png",
-   "source": "AutoPET PETCT_d9da6129f8, 2002-04-14, Melanoma. CT series 4.000000-GK p.v.3-98719, PET series 5.000000-PET corr.-53940. A: lesion #4 (3.7 mL, SUVmax 34.9, z 630 mm); B: lesion #6 (1.2 mL, SUVmax 12.6, z 669 mm)."
+   "source": "AutoPET PETCT_d9da6129f8, 2002-04-14, Melanoma. CT series 4.000000-GK p.v.3-98719, PET series 5.000000-PET corr.-53940. A: lesion #4 (3.7 mL, SUVmax 34.9, z 630 mm); B: lesion #6 (1.2 mL, SUVmax 12.6, z 669 mm).",
+   "keepHotSeat": true
   },
   {
    "type": "question",
@@ -324,7 +329,8 @@
    "explain": "B is right of the left tracheal wall: 4R. For a left lung tumor that is the opposite side.",
    "imageClean": "img/pre2-chest-fdg-clean.png",
    "imageBare": "img/pre2-chest-fdg-bare.png",
-   "source": "AutoPET PETCT_442a09f90e, 2002-03-16, Lung Cancer. CT series 5.000000-GK p.v.2-46154, PET series 9.000000-PET corr.-11580. A: lesion #9 (3.2 mL, SUVmax 5.8, z 174 mm); B: lesion #3 (19.9 mL, SUVmax 7.9, z 147 mm)."
+   "source": "AutoPET PETCT_442a09f90e, 2002-03-16, Lung Cancer. CT series 5.000000-GK p.v.2-46154, PET series 9.000000-PET corr.-11580. A: lesion #9 (3.2 mL, SUVmax 5.8, z 174 mm); B: lesion #3 (19.9 mL, SUVmax 7.9, z 147 mm).",
+   "keepHotSeat": true
   },
   {
    "type": "question",
@@ -345,7 +351,8 @@
    "explain": "A (4L) is same-side, N2: surgery may still follow chemo-immunotherapy. B (4R) is opposite-side, N3: surgery is off the table.",
    "imageClean": "img/pre2-chest-fdg-clean.png",
    "imageBare": "img/pre2-chest-fdg-bare.png",
-   "source": "AutoPET PETCT_442a09f90e, 2002-03-16, Lung Cancer. CT series 5.000000-GK p.v.2-46154, PET series 9.000000-PET corr.-11580. A: lesion #9 (3.2 mL, SUVmax 5.8, z 174 mm); B: lesion #3 (19.9 mL, SUVmax 7.9, z 147 mm)."
+   "source": "AutoPET PETCT_442a09f90e, 2002-03-16, Lung Cancer. CT series 5.000000-GK p.v.2-46154, PET series 9.000000-PET corr.-11580. A: lesion #9 (3.2 mL, SUVmax 5.8, z 174 mm); B: lesion #3 (19.9 mL, SUVmax 7.9, z 147 mm).",
+   "keepHotSeat": true
   },
   {
    "type": "question",
@@ -366,7 +373,8 @@
    "explain": "For lymphoma the whole mediastinum is one region.",
    "imageClean": "img/pre2-chest-fdg-clean.png",
    "imageBare": "img/pre2-chest-fdg-bare.png",
-   "source": "AutoPET PETCT_442a09f90e, 2002-03-16, Lung Cancer. CT series 5.000000-GK p.v.2-46154, PET series 9.000000-PET corr.-11580. A: lesion #9 (3.2 mL, SUVmax 5.8, z 174 mm); B: lesion #3 (19.9 mL, SUVmax 7.9, z 147 mm)."
+   "source": "AutoPET PETCT_442a09f90e, 2002-03-16, Lung Cancer. CT series 5.000000-GK p.v.2-46154, PET series 9.000000-PET corr.-11580. A: lesion #9 (3.2 mL, SUVmax 5.8, z 174 mm); B: lesion #3 (19.9 mL, SUVmax 7.9, z 147 mm).",
+   "keepHotSeat": true
   },
   {
    "type": "question",
@@ -387,7 +395,8 @@
    "explain": "Same region: mediastinal. Right or left paratracheal changes nothing.",
    "imageClean": "img/pre2-chest-fdg-clean.png",
    "imageBare": "img/pre2-chest-fdg-bare.png",
-   "source": "AutoPET PETCT_442a09f90e, 2002-03-16, Lung Cancer. CT series 5.000000-GK p.v.2-46154, PET series 9.000000-PET corr.-11580. A: lesion #9 (3.2 mL, SUVmax 5.8, z 174 mm); B: lesion #3 (19.9 mL, SUVmax 7.9, z 147 mm)."
+   "source": "AutoPET PETCT_442a09f90e, 2002-03-16, Lung Cancer. CT series 5.000000-GK p.v.2-46154, PET series 9.000000-PET corr.-11580. A: lesion #9 (3.2 mL, SUVmax 5.8, z 174 mm); B: lesion #3 (19.9 mL, SUVmax 7.9, z 147 mm).",
+   "keepHotSeat": true
   },
   {
    "type": "question",
@@ -408,7 +417,8 @@
    "explain": "Both nodes are mediastinal, one region. Same stage, same treatment.",
    "imageClean": "img/pre2-chest-fdg-clean.png",
    "imageBare": "img/pre2-chest-fdg-bare.png",
-   "source": "AutoPET PETCT_442a09f90e, 2002-03-16, Lung Cancer. CT series 5.000000-GK p.v.2-46154, PET series 9.000000-PET corr.-11580. A: lesion #9 (3.2 mL, SUVmax 5.8, z 174 mm); B: lesion #3 (19.9 mL, SUVmax 7.9, z 147 mm)."
+   "source": "AutoPET PETCT_442a09f90e, 2002-03-16, Lung Cancer. CT series 5.000000-GK p.v.2-46154, PET series 9.000000-PET corr.-11580. A: lesion #9 (3.2 mL, SUVmax 5.8, z 174 mm); B: lesion #3 (19.9 mL, SUVmax 7.9, z 147 mm).",
+   "keepHotSeat": true
   },
   {
    "type": "question",
@@ -450,7 +460,8 @@
    "explain": "B is medial to the pectoralis minor, under the clavicle: level III, infraclavicular, cN3a.",
    "imageClean": "img/pre4-axilla-fdg-clean.png",
    "imageBare": "img/pre4-axilla-fdg-bare.png",
-   "source": "AutoPET PETCT_f24f3ce1da, 2001-09-14, Melanoma. CT series 5.000000-GK p.v.2-28878, PET series 6.000000-PET corr.-93674. A: lesion #1 (161.7 mL conglomerate, SUVmax 54.3, slice z 1163); B: lesion #3 (9.0 mL, SUVmax 56.2, z 1152)."
+   "source": "AutoPET PETCT_f24f3ce1da, 2001-09-14, Melanoma. CT series 5.000000-GK p.v.2-28878, PET series 6.000000-PET corr.-93674. A: lesion #1 (161.7 mL conglomerate, SUVmax 54.3, slice z 1163); B: lesion #3 (9.0 mL, SUVmax 56.2, z 1152).",
+   "keepHotSeat": true
   },
   {
    "type": "question",
@@ -471,7 +482,8 @@
    "explain": "A is level I, the surgeon's axilla. B is medial to the pectoralis minor, level III: cN3a, systemic therapy before any surgery.",
    "imageClean": "img/pre4-axilla-fdg-clean.png",
    "imageBare": "img/pre4-axilla-fdg-bare.png",
-   "source": "AutoPET PETCT_f24f3ce1da, 2001-09-14, Melanoma. CT series 5.000000-GK p.v.2-28878, PET series 6.000000-PET corr.-93674. A: lesion #1 (161.7 mL conglomerate, SUVmax 54.3, slice z 1163); B: lesion #3 (9.0 mL, SUVmax 56.2, z 1152)."
+   "source": "AutoPET PETCT_f24f3ce1da, 2001-09-14, Melanoma. CT series 5.000000-GK p.v.2-28878, PET series 6.000000-PET corr.-93674. A: lesion #1 (161.7 mL conglomerate, SUVmax 54.3, slice z 1163); B: lesion #3 (9.0 mL, SUVmax 56.2, z 1152).",
+   "keepHotSeat": true
   },
   {
    "type": "question",
@@ -492,7 +504,8 @@
    "explain": "Lugano calls the axillary and pectoral nodes one region: left axillary. Level I or II makes no difference.",
    "imageClean": "img/pre4-axilla-fdg-clean.png",
    "imageBare": "img/pre4-axilla-fdg-bare.png",
-   "source": "AutoPET PETCT_f24f3ce1da, 2001-09-14, Melanoma. CT series 5.000000-GK p.v.2-28878, PET series 6.000000-PET corr.-93674. A: lesion #1 (161.7 mL conglomerate, SUVmax 54.3, slice z 1163); B: lesion #3 (9.0 mL, SUVmax 56.2, z 1152)."
+   "source": "AutoPET PETCT_f24f3ce1da, 2001-09-14, Melanoma. CT series 5.000000-GK p.v.2-28878, PET series 6.000000-PET corr.-93674. A: lesion #1 (161.7 mL conglomerate, SUVmax 54.3, slice z 1163); B: lesion #3 (9.0 mL, SUVmax 56.2, z 1152).",
+   "keepHotSeat": true
   },
   {
    "type": "question",
@@ -513,7 +526,8 @@
    "explain": "Infraclavicular is its own Lugano region, separate from axillary.",
    "imageClean": "img/pre4-axilla-fdg-clean.png",
    "imageBare": "img/pre4-axilla-fdg-bare.png",
-   "source": "AutoPET PETCT_f24f3ce1da, 2001-09-14, Melanoma. CT series 5.000000-GK p.v.2-28878, PET series 6.000000-PET corr.-93674. A: lesion #1 (161.7 mL conglomerate, SUVmax 54.3, slice z 1163); B: lesion #3 (9.0 mL, SUVmax 56.2, z 1152)."
+   "source": "AutoPET PETCT_f24f3ce1da, 2001-09-14, Melanoma. CT series 5.000000-GK p.v.2-28878, PET series 6.000000-PET corr.-93674. A: lesion #1 (161.7 mL conglomerate, SUVmax 54.3, slice z 1163); B: lesion #3 (9.0 mL, SUVmax 56.2, z 1152).",
+   "keepHotSeat": true
   },
   {
    "type": "question",
@@ -534,7 +548,8 @@
    "explain": "A is axillary, B is infraclavicular: two regions on the same side of the diaphragm instead of one. Still early stage, same treatment. Lugano counts regions; it does not care which level.",
    "imageClean": "img/pre4-axilla-fdg-clean.png",
    "imageBare": "img/pre4-axilla-fdg-bare.png",
-   "source": "AutoPET PETCT_f24f3ce1da, 2001-09-14, Melanoma. CT series 5.000000-GK p.v.2-28878, PET series 6.000000-PET corr.-93674. A: lesion #1 (161.7 mL conglomerate, SUVmax 54.3, slice z 1163); B: lesion #3 (9.0 mL, SUVmax 56.2, z 1152)."
+   "source": "AutoPET PETCT_f24f3ce1da, 2001-09-14, Melanoma. CT series 5.000000-GK p.v.2-28878, PET series 6.000000-PET corr.-93674. A: lesion #1 (161.7 mL conglomerate, SUVmax 54.3, slice z 1163); B: lesion #3 (9.0 mL, SUVmax 56.2, z 1152).",
+   "keepHotSeat": true
   },
   {
    "type": "slide",
@@ -957,7 +972,7 @@
   },
   {
    "type": "question",
-   "id": "qc4",
+   "id": "qc3",
    "kind": "quick",
    "hotSeat": "beforePoll",
    "image": "img/dx/line4-axilla.svg",
@@ -1107,7 +1122,8 @@
    "explain": "B sits on the common iliac just below where the aorta splits: above the edge of the pelvis, counted as metastatic for prostate.",
    "imageClean": "img/pre1-pelvis-fdg-clean.png",
    "imageBare": "img/pre1-pelvis-fdg-bare.png",
-   "source": "AutoPET PETCT_d9da6129f8, 2002-04-14, Melanoma. CT series 4.000000-GK p.v.3-98719, PET series 5.000000-PET corr.-53940. A: lesion #4 (3.7 mL, SUVmax 34.9, z 630 mm); B: lesion #6 (1.2 mL, SUVmax 12.6, z 669 mm)."
+   "source": "AutoPET PETCT_d9da6129f8, 2002-04-14, Melanoma. CT series 4.000000-GK p.v.3-98719, PET series 5.000000-PET corr.-53940. A: lesion #4 (3.7 mL, SUVmax 34.9, z 630 mm); B: lesion #6 (1.2 mL, SUVmax 12.6, z 669 mm).",
+   "keepHotSeat": true
   },
   {
    "type": "question",
@@ -1128,7 +1144,8 @@
    "explain": "A is pelvic and radiated with the prostate. B is a common iliac node, counted as metastatic: hormones and drugs instead of curative radiation.",
    "imageClean": "img/pre1-pelvis-fdg-clean.png",
    "imageBare": "img/pre1-pelvis-fdg-bare.png",
-   "source": "AutoPET PETCT_d9da6129f8, 2002-04-14, Melanoma. CT series 4.000000-GK p.v.3-98719, PET series 5.000000-PET corr.-53940. A: lesion #4 (3.7 mL, SUVmax 34.9, z 630 mm); B: lesion #6 (1.2 mL, SUVmax 12.6, z 669 mm)."
+   "source": "AutoPET PETCT_d9da6129f8, 2002-04-14, Melanoma. CT series 4.000000-GK p.v.3-98719, PET series 5.000000-PET corr.-53940. A: lesion #4 (3.7 mL, SUVmax 34.9, z 630 mm); B: lesion #6 (1.2 mL, SUVmax 12.6, z 669 mm).",
+   "keepHotSeat": true
   },
   {
    "type": "question",
@@ -1149,7 +1166,8 @@
    "explain": "For lymphoma the whole iliac chain on one side is one region: left iliac.",
    "imageClean": "img/pre1-pelvis-fdg-clean.png",
    "imageBare": "img/pre1-pelvis-fdg-bare.png",
-   "source": "AutoPET PETCT_d9da6129f8, 2002-04-14, Melanoma. CT series 4.000000-GK p.v.3-98719, PET series 5.000000-PET corr.-53940. A: lesion #4 (3.7 mL, SUVmax 34.9, z 630 mm); B: lesion #6 (1.2 mL, SUVmax 12.6, z 669 mm)."
+   "source": "AutoPET PETCT_d9da6129f8, 2002-04-14, Melanoma. CT series 4.000000-GK p.v.3-98719, PET series 5.000000-PET corr.-53940. A: lesion #4 (3.7 mL, SUVmax 34.9, z 630 mm); B: lesion #6 (1.2 mL, SUVmax 12.6, z 669 mm).",
+   "keepHotSeat": true
   },
   {
    "type": "question",
@@ -1170,7 +1188,8 @@
    "explain": "Still left iliac. Above or below the bifurcation changes nothing for Lugano.",
    "imageClean": "img/pre1-pelvis-fdg-clean.png",
    "imageBare": "img/pre1-pelvis-fdg-bare.png",
-   "source": "AutoPET PETCT_d9da6129f8, 2002-04-14, Melanoma. CT series 4.000000-GK p.v.3-98719, PET series 5.000000-PET corr.-53940. A: lesion #4 (3.7 mL, SUVmax 34.9, z 630 mm); B: lesion #6 (1.2 mL, SUVmax 12.6, z 669 mm)."
+   "source": "AutoPET PETCT_d9da6129f8, 2002-04-14, Melanoma. CT series 4.000000-GK p.v.3-98719, PET series 5.000000-PET corr.-53940. A: lesion #4 (3.7 mL, SUVmax 34.9, z 630 mm); B: lesion #6 (1.2 mL, SUVmax 12.6, z 669 mm).",
+   "keepHotSeat": true
   },
   {
    "type": "question",
@@ -1191,7 +1210,8 @@
    "explain": "Both nodes are in the same region, left iliac. One region, same stage, same treatment.",
    "imageClean": "img/pre1-pelvis-fdg-clean.png",
    "imageBare": "img/pre1-pelvis-fdg-bare.png",
-   "source": "AutoPET PETCT_d9da6129f8, 2002-04-14, Melanoma. CT series 4.000000-GK p.v.3-98719, PET series 5.000000-PET corr.-53940. A: lesion #4 (3.7 mL, SUVmax 34.9, z 630 mm); B: lesion #6 (1.2 mL, SUVmax 12.6, z 669 mm)."
+   "source": "AutoPET PETCT_d9da6129f8, 2002-04-14, Melanoma. CT series 4.000000-GK p.v.3-98719, PET series 5.000000-PET corr.-53940. A: lesion #4 (3.7 mL, SUVmax 34.9, z 630 mm); B: lesion #6 (1.2 mL, SUVmax 12.6, z 669 mm).",
+   "keepHotSeat": true
   },
   {
    "type": "question",
@@ -1233,7 +1253,8 @@
    "explain": "B is right of the left tracheal wall: 4R. For a left lung tumor that is the opposite side.",
    "imageClean": "img/pre2-chest-fdg-clean.png",
    "imageBare": "img/pre2-chest-fdg-bare.png",
-   "source": "AutoPET PETCT_442a09f90e, 2002-03-16, Lung Cancer. CT series 5.000000-GK p.v.2-46154, PET series 9.000000-PET corr.-11580. A: lesion #9 (3.2 mL, SUVmax 5.8, z 174 mm); B: lesion #3 (19.9 mL, SUVmax 7.9, z 147 mm)."
+   "source": "AutoPET PETCT_442a09f90e, 2002-03-16, Lung Cancer. CT series 5.000000-GK p.v.2-46154, PET series 9.000000-PET corr.-11580. A: lesion #9 (3.2 mL, SUVmax 5.8, z 174 mm); B: lesion #3 (19.9 mL, SUVmax 7.9, z 147 mm).",
+   "keepHotSeat": true
   },
   {
    "type": "question",
@@ -1254,7 +1275,8 @@
    "explain": "A (4L) is same-side, N2: surgery may still follow chemo-immunotherapy. B (4R) is opposite-side, N3: surgery is off the table.",
    "imageClean": "img/pre2-chest-fdg-clean.png",
    "imageBare": "img/pre2-chest-fdg-bare.png",
-   "source": "AutoPET PETCT_442a09f90e, 2002-03-16, Lung Cancer. CT series 5.000000-GK p.v.2-46154, PET series 9.000000-PET corr.-11580. A: lesion #9 (3.2 mL, SUVmax 5.8, z 174 mm); B: lesion #3 (19.9 mL, SUVmax 7.9, z 147 mm)."
+   "source": "AutoPET PETCT_442a09f90e, 2002-03-16, Lung Cancer. CT series 5.000000-GK p.v.2-46154, PET series 9.000000-PET corr.-11580. A: lesion #9 (3.2 mL, SUVmax 5.8, z 174 mm); B: lesion #3 (19.9 mL, SUVmax 7.9, z 147 mm).",
+   "keepHotSeat": true
   },
   {
    "type": "question",
@@ -1275,7 +1297,8 @@
    "explain": "For lymphoma the whole mediastinum is one region.",
    "imageClean": "img/pre2-chest-fdg-clean.png",
    "imageBare": "img/pre2-chest-fdg-bare.png",
-   "source": "AutoPET PETCT_442a09f90e, 2002-03-16, Lung Cancer. CT series 5.000000-GK p.v.2-46154, PET series 9.000000-PET corr.-11580. A: lesion #9 (3.2 mL, SUVmax 5.8, z 174 mm); B: lesion #3 (19.9 mL, SUVmax 7.9, z 147 mm)."
+   "source": "AutoPET PETCT_442a09f90e, 2002-03-16, Lung Cancer. CT series 5.000000-GK p.v.2-46154, PET series 9.000000-PET corr.-11580. A: lesion #9 (3.2 mL, SUVmax 5.8, z 174 mm); B: lesion #3 (19.9 mL, SUVmax 7.9, z 147 mm).",
+   "keepHotSeat": true
   },
   {
    "type": "question",
@@ -1296,7 +1319,8 @@
    "explain": "Same region: mediastinal. Right or left paratracheal changes nothing.",
    "imageClean": "img/pre2-chest-fdg-clean.png",
    "imageBare": "img/pre2-chest-fdg-bare.png",
-   "source": "AutoPET PETCT_442a09f90e, 2002-03-16, Lung Cancer. CT series 5.000000-GK p.v.2-46154, PET series 9.000000-PET corr.-11580. A: lesion #9 (3.2 mL, SUVmax 5.8, z 174 mm); B: lesion #3 (19.9 mL, SUVmax 7.9, z 147 mm)."
+   "source": "AutoPET PETCT_442a09f90e, 2002-03-16, Lung Cancer. CT series 5.000000-GK p.v.2-46154, PET series 9.000000-PET corr.-11580. A: lesion #9 (3.2 mL, SUVmax 5.8, z 174 mm); B: lesion #3 (19.9 mL, SUVmax 7.9, z 147 mm).",
+   "keepHotSeat": true
   },
   {
    "type": "question",
@@ -1317,7 +1341,8 @@
    "explain": "Both nodes are mediastinal, one region. Same stage, same treatment.",
    "imageClean": "img/pre2-chest-fdg-clean.png",
    "imageBare": "img/pre2-chest-fdg-bare.png",
-   "source": "AutoPET PETCT_442a09f90e, 2002-03-16, Lung Cancer. CT series 5.000000-GK p.v.2-46154, PET series 9.000000-PET corr.-11580. A: lesion #9 (3.2 mL, SUVmax 5.8, z 174 mm); B: lesion #3 (19.9 mL, SUVmax 7.9, z 147 mm)."
+   "source": "AutoPET PETCT_442a09f90e, 2002-03-16, Lung Cancer. CT series 5.000000-GK p.v.2-46154, PET series 9.000000-PET corr.-11580. A: lesion #9 (3.2 mL, SUVmax 5.8, z 174 mm); B: lesion #3 (19.9 mL, SUVmax 7.9, z 147 mm).",
+   "keepHotSeat": true
   },
   {
    "type": "question",
@@ -1359,7 +1384,8 @@
    "explain": "B is medial to the pectoralis minor, under the clavicle: level III, infraclavicular, cN3a.",
    "imageClean": "img/pre4-axilla-fdg-clean.png",
    "imageBare": "img/pre4-axilla-fdg-bare.png",
-   "source": "AutoPET PETCT_f24f3ce1da, 2001-09-14, Melanoma. CT series 5.000000-GK p.v.2-28878, PET series 6.000000-PET corr.-93674. A: lesion #1 (161.7 mL conglomerate, SUVmax 54.3, slice z 1163); B: lesion #3 (9.0 mL, SUVmax 56.2, z 1152)."
+   "source": "AutoPET PETCT_f24f3ce1da, 2001-09-14, Melanoma. CT series 5.000000-GK p.v.2-28878, PET series 6.000000-PET corr.-93674. A: lesion #1 (161.7 mL conglomerate, SUVmax 54.3, slice z 1163); B: lesion #3 (9.0 mL, SUVmax 56.2, z 1152).",
+   "keepHotSeat": true
   },
   {
    "type": "question",
@@ -1380,7 +1406,8 @@
    "explain": "A is level I, the surgeon's axilla. B is medial to the pectoralis minor, level III: cN3a, systemic therapy before any surgery.",
    "imageClean": "img/pre4-axilla-fdg-clean.png",
    "imageBare": "img/pre4-axilla-fdg-bare.png",
-   "source": "AutoPET PETCT_f24f3ce1da, 2001-09-14, Melanoma. CT series 5.000000-GK p.v.2-28878, PET series 6.000000-PET corr.-93674. A: lesion #1 (161.7 mL conglomerate, SUVmax 54.3, slice z 1163); B: lesion #3 (9.0 mL, SUVmax 56.2, z 1152)."
+   "source": "AutoPET PETCT_f24f3ce1da, 2001-09-14, Melanoma. CT series 5.000000-GK p.v.2-28878, PET series 6.000000-PET corr.-93674. A: lesion #1 (161.7 mL conglomerate, SUVmax 54.3, slice z 1163); B: lesion #3 (9.0 mL, SUVmax 56.2, z 1152).",
+   "keepHotSeat": true
   },
   {
    "type": "question",
@@ -1401,7 +1428,8 @@
    "explain": "Lugano calls the axillary and pectoral nodes one region: left axillary. Level I or II makes no difference.",
    "imageClean": "img/pre4-axilla-fdg-clean.png",
    "imageBare": "img/pre4-axilla-fdg-bare.png",
-   "source": "AutoPET PETCT_f24f3ce1da, 2001-09-14, Melanoma. CT series 5.000000-GK p.v.2-28878, PET series 6.000000-PET corr.-93674. A: lesion #1 (161.7 mL conglomerate, SUVmax 54.3, slice z 1163); B: lesion #3 (9.0 mL, SUVmax 56.2, z 1152)."
+   "source": "AutoPET PETCT_f24f3ce1da, 2001-09-14, Melanoma. CT series 5.000000-GK p.v.2-28878, PET series 6.000000-PET corr.-93674. A: lesion #1 (161.7 mL conglomerate, SUVmax 54.3, slice z 1163); B: lesion #3 (9.0 mL, SUVmax 56.2, z 1152).",
+   "keepHotSeat": true
   },
   {
    "type": "question",
@@ -1422,7 +1450,8 @@
    "explain": "Infraclavicular is its own Lugano region, separate from axillary.",
    "imageClean": "img/pre4-axilla-fdg-clean.png",
    "imageBare": "img/pre4-axilla-fdg-bare.png",
-   "source": "AutoPET PETCT_f24f3ce1da, 2001-09-14, Melanoma. CT series 5.000000-GK p.v.2-28878, PET series 6.000000-PET corr.-93674. A: lesion #1 (161.7 mL conglomerate, SUVmax 54.3, slice z 1163); B: lesion #3 (9.0 mL, SUVmax 56.2, z 1152)."
+   "source": "AutoPET PETCT_f24f3ce1da, 2001-09-14, Melanoma. CT series 5.000000-GK p.v.2-28878, PET series 6.000000-PET corr.-93674. A: lesion #1 (161.7 mL conglomerate, SUVmax 54.3, slice z 1163); B: lesion #3 (9.0 mL, SUVmax 56.2, z 1152).",
+   "keepHotSeat": true
   },
   {
    "type": "question",
@@ -1443,7 +1472,8 @@
    "explain": "A is axillary, B is infraclavicular: two regions on the same side of the diaphragm instead of one. Still early stage, same treatment. Lugano counts regions; it does not care which level.",
    "imageClean": "img/pre4-axilla-fdg-clean.png",
    "imageBare": "img/pre4-axilla-fdg-bare.png",
-   "source": "AutoPET PETCT_f24f3ce1da, 2001-09-14, Melanoma. CT series 5.000000-GK p.v.2-28878, PET series 6.000000-PET corr.-93674. A: lesion #1 (161.7 mL conglomerate, SUVmax 54.3, slice z 1163); B: lesion #3 (9.0 mL, SUVmax 56.2, z 1152)."
+   "source": "AutoPET PETCT_f24f3ce1da, 2001-09-14, Melanoma. CT series 5.000000-GK p.v.2-28878, PET series 6.000000-PET corr.-93674. A: lesion #1 (161.7 mL conglomerate, SUVmax 54.3, slice z 1163); B: lesion #3 (9.0 mL, SUVmax 56.2, z 1152).",
+   "keepHotSeat": true
   },
   {
    "type": "slide",
