@@ -10,6 +10,7 @@
 <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-database-compat.js"></script>
 <script src="config.js" onerror="void 0"></script>
+<script>if (/[?&]local\b/.test(location.search)) window.firebaseConfig = null; // ?local = preview without Firebase or sign-in</script>
 <script src="js/store.js"></script>
 </head>
 <body class="vote">
