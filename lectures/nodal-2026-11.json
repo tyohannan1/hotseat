@@ -351,15 +351,15 @@
    "kind": "quick",
    "hotSeat": "beforePoll",
    "image": null,
-   "stem": "Same common iliac node as the prostate case. Now the primary is bladder cancer. Does the bifurcation matter here?",
+   "stem": "New prostate cancer. PSMA-avid node along the right external iliac vessels, below the common iliac bifurcation. What goes in the report, and what happens to the patient?",
    "options": [
-    "No, still regional and still in the plan",
-    "Yes, now metastatic",
-    "Yes, changes the surgery only",
-    "Cannot say without MRI"
+    "Right external iliac node; regional, radiated with the prostate",
+    "Right common iliac node; metastatic, systemic therapy",
+    "Right pelvic node; management unchanged either way",
+    "Right iliac node; cannot say without the size"
    ],
    "correct": 0,
-   "explain": "For bladder the common iliac node is still regional (a higher N category, but regional) and still part of the surgical and radiation plan."
+   "explain": "Below the common iliac bifurcation the node is pelvic: name the vessel, external iliac, and it stays in the curative radiation plan. Above the bifurcation it would be a common iliac node and counted as metastatic."
   },
   {
    "type": "slide",
@@ -444,15 +444,15 @@
    "kind": "quick",
    "hotSeat": "beforePoll",
    "image": null,
-   "stem": "Left lower lobe lung cancer, FDG-avid subcarinal node, nothing else. Same-side or opposite-side rule?",
+   "stem": "Right upper lobe lung cancer. FDG-avid node just left of midline, but medial to the left lateral wall of the trachea. Station, and what does it mean?",
    "options": [
-    "Same side; surgery still possible",
-    "Opposite side; surgery off the table",
-    "Depends on which side of midline",
-    "Supraclavicular rule applies"
+    "4R; same side, surgery still possible",
+    "4L; opposite side, surgery off the table",
+    "2L; opposite side, chemoradiation",
+    "Depends on the size of the node"
    ],
    "correct": 0,
-   "explain": "Station 7 is a midline station and counts as same-side (N2) for every tumor. Station 7 is the exception; every other paired station follows the side rule."
+   "explain": "The border is the left lateral tracheal wall, not the midline. Medial to that wall is still 4R, same side for a right lung tumor, so the surgeon is still in the room."
   },
   {
    "type": "slide",
@@ -603,15 +603,15 @@
    "kind": "quick",
    "hotSeat": "beforePoll",
    "image": null,
-   "stem": "Breast cancer. Avid node sits deep to pectoralis minor, not medial to it. Which level, and who sees the patient first?",
+   "stem": "Left breast cancer. FDG-avid node medial to the pectoralis minor, under the clavicle. Level, and who sees the patient first?",
    "options": [
+    "Level III; medical oncology first, systemic therapy before surgery",
     "Level II; surgeon first",
-    "Level III; medical oncology first",
-    "Level I; surgeon first",
-    "Rotter's; radiation first"
+    "Level I; surgeon first, sentinel node",
+    "Internal mammary; radiation first"
    ],
    "correct": 0,
-   "explain": "Behind the pectoralis minor is level II. Medial to it would be level III and the chemo-first pathway."
+   "explain": "Medial to the pectoralis minor is level III, infraclavicular: cN3a. That puts systemic therapy before any surgery. Lateral to the muscle is level I, behind it level II, the surgeon's axilla."
   },
   {
    "type": "slide",
