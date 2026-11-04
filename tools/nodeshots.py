@@ -282,6 +282,42 @@ class Study:
     def provenance(self, lesions):
         return f"AutoPET {self.sid.split('_')[0]} · {self.date} · FDG · lesion {','.join(str(n) for n in lesions)}"
 
+def vessel_diagram(nodes, W=640, Hh=900):
+    """Schematic aorto-iliac tree (anterior view, patient's right on the left) with named bifurcations.
+    nodes: list of (letter, branch) with branch in L-CIA, R-CIA, L-EIA, R-EIA, L-IIA, R-IIA, AO (just above the aortic bifurcation)."""
+    im = Image.new("RGB", (W, Hh), (0, 0, 0)); d = ImageDraw.Draw(im)
+    cx = W // 2; TEAL = (24, 163, 172); VES = (235, 90, 90); DIM = (170, 170, 170)
+    y_top, y_ab, y_cb, y_bot = 70, 330, 560, 850
+    wA, wC, wE, wI = 34, 24, 18, 13
+    def seg(p0, p1, w): d.line([p0, p1], fill=VES, width=w); 
+    for p, r in ((p, w // 2) for p, w in ()): pass
+    # aorta
+    seg((cx, y_top), (cx, y_ab), wA)
+    pts = {}
+    for sgn, side in ((-1, "R"), (1, "L")):            # viewer's left = patient's right
+        cb = (cx + sgn * 120, y_cb); seg((cx, y_ab), cb, wC); pts[f"{side}-CIA"] = ((cx + cb[0]) // 2 + sgn * 0, (y_ab + y_cb) // 2)
+        ei = (cx + sgn * 215, y_bot); seg(cb, ei, wE); pts[f"{side}-EIA"] = ((cb[0] + ei[0]) // 2, (y_cb + y_bot) // 2)
+        ii = (cx + sgn * 95, y_cb + 190); seg(cb, ii, wI); pts[f"{side}-IIA"] = ((cb[0] + ii[0]) // 2, (y_cb + ii[1]) // 2)
+        # round the joints
+        for (x, y), w in ((cb, wC),): d.ellipse([x - w // 2, y - w // 2, x + w // 2, y + w // 2], fill=VES)
+    d.ellipse([cx - wA // 2, y_ab - wA // 2, cx + wA // 2, y_ab + wA // 2], fill=VES)
+    pts["AO"] = (cx + 40, y_ab - 70)
+    # bifurcation lines + labels
+    for y, lab in ((y_ab, "aortic bifurcation"), (y_cb, "common iliac bifurcation")):
+        for x in range(30, W - 30, 22): d.line([(x, y), (x + 11, y)], fill=TEAL, width=3)
+        d.text((W // 2, y - 34), lab, fill=TEAL, font=font(24, True), anchor="mm", stroke_width=2, stroke_fill=(0, 0, 0))
+    # vessel names
+    f = font(20)
+    d.text((cx + 28, y_top + 60), "aorta", fill=DIM, font=f)
+    d.text((cx + 150, y_ab + 70), "common iliac", fill=DIM, font=f)
+    d.text((cx + 215, y_bot - 90), "external iliac", fill=DIM, font=f)
+    d.text((cx + 20, y_cb + 150), "internal iliac", fill=DIM, font=f)
+    d.text((40, Hh - 40), "patient's right", fill=DIM, font=font(17)); d.text((W - 170, Hh - 40), "patient's left", fill=DIM, font=font(17))
+    for letter, br in nodes:
+        x, y = pts[br]; draw_marker(d, (x, y), letter, r=26, f=font(34, True))
+    d.text((10, 8), "Vessels", fill=(200, 200, 200), font=font(22), stroke_width=2, stroke_fill=(0, 0, 0))
+    return im
+
 CROPMM = {"pelvis": 420, "chest": 400, "axilla": 300, "neck": 260, "body": 520, "iliac": 200, "groin": 240, "vessel": 150, "pelvis300": 300}
 
 def crop_region(img, box, S, k, crop, center=None):
@@ -334,7 +370,7 @@ def survey(sid, out, region=None):
     json.dump(dict(sid=sid, diagnosis=S.row["diagnosis"], studyDir=S.row["studyDir"], ct=S.row["ct"]["dir"], pt=S.row["pt"]["dir"], seg=S.row["seg"], landmarks=S.landmarks, lesions=S.lesions), open(os.path.join(out, f"{sid}-lesions.json"), "w"), indent=1)
     print("wrote", p)
 
-def figure(sid, out, crop, a=None, b=None, coronal=False, title=None, nolabel=False, letters=("A", "B"), zoom=1.0, extra=None, suv_hi=5.0, coronalct=None, lines=None, zforce=None, tline=False, vmip=False, vmip_hu=100.0, vlabels=None):
+def figure(sid, out, crop, a=None, b=None, coronal=False, title=None, nolabel=False, letters=("A", "B"), zoom=1.0, extra=None, suv_hi=5.0, coronalct=None, lines=None, zforce=None, tline=False, vmip=False, vmip_hu=100.0, vlabels=None, vdiag=None):
     S = Study(sid)
     byn = {L["n"]: L for L in S.lesions}
     def res(v):
@@ -380,7 +416,9 @@ def figure(sid, out, crop, a=None, b=None, coronal=False, title=None, nolabel=Fa
             row.append(im)
         rows.append(row)
     vpanel = None
-    if vmip:
+    if vdiag:
+        vpanel = vessel_diagram([(t.split("=")[0], t.split("=")[1]) for t in vdiag.split(";") if t])
+    if vmip and vpanel is None:
         zs = [L["zdraw"] for _, L in picks]; ab = S.landmarks["aorticBifZ"] or float(np.mean(zs))
         im, vmap = S.vessel_mip(min(min(zs) - 45, ab - 100), max(max(zs) + 45, ab + 55), hu_lo=vmip_hu)
         im = im.resize((im.width * 2, im.height * 2), Image.LANCZOS); d = ImageDraw.Draw(im)
@@ -462,7 +500,7 @@ if __name__ == "__main__":
     elif a[0] == "figure":
         LETTER_ONLY = "--letteronly" in a
         lines = [("z", float(v.split(":")[0]), v.split(":")[1]) for v in opt("--zline", "").split(";") if v]
-        figure(a[1], opt("--out"), opt("--crop", "body"), a=opt("--a"), b=opt("--b"), coronal="--coronal" in a, title=opt("--title"), nolabel="--nolabel" in a, zoom=float(opt("--zoom", "1")), suv_hi=float(opt("--suvhi", "5")), coronalct=opt("--coronalct"), lines=lines, letters=tuple(opt("--letters", "A,B").split(",")), zforce=opt("--z"), tline="--tline" in a, vmip="--vmip" in a, vmip_hu=float(opt("--vmiphu", "100")), vlabels=[(float(v.split(":")[0]), v.split(":")[1]) for v in opt("--vlabel", "").split(";") if v])
+        figure(a[1], opt("--out"), opt("--crop", "body"), a=opt("--a"), b=opt("--b"), coronal="--coronal" in a, title=opt("--title"), nolabel="--nolabel" in a, zoom=float(opt("--zoom", "1")), suv_hi=float(opt("--suvhi", "5")), coronalct=opt("--coronalct"), lines=lines, letters=tuple(opt("--letters", "A,B").split(",")), zforce=opt("--z"), tline="--tline" in a, vmip="--vmip" in a, vmip_hu=float(opt("--vmiphu", "100")), vlabels=[(float(v.split(":")[0]), v.split(":")[1]) for v in opt("--vlabel", "").split(";") if v], vdiag=opt("--vdiag"))
     elif a[0] == "stack":
         # stack <sid> --lesion n --crop pelvis --out file [--above 30 --below 12 --step 4] : CT-only axial thumbnails from above the lesion down through it, lesion outlined on each slice it touches
         S = Study(a[1]); byn = {L["n"]: L for L in S.lesions}; L = byn[int(opt("--lesion"))] if opt("--lesion") else S.nearest([float(v) for v in opt("--near").split(",")]); crop = opt("--crop", "pelvis")
