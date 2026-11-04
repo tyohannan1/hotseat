@@ -252,7 +252,7 @@
     show("v-run"); render();
   }
   let stepShown = 0;   // build slides: how many body lines are revealed
-  const buildLen = it => (it && it.type === "slide" && it.build && Array.isArray(it.body)) ? it.body.length : 0;
+  const buildLen = it => (it && it.type === "slide" && it.build && Array.isArray(it.body)) ? it.body.length + (it.buildTitle ? 1 : 0) : 0;
   $("btn-prev").addEventListener("click", () => {
     if (buildLen(curItem()) && stepShown > 0) { stepShown--; renderSlide(); return; }
     goTo(iIndex - 1);
@@ -347,16 +347,17 @@
     const s = curItem();
     $("s-eyebrow").textContent = s.eyebrow || "";
     $("s-title").textContent = s.title || "";
+    $("s-title").className = s.build && s.buildTitle ? ("frag" + (stepShown > 0 ? " shown" : "")) : "";
     $("s-body").innerHTML = s.kind === "title"
       ? `<p class="t-sub">${esc(s.subtitle || "")}</p><p class="t-by">${esc(s.byline || "")}</p>`
       : s.build && Array.isArray(s.body)
-        ? s.body.map((line, i) => `<div class="frag${i < stepShown ? " shown" : ""}">${bodyHtml([line])}</div>`).join("")
+        ? s.body.map((line, i) => `<div class="frag${i < stepShown - (s.buildTitle ? 1 : 0) ? " shown" : ""}">${bodyHtml([line])}</div>`).join("")
         : (s.tableFirst ? tableHtml(s.table) + bodyHtml(s.body) : bodyHtml(s.body) + tableHtml(s.table));
     $("slideview").classList.toggle("titlecard", s.kind === "title");
     $("s-body").classList.toggle("build", !!s.build);
     $("slideview").classList.toggle("hasbuild", !!s.build);
     $("s-caption").textContent = s.build && Array.isArray(s.body)
-      ? (stepShown < s.body.length ? `Line ${stepShown} of ${s.body.length} shown · Next or → reveals the next line` : `All ${s.body.length} lines shown · Next moves on`)
+      ? (stepShown < buildLen(s) ? `Line ${stepShown} of ${buildLen(s)} shown · Next or → reveals the next line` : `All ${buildLen(s)} lines shown · Next moves on`)
       : (s.caption || "");
     const nccn = Array.isArray(s.nccn) ? s.nccn : (s.nccn ? [s.nccn] : []);
     let media = "";

@@ -192,17 +192,18 @@
    "eyebrow": "Opening",
    "title": "Lymphoma counts regions",
    "image": "img/dx/regions-lymphoma.svg",
-   "caption": "The 17 regions used by the PET/CT workbench. Right and left are counted separately.",
+   "caption": "",
    "body": [
-    "- One region is one area on this map, right and left counted separately. \"Right iliac\" is a complete word; so is \"left axillary\".",
-    "- Stage counts regions and sides of the diaphragm, not which vessel the node sits on.",
-    "- None of today's four lines moves a node between regions."
+    "- One region is one area on this map. Nomenclature like “right iliac”, “mediastinal” and “right neck” is complete for staging purposes.",
+    "- Stage counts regions and sides of the diaphragm."
    ],
    "notes": [
-    "This is the lymphoma map. Point at the iliac region and the axillary region: the whole chain is one word.",
+    "Build: the map comes up alone. Press 1: the title. Press 2: one region is one area; the region name is the complete word. Press 3: stage counts regions and sides of the diaphragm. Point at the iliac and axillary regions while you say it.",
     "Say it once: stage I one region, II two or more on one side of the diaphragm, III both sides, IV extranodal. Bulk and number of regions are what the lymphoma team wants from you.",
     "Then the contrast: carcinomas do not use this map. They use a line, and the line is different for every disease. That is the next slide."
-   ]
+   ],
+   "build": true,
+   "buildTitle": true
   },
   {
    "type": "slide",
