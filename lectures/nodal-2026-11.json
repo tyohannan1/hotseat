@@ -295,13 +295,15 @@
    "body": [
     "- Below the line (external, internal iliac, obturator): N1. Pelvic radiation with the prostate, curative intent.",
     "- Above the line (common iliac, para-aortic): M1a. Systemic therapy leads.",
-    "- Bladder cancer: common iliac is still regional (N3). Lymphoma: one chain, one region.",
+    "- Aside: when M1a disease is limited to the common iliac nodes, there is evidence that radiation plus ADT may approach the outcomes of pelvic N1 disease treated the same way. The report still has to name the vessel so that conversation can happen.",
+    "- Lymphoma: one chain, one region. “Left iliac” and stop.",
     "- Report the vessel the node sits on and which side of the bifurcation."
    ],
    "notes": [
     "Teach the line before the image. Walk the vessel tree top down: aorta, aortic bifurcation at L4, common iliac, then the bifurcation into external and internal iliac. The gold line is the common iliac bifurcation.",
     "For prostate: below is N1 and radiated with the prostate; above is M1a and systemic therapy leads. Then the two contrasts on the right: bladder cancer keeps the common iliac node regional, lymphoma does not care.",
-    "An R1 who has this slide can answer the quick check (bladder, same node): the line does not matter for bladder."
+    "An R1 who has this slide can answer the quick check (bladder, same node): the line does not matter for bladder.",
+    "Aside, said once: for M1a limited to the common iliac nodes, radiation plus ADT may do about as well as for pelvic N1; the field is extended rather than abandoned. Verify the trial you want to cite before naming it."
    ]
   },
   {
@@ -507,10 +509,12 @@
    "image": "img/dx/line2-trachea.svg",
    "caption": "Axial schematic at the lower paratracheal level. Gold line = left tracheal wall, not the midline.",
    "body": [
-    "- Right and left paratracheal stations are split by the left lateral wall of the trachea.",
+    "- Right and left paratracheal stations, 2R/2L and 4R/4L, are split by the left lateral wall of the trachea, not the midline.",
     "- A node left of midline but medial to that wall is still 4R (or 2R).",
     "- Same side as the tumor: N2, surgery may still be possible. Opposite side: N3, surgery off.",
-    "- Station 7 is midline and always counts as N2."
+    "- Midline stations have no side: station 7 (subcarinal) is N2 for every tumor.",
+    "- Supraclavicular is N3 regardless of side.",
+    "- Lymphoma: the whole mediastinum is one region; sidedness means nothing."
    ],
    "notes": [
     "Teach the station rule before the image. The IASLC boundary between R and L paratracheal stations is the left lateral wall of the trachea, so a node sitting just left of midline is still right-sided.",
@@ -736,10 +740,10 @@
    "image": "img/dx/line4-axilla.svg",
    "caption": "Axial schematic of the left axilla. Gold = pectoralis minor; levels are named by their relation to it.",
    "body": [
-    "- Level I lateral, level II behind, level III medial to pectoralis minor. Rotter's sits between the two pectoralis muscles.",
-    "- Level I or II: the surgeon's axilla. Level III (infraclavicular): cN3a, systemic therapy before any surgery.",
-    "- Internal mammary cN3b, supraclavicular cN3c. Rotter's is not reached by a standard dissection.",
-    "- Lymphoma: axillary/pectoral is one region, infraclavicular another."
+    "- Level I lateral, level II behind, level III medial to pectoralis minor. Rotter’s sits between the two pectoralis muscles.",
+    "- Breast: level I or II is the surgeon’s axilla. Level III (infraclavicular): cN3a, systemic therapy before any surgery. Rotter’s is not reached by a standard dissection, so it changes the operation.",
+    "- Lymphoma: axillary and pectoral (including Rotter’s) are one region; infraclavicular is a separate region.",
+    "- Lymphoma: infraclavicular alone or axillary alone is one region, same stage. Both together is two regions and the stage goes up."
    ],
    "notes": [
     "Teach the muscle before the image. On an axial, find the pectoralis minor as the oblique band from the coracoid to ribs 3 to 5; everything lateral is level I, deep is level II, medial is level III.",
