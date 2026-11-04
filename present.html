@@ -5,14 +5,14 @@
 <meta http-equiv="Cache-Control" content="no-cache">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>Hot Seat — Presenter</title>
-<link rel="stylesheet" href="css/style.css?v=20261104c">
+<link rel="stylesheet" href="css/style.css?v=20261104d">
 <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-database-compat.js"></script>
 <script src="js/qrcode.min.js"></script>
 <script src="config.js" onerror="void 0"></script>
 <script>if (/[?&]local\b/.test(location.search)) window.firebaseConfig = null; // ?local = preview without Firebase or sign-in</script>
-<script src="js/store.js"></script>
+<script src="js/store.js?v=20261104d"></script>
 </head>
 <body>
 
@@ -169,7 +169,7 @@
   if (store.kind === "firebase") $("signin").classList.remove("hidden");
 
   // ---- lecture list
-  const idx = await (await fetch("lectures/index.json")).json();
+  const idx = await (await fetch("lectures/index.json?t=" + Date.now())).json();
   $("lecture").innerHTML = idx.lectures.map(l => `<option value="${l.id}" data-file="${l.file}">${l.title}</option>`).join("");
 
   let lecture = null, sid = null, session = null, uid = null;
@@ -178,7 +178,7 @@
 
   async function loadLecture(id) {
     const entry = idx.lectures.find(l => l.id === id);
-    lecture = HotSeatStore.normalizeLecture(await (await fetch(entry ? entry.file : `lectures/${id}.json`)).json());
+    lecture = HotSeatStore.normalizeLecture(await (await fetch((entry ? entry.file : `lectures/${id}.json`) + "?t=" + Date.now())).json());
     $("h-title").innerHTML = `<span class="hl">UCSF</span> ${esc(lecture.title)}`;
   }
 
@@ -355,7 +355,9 @@
     $("slideview").classList.toggle("titlecard", s.kind === "title");
     $("s-body").classList.toggle("build", !!s.build);
     $("slideview").classList.toggle("hasbuild", !!s.build);
-    $("s-caption").textContent = s.caption || "";
+    $("s-caption").textContent = s.build && Array.isArray(s.body)
+      ? (stepShown < s.body.length ? `Line ${stepShown} of ${s.body.length} shown · Next or → reveals the next line` : `All ${s.body.length} lines shown · Next moves on`)
+      : (s.caption || "");
     const nccn = Array.isArray(s.nccn) ? s.nccn : (s.nccn ? [s.nccn] : []);
     let media = "";
     if (s.image) media += `<div class="imgbox">${imgTag(s.image)}</div>`;

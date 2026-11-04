@@ -5,13 +5,13 @@
 <meta http-equiv="Cache-Control" content="no-cache">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Hot Seat — Notes</title>
-<link rel="stylesheet" href="css/style.css?v=20261104c">
+<link rel="stylesheet" href="css/style.css?v=20261104d">
 <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-database-compat.js"></script>
 <script src="config.js" onerror="void 0"></script>
 <script>if (/[?&]local\b/.test(location.search)) window.firebaseConfig = null; // ?local = preview without Firebase or sign-in</script>
-<script src="js/store.js"></script>
+<script src="js/store.js?v=20261104d"></script>
 </head>
 <body class="notes">
 <!-- Speaker-notes window. Open it from the presenter page (Notes button) on the laptop screen while the projector shows present.html.
@@ -65,7 +65,7 @@
   }
   const s0 = await store.getSession(sid);
   if (!s0) { $("n-msg").textContent = "No session with that code."; return; }
-  const idx = await (await fetch("lectures/index.json")).json();
+  const idx = await (await fetch("lectures/index.json?t=" + Date.now())).json();
   const entry = idx.lectures.find(l => l.id === s0.lectureId);
   const lecture = HotSeatStore.normalizeLecture(await (await fetch(entry ? entry.file : `lectures/${s0.lectureId}.json`)).json());
   $("n-lecture").textContent = lecture.title;
