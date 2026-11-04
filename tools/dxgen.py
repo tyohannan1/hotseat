@@ -22,10 +22,10 @@ def path(d, col=INK, w=3, fill="none", dash=None, op=1):
     return f"<path d='{d}' stroke='{col}' stroke-width='{w}' fill='{fill}' stroke-linejoin='round' stroke-linecap='round'{ds} opacity='{op}'/>"
 
 # ------------------------------------------------------------------ lymphoma regions
-def regions(w=1580, h=1190, standalone=True):
+def regions(w=1740, h=1190, standalone=True):
     """The Augmented Workstation's lymphoma body diagram (luganoRegions.ts, 230 x 287 silhouette, 17 region dots,
     diaphragm at y 127), scaled 4x, with the region names on either side. Nothing else."""
-    K = 4; ox, oy = 330, 20
+    K = 4; ox, oy = 410, 20
     BODY = ("M 76 0 L 76 17 C 76 23, 88 27, 92 29 L 92 41 L 50 47 C 30 47, 22 63, 24 83 C 30 93, 52 93, 68 83 L 75 119 L 72 137 L 64 189 "
             "L 60 239 L 68 269 C 68 277, 80 281, 92 281 C 102 281, 110 277, 110 269 L 112 239 L 115 234 L 118 239 L 120 269 C 120 277, 128 281, 138 281 "
             "C 150 281, 162 277, 162 269 L 170 239 L 166 189 L 158 137 L 155 119 L 162 83 C 178 93, 200 93, 206 83 C 208 63, 200 47, 180 47 L 138 41 "
@@ -39,15 +39,15 @@ def regions(w=1580, h=1190, standalone=True):
     b = []
     b.append(f"<g transform='translate({ox} {oy}) scale({K})'><path d='{BODY}' fill='none' stroke='{MUTE}' stroke-width='0.9' stroke-linejoin='round'/>"
              f"<line x1='50' y1='127' x2='180' y2='127' stroke='{TEAL}' stroke-width='0.8' stroke-dasharray='3 2.5'/></g>")
-    XL, XR = ox - 40, ox + 230 * K + 40
+    XL, XR = ox - 30, ox + 230 * K + 30
     for rid, name, x, y, side, ly in REG:
         px, py, pyl = ox + x * K, oy + y * K, oy + ly * K
-        b.append(f"<circle cx='{px}' cy='{py}' r='15' fill='{NODE}' fill-opacity='0.9' stroke='#0e2841' stroke-width='3'/>")
+        b.append(f"<circle cx='{px}' cy='{py}' r='21' fill='{NODE}' fill-opacity='0.92' stroke='#0e2841' stroke-width='3'/>")
         if side == "l":
-            b.append(line(px - 18, py, XL + 60, pyl, DIM, 1.5)); b.append(line(XL + 60, pyl, XL, pyl, DIM, 1.5)); b.append(T(XL - 8, pyl + 8, name, 24, INK, "end"))
+            b.append(line(px - 24, py, XL + 50, pyl, DIM, 2)); b.append(line(XL + 50, pyl, XL, pyl, DIM, 2)); b.append(T(XL - 10, pyl + 11, name, 32, INK, "end", 600))
         else:
-            b.append(line(px + 18, py, XR - 60, pyl, DIM, 1.5)); b.append(line(XR - 60, pyl, XR, pyl, DIM, 1.5)); b.append(T(XR + 8, pyl + 8, name, 24, INK, "start"))
-    b.append(T(XR + 8, oy + 127 * K + 8, "diaphragm", 20, TEAL, "start", 400, True))
+            b.append(line(px + 24, py, XR - 50, pyl, DIM, 2)); b.append(line(XR - 50, pyl, XR, pyl, DIM, 2)); b.append(T(XR + 10, pyl + 11, name, 32, INK, "start", 600))
+    b.append(T(XR + 10, oy + 127 * K + 9, "diaphragm", 26, TEAL, "start", 400, True))
     return svg(w, h, "\n".join(b), None)
 
 # ------------------------------------------------------------------ pelvis: common iliac bifurcation
