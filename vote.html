@@ -79,7 +79,7 @@
     if (!lecture || lecture.id !== s.lectureId) {
       const idx = await (await fetch("lectures/index.json?t=" + Date.now())).json();
       const entry = idx.lectures.find(l => l.id === s.lectureId);
-      lecture = HotSeatStore.normalizeLecture(await (await fetch(entry ? entry.file : `lectures/${s.lectureId}.json`)).json());
+      lecture = HotSeatStore.normalizeLecture(await (await fetch((entry ? entry.file : `lectures/${s.lectureId}.json`) + "?t=" + Date.now())).json());
       $("title").textContent = lecture.title;
     }
     render();

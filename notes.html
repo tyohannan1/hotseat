@@ -67,7 +67,7 @@
   if (!s0) { $("n-msg").textContent = "No session with that code."; return; }
   const idx = await (await fetch("lectures/index.json?t=" + Date.now())).json();
   const entry = idx.lectures.find(l => l.id === s0.lectureId);
-  const lecture = HotSeatStore.normalizeLecture(await (await fetch(entry ? entry.file : `lectures/${s0.lectureId}.json`)).json());
+  const lecture = HotSeatStore.normalizeLecture(await (await fetch((entry ? entry.file : `lectures/${s0.lectureId}.json`) + "?t=" + Date.now())).json());
   $("n-lecture").textContent = lecture.title;
   $("n-grid").classList.remove("hidden");
 
