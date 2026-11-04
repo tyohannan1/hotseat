@@ -1,0 +1,78 @@
+{
+ "sid": "PETCT_db3daf78d2_20001030",
+ "diagnosis": "LYMPHOMA",
+ "studyDir": "/Users/tyohannan/AutoPET/FDG-PET-CT-Lesions_v02_20260817/FDG-PET-CT-Lesions/PETCT_db3daf78d2/10-30-2000-PET-CT (Ganzkoerper  primaer mit KM)-67998",
+ "ct": "5.000000-GK p.v.2-47450",
+ "pt": "10.000000-PET corr.-51485",
+ "seg": {
+  "dir": "300.000000-Segmentation-97036",
+  "file": "1-1.dcm"
+ },
+ "crop": "chest",
+ "lesions": {
+  "A": {
+   "n": 5,
+   "id": 3,
+   "ml": 7.066498933545602,
+   "suvmax": 10.087538719177246,
+   "centroid": [
+    -4.2,
+    -185.7,
+    -462.7
+   ],
+   "peak": [
+    -9.6,
+    -177.0,
+    -462.0
+   ],
+   "zdraw": -459.0,
+   "extent": [
+    24,
+    35,
+    30
+   ],
+   "place": {
+    "side": "R",
+    "label_at_centroid": "none",
+    "text": "R other"
+   }
+  },
+  "B": {
+   "n": 9,
+   "id": 4,
+   "ml": 1.2814249826676003,
+   "suvmax": 7.993018627166748,
+   "centroid": [
+    24.6,
+    -170.0,
+    -454.0
+   ],
+   "peak": [
+    25.0,
+    -168.8,
+    -453.0
+   ],
+   "zdraw": -453.0,
+   "extent": [
+    10,
+    16,
+    12
+   ],
+   "place": {
+    "side": "L",
+    "label_at_centroid": "none",
+    "text": "L other"
+   }
+  }
+ },
+ "landmarks": {
+  "aorticBifZ": -809.0,
+  "commonIliacBifZ_left": null,
+  "femurTopZ_left": -937.0,
+  "clavicleBottomZ_left": -455.0,
+  "commonIliacBifZ_right": null,
+  "femurTopZ_right": -943.0,
+  "clavicleBottomZ_right": -455.0,
+  "midlineX": 0.7
+ }
+}

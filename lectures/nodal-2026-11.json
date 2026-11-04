@@ -170,7 +170,8 @@
    "correct": 2,
    "explain": "Below the bifurcation the node is pelvic and gets radiated with the prostate; above it the node counts as metastatic and the patient goes to hormone therapy and drugs instead.",
    "source": "AutoPET PETCT_d9da6129f8, 2002-04-14, Melanoma. CT series 4.000000-GK p.v.3-98719, PET series 5.000000-PET corr.-53940. A: lesion #4 (3.7 mL, SUVmax 34.9, z 630 mm); B: lesion #6 (1.2 mL, SUVmax 12.6, z 669 mm).",
-   "imageClean": "img/pre1-pelvis-fdg-clean.png"
+   "imageClean": "img/pre1-pelvis-fdg-clean.png",
+   "imageBare": "img/pre1-pelvis-fdg-bare.png"
   },
   {
    "type": "question",
@@ -184,7 +185,8 @@
    "correct": 2,
    "explain": "Same side as the tumor (4L), the surgeon may still operate; opposite side (4R), surgery is off the table and the patient gets chemoradiation.",
    "source": "AutoPET PETCT_442a09f90e, 2002-03-16, Lung Cancer. CT series 5.000000-GK p.v.2-46154, PET series 9.000000-PET corr.-11580. A: lesion #9 (3.2 mL, SUVmax 5.8, z 174 mm); B: lesion #3 (19.9 mL, SUVmax 7.9, z 147 mm).",
-   "imageClean": "img/pre2-chest-fdg-clean.png"
+   "imageClean": "img/pre2-chest-fdg-clean.png",
+   "imageBare": "img/pre2-chest-fdg-bare.png"
   },
   {
    "type": "question",
@@ -198,7 +200,8 @@
    "correct": 2,
    "explain": "Level II goes to surgery first; a node medial to pectoralis minor sends the patient to systemic therapy before any surgery.",
    "source": "AutoPET PETCT_f24f3ce1da, 2001-09-14, Melanoma. CT series 5.000000-GK p.v.2-28878, PET series 6.000000-PET corr.-93674. A: lesion #4 (5.8 mL, SUVmax 35.8, z 1156 mm); B: lesion #3 (9.0 mL, SUVmax 56.2, z 1146 mm).",
-   "imageClean": "img/pre4-axilla-fdg-clean.png"
+   "imageClean": "img/pre4-axilla-fdg-clean.png",
+   "imageBare": "img/pre4-axilla-fdg-bare.png"
   },
   {
    "type": "slide",
@@ -324,7 +327,8 @@
     "**Prostate:** the bifurcation is the edge of the pelvis. Below it, the node gets radiated with the prostate. Above it, the node counts as metastatic and the patient goes to hormone therapy and drugs instead. The report has to say which side of the bifurcation, with the vessel named."
    ],
    "source": "AutoPET PETCT_791ec15924, 2001-04-16, Melanoma. CT series 5.000000-GK p.v.2-41675, PET series 6.000000-PET corr.-15444. A: lesion #3 (10.6 mL, SUVmax 12.0, z 663 mm); B: lesion #4 (9.3 mL, SUVmax 13.8, z 702 mm).",
-   "imageClean": "img/case1-pelvis-fdg-clean.png"
+   "imageClean": "img/case1-pelvis-fdg-clean.png",
+   "imageBare": "img/case1-pelvis-fdg-bare.png"
   },
   {
    "type": "slide",
@@ -417,7 +421,8 @@
     "A node just left of midline but medial to the left tracheal wall is still 4R, still same-side for a right lung tumor, so the report has to name the station, not describe the position."
    ],
    "source": "AutoPET PETCT_db3daf78d2, 2000-10-30, Lymphoma. CT series 5.000000-GK p.v.2-47450, PET series 10.000000-PET corr.-51485. A: lesion #5 (7.1 mL, SUVmax 10.1, z -459 mm); B: lesion #9 (1.3 mL, SUVmax 8.0, z -453 mm).",
-   "imageClean": "img/case2-chest-fdg-clean.png"
+   "imageClean": "img/case2-chest-fdg-clean.png",
+   "imageBare": "img/case2-chest-fdg-bare.png"
   },
   {
    "type": "slide",
@@ -520,7 +525,8 @@
     "Two pairs on one image. Fresh FDG PET/CT axilla with the pectoralis minor drawn (Z to zoom). Level I lateral to it, level II behind it, level III medial to it, Rotter's between the two pectoralis muscles."
    ],
    "source": "AutoPET PETCT_12025abab5, 2004-11-01, Melanoma. CT series 4.000000-GK p.v.3 s-69307, PET series 8.000000-PET corr.-67190. A: lesion #2 (1.7 mL, SUVmax 21.1, z 172 mm); B: lesion #4 (1.4 mL, SUVmax 6.7, z 182 mm).",
-   "imageClean": "img/case4-axilla-fdg-clean.png"
+   "imageClean": "img/case4-axilla-fdg-clean.png",
+   "imageBare": "img/case4-axilla-fdg-bare.png"
   },
   {
    "type": "slide",
@@ -686,7 +692,8 @@
     "Say it once: the node did not move. Only the rulebook did."
    ],
    "source": "AutoPET PETCT_cbbc9e2879, 2006-01-16, Lymphoma. CT series 4.000000-GK p.v.3 s-53013, PET series 8.000000-PET corr.-60905. A: lesion #3 (11.0 mL, SUVmax 10.4, z -415 mm).",
-   "imageClean": "img/close-supraclavicular-fdg-clean.png"
+   "imageClean": "img/close-supraclavicular-fdg-clean.png",
+   "imageBare": "img/close-supraclavicular-fdg-bare.png"
   },
   {
    "type": "slide",
@@ -718,7 +725,8 @@
    "correct": 2,
    "explain": "Below the bifurcation the node is pelvic and gets radiated with the prostate; above it the node counts as metastatic and the patient goes to hormone therapy and drugs instead.",
    "source": "AutoPET PETCT_d9da6129f8, 2002-04-14, Melanoma. CT series 4.000000-GK p.v.3-98719, PET series 5.000000-PET corr.-53940. A: lesion #4 (3.7 mL, SUVmax 34.9, z 630 mm); B: lesion #6 (1.2 mL, SUVmax 12.6, z 669 mm).",
-   "imageClean": "img/pre1-pelvis-fdg-clean.png"
+   "imageClean": "img/pre1-pelvis-fdg-clean.png",
+   "imageBare": "img/pre1-pelvis-fdg-bare.png"
   },
   {
    "type": "question",
@@ -732,7 +740,8 @@
    "correct": 2,
    "explain": "Same side as the tumor (4L), the surgeon may still operate; opposite side (4R), surgery is off the table and the patient gets chemoradiation.",
    "source": "AutoPET PETCT_442a09f90e, 2002-03-16, Lung Cancer. CT series 5.000000-GK p.v.2-46154, PET series 9.000000-PET corr.-11580. A: lesion #9 (3.2 mL, SUVmax 5.8, z 174 mm); B: lesion #3 (19.9 mL, SUVmax 7.9, z 147 mm).",
-   "imageClean": "img/pre2-chest-fdg-clean.png"
+   "imageClean": "img/pre2-chest-fdg-clean.png",
+   "imageBare": "img/pre2-chest-fdg-bare.png"
   },
   {
    "type": "question",
@@ -746,7 +755,8 @@
    "correct": 2,
    "explain": "Level II goes to surgery first; a node medial to pectoralis minor sends the patient to systemic therapy before any surgery.",
    "source": "AutoPET PETCT_f24f3ce1da, 2001-09-14, Melanoma. CT series 5.000000-GK p.v.2-28878, PET series 6.000000-PET corr.-93674. A: lesion #4 (5.8 mL, SUVmax 35.8, z 1156 mm); B: lesion #3 (9.0 mL, SUVmax 56.2, z 1146 mm).",
-   "imageClean": "img/pre4-axilla-fdg-clean.png"
+   "imageClean": "img/pre4-axilla-fdg-clean.png",
+   "imageBare": "img/pre4-axilla-fdg-bare.png"
   },
   {
    "type": "slide",

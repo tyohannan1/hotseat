@@ -1,0 +1,78 @@
+{
+ "sid": "PETCT_442a09f90e_20020316",
+ "diagnosis": "LUNG_CANCER",
+ "studyDir": "/Users/tyohannan/AutoPET/FDG-PET-CT-Lesions_v02_20260817/FDG-PET-CT-Lesions/PETCT_442a09f90e/03-16-2002-PET-CT (Ganzkoerper  primaer mit KM)-24290",
+ "ct": "5.000000-GK p.v.2-46154",
+ "pt": "9.000000-PET corr.-11580",
+ "seg": {
+  "dir": "300.000000-Segmentation-02848",
+  "file": "1-1.dcm"
+ },
+ "crop": "chest",
+ "lesions": {
+  "A": {
+   "n": 9,
+   "id": 8,
+   "ml": 3.184900927795201,
+   "suvmax": 5.78237247467041,
+   "centroid": [
+    8.9,
+    -182.8,
+    172.4
+   ],
+   "peak": [
+    6.7,
+    -183.3,
+    171.0
+   ],
+   "zdraw": 174.0,
+   "extent": [
+    20,
+    20,
+    12
+   ],
+   "place": {
+    "side": "L",
+    "label_at_centroid": "none",
+    "text": "L other"
+   }
+  },
+  "B": {
+   "n": 3,
+   "id": 7,
+   "ml": 19.918071817969206,
+   "suvmax": 7.897562026977539,
+   "centroid": [
+    -14.7,
+    -200.4,
+    159.6
+   ],
+   "peak": [
+    -17.7,
+    -197.5,
+    144.0
+   ],
+   "zdraw": 147.0,
+   "extent": [
+    35,
+    31,
+    51
+   ],
+   "place": {
+    "side": "R",
+    "label_at_centroid": "none",
+    "text": "R other"
+   }
+  }
+ },
+ "landmarks": {
+  "aorticBifZ": -158.0,
+  "commonIliacBifZ_left": null,
+  "femurTopZ_left": -283.0,
+  "clavicleBottomZ_left": 196.0,
+  "commonIliacBifZ_right": null,
+  "femurTopZ_right": -298.0,
+  "clavicleBottomZ_right": 193.0,
+  "midlineX": -0.4
+ }
+}

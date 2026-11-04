@@ -1,0 +1,78 @@
+{
+ "sid": "PETCT_f24f3ce1da_20010914",
+ "diagnosis": "MELANOMA",
+ "studyDir": "/Users/tyohannan/AutoPET/FDG-PET-CT-Lesions_v02_20260817/FDG-PET-CT-Lesions/PETCT_f24f3ce1da/09-14-2001-PET-CT (Ganzkoerper  primaer mit KM)-27130",
+ "ct": "5.000000-GK p.v.2-28878",
+ "pt": "6.000000-PET corr.-93674",
+ "seg": {
+  "dir": "300.000000-Segmentation-17494",
+  "file": "1-1.dcm"
+ },
+ "crop": "axilla",
+ "lesions": {
+  "A": {
+   "n": 4,
+   "id": 4,
+   "ml": 5.772632931628801,
+   "suvmax": 35.776771545410156,
+   "centroid": [
+    113.8,
+    -182.7,
+    1157.8
+   ],
+   "peak": [
+    119.6,
+    -179.1,
+    1155.5
+   ],
+   "zdraw": 1155.5,
+   "extent": [
+    20,
+    24,
+    21
+   ],
+   "place": {
+    "side": "L",
+    "label_at_centroid": "none",
+    "text": "L supraclavicular / low neck (above the clavicle)"
+   }
+  },
+  "B": {
+   "n": 3,
+   "id": 3,
+   "ml": 8.969974878673202,
+   "suvmax": 56.15294647216797,
+   "centroid": [
+    82.6,
+    -220.1,
+    1152.4
+   ],
+   "peak": [
+    80.9,
+    -228.0,
+    1140.5
+   ],
+   "zdraw": 1146.5,
+   "extent": [
+    18,
+    35,
+    36
+   ],
+   "place": {
+    "side": "L",
+    "label_at_centroid": "none",
+    "text": "L supraclavicular / low neck (above the clavicle)"
+   }
+  }
+ },
+ "landmarks": {
+  "aorticBifZ": 757.5,
+  "commonIliacBifZ_left": 699.5,
+  "femurTopZ_left": 624.5,
+  "clavicleBottomZ_left": 1130.5,
+  "commonIliacBifZ_right": null,
+  "femurTopZ_right": 618.5,
+  "clavicleBottomZ_right": 1130.5,
+  "midlineX": -1.6
+ }
+}
