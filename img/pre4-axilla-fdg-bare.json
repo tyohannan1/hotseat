@@ -11,30 +11,30 @@
  "crop": "axilla",
  "lesions": {
   "A": {
-   "n": 4,
-   "id": 4,
-   "ml": 5.772632931628801,
-   "suvmax": 35.776771545410156,
+   "n": 1,
+   "id": 2,
+   "ml": 161.74569125884923,
+   "suvmax": 54.34354782104492,
    "centroid": [
-    113.8,
-    -182.7,
-    1157.8
+    146.0,
+    -211.2,
+    1114.3
    ],
    "peak": [
-    119.6,
-    -179.1,
-    1155.5
+    133.8,
+    -230.0,
+    1089.5
    ],
-   "zdraw": 1155.5,
+   "zdraw": 1107.5,
    "extent": [
-    20,
-    24,
-    21
+    88,
+    75,
+    90
    ],
    "place": {
     "side": "L",
     "label_at_centroid": "none",
-    "text": "L supraclavicular / low neck (above the clavicle)"
+    "text": "L axillary (lateral chest wall)"
    }
   },
   "B": {

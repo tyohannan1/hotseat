@@ -420,16 +420,16 @@
    "imageCaption": "FDG PET/CT under the left clavicle. The pectoralis minor is the landmark.",
    "stem": "Left-sided breast cancer. How would you describe node A?",
    "options": [
-    "Left axillary level II, behind the pectoralis minor",
     "Left axillary level I, lateral to the pectoralis minor",
+    "Left axillary level II, behind the pectoralis minor",
     "Left axillary level III, medial to the pectoralis minor",
     "Left supraclavicular node"
    ],
    "correct": 0,
-   "explain": "A lies behind the pectoralis minor: level II, still the surgeon's axilla.",
+   "explain": "A lies lateral to the pectoralis minor: level I, the surgeon's axilla. Sentinel node or dissection.",
    "imageClean": "img/pre4-axilla-fdg-clean.png",
    "imageBare": "img/pre4-axilla-fdg-bare.png",
-   "source": "AutoPET PETCT_f24f3ce1da, 2001-09-14, Melanoma. CT series 5.000000-GK p.v.2-28878, PET series 6.000000-PET corr.-93674. A: lesion #4 (5.8 mL, SUVmax 35.8, z 1156 mm); B: lesion #3 (9.0 mL, SUVmax 56.2, z 1146 mm)."
+   "source": "AutoPET PETCT_f24f3ce1da, 2001-09-14, Melanoma. CT series 5.000000-GK p.v.2-28878, PET series 6.000000-PET corr.-93674. A: lesion #1 (161.7 mL conglomerate, SUVmax 54.3, slice z 1163); B: lesion #3 (9.0 mL, SUVmax 56.2, z 1152)."
   },
   {
    "type": "question",
@@ -450,7 +450,7 @@
    "explain": "B is medial to the pectoralis minor, under the clavicle: level III, infraclavicular, cN3a.",
    "imageClean": "img/pre4-axilla-fdg-clean.png",
    "imageBare": "img/pre4-axilla-fdg-bare.png",
-   "source": "AutoPET PETCT_f24f3ce1da, 2001-09-14, Melanoma. CT series 5.000000-GK p.v.2-28878, PET series 6.000000-PET corr.-93674. A: lesion #4 (5.8 mL, SUVmax 35.8, z 1156 mm); B: lesion #3 (9.0 mL, SUVmax 56.2, z 1146 mm)."
+   "source": "AutoPET PETCT_f24f3ce1da, 2001-09-14, Melanoma. CT series 5.000000-GK p.v.2-28878, PET series 6.000000-PET corr.-93674. A: lesion #1 (161.7 mL conglomerate, SUVmax 54.3, slice z 1163); B: lesion #3 (9.0 mL, SUVmax 56.2, z 1152)."
   },
   {
    "type": "question",
@@ -468,10 +468,10 @@
     "Yes, changes intent from curative to palliative"
    ],
    "correct": 2,
-   "explain": "Level II goes to surgery first; a node medial to pectoralis minor sends the patient to systemic therapy before any surgery.",
+   "explain": "A is level I, the surgeon's axilla. B is medial to the pectoralis minor, level III: cN3a, systemic therapy before any surgery.",
    "imageClean": "img/pre4-axilla-fdg-clean.png",
    "imageBare": "img/pre4-axilla-fdg-bare.png",
-   "source": "AutoPET PETCT_f24f3ce1da, 2001-09-14, Melanoma. CT series 5.000000-GK p.v.2-28878, PET series 6.000000-PET corr.-93674. A: lesion #4 (5.8 mL, SUVmax 35.8, z 1156 mm); B: lesion #3 (9.0 mL, SUVmax 56.2, z 1146 mm)."
+   "source": "AutoPET PETCT_f24f3ce1da, 2001-09-14, Melanoma. CT series 5.000000-GK p.v.2-28878, PET series 6.000000-PET corr.-93674. A: lesion #1 (161.7 mL conglomerate, SUVmax 54.3, slice z 1163); B: lesion #3 (9.0 mL, SUVmax 56.2, z 1152)."
   },
   {
    "type": "question",
@@ -489,10 +489,10 @@
     "Left infraclavicular"
    ],
    "correct": 0,
-   "explain": "Lugano calls the axillary and pectoral nodes one region: left axillary.",
+   "explain": "Lugano calls the axillary and pectoral nodes one region: left axillary. Level I or II makes no difference.",
    "imageClean": "img/pre4-axilla-fdg-clean.png",
    "imageBare": "img/pre4-axilla-fdg-bare.png",
-   "source": "AutoPET PETCT_f24f3ce1da, 2001-09-14, Melanoma. CT series 5.000000-GK p.v.2-28878, PET series 6.000000-PET corr.-93674. A: lesion #4 (5.8 mL, SUVmax 35.8, z 1156 mm); B: lesion #3 (9.0 mL, SUVmax 56.2, z 1146 mm)."
+   "source": "AutoPET PETCT_f24f3ce1da, 2001-09-14, Melanoma. CT series 5.000000-GK p.v.2-28878, PET series 6.000000-PET corr.-93674. A: lesion #1 (161.7 mL conglomerate, SUVmax 54.3, slice z 1163); B: lesion #3 (9.0 mL, SUVmax 56.2, z 1152)."
   },
   {
    "type": "question",
@@ -513,7 +513,7 @@
    "explain": "Infraclavicular is its own Lugano region, separate from axillary.",
    "imageClean": "img/pre4-axilla-fdg-clean.png",
    "imageBare": "img/pre4-axilla-fdg-bare.png",
-   "source": "AutoPET PETCT_f24f3ce1da, 2001-09-14, Melanoma. CT series 5.000000-GK p.v.2-28878, PET series 6.000000-PET corr.-93674. A: lesion #4 (5.8 mL, SUVmax 35.8, z 1156 mm); B: lesion #3 (9.0 mL, SUVmax 56.2, z 1146 mm)."
+   "source": "AutoPET PETCT_f24f3ce1da, 2001-09-14, Melanoma. CT series 5.000000-GK p.v.2-28878, PET series 6.000000-PET corr.-93674. A: lesion #1 (161.7 mL conglomerate, SUVmax 54.3, slice z 1163); B: lesion #3 (9.0 mL, SUVmax 56.2, z 1152)."
   },
   {
    "type": "question",
@@ -531,10 +531,10 @@
     "Yes, B means systemic therapy instead of radiation"
    ],
    "correct": 0,
-   "explain": "Two regions on the same side of the diaphragm instead of one: still early stage, same treatment. Lugano counts regions; it does not care which level.",
+   "explain": "A is axillary, B is infraclavicular: two regions on the same side of the diaphragm instead of one. Still early stage, same treatment. Lugano counts regions; it does not care which level.",
    "imageClean": "img/pre4-axilla-fdg-clean.png",
    "imageBare": "img/pre4-axilla-fdg-bare.png",
-   "source": "AutoPET PETCT_f24f3ce1da, 2001-09-14, Melanoma. CT series 5.000000-GK p.v.2-28878, PET series 6.000000-PET corr.-93674. A: lesion #4 (5.8 mL, SUVmax 35.8, z 1156 mm); B: lesion #3 (9.0 mL, SUVmax 56.2, z 1146 mm)."
+   "source": "AutoPET PETCT_f24f3ce1da, 2001-09-14, Melanoma. CT series 5.000000-GK p.v.2-28878, PET series 6.000000-PET corr.-93674. A: lesion #1 (161.7 mL conglomerate, SUVmax 54.3, slice z 1163); B: lesion #3 (9.0 mL, SUVmax 56.2, z 1152)."
   },
   {
    "type": "slide",
@@ -1329,16 +1329,16 @@
    "imageCaption": "FDG PET/CT under the left clavicle. The pectoralis minor is the landmark.",
    "stem": "Left-sided breast cancer. How would you describe node A?",
    "options": [
-    "Left axillary level II, behind the pectoralis minor",
     "Left axillary level I, lateral to the pectoralis minor",
+    "Left axillary level II, behind the pectoralis minor",
     "Left axillary level III, medial to the pectoralis minor",
     "Left supraclavicular node"
    ],
    "correct": 0,
-   "explain": "A lies behind the pectoralis minor: level II, still the surgeon's axilla.",
+   "explain": "A lies lateral to the pectoralis minor: level I, the surgeon's axilla. Sentinel node or dissection.",
    "imageClean": "img/pre4-axilla-fdg-clean.png",
    "imageBare": "img/pre4-axilla-fdg-bare.png",
-   "source": "AutoPET PETCT_f24f3ce1da, 2001-09-14, Melanoma. CT series 5.000000-GK p.v.2-28878, PET series 6.000000-PET corr.-93674. A: lesion #4 (5.8 mL, SUVmax 35.8, z 1156 mm); B: lesion #3 (9.0 mL, SUVmax 56.2, z 1146 mm)."
+   "source": "AutoPET PETCT_f24f3ce1da, 2001-09-14, Melanoma. CT series 5.000000-GK p.v.2-28878, PET series 6.000000-PET corr.-93674. A: lesion #1 (161.7 mL conglomerate, SUVmax 54.3, slice z 1163); B: lesion #3 (9.0 mL, SUVmax 56.2, z 1152)."
   },
   {
    "type": "question",
@@ -1359,7 +1359,7 @@
    "explain": "B is medial to the pectoralis minor, under the clavicle: level III, infraclavicular, cN3a.",
    "imageClean": "img/pre4-axilla-fdg-clean.png",
    "imageBare": "img/pre4-axilla-fdg-bare.png",
-   "source": "AutoPET PETCT_f24f3ce1da, 2001-09-14, Melanoma. CT series 5.000000-GK p.v.2-28878, PET series 6.000000-PET corr.-93674. A: lesion #4 (5.8 mL, SUVmax 35.8, z 1156 mm); B: lesion #3 (9.0 mL, SUVmax 56.2, z 1146 mm)."
+   "source": "AutoPET PETCT_f24f3ce1da, 2001-09-14, Melanoma. CT series 5.000000-GK p.v.2-28878, PET series 6.000000-PET corr.-93674. A: lesion #1 (161.7 mL conglomerate, SUVmax 54.3, slice z 1163); B: lesion #3 (9.0 mL, SUVmax 56.2, z 1152)."
   },
   {
    "type": "question",
@@ -1377,10 +1377,10 @@
     "Yes, changes intent from curative to palliative"
    ],
    "correct": 2,
-   "explain": "Level II goes to surgery first; a node medial to pectoralis minor sends the patient to systemic therapy before any surgery.",
+   "explain": "A is level I, the surgeon's axilla. B is medial to the pectoralis minor, level III: cN3a, systemic therapy before any surgery.",
    "imageClean": "img/pre4-axilla-fdg-clean.png",
    "imageBare": "img/pre4-axilla-fdg-bare.png",
-   "source": "AutoPET PETCT_f24f3ce1da, 2001-09-14, Melanoma. CT series 5.000000-GK p.v.2-28878, PET series 6.000000-PET corr.-93674. A: lesion #4 (5.8 mL, SUVmax 35.8, z 1156 mm); B: lesion #3 (9.0 mL, SUVmax 56.2, z 1146 mm)."
+   "source": "AutoPET PETCT_f24f3ce1da, 2001-09-14, Melanoma. CT series 5.000000-GK p.v.2-28878, PET series 6.000000-PET corr.-93674. A: lesion #1 (161.7 mL conglomerate, SUVmax 54.3, slice z 1163); B: lesion #3 (9.0 mL, SUVmax 56.2, z 1152)."
   },
   {
    "type": "question",
@@ -1398,10 +1398,10 @@
     "Left infraclavicular"
    ],
    "correct": 0,
-   "explain": "Lugano calls the axillary and pectoral nodes one region: left axillary.",
+   "explain": "Lugano calls the axillary and pectoral nodes one region: left axillary. Level I or II makes no difference.",
    "imageClean": "img/pre4-axilla-fdg-clean.png",
    "imageBare": "img/pre4-axilla-fdg-bare.png",
-   "source": "AutoPET PETCT_f24f3ce1da, 2001-09-14, Melanoma. CT series 5.000000-GK p.v.2-28878, PET series 6.000000-PET corr.-93674. A: lesion #4 (5.8 mL, SUVmax 35.8, z 1156 mm); B: lesion #3 (9.0 mL, SUVmax 56.2, z 1146 mm)."
+   "source": "AutoPET PETCT_f24f3ce1da, 2001-09-14, Melanoma. CT series 5.000000-GK p.v.2-28878, PET series 6.000000-PET corr.-93674. A: lesion #1 (161.7 mL conglomerate, SUVmax 54.3, slice z 1163); B: lesion #3 (9.0 mL, SUVmax 56.2, z 1152)."
   },
   {
    "type": "question",
@@ -1422,7 +1422,7 @@
    "explain": "Infraclavicular is its own Lugano region, separate from axillary.",
    "imageClean": "img/pre4-axilla-fdg-clean.png",
    "imageBare": "img/pre4-axilla-fdg-bare.png",
-   "source": "AutoPET PETCT_f24f3ce1da, 2001-09-14, Melanoma. CT series 5.000000-GK p.v.2-28878, PET series 6.000000-PET corr.-93674. A: lesion #4 (5.8 mL, SUVmax 35.8, z 1156 mm); B: lesion #3 (9.0 mL, SUVmax 56.2, z 1146 mm)."
+   "source": "AutoPET PETCT_f24f3ce1da, 2001-09-14, Melanoma. CT series 5.000000-GK p.v.2-28878, PET series 6.000000-PET corr.-93674. A: lesion #1 (161.7 mL conglomerate, SUVmax 54.3, slice z 1163); B: lesion #3 (9.0 mL, SUVmax 56.2, z 1152)."
   },
   {
    "type": "question",
@@ -1440,10 +1440,10 @@
     "Yes, B means systemic therapy instead of radiation"
    ],
    "correct": 0,
-   "explain": "Two regions on the same side of the diaphragm instead of one: still early stage, same treatment. Lugano counts regions; it does not care which level.",
+   "explain": "A is axillary, B is infraclavicular: two regions on the same side of the diaphragm instead of one. Still early stage, same treatment. Lugano counts regions; it does not care which level.",
    "imageClean": "img/pre4-axilla-fdg-clean.png",
    "imageBare": "img/pre4-axilla-fdg-bare.png",
-   "source": "AutoPET PETCT_f24f3ce1da, 2001-09-14, Melanoma. CT series 5.000000-GK p.v.2-28878, PET series 6.000000-PET corr.-93674. A: lesion #4 (5.8 mL, SUVmax 35.8, z 1156 mm); B: lesion #3 (9.0 mL, SUVmax 56.2, z 1146 mm)."
+   "source": "AutoPET PETCT_f24f3ce1da, 2001-09-14, Melanoma. CT series 5.000000-GK p.v.2-28878, PET series 6.000000-PET corr.-93674. A: lesion #1 (161.7 mL conglomerate, SUVmax 54.3, slice z 1163); B: lesion #3 (9.0 mL, SUVmax 56.2, z 1152)."
   },
   {
    "type": "slide",
