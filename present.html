@@ -122,8 +122,8 @@
       <div class="jump" id="jump"></div>
     </div>
   </div>
-  <p class="keys" id="keys-q"><kbd>Space</kbd> pick · <kbd>A</kbd>–<kbd>D</kbd> hot seat answer · <kbd>O</kbd> open · <kbd>X</kbd> close · <kbd>R</kbd> reveal · <kbd>←</kbd> <kbd>→</kbd> prev/next · <kbd>Z</kbd> zoom image · <kbd>L</kbd> circles <span class="circ-state">off</span> · <kbd>F</kbd> present · <kbd>Esc</kbd> clear hot seat</p>
-  <p class="keys hidden" id="keys-s"><kbd>←</kbd> <kbd>→</kbd> prev/next · <kbd>Z</kbd> zoom image · <kbd>L</kbd> circles <span class="circ-state">off</span> · <kbd>F</kbd> present · <kbd>V</kbd> pre/post</p>
+  <p class="keys" id="keys-q"><kbd>Space</kbd> pick · <kbd>A</kbd>–<kbd>D</kbd> hot seat answer · <kbd>O</kbd> open · <kbd>X</kbd> close · <kbd>R</kbd> reveal · <kbd>←</kbd> <kbd>→</kbd> prev/next · <kbd>Z</kbd> zoom image · <kbd>L</kbd> circles <span class="circ-state">on</span> · <kbd>F</kbd> present · <kbd>Esc</kbd> clear hot seat</p>
+  <p class="keys hidden" id="keys-s"><kbd>←</kbd> <kbd>→</kbd> prev/next · <kbd>Z</kbd> zoom image · <kbd>L</kbd> circles <span class="circ-state">on</span> · <kbd>F</kbd> present · <kbd>V</kbd> pre/post</p>
 </section>
 
 <!-- PRE/POST REVEAL: one pair per screen, projector sized -->
@@ -311,8 +311,8 @@
     return `<table class="s-table">${head}${t.rows.map(r => `<tr>${r.map(c => `<td>${inline(c)}</td>`).join("")}</tr>`).join("")}</table>`;
   }
   const ASSET_V = "20261104m";
-  let circlesOn = false;   // C toggles between the letters-only image (imageClean) and the circled one (image)
-  const imgSrcFor = it => (it.imageClean && !circlesOn) ? it.imageClean : it.image;
+  let circlesOn = true;    // L toggles: circles + letters (image) on, or off (imageBare if it exists, else imageClean = letters only)
+  const imgSrcFor = it => circlesOn ? it.image : (it.imageBare || it.imageClean || it.image);
   function toggleCircles() { circlesOn = !circlesOn; document.body.classList.toggle("circles", circlesOn); document.querySelectorAll(".circ-state").forEach(el => el.textContent = circlesOn ? "on" : "off"); render(); }   // bump when an image or diagram changes under the same file name
   function imgTag(src, cls) {
     const v = src.includes("?") ? "" : "?v=" + ASSET_V;
