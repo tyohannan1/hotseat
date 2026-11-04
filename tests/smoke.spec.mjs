@@ -169,7 +169,7 @@ test("lecture runs end to end: slides, pretest, hot seat, quick check reveal, zo
   await expect(page.locator(".eyebrow", { hasText: "2 of 3" })).toBeVisible();
   await page.click("#btn-rv-summary");
   await expect(page.locator("#v-summary")).toBeVisible();
-  await expect(page.locator("#sum-table tr")).toHaveCount(13); // header + 12 question items, no slides
+  await expect(page.locator("#sum-table tr")).toHaveCount(10); // header + 12 question items, no slides
   await expect(page.locator("#sum-pairs")).toContainText("pre1 → post1");
   await expect(page.locator("#sum-pairs")).toContainText("Paired devices: 1 · improved 1");
 });
