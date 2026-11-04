@@ -968,20 +968,6 @@
   },
   {
    "type": "slide",
-   "id": "c4-aside",
-   "eyebrow": "Case 3 · Aside, cut if behind",
-   "title": "Even lymphoma has more than one map",
-   "body": [
-    "The Hodgkin trial groups count nodal areas differently from the standard regions. The same axilla can be one area on one scheme and two on another.",
-    "The counting rule belongs to the trial, not to anatomy."
-   ],
-   "notes": [
-    "Cut if behind. Even lymphoma has more than one map. The Hodgkin trial groups count nodal areas differently from the standard regions, so the same axilla can be one area on one scheme and two on another. The counting rule belongs to the trial, not to anatomy."
-   ],
-   "build": true
-  },
-  {
-   "type": "slide",
    "id": "close-rules",
    "eyebrow": "Close",
    "title": "Three reporting rules",
