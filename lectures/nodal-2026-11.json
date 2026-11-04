@@ -475,7 +475,7 @@
    "id": "qc1",
    "kind": "quick",
    "hotSeat": "beforePoll",
-   "image": null,
+   "image": "img/dx/line1-pelvis.svg",
    "stem": "New prostate cancer. PSMA-avid node along the right external iliac vessels, below the common iliac bifurcation. What goes in the report, and what happens to the patient?",
    "options": [
     "Right external iliac node; regional, radiated with the prostate",
@@ -484,7 +484,8 @@
     "Right iliac node; cannot say without the size"
    ],
    "correct": 0,
-   "explain": "Below the common iliac bifurcation the node is pelvic: name the vessel, external iliac, and it stays in the curative radiation plan. Above the bifurcation it would be a common iliac node and counted as metastatic."
+   "explain": "Below the common iliac bifurcation the node is pelvic: name the vessel, external iliac, and it stays in the curative radiation plan. Above the bifurcation it would be a common iliac node and counted as metastatic.",
+   "imageCaption": "The line: the common iliac bifurcation."
   },
   {
    "type": "slide",
@@ -691,7 +692,7 @@
    "id": "qc2",
    "kind": "quick",
    "hotSeat": "beforePoll",
-   "image": null,
+   "image": "img/dx/line2-trachea.svg",
    "stem": "Right upper lobe lung cancer. FDG-avid node just left of midline, but medial to the left lateral wall of the trachea. Station, and what does it mean?",
    "options": [
     "4R; same side, surgery still possible",
@@ -700,7 +701,8 @@
     "Depends on the size of the node"
    ],
    "correct": 0,
-   "explain": "The border is the left lateral tracheal wall, not the midline. Medial to that wall is still 4R, same side for a right lung tumor, so the surgeon is still in the room."
+   "explain": "The border is the left lateral tracheal wall, not the midline. Medial to that wall is still 4R, same side for a right lung tumor, so the surgeon is still in the room.",
+   "imageCaption": "The line: the left lateral wall of the trachea."
   },
   {
    "type": "slide",
@@ -788,7 +790,8 @@
     "**Lymphoma:** same region, same stage, same treatment. The report can say \"axillary\" and stop.",
     "**Breast:** same stage too, but not the same operation. A standard axillary dissection does not reach the interpectoral space, so an unreported Rotter's node is a node left behind, and radiation planning covers it separately. The stage did not change; the surgeon's plan did.",
     "(The 8% interpectoral metastasis figure is from a 1984 series; label it as such or leave the number out.)"
-   ]
+   ],
+   "image": "img/dx/line4-axilla.svg"
   },
   {
    "type": "slide",
@@ -807,7 +810,8 @@
    "notes": [
     "**Lymphoma:** different regions, but one region is one region. A single node at level II or at level III is the same stage and the same treatment, so II versus III does not change the plan.",
     "**Breast:** II versus III is the whole decision. Level II goes to the surgeon. A node medial to the pectoralis minor sends the patient to the medical oncologist first, for chemotherapy before any operation, and the radiation plan expands. The report has to say which side of the muscle before the case is booked."
-   ]
+   ],
+   "image": "img/dx/line4-axilla.svg"
   },
   {
    "type": "question",
@@ -944,7 +948,8 @@
    "notes": [
     "Now both diseases care, for different reasons. Lymphoma: two regions instead of one, so the stage goes up. Breast: level III is involved, so it is the chemo-first pathway, and level II riding along adds nothing.",
     "Versus and plus are different questions, and the two diseases answer them in opposite order."
-   ]
+   ],
+   "image": "img/dx/line4-axilla.svg"
   },
   {
    "type": "slide",
@@ -971,7 +976,7 @@
    "id": "qc4",
    "kind": "quick",
    "hotSeat": "beforePoll",
-   "image": null,
+   "image": "img/dx/line4-axilla.svg",
    "stem": "Left breast cancer. FDG-avid node medial to the pectoralis minor, under the clavicle. Level, and who sees the patient first?",
    "options": [
     "Level III; medical oncology first, systemic therapy before surgery",
@@ -980,7 +985,8 @@
     "Internal mammary; radiation first"
    ],
    "correct": 0,
-   "explain": "Medial to the pectoralis minor is level III, infraclavicular: cN3a. That puts systemic therapy before any surgery. Lateral to the muscle is level I, behind it level II, the surgeon's axilla."
+   "explain": "Medial to the pectoralis minor is level III, infraclavicular: cN3a. That puts systemic therapy before any surgery. Lateral to the muscle is level I, behind it level II, the surgeon's axilla.",
+   "imageCaption": "The line: the pectoralis minor."
   },
   {
    "type": "slide",
