@@ -51,7 +51,7 @@ def regions(w=1740, h=1030, standalone=True):
     return svg(w, h, "\n".join(b), None)
 
 # ------------------------------------------------------------------ pelvis: common iliac bifurcation
-def pelvis(w=1400, h=900, standalone=True):
+def pelvis(w=900, h=900, standalone=True):
     b = []
     cx = 520
     # aorta and iliac tree (coronal)
@@ -76,17 +76,10 @@ def pelvis(w=1400, h=900, standalone=True):
     b.append(node(cx-95, 560)); b.append(T(cx-75, 548, "internal iliac", 20, INK, "start"))
     b.append(node(cx-225, 770)); b.append(T(cx-245, 777, "inguinal", 20, INK, "end"))
     # right column: consequences
-    x0 = 920
-    b.append(T(x0, 150, "Prostate", 30, INK, "start", 700))
-    b.append(T(x0, 200, "Below the line: N1, pelvic.", 24)); b.append(T(x0, 232, "Radiated with the prostate, curative.", 22, DIM))
-    b.append(T(x0, 285, "Above the line: M1a, metastatic.", 24)); b.append(T(x0, 317, "Hormones and drugs lead.", 22, DIM))
-    b.append(T(x0, 400, "Bladder", 30, INK, "start", 700)); b.append(T(x0, 450, "Common iliac is still regional (N3).", 24)); b.append(T(x0, 482, "The line does not matter here.", 22, DIM))
-    b.append(T(x0, 565, "Lymphoma", 30, INK, "start", 700)); b.append(T(x0, 615, "One iliac chain = one region.", 24)); b.append(T(x0, 647, "“Right iliac” and stop.", 22, DIM))
-    b.append(T(x0, 740, "Report: the vessel the node sits on, and which side", 22, TEAL)); b.append(T(x0, 770, "of the bifurcation.", 22, TEAL))
     return svg(w, h, "\n".join(b), "Line 1: the common iliac bifurcation" if standalone else None)
 
 # ------------------------------------------------------------------ trachea: left lateral wall
-def trachea(w=1400, h=900, standalone=True):
+def trachea(w=900, h=900, standalone=True):
     b = []
     cx, cy = 470, 430
     # axial schematic at the lower paratracheal level: anterior at top, patient's right on viewer's left
@@ -113,18 +106,10 @@ def trachea(w=1400, h=900, standalone=True):
     b.append(node(cx+120, cy-20)); b.append(T(cx+120, cy-40, "4L", 20, NODE, "middle", 700))
     b.append(node(cx-110, cy-30)); b.append(T(cx-110, cy-50, "4R", 20, NODE, "middle", 700))
     # right column
-    x0 = 920
-    b.append(T(x0, 150, "Lung cancer", 30, INK, "start", 700))
-    b.append(T(x0, 200, "Same side as the tumor: N2.", 24)); b.append(T(x0, 232, "Surgery may still be on the table.", 22, DIM))
-    b.append(T(x0, 285, "Opposite side: N3.", 24)); b.append(T(x0, 317, "Surgery off; chemoradiation.", 22, DIM))
-    b.append(T(x0, 370, "The side is set by the left tracheal wall,", 22, INK)); b.append(T(x0, 400, "not the midline. Station 7 is midline", 22, INK)); b.append(T(x0, 430, "and always counts as N2.", 22, INK))
-    b.append(T(x0, 520, "Lymphoma", 30, INK, "start", 700)); b.append(T(x0, 570, "The whole mediastinum is one region.", 24)); b.append(T(x0, 602, "Right or left changes nothing; size does.", 22, DIM))
-    b.append(T(x0, 700, "2 vs 4: above or below the top of the aortic arch", 20, TEAL)); b.append(T(x0, 728, "(on the right, the innominate vein crossing).", 20, TEAL))
-    b.append(T(x0, 790, "Report: the station number, not the position.", 22, TEAL))
     return svg(w, h, "\n".join(b), "Line 2: the left lateral wall of the trachea" if standalone else None)
 
 # ------------------------------------------------------------------ anorectal: dentate line and mesorectal fascia
-def anorectal(w=1400, h=900, standalone=True):
+def anorectal(w=900, h=900, standalone=True):
     b = []
     cx = 430
     # rectum and anal canal (coronal), mesorectal fascia envelope
@@ -143,19 +128,10 @@ def anorectal(w=1400, h=900, standalone=True):
     b.append(node(cx-215, 760)); b.append(T(cx-235, 767, "inguinal", 20, INK, "end"))
     b.append(node(cx+215, 760)); b.append(node(cx+200, 380)); b.append(node(cx+105, 300))
     # right: two tables
-    x0 = 820
-    b.append(T(x0, 150, "Anal canal SCC", 30, INK, "start", 700))
-    for i, r in enumerate(["Regional: inguinal, mesorectal, internal iliac (N1a)", "Regional: external iliac (N1b)", "All of them are already inside the radiation field."]):
-        b.append(T(x0, 200 + i * 34, r, 22, INK if i < 2 else DIM))
-    b.append(T(x0, 350, "Rectal adenocarcinoma", 30, INK, "start", 700))
-    for i, r in enumerate(["Regional: mesorectal, internal iliac, obturator", "Distant (M1): external iliac, common iliac", "Inguinal: regional only if the tumor reaches", "   below the dentate line; otherwise M1"]):
-        b.append(T(x0, 400 + i * 34, r, 22, INK))
-    b.append(T(x0, 580, "Lymphoma", 30, INK, "start", 700)); b.append(T(x0, 630, "Pelvic and inguinal are different regions,", 24)); b.append(T(x0, 662, "but one node in either is the same stage.", 24))
-    b.append(T(x0, 760, "Report: name the node group, and whether the primary", 22, TEAL)); b.append(T(x0, 790, "sits above or below the dentate line.", 22, TEAL))
     return svg(w, h, "\n".join(b), "Line 3: the dentate line and the mesorectal fascia" if standalone else None)
 
 # ------------------------------------------------------------------ axilla: pectoralis minor
-def axilla(w=1400, h=900, standalone=True):
+def axilla(w=900, h=900, standalone=True):
     b = []
     # axial schematic of the left axilla: anterior up, medial (sternum) on the left of the drawing
     b.append(T(200, 120, "medial (sternum)", 20, DIM, "start", 400, True)); b.append(T(760, 120, "lateral (arm)", 20, DIM, "end", 400, True)); b.append(T(480, 100, "anterior", 20, DIM, "middle", 400, True))
@@ -177,14 +153,6 @@ def axilla(w=1400, h=900, standalone=True):
     b.append(T(460, 300, "Rotter's (interpectoral)", 20, INK, "middle")); b.append(node(460, 325))
     b.append(node(700, 450)); b.append(node(430, 440)); b.append(node(210, 430)); b.append(node(150, 350)); b.append(T(150, 380, "internal mammary", 16, DIM, "middle"))
     # right column
-    x0 = 880
-    b.append(T(x0, 150, "Breast cancer", 30, INK, "start", 700))
-    b.append(T(x0, 200, "Level I or II: the surgeon's axilla.", 24)); b.append(T(x0, 232, "Sentinel node or dissection.", 22, DIM))
-    b.append(T(x0, 285, "Level III (infraclavicular): cN3a.", 24)); b.append(T(x0, 317, "Systemic therapy before any surgery.", 22, DIM))
-    b.append(T(x0, 370, "Rotter's: not reached by a standard", 22, INK)); b.append(T(x0, 400, "dissection; radiation covers it only if named.", 22, INK))
-    b.append(T(x0, 450, "Internal mammary: cN3b. Supraclavicular: cN3c.", 22, INK))
-    b.append(T(x0, 540, "Lymphoma", 30, INK, "start", 700)); b.append(T(x0, 590, "Axillary/pectoral is one region;", 24)); b.append(T(x0, 622, "infraclavicular is another. Count regions.", 24))
-    b.append(T(x0, 720, "Report: the level by its relation to pectoralis minor,", 22, TEAL)); b.append(T(x0, 750, "and say Rotter's, internal mammary and", 22, TEAL)); b.append(T(x0, 780, "supraclavicular by name.", 22, TEAL))
     return svg(w, h, "\n".join(b), "Line 3: the pectoralis minor" if standalone else None)
 
 def composite():
@@ -193,9 +161,9 @@ def composite():
     # three lines side by side: prostate, lung, breast (the anorectal line is kept as its own file but is off the deck)
     for i, fn in enumerate([pelvis, trachea, axilla]):
         inner = fn(standalone=True)
-        inner = inner.replace("<svg xmlns='http://www.w3.org/2000/svg' ", f"<svg x='{i * 1400}' y='0' ")
+        inner = inner.replace("<svg xmlns='http://www.w3.org/2000/svg' ", f"<svg x='{i * 900}' y='0' ")
         parts.append(inner)
-    return f"<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 4200 900' width='4200' height='900'>\n" + "\n".join(parts) + "\n</svg>\n"
+    return f"<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 2700 900' width='2700' height='900'>\n" + "\n".join(parts) + "\n</svg>\n"
 
 os.makedirs(OUT, exist_ok=True)
 for name, fn in [("regions-lymphoma", regions), ("line1-pelvis", pelvis), ("line2-trachea", trachea), ("line3-anorectal", anorectal), ("line4-axilla", axilla)]:

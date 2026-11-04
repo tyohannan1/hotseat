@@ -1,4 +1,4 @@
-<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1400 900' width='1400' height='900' font-family='Helvetica Neue, Helvetica, Arial, sans-serif'>
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 900 900' width='900' height='900' font-family='Helvetica Neue, Helvetica, Arial, sans-serif'>
 
 <text x='200' y='120' font-size='20' fill='#9fb3c8' text-anchor='start' font-weight='400' font-style='italic'>medial (sternum)</text>
 <text x='760' y='120' font-size='20' fill='#9fb3c8' text-anchor='end' font-weight='400' font-style='italic'>lateral (arm)</text>
@@ -27,18 +27,4 @@
 <circle cx='210' cy='430' r='9' fill='#ffb000' stroke='#000' stroke-width='1.5'/>
 <circle cx='150' cy='350' r='9' fill='#ffb000' stroke='#000' stroke-width='1.5'/>
 <text x='150' y='380' font-size='16' fill='#9fb3c8' text-anchor='middle' font-weight='400'>internal mammary</text>
-<text x='880' y='150' font-size='30' fill='#e8eef5' text-anchor='start' font-weight='700'>Breast cancer</text>
-<text x='880' y='200' font-size='24' fill='#e8eef5' text-anchor='start' font-weight='400'>Level I or II: the surgeon's axilla.</text>
-<text x='880' y='232' font-size='22' fill='#9fb3c8' text-anchor='start' font-weight='400'>Sentinel node or dissection.</text>
-<text x='880' y='285' font-size='24' fill='#e8eef5' text-anchor='start' font-weight='400'>Level III (infraclavicular): cN3a.</text>
-<text x='880' y='317' font-size='22' fill='#9fb3c8' text-anchor='start' font-weight='400'>Systemic therapy before any surgery.</text>
-<text x='880' y='370' font-size='22' fill='#e8eef5' text-anchor='start' font-weight='400'>Rotter's: not reached by a standard</text>
-<text x='880' y='400' font-size='22' fill='#e8eef5' text-anchor='start' font-weight='400'>dissection; radiation covers it only if named.</text>
-<text x='880' y='450' font-size='22' fill='#e8eef5' text-anchor='start' font-weight='400'>Internal mammary: cN3b. Supraclavicular: cN3c.</text>
-<text x='880' y='540' font-size='30' fill='#e8eef5' text-anchor='start' font-weight='700'>Lymphoma</text>
-<text x='880' y='590' font-size='24' fill='#e8eef5' text-anchor='start' font-weight='400'>Axillary/pectoral is one region;</text>
-<text x='880' y='622' font-size='24' fill='#e8eef5' text-anchor='start' font-weight='400'>infraclavicular is another. Count regions.</text>
-<text x='880' y='720' font-size='22' fill='#18A3AC' text-anchor='start' font-weight='400'>Report: the level by its relation to pectoralis minor,</text>
-<text x='880' y='750' font-size='22' fill='#18A3AC' text-anchor='start' font-weight='400'>and say Rotter's, internal mammary and</text>
-<text x='880' y='780' font-size='22' fill='#18A3AC' text-anchor='start' font-weight='400'>supraclavicular by name.</text>
 </svg>

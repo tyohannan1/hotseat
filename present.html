@@ -310,7 +310,7 @@
     const head = t.head ? `<tr>${t.head.map(h => `<th>${inline(h)}</th>`).join("")}</tr>` : "";
     return `<table class="s-table">${head}${t.rows.map(r => `<tr>${r.map(c => `<td>${inline(c)}</td>`).join("")}</tr>`).join("")}</table>`;
   }
-  const ASSET_V = "20261104p";
+  const ASSET_V = "20261104q";
   let circlesOn = true;    // L toggles: circles + letters (image) on, or off (imageBare if it exists, else imageClean = letters only)
   const imgSrcFor = it => circlesOn ? it.image : (it.imageBare || it.imageClean || it.image);
   function toggleCircles() { circlesOn = !circlesOn; document.body.classList.toggle("circles", circlesOn); document.querySelectorAll(".circ-state").forEach(el => el.textContent = circlesOn ? "on" : "off"); render(); }   // bump when an image or diagram changes under the same file name
