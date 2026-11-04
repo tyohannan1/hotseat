@@ -1,0 +1,45 @@
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1400 900' width='1400' height='900' font-family='Helvetica Neue, Helvetica, Arial, sans-serif'>
+
+<path d='M498 90 L498 300 Q498 330 470 350 L370 470 Q355 488 352 510 L320 720' stroke='#ff5a5a' stroke-width='14' fill='none' stroke-linejoin='round' stroke-linecap='round' opacity='1'/>
+<path d='M542 90 L542 300 Q542 330 570 350 L670 470 Q685 488 688 510 L720 720' stroke='#ff5a5a' stroke-width='14' fill='none' stroke-linejoin='round' stroke-linecap='round' opacity='1'/>
+<rect x='498' y='90' width='44' height='215' fill='#ff5a5a'/>
+<path d='M370 470 L400 560 L410 640' stroke='#ff5a5a' stroke-width='9' fill='none' stroke-linejoin='round' stroke-linecap='round' opacity='1'/>
+<path d='M670 470 L640 560 L630 640' stroke='#ff5a5a' stroke-width='9' fill='none' stroke-linejoin='round' stroke-linecap='round' opacity='1'/>
+<text x='580' y='200' font-size='22' fill='#9fb3c8' text-anchor='start' font-weight='400'>aorta</text>
+<text x='635' y='420' font-size='22' fill='#9fb3c8' text-anchor='start' font-weight='400'>common iliac</text>
+<text x='725' y='640' font-size='22' fill='#9fb3c8' text-anchor='start' font-weight='400'>external iliac</text>
+<text x='560' y='620' font-size='22' fill='#9fb3c8' text-anchor='start' font-weight='400'>internal iliac</text>
+<line x1='230' y1='690' x2='370' y2='735' stroke='#18A3AC' stroke-width='3' stroke-linecap='round' stroke-dasharray='10 8'/>
+<line x1='810' y1='690' x2='670' y2='735' stroke='#18A3AC' stroke-width='3' stroke-linecap='round' stroke-dasharray='10 8'/>
+<text x='220' y='680' font-size='20' fill='#18A3AC' text-anchor='start' font-weight='400' font-style='italic'>inguinal ligament</text>
+<line x1='190' y1='330' x2='850' y2='330' stroke='#9fb3c8' stroke-width='2' stroke-linecap='round' stroke-dasharray='6 8'/>
+<text x='180' y='322' font-size='20' fill='#9fb3c8' text-anchor='end' font-weight='400'>aortic bifurcation</text>
+<text x='180' y='344' font-size='20' fill='#9fb3c8' text-anchor='end' font-weight='400'>(L4)</text>
+<line x1='190' y1='470' x2='850' y2='470' stroke='#FFDD00' stroke-width='5' stroke-linecap='round'/>
+<text x='180' y='452' font-size='24' fill='#FFDD00' text-anchor='end' font-weight='700'>common iliac</text>
+<text x='180' y='480' font-size='24' fill='#FFDD00' text-anchor='end' font-weight='700'>bifurcation</text>
+<text x='180' y='506' font-size='18' fill='#FFDD00' text-anchor='end' font-weight='400' font-style='italic'>the edge of the pelvis</text>
+<circle cx='460' cy='250' r='9' fill='#ffb000' stroke='#000' stroke-width='1.5'/>
+<text x='440' y='257' font-size='20' fill='#e8eef5' text-anchor='end' font-weight='400'>para-aortic</text>
+<circle cx='410' cy='410' r='9' fill='#ffb000' stroke='#000' stroke-width='1.5'/>
+<text x='390' y='417' font-size='20' fill='#e8eef5' text-anchor='end' font-weight='400'>common iliac</text>
+<circle cx='320' cy='600' r='9' fill='#ffb000' stroke='#000' stroke-width='1.5'/>
+<text x='300' y='607' font-size='20' fill='#e8eef5' text-anchor='end' font-weight='400'>external iliac</text>
+<circle cx='425' cy='560' r='9' fill='#ffb000' stroke='#000' stroke-width='1.5'/>
+<text x='445' y='548' font-size='20' fill='#e8eef5' text-anchor='start' font-weight='400'>internal iliac</text>
+<circle cx='295' cy='770' r='9' fill='#ffb000' stroke='#000' stroke-width='1.5'/>
+<text x='275' y='777' font-size='20' fill='#e8eef5' text-anchor='end' font-weight='400'>inguinal</text>
+<text x='920' y='150' font-size='30' fill='#e8eef5' text-anchor='start' font-weight='700'>Prostate</text>
+<text x='920' y='200' font-size='24' fill='#e8eef5' text-anchor='start' font-weight='400'>Below the line: N1, pelvic.</text>
+<text x='920' y='232' font-size='22' fill='#9fb3c8' text-anchor='start' font-weight='400'>Radiated with the prostate, curative.</text>
+<text x='920' y='285' font-size='24' fill='#e8eef5' text-anchor='start' font-weight='400'>Above the line: M1a, metastatic.</text>
+<text x='920' y='317' font-size='22' fill='#9fb3c8' text-anchor='start' font-weight='400'>Hormones and drugs lead.</text>
+<text x='920' y='400' font-size='30' fill='#e8eef5' text-anchor='start' font-weight='700'>Bladder</text>
+<text x='920' y='450' font-size='24' fill='#e8eef5' text-anchor='start' font-weight='400'>Common iliac is still regional (N3).</text>
+<text x='920' y='482' font-size='22' fill='#9fb3c8' text-anchor='start' font-weight='400'>The line does not matter here.</text>
+<text x='920' y='565' font-size='30' fill='#e8eef5' text-anchor='start' font-weight='700'>Lymphoma</text>
+<text x='920' y='615' font-size='24' fill='#e8eef5' text-anchor='start' font-weight='400'>One iliac chain = one region.</text>
+<text x='920' y='647' font-size='22' fill='#9fb3c8' text-anchor='start' font-weight='400'>“Right iliac” and stop.</text>
+<text x='920' y='740' font-size='22' fill='#18A3AC' text-anchor='start' font-weight='400'>Report: the vessel the node sits on, and which side</text>
+<text x='920' y='770' font-size='22' fill='#18A3AC' text-anchor='start' font-weight='400'>of the bifurcation.</text>
+</svg>

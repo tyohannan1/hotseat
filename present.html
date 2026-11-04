@@ -1,0 +1,599 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Hot Seat — Presenter</title>
+<link rel="stylesheet" href="css/style.css">
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-database-compat.js"></script>
+<script src="js/qrcode.min.js"></script>
+<script src="config.js" onerror="void 0"></script>
+<script src="js/store.js"></script>
+</head>
+<body>
+
+<header class="p-header">
+  <h1 id="h-title"><span class="hl">Hot Seat</span></h1>
+  <div class="meta">
+    <span id="h-mode" class="muted"></span>
+    <span>Session <b id="h-sid">—</b></span>
+    <span><b id="h-joined">0</b> joined</span>
+    <button id="btn-lobby" class="hidden">Show QR</button>
+    <button id="btn-notes" class="hidden" title="Opens the speaker-notes window on the laptop screen">Notes</button>
+    <button id="btn-prepost" class="hidden" title="Pretest beside posttest, one pair per screen (V)">Pre/post</button>
+    <button id="btn-summary" class="hidden">Summary</button>
+    <button id="btn-present" class="hidden" title="Presentation mode: full screen, no chrome (F)">Present</button>
+  </div>
+</header>
+
+<!-- SIGN IN / START -->
+<section id="v-start" class="card center" style="flex:1">
+  <p class="eyebrow">Start a session</p>
+  <div id="signin" class="hidden" style="display:flex;gap:8px;flex-wrap:wrap;justify-content:center">
+    <input id="email" type="email" placeholder="Presenter email" autocomplete="username">
+    <input id="pw" type="password" placeholder="Password" autocomplete="current-password">
+  </div>
+  <select id="lecture"></select>
+  <div style="display:flex;gap:8px;flex-wrap:wrap;justify-content:center">
+    <button id="btn-start" class="primary">Start new session</button>
+    <input id="resume" placeholder="or resume code" style="width:11em;text-transform:uppercase">
+    <button id="btn-resume">Resume</button>
+  </div>
+  <p class="muted" id="start-msg"></p>
+</section>
+
+<!-- LOBBY / QR -->
+<section id="v-lobby" class="card center lobby hidden" style="flex:1">
+  <p class="eyebrow">Scan to join</p>
+  <div class="qr" id="qr"></div>
+  <div class="join" id="join-url"></div>
+  <div class="count" id="lobby-count">0</div>
+  <p class="muted">Pick your year on your phone, then wait for the first question.</p>
+  <button id="btn-begin" class="primary">Begin</button>
+</section>
+
+<!-- ITEM RUNNER: a slide or a question -->
+<section id="v-run" class="hidden">
+
+  <!-- slide item -->
+  <div class="slide hidden" id="slideview">
+    <div class="s-media" id="s-media"></div>
+    <div class="s-text">
+      <p class="eyebrow" id="s-eyebrow"></p>
+      <h2 id="s-title"></h2>
+      <div class="s-body" id="s-body"></div>
+      <div class="caption" id="s-caption"></div>
+    </div>
+  </div>
+
+  <!-- question item -->
+  <div class="runner hidden" id="runner">
+    <div class="leftcol">
+      <div class="imgbox" id="imgbox"></div>
+      <div class="card hot" id="hotbox">
+        <div>
+          <div class="eyebrow" id="hot-eyebrow">Hot seat</div>
+          <div class="name" id="hot-name">—</div>
+          <div class="cls" id="hot-cls"></div>
+          <div class="elig">
+            <label><input type="checkbox" id="e1" value="R1"> R1</label>
+            <label><input type="checkbox" id="e2" value="R2"> R2</label>
+            <label><input type="checkbox" id="e3" value="R3"> R3</label>
+            <label><input type="checkbox" id="e4" value="R4"> R4</label>
+            <span id="pool"></span>
+          </div>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:8px;align-items:flex-end">
+          <button id="btn-pick" class="primary">Pick</button>
+          <div class="answer" id="hot-answer">
+            <button data-a="0">A</button><button data-a="1">B</button><button data-a="2">C</button><button data-a="3">D</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="qpanel">
+      <div>
+        <p class="eyebrow" id="q-kind"></p>
+        <div class="disease" id="q-disease"></div>
+        <div class="stem" id="q-stem"></div>
+        <div class="caption" id="q-caption"></div>
+      </div>
+      <div class="opts" id="opts"></div>
+      <div class="explain hidden" id="explain"></div>
+    </div>
+  </div>
+
+  <div class="controls card" style="padding:12px 16px">
+    <div class="left">
+      <button id="btn-prev">◀ Prev</button>
+      <span id="q-controls">
+        <button id="btn-open">Open voting</button>
+        <button id="btn-close">Close voting</button>
+        <button id="btn-reveal" class="primary">Reveal</button>
+      </span>
+      <button id="btn-next">Next ▶</button>
+    </div>
+    <div class="status" id="q-status"><b id="st-n">0</b> answered · <span id="st-state"></span></div>
+    <div class="right">
+      <div class="jump" id="jump"></div>
+    </div>
+  </div>
+  <p class="keys" id="keys-q"><kbd>Space</kbd> pick · <kbd>A</kbd>–<kbd>D</kbd> hot seat answer · <kbd>O</kbd> open · <kbd>X</kbd> close · <kbd>R</kbd> reveal · <kbd>←</kbd> <kbd>→</kbd> prev/next · <kbd>Z</kbd> zoom image · <kbd>F</kbd> present · <kbd>Esc</kbd> clear hot seat</p>
+  <p class="keys hidden" id="keys-s"><kbd>←</kbd> <kbd>→</kbd> prev/next · <kbd>Z</kbd> zoom image · <kbd>F</kbd> present · <kbd>V</kbd> pre/post</p>
+</section>
+
+<!-- PRE/POST REVEAL: one pair per screen, projector sized -->
+<section id="v-reveal" class="hidden" style="flex:1;display:flex;flex-direction:column;gap:12px;min-height:0">
+  <div class="reveal" id="reveal-body"></div>
+  <div class="controls card" style="padding:12px 16px">
+    <div class="left"><button id="btn-rv-prev">◀ Prev pair</button><button id="btn-rv-next" class="primary">Next pair ▶</button></div>
+    <div class="status" id="rv-status"></div>
+    <div class="right"><button id="btn-rv-back">Back to lecture</button><button id="btn-rv-summary">Summary</button></div>
+  </div>
+</section>
+
+<!-- IMAGE ZOOM OVERLAY -->
+<div id="zoom" class="zoom hidden"><img id="zoom-img" alt="" onerror="this.style.display='none';document.getElementById('zoom-cap').textContent='Image missing: '+this.getAttribute('src')"><div class="zoom-cap" id="zoom-cap"></div></div>
+
+<!-- SUMMARY -->
+<section id="v-summary" class="hidden" style="flex:1;display:flex;flex-direction:column;gap:14px;overflow:auto">
+  <div class="card">
+    <p class="eyebrow">Pretest vs posttest</p>
+    <div id="sum-pairs"></div>
+  </div>
+  <div class="card">
+    <p class="eyebrow">By question</p>
+    <table id="sum-table"></table>
+  </div>
+  <div class="controls">
+    <div class="left"><button id="btn-back">Back to lecture</button></div>
+    <div class="right"><button id="btn-csv" class="primary">Download CSV</button></div>
+  </div>
+</section>
+
+<script>
+(async function () {
+  const $ = id => document.getElementById(id);
+  const CLASSES = ["R1","R2","R3","R4"];
+  const LETTERS = "ABCD";
+  const VIEWS = ["v-start","v-lobby","v-run","v-reveal","v-summary"];
+  const show = id => VIEWS.forEach(s => $(s).classList.toggle("hidden", s !== id));
+
+  const esc = s => String(s).replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+  const store = HotSeatStore.makeStore();
+  $("h-mode").textContent = store.kind === "mock" ? "local test mode" : "";
+  if (store.kind === "firebase") $("signin").classList.remove("hidden");
+
+  // ---- lecture list
+  const idx = await (await fetch("lectures/index.json")).json();
+  $("lecture").innerHTML = idx.lectures.map(l => `<option value="${l.id}" data-file="${l.file}">${l.title}</option>`).join("");
+
+  let lecture = null, sid = null, session = null, uid = null;
+  let iIndex = -1, unsubVotes = null, votes = {}, allVotesCache = null;
+  let spinning = false;
+
+  async function loadLecture(id) {
+    const entry = idx.lectures.find(l => l.id === id);
+    lecture = HotSeatStore.normalizeLecture(await (await fetch(entry ? entry.file : `lectures/${id}.json`)).json());
+    $("h-title").innerHTML = `<span class="hl">UCSF</span> ${esc(lecture.title)}`;
+  }
+
+  async function signIn() {
+    if (store.kind === "firebase") {
+      if (!$("email").value) throw new Error("Enter presenter email and password.");
+      uid = await store.signInPresenter($("email").value, $("pw").value);
+    } else uid = await store.signInPresenter();
+  }
+
+  $("btn-start").addEventListener("click", async () => {
+    try {
+      await signIn();
+      await loadLecture($("lecture").value);
+      sid = await store.createSession(lecture.id, uid);
+      attach(); show("v-lobby");
+    } catch (e) { $("start-msg").textContent = e.message; }
+  });
+  $("btn-resume").addEventListener("click", async () => {
+    try {
+      await signIn();
+      const code = $("resume").value.trim().toUpperCase();
+      const s = await store.getSession(code);
+      if (!s) throw new Error("No session with that code.");
+      sid = code; await loadLecture(s.lectureId);
+      attach();
+      const c = s.current || {};
+      const i = c.itemId ? lecture.items.findIndex(it => it.id === c.itemId)
+              : c.questionId ? lecture.items.findIndex(it => it.id === c.questionId) : -1;
+      if (i >= 0) { iIndex = i; show("v-run"); render(); }
+      else show("v-lobby");
+    } catch (e) { $("start-msg").textContent = e.message; }
+  });
+
+  function attach() {
+    $("h-sid").textContent = sid;
+    ["btn-lobby","btn-notes","btn-prepost","btn-summary","btn-present"].forEach(b => $(b).classList.remove("hidden"));
+    const url = location.href.replace(/present\.html.*$/, "") + "vote.html?s=" + sid;
+    $("join-url").textContent = url.replace(/^https?:\/\//, "");
+    $("qr").innerHTML = "";
+    if (typeof QRCode !== "undefined") new QRCode($("qr"), { text: url, width: 260, height: 260 });
+    else $("qr").textContent = "QR library missing; use the link below.";
+    store.onDeviceCount(sid, n => { $("h-joined").textContent = n; $("lobby-count").textContent = n; });
+    store.onSession(sid, s => { session = s; if (!s) return; renderHot(); renderStatus(); });
+  }
+
+  $("btn-begin").addEventListener("click", async () => {
+    if (session && !session.beganAt) await store.updateSession(sid, { beganAt: Date.now() });
+    goTo(0);
+  });
+  $("btn-notes").addEventListener("click", () => window.open("notes.html?s=" + sid, "hotseat-notes", "width=900,height=700"));
+  $("btn-prepost").addEventListener("click", () => showReveal(0));
+  $("btn-present").addEventListener("click", togglePresent);
+  $("btn-lobby").addEventListener("click", () => show("v-lobby"));
+  $("btn-summary").addEventListener("click", showSummary);
+  $("btn-back").addEventListener("click", () => { show("v-run"); });
+
+  // ---- item navigation (slides and questions share one ordered list)
+  function curItem() { return lecture && lecture.items[iIndex]; }
+  function isQuestion() { const it = curItem(); return !!it && it.type === "question"; }
+  function curQ() { return isQuestion() ? curItem() : null; }
+
+  async function goTo(i) {
+    if (!lecture || i < 0 || i >= lecture.items.length) return;
+    iIndex = i;
+    const it = lecture.items[i];
+    await store.updateSession(sid, {
+      current: { itemId: it.id, questionId: it.type === "question" ? it.id : null, open: false, revealed: false },
+      hotSeat: { __set: null }
+    });
+    show("v-run"); render();
+  }
+  $("btn-prev").addEventListener("click", () => goTo(iIndex - 1));
+  $("btn-next").addEventListener("click", () => { if (iIndex + 1 >= lecture.items.length) showReveal(0); else goTo(iIndex + 1); });
+  $("btn-open").addEventListener("click", () => isQuestion() && store.updateSession(sid, { current: { open: true } }));
+  $("btn-close").addEventListener("click", () => isQuestion() && store.updateSession(sid, { current: { open: false } }));
+  const noReveal = q => q.kind === "pretest" || q.kind === "posttest";
+  $("btn-reveal").addEventListener("click", () => { const q = curQ(); if (q && !noReveal(q)) store.updateSession(sid, { current: { open: false, revealed: true } }); });
+
+  function render() {
+    const it = curItem(); if (!it) return;
+    const isQ = it.type === "question";
+    $("slideview").classList.toggle("hidden", isQ);
+    $("runner").classList.toggle("hidden", !isQ);
+    $("q-controls").classList.toggle("hidden", !isQ);
+    $("q-status").classList.toggle("hidden", !isQ);
+    $("keys-q").classList.toggle("hidden", !isQ);
+    $("keys-s").classList.toggle("hidden", isQ);
+    if (unsubVotes) { unsubVotes(); unsubVotes = null; }
+    votes = {};
+    if (isQ) renderQ(); else renderSlide();
+    renderJump();
+  }
+
+  // ---- slides
+  const inline = s => esc(s)
+    .replace(/\*\*(.+?)\*\*/g, "<b>$1</b>")
+    .replace(/(^|[^*])\*([^*]+)\*/g, "$1<i>$2</i>")
+    .replace(/`([^`]+)`/g, "<code>$1</code>");
+  function bodyHtml(body) {
+    const lines = Array.isArray(body) ? body : String(body || "").split("\n");
+    let html = "", inList = false;
+    const closeList = () => { if (inList) { html += "</ul>"; inList = false; } };
+    lines.forEach(line => {
+      const m = /^-\s+(.*)$/.exec(line);
+      if (m) { if (!inList) { html += "<ul>"; inList = true; } html += `<li>${inline(m[1])}</li>`; return; }
+      closeList();
+      if (!line.trim()) { html += `<div class="s-gap"></div>`; return; }
+      const h = /^#+\s+(.*)$/.exec(line);
+      if (h) { html += `<h3>${inline(h[1])}</h3>`; return; }
+      const quote = /^>\s?(.*)$/.exec(line);
+      if (quote) { html += `<blockquote>${inline(quote[1])}</blockquote>`; return; }
+      html += `<p>${inline(line)}</p>`;
+    });
+    closeList();
+    return html;
+  }
+  function tableHtml(t) {
+    if (!t || !t.rows) return "";
+    const head = t.head ? `<tr>${t.head.map(h => `<th>${inline(h)}</th>`).join("")}</tr>` : "";
+    return `<table class="s-table">${head}${t.rows.map(r => `<tr>${r.map(c => `<td>${inline(c)}</td>`).join("")}</tr>`).join("")}</table>`;
+  }
+  function imgTag(src, cls) {
+    return `<img class="${cls || ""}" src="${esc(src)}" alt="" title="Click or Z to zoom" onclick="window.hsZoom(this.src)" onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'placeholder',textContent:'Image missing: ${esc(src)}'}))">`;
+  }
+  // ---- image zoom: full-bleed overlay of the current image (Z, click, or Esc to close)
+  function zoomSrc() {
+    const it = curItem(); if (!it) return null;
+    if (it.image) return it.image; // the item's own image, even if the file is missing (overlay then says so)
+    const n = Array.isArray(it.nccn) ? it.nccn[0] : it.nccn;
+    return n || null;
+  }
+  function zoomOpen() { return !$("zoom").classList.contains("hidden"); }
+  window.hsZoom = function (src) {
+    if (!src) return;
+    const it = curItem();
+    $("zoom-img").style.display = ""; $("zoom-img").src = src;
+    $("zoom-cap").textContent = (it && (it.imageCaption || it.caption)) || "";
+    $("zoom").classList.remove("hidden");
+  };
+  function zoomClose() { $("zoom").classList.add("hidden"); }
+  function zoomToggle() { if (zoomOpen()) zoomClose(); else window.hsZoom(zoomSrc()); }
+  $("zoom").addEventListener("click", zoomClose);
+
+  // ---- presentation mode: no chrome, full screen (F)
+  function togglePresent(force) {
+    const on = typeof force === "boolean" ? force : !document.body.classList.contains("present");
+    document.body.classList.toggle("present", on);
+    $("btn-present").textContent = on ? "Exit present" : "Present";
+    try {
+      if (on && !document.fullscreenElement) document.documentElement.requestFullscreen().catch(() => {});
+      if (!on && document.fullscreenElement) document.exitFullscreen().catch(() => {});
+    } catch (e) {}
+  }
+  document.addEventListener("fullscreenchange", () => { if (!document.fullscreenElement && document.body.classList.contains("present")) togglePresent(false); });
+  function renderSlide() {
+    const s = curItem();
+    $("s-eyebrow").textContent = s.eyebrow || "";
+    $("s-title").textContent = s.title || "";
+    $("s-body").innerHTML = s.tableFirst ? tableHtml(s.table) + bodyHtml(s.body) : bodyHtml(s.body) + tableHtml(s.table);
+    $("s-caption").textContent = s.caption || "";
+    const nccn = Array.isArray(s.nccn) ? s.nccn : (s.nccn ? [s.nccn] : []);
+    let media = "";
+    if (s.image) media += `<div class="imgbox">${imgTag(s.image)}</div>`;
+    nccn.forEach(p => media += `<div class="nccn">${imgTag(p)}</div>`);
+    $("s-media").innerHTML = media;
+    $("slideview").classList.toggle("nomedia", !media);
+    $("slideview").classList.toggle("textonly", !media);
+  }
+
+  function renderJump() {
+    let n = 0;
+    $("jump").innerHTML = lecture.items.map((it, i) => {
+      const cur = i === iIndex ? " cur" : "";
+      if (it.type === "slide") { n++; return `<button data-i="${i}" class="dot${cur}" title="${esc(it.title || it.id)}">${n}</button>`; }
+      return `<button data-i="${i}" class="${cur.trim()}">${it.id}</button>`;
+    }).join("");
+    document.querySelectorAll("#jump button").forEach(b => b.addEventListener("click", () => goTo(+b.dataset.i)));
+  }
+
+  // ---- questions
+  function optsOf(q) { return q.options || lecture.sharedOptions; }
+  function stemOf(q) { return q.stem || lecture.sharedStem; }
+
+  function renderQ() {
+    const q = curQ(); if (!q) return;
+    const qn = lecture.questions.indexOf(q) + 1;
+    $("q-kind").textContent = { pretest: "Pretest", quick: "Quick check", posttest: "Posttest" }[q.kind] + ` · question ${qn} of ${lecture.questions.length}`;
+    $("q-disease").textContent = q.disease || "";
+    $("q-stem").textContent = stemOf(q);
+    $("q-caption").textContent = q.imageCaption || "";
+    if (q.image) $("imgbox").innerHTML = imgTag(q.image);
+    else $("imgbox").innerHTML = `<div class="placeholder">${q.stem ? "Verbal case" : ""}</div>`;
+    $("opts").innerHTML = optsOf(q).map((o, i) => `<div class="opt" data-i="${i}"><div class="bar" style="width:0"></div><span class="letter">${LETTERS[i]}</span><span>${esc(o)} <span class="hotbadge">hot seat</span></span><span class="n"></span></div>`).join("");
+    $("explain").textContent = q.explain || ""; $("explain").classList.add("hidden");
+    // pretest and posttest answers are revealed together on the pre/post screen, never per question
+    $("btn-reveal").classList.toggle("hidden", noReveal(q));
+
+    // eligibility
+    const elig = q.eligible || lecture.eligibleByKind[q.kind] || [];
+    CLASSES.forEach((c, i) => $("e" + (i + 1)).checked = elig.includes(c));
+    $("hotbox").classList.toggle("hidden", q.hotSeat === "none" || elig.length === 0);
+    $("hot-eyebrow").textContent = q.hotSeat === "afterPoll" ? "Hot seat · pick after voting closes" : "Hot seat · pick first, then open voting";
+    clearHotUI();
+
+    // votes
+    unsubVotes = store.onVotes(sid, q.id, v => { votes = v || {}; renderVotes(); });
+    renderHot(); renderStatus();
+  }
+
+  function renderVotes() {
+    const q = curQ(); if (!q) return;
+    const n = Object.keys(votes).length;
+    $("st-n").textContent = n;
+    const counts = optsOf(q).map((_, i) => Object.values(votes).filter(v => v.choice === i).length);
+    const revealed = session && session.current && session.current.revealed;
+    document.querySelectorAll("#opts .opt").forEach((el, i) => {
+      el.querySelector(".bar").style.width = revealed && n ? (100 * counts[i] / n) + "%" : "0";
+      el.querySelector(".n").textContent = revealed ? `${counts[i]} · ${n ? Math.round(100 * counts[i] / n) : 0}%` : "";
+      el.classList.toggle("correct", !!revealed && i === q.correct);
+      el.classList.toggle("hot", !!revealed && session.hotSeat && session.hotSeat.answer === i);
+    });
+    $("explain").classList.toggle("hidden", !revealed || !q.explain);
+  }
+  function renderStatus() {
+    if (!session || !session.current || !isQuestion()) return;
+    const c = session.current;
+    $("st-state").textContent = c.revealed ? "revealed" : c.open ? "voting open" : "voting closed";
+    $("btn-open").classList.toggle("on", !!c.open);
+    renderVotes();
+  }
+
+  // ---- hot seat
+  // Firebase keys may not contain . # $ [ ] /  — roster names like "Isaiah A." need encoding.
+  function keyOf(c, n) { return c + "|" + n.replace(/[.#$\[\]\/]/g, "_"); }
+  function eligible() { return CLASSES.filter((c, i) => $("e" + (i + 1)).checked); }
+  function pool() {
+    const called = (session && session.called) || {};
+    const out = [];
+    eligible().forEach(c => (lecture.roster[c] || []).forEach(n => { if (!called[keyOf(c, n)]) out.push({ c, n }); }));
+    return out;
+  }
+  function refreshPool() {
+    if (!lecture) return;
+    const el = eligible(), p = pool();
+    const all = el.reduce((s, c) => s + (lecture.roster[c] || []).length, 0);
+    $("pool").textContent = el.length ? `${p.length} of ${all} not yet called` : "";
+    $("btn-pick").disabled = all === 0 || spinning;
+  }
+  CLASSES.forEach((c, i) => $("e" + (i + 1)).addEventListener("change", refreshPool));
+
+  async function pick() {
+    if (spinning || !session || !isQuestion()) return;
+    let p = pool();
+    let note = "";
+    if (!p.length) {
+      const el = eligible(); const patch = {};
+      el.forEach(c => (lecture.roster[c] || []).forEach(n => patch[keyOf(c, n)] = null));
+      await store.updateSession(sid, { called: patch });
+      p = pool(); if (!p.length) return;
+      note = "Everyone eligible had been called; fresh round.";
+    }
+    const choice = p[Math.floor(Math.random() * p.length)];
+    spinning = true; $("btn-pick").disabled = true; $("hot-name").classList.add("spin");
+    const steps = matchMedia("(prefers-reduced-motion: reduce)").matches ? 1 : 14; let i = 0;
+    await new Promise(res => { const tick = () => { if (i < steps) { const r = p[Math.floor(Math.random() * p.length)]; $("hot-name").textContent = r.n; $("hot-cls").textContent = r.c; i++; setTimeout(tick, 40 + i * 18); } else res(); }; tick(); });
+    $("hot-name").classList.remove("spin"); spinning = false;
+    const called = {}; called[keyOf(choice.c, choice.n)] = true;
+    await store.updateSession(sid, { hotSeat: { name: choice.n, cls: choice.c, answer: null }, called });
+    if (note) $("st-state").textContent = note;
+  }
+  $("btn-pick").addEventListener("click", pick);
+  document.querySelectorAll("#hot-answer button").forEach(b => b.addEventListener("click", () => hotAnswer(+b.dataset.a)));
+  async function hotAnswer(i) {
+    if (!session || !session.hotSeat || !isQuestion()) return;
+    const q = curQ(); const rec = {};
+    rec[q.id] = { name: session.hotSeat.name, cls: session.hotSeat.cls, answer: i };
+    await store.updateSession(sid, { hotSeat: { answer: i }, hotSeats: rec });
+  }
+  function clearHotUI() { $("hot-name").textContent = "—"; $("hot-cls").textContent = ""; document.querySelectorAll("#hot-answer button").forEach(b => b.classList.remove("chosen")); refreshPool(); }
+  function renderHot() {
+    if (!session || spinning) { refreshPool(); return; }
+    const h = session.hotSeat;
+    if (!h) { clearHotUI(); return; }
+    $("hot-name").textContent = h.name; $("hot-cls").textContent = h.cls;
+    document.querySelectorAll("#hot-answer button").forEach(b => b.classList.toggle("chosen", h.answer === +b.dataset.a));
+    refreshPool(); renderVotes();
+  }
+
+  // ---- keyboard
+  document.addEventListener("keydown", e => {
+    const t = e.target; if (t && (t.tagName === "INPUT" || t.tagName === "SELECT" || t.tagName === "TEXTAREA")) return;
+    if (e.key === "f" || e.key === "F") { togglePresent(); return; }
+    if (!$("v-reveal").classList.contains("hidden")) {
+      if (e.key === "ArrowRight") $("btn-rv-next").click();
+      else if (e.key === "ArrowLeft") $("btn-rv-prev").click();
+      else if (e.key === "Escape" || e.key === "v" || e.key === "V") $("btn-rv-back").click();
+      return;
+    }
+    if ($("v-run").classList.contains("hidden")) return;
+    if (e.key === "Escape" && zoomOpen()) { zoomClose(); return; }
+    if (e.key === "z" || e.key === "Z") { zoomToggle(); return; }
+    if (e.key === "v" || e.key === "V") { showReveal(0); return; }
+    if (e.key === "ArrowRight") { zoomClose(); $("btn-next").click(); return; }
+    if (e.key === "ArrowLeft") { zoomClose(); $("btn-prev").click(); return; }
+    if (!isQuestion()) return;
+    if (e.key === " ") { e.preventDefault(); pick(); }
+    else if (/^[a-dA-D]$/.test(e.key)) hotAnswer(LETTERS.indexOf(e.key.toUpperCase()));
+    else if (e.key === "o" || e.key === "O") $("btn-open").click();
+    else if (e.key === "x" || e.key === "X") $("btn-close").click();
+    else if (e.key === "r" || e.key === "R") $("btn-reveal").click();
+    else if (e.key === "Escape") store.updateSession(sid, { hotSeat: { __set: null } });
+  });
+
+  // ---- pre/post reveal: one pretest/posttest pair per screen, both bar sets, correct marked, the one-line reason
+  let rvIndex = 0, rvPairs = [];
+  async function showReveal(i) {
+    allVotesCache = await store.getAllVotes(sid);
+    rvPairs = lecture.questions.filter(q => q.kind === "pretest" && q.pairedWith)
+      .map(pre => ({ pre, post: lecture.questions.find(q => q.id === pre.pairedWith) })).filter(p => p.post);
+    if (!rvPairs.length) { showSummary(); return; }
+    rvIndex = Math.max(0, Math.min(i, rvPairs.length - 1));
+    renderReveal(); show("v-reveal");
+  }
+  function renderReveal() {
+    const V = allVotesCache || {};
+    const { pre, post } = rvPairs[rvIndex];
+    const opts = optsOf(pre);
+    const tally = q => { const vs = Object.values(V[q.id] || {}); return { n: vs.length, c: opts.map((_, i) => vs.filter(v => v.choice === i).length) }; };
+    const a = tally(pre), b = tally(post);
+    const pct = (c, n) => n ? Math.round(100 * c / n) : 0;
+    const rows = opts.map((o, i) => `<div class="rv-row${i === pre.correct ? " correct" : ""}">
+        <div class="rv-letter">${LETTERS[i]}</div>
+        <div class="rv-opt">${esc(o)}</div>
+        <div class="rv-bars">
+          <div class="rv-bar pre"><div class="fill" style="width:${pct(a.c[i], a.n)}%"></div><span>Pre ${pct(a.c[i], a.n)}%</span></div>
+          <div class="rv-bar post"><div class="fill" style="width:${pct(b.c[i], b.n)}%"></div><span>Post ${pct(b.c[i], b.n)}%</span></div>
+        </div></div>`).join("");
+    const img = pre.image ? `<div class="imgbox">${imgTag(pre.image)}</div>` : "";
+    $("reveal-body").innerHTML = `${img}<div class="rv-text">
+        <p class="eyebrow">Pretest vs posttest · ${rvIndex + 1} of ${rvPairs.length}</p>
+        <div class="disease">${esc(pre.disease || "")}</div>
+        <div class="stem">${esc(stemOf(pre))}</div>
+        <div class="caption">${esc(pre.imageCaption || "")}</div>
+        <div class="rv-rows">${rows}</div>
+        <div class="explain">${esc(pre.explain || "")}</div>
+      </div>`;
+    $("reveal-body").classList.toggle("noimg", !img);
+    const pc = pct(a.c[pre.correct], a.n), qc = pct(b.c[post.correct], b.n);
+    $("rv-status").innerHTML = `<b>${pc}% → ${qc}%</b> correct · n ${a.n} / ${b.n}`;
+    $("btn-rv-prev").disabled = rvIndex === 0;
+    $("btn-rv-next").textContent = rvIndex === rvPairs.length - 1 ? "Summary ▶" : "Next pair ▶";
+  }
+  $("btn-rv-prev").addEventListener("click", () => { if (rvIndex > 0) { rvIndex--; renderReveal(); } });
+  $("btn-rv-next").addEventListener("click", () => { if (rvIndex < rvPairs.length - 1) { rvIndex++; renderReveal(); } else showSummary(); });
+  $("btn-rv-back").addEventListener("click", () => show("v-run"));
+  $("btn-rv-summary").addEventListener("click", showSummary);
+
+  // ---- summary (question items only)
+  async function showSummary() {
+    allVotesCache = await store.getAllVotes(sid);
+    const V = allVotesCache;
+    const pct = (num, den) => den ? Math.round(100 * num / den) : 0;
+    const correctRate = (q, filter) => {
+      const vs = Object.values(V[q.id] || {}).filter(filter || (() => true));
+      return { n: vs.length, c: vs.filter(v => v.choice === q.correct).length };
+    };
+    const pres = lecture.questions.filter(q => q.kind === "pretest" && q.pairedWith);
+    let html = "";
+    let totPreC = 0, totPreN = 0, totPostC = 0, totPostN = 0;
+    pres.forEach(pre => {
+      const post = lecture.questions.find(q => q.id === pre.pairedWith); if (!post) return;
+      const a = correctRate(pre), b = correctRate(post);
+      totPreC += a.c; totPreN += a.n; totPostC += b.c; totPostN += b.n;
+      const preV = V[pre.id] || {}, postV = V[post.id] || {};
+      const both = Object.keys(preV).filter(d => postV[d]);
+      const improved = both.filter(d => preV[d].choice !== pre.correct && postV[d].choice === post.correct).length;
+      const regressed = both.filter(d => preV[d].choice === pre.correct && postV[d].choice !== post.correct).length;
+      html += `<div style="margin:12px 0"><div><b>${pre.id} → ${post.id}</b> · ${esc(pre.disease || pre.stem || "")} · correct: ${LETTERS[pre.correct]}</div>
+        <div class="minibar"><span>Pre</span><div class="track"><div class="fill" style="width:${pct(a.c, a.n)}%"></div></div><span>${pct(a.c, a.n)}% (${a.c}/${a.n})</span></div>
+        <div class="minibar ok"><span>Post</span><div class="track"><div class="fill" style="width:${pct(b.c, b.n)}%"></div></div><span>${pct(b.c, b.n)}% (${b.c}/${b.n})</span></div>
+        <div class="muted" style="font-size:.9rem">${esc(pre.explain || "")}</div>
+        <div class="muted" style="font-size:.9rem">Paired devices: ${both.length} · improved ${improved} · regressed ${regressed}</div></div>`;
+    });
+    const byClass = CLASSES.map(c => {
+      let pc = 0, pn = 0, qc = 0, qn = 0;
+      pres.forEach(pre => { const post = lecture.questions.find(q => q.id === pre.pairedWith); if (!post) return;
+        const a = correctRate(pre, v => v.class === c), b = correctRate(post, v => v.class === c); pc += a.c; pn += a.n; qc += b.c; qn += b.n; });
+      return pn || qn ? `${c}: ${pct(pc, pn)}% → ${pct(qc, qn)}%` : null;
+    }).filter(Boolean).join(" · ");
+    $("sum-pairs").innerHTML = `<div class="delta">${pct(totPreC, totPreN)}% → ${pct(totPostC, totPostN)}%</div><div class="muted">${byClass}</div>` + html;
+
+    let rows = `<tr><th>Question</th><th>Kind</th><th>n</th><th>% correct</th><th>Hot seat</th></tr>`;
+    lecture.questions.forEach(q => {
+      const r = correctRate(q);
+      const hs = (session && session.hotSeats || {})[q.id];
+      const hsTxt = hs ? `${esc(hs.name)} (${hs.cls}) · ${LETTERS[hs.answer]} ${hs.answer === q.correct ? "✓" : "✗"}` : "—";
+      rows += `<tr><td>${q.id}</td><td>${q.kind}</td><td>${r.n}</td><td>${pct(r.c, r.n)}%</td><td>${hsTxt}</td></tr>`;
+    });
+    $("sum-table").innerHTML = rows;
+    show("v-summary");
+  }
+
+  $("btn-csv").addEventListener("click", () => {
+    const V = allVotesCache || {};
+    const lines = ["sessionId,questionId,kind,deviceId,class,choice,correctChoice,isCorrect,ts"];
+    lecture.questions.forEach(q => {
+      for (const d in (V[q.id] || {})) { const v = V[q.id][d];
+        lines.push([sid, q.id, q.kind, d, v.class || "", v.choice, q.correct, v.choice === q.correct ? 1 : 0, v.ts || ""].join(",")); }
+    });
+    const hsAll = (session && session.hotSeats) || {};
+    for (const qid in hsAll) { const h = hsAll[qid]; const q = lecture.questions.find(x => x.id === qid);
+      lines.push([sid, qid, "hotseat", h.name.replace(/,/g, " "), h.cls, h.answer, q ? q.correct : "", q && h.answer === q.correct ? 1 : 0, ""].join(",")); }
+    const blob = new Blob([lines.join("\n")], { type: "text/csv" });
+    const a = document.createElement("a"); a.href = URL.createObjectURL(blob); a.download = `hotseat-${lecture.id}-${sid}.csv`; a.click();
+  });
+})();
+</script>
+</body>
+</html>

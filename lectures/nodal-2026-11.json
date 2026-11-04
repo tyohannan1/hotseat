@@ -1,0 +1,876 @@
+{
+ "id": "nodal-2026-11",
+ "title": "Disease-Specific Reporting: Why Nodal Nomenclature Matters",
+ "presenter": "Thomas Yohannan, MD",
+ "notes": "Speaker notes and the full prose are in LECTURE.md. Slides keep only what is projected.",
+ "roster": {
+  "R1": [
+   "Isaiah A.",
+   "Younes A.",
+   "Kylie C.",
+   "Zoe F.",
+   "Cindy F.",
+   "Gary G.",
+   "Lyle K.",
+   "Emily L.",
+   "Lyanne L.",
+   "Olesya M.",
+   "Michelle N.",
+   "Shinji R.",
+   "Jenny R.",
+   "Siddharth V.",
+   "Audrey Z."
+  ],
+  "R2": [
+   "Seoiyoung A.",
+   "Ryan B.",
+   "Ankush B.",
+   "Pratheek B.",
+   "Angela H.",
+   "Matt H.",
+   "Renaid K.",
+   "Lydia K.",
+   "Claudio M.",
+   "Kevin N.",
+   "Santhoshini R.",
+   "Junmi S.",
+   "Juan S.",
+   "Ramtin T.",
+   "Brianna W."
+  ],
+  "R3": [
+   "Daniela B.",
+   "Shin Mei C.",
+   "Devan D.",
+   "Priya G.",
+   "Connor H.",
+   "Matthew L.",
+   "Larry L.",
+   "Brian L.",
+   "Kathleen M.",
+   "Nikki O.",
+   "John R.",
+   "Christopher S.",
+   "Teguru T.",
+   "Jocelyn Y.",
+   "Richard W."
+  ],
+  "R4": [
+   "Barrett A.",
+   "Priyanka B.",
+   "Kaelan C.",
+   "Nikita D.",
+   "Kevin D.",
+   "Anne H.",
+   "Jose M.",
+   "John M.",
+   "Simona M.",
+   "Alexander M.",
+   "Simon P.",
+   "Shan S.",
+   "Maximilian S.",
+   "Justin Y.",
+   "Theresa Y."
+  ]
+ },
+ "sharedStem": "Does node A versus node B change management?",
+ "sharedOptions": [
+  "No, same management either way",
+  "Yes, changes how much the surgeon takes or how much the radiation field covers",
+  "Yes, takes surgery off the table or puts systemic therapy before surgery",
+  "Yes, changes intent from curative to palliative"
+ ],
+ "eligibleByKind": {
+  "pretest": [
+   "R3",
+   "R4"
+  ],
+  "quick": [
+   "R1"
+  ],
+  "posttest": []
+ },
+ "runOfShow": [
+  {
+   "label": "Opening",
+   "minutes": 3,
+   "from": "op-thesis"
+  },
+  {
+   "label": "Pretest",
+   "minutes": 7,
+   "from": "pre1"
+  },
+  {
+   "label": "Case 1 · common iliac",
+   "minutes": 8,
+   "from": "c1-lazy"
+  },
+  {
+   "label": "Case 2 · paratracheal",
+   "minutes": 8,
+   "from": "c2-lazy"
+  },
+  {
+   "label": "Case 3 · inguinal",
+   "minutes": 8,
+   "from": "c3-lazy"
+  },
+  {
+   "label": "Case 4 · axilla",
+   "minutes": 8,
+   "from": "c4-lazy"
+  },
+  {
+   "label": "Close",
+   "minutes": 3,
+   "from": "close-supraclav"
+  },
+  {
+   "label": "Posttest",
+   "minutes": 5,
+   "from": "post1"
+  }
+ ],
+ "lobbyNotes": [
+  "Leave the QR up a full minute; residents arrive late. Say the session code out loud.",
+  "Everyone picks their year on the phone once. Then Begin."
+ ],
+ "questionNotes": {
+  "pretest": [
+   "**Order:** O to open the poll, let everyone vote, X to close, then Space to pick the hot seat (R3 or R4). They give their letter and one sentence of reasoning. Tap A–D to record it.",
+   "Say nothing beyond \"noted\" and move on. Your face does nothing during the pretest. No reveal; the answers appear only on the pre/post screen after the posttest."
+  ],
+  "quick": [
+   "**Order:** Space to pick the hot seat first (R1), they answer aloud, then O to open the room vote, X to close, R to reveal. Anchoring is fine here; it is teaching, not measurement.",
+   "Quick checks test the rule on a case not shown in the pretest, never the pretest item itself."
+  ],
+  "posttest": [
+   "Same question, same image, same options. No hot seat. O to open, close after about 45 seconds, → to move on. Do not reveal; after post4 press V for the pre/post screen."
+  ]
+ },
+ "items": [
+  {
+   "type": "slide",
+   "id": "op-thesis",
+   "eyebrow": "Opening",
+   "title": "Ask what disease is being staged. That decides which words matter.",
+   "body": [
+    "**Lymphoma** reads nodes by region. Inside a region, \"iliac\" or \"axillary\" is enough. What counts is how many regions, and which side of the diaphragm.",
+    "**Carcinomas** read nodes against a boundary, and the boundary is different for every disease.",
+    "Same scan: \"common iliac\" for prostate, \"4R\" for lung, \"medial to pectoralis minor\" for breast.",
+    "> A lazy word quietly changes what the oncologist does."
+   ],
+   "notes": [
+    "Before you describe a node, ask what disease is being staged, because that decides which words matter.",
+    "Lymphoma reads nodes by region, so inside a region you can say \"iliac\" or \"axillary\" and stop; what lymphoma counts is how many regions and which side of the diaphragm.",
+    "Carcinomas read nodes against a boundary that is different for every disease, so the same scan demands \"common iliac\" for prostate, \"4R\" for lung, \"medial to pectoralis minor\" for breast. A lazy word quietly changes what the oncologist does.",
+    "This talk is four of those boundaries. The staging letters are the reason the words matter; the words are the point."
+   ]
+  },
+  {
+   "type": "slide",
+   "id": "op-regions",
+   "eyebrow": "Opening",
+   "title": "Lymphoma counts regions",
+   "image": "img/dx/regions-lymphoma.svg",
+   "caption": "Ann Arbor regions as used by Lugano. The dashed line is the diaphragm.",
+   "body": [
+    "- One region is one area on this map. \"Iliac\" is a complete word; so is \"axillary\".",
+    "- Stage counts regions and sides of the diaphragm, not which vessel the node sits on.",
+    "- None of today's four lines moves a node between regions."
+   ],
+   "notes": [
+    "This is the lymphoma map. Point at the iliac region and the axillary region: the whole chain is one word.",
+    "Say it once: stage I one region, II two or more on one side of the diaphragm, III both sides, IV extranodal. Bulk and number of regions are what the lymphoma team wants from you.",
+    "Then the contrast: carcinomas do not use this map. They use a line, and the line is different for every disease. That is the next slide."
+   ]
+  },
+  {
+   "type": "slide",
+   "id": "op-landmarks",
+   "eyebrow": "Opening",
+   "title": "Four landmarks",
+   "body": [
+    "- The common iliac bifurcation",
+    "- The left lateral wall of the trachea",
+    "- The dentate line and the mesorectal fascia",
+    "- The pectoralis minor",
+    "",
+    "Each one is a line where the same node changes its name and its consequence for at least one disease. For lymphoma, none of them matter.",
+    "",
+    "Pretest next. You were not expected to know these. The next 40 minutes should make the posttest feel obvious."
+   ],
+   "notes": [
+    "These are the four lines you will learn to name today, one per case. Each one is a boundary where the same node changes its name and its consequence for at least one disease, and for lymphoma none of them matter at all.",
+    "Say out loud: the pretest answers are coming, they were not expected to know them, and the point of the next 40 minutes is to make the posttest feel obvious.",
+    "Pretest next. Four questions, same stem and options every time, room votes on phones, no answers revealed."
+   ],
+   "image": "img/dx/four-lines.svg",
+   "caption": "The four lines, one per case. Each comes back as its own slide."
+  },
+  {
+   "type": "question",
+   "id": "pre1",
+   "kind": "pretest",
+   "pairedWith": "post1",
+   "hotSeat": "afterPoll",
+   "image": "img/pre1-pelvis-fdg.png",
+   "imageCaption": "FDG PET/CT pelvis, read it as a PSMA study. Left: the aorto-iliac vessels with bone removed, lines at the levels of A and B. Name each node's station from the vessel it sits on.",
+   "disease": "Prostate cancer, newly diagnosed, no other disease",
+   "correct": 2,
+   "explain": "Below the bifurcation the node is pelvic and gets radiated with the prostate; above it the node counts as metastatic and the patient goes to hormone therapy and drugs instead.",
+   "source": "AutoPET PETCT_d9da6129f8, 2002-04-14, Melanoma. CT series 4.000000-GK p.v.3-98719, PET series 5.000000-PET corr.-53940. A: lesion #4 (3.7 mL, SUVmax 34.9, z 630 mm); B: lesion #6 (1.2 mL, SUVmax 12.6, z 669 mm)."
+  },
+  {
+   "type": "question",
+   "id": "pre2",
+   "kind": "pretest",
+   "pairedWith": "post2",
+   "hotSeat": "afterPoll",
+   "image": "img/pre2-chest-fdg.png",
+   "imageCaption": "FDG PET/CT chest, left lung primary. A: 4L. B: 4R.",
+   "disease": "Lung adenocarcinoma, left lung",
+   "correct": 2,
+   "explain": "Same side as the tumor (4L), the surgeon may still operate; opposite side (4R), surgery is off the table and the patient gets chemoradiation.",
+   "source": "AutoPET PETCT_442a09f90e, 2002-03-16, Lung Cancer. CT series 5.000000-GK p.v.2-46154, PET series 9.000000-PET corr.-11580. A: lesion #9 (3.2 mL, SUVmax 5.8, z 174 mm); B: lesion #3 (19.9 mL, SUVmax 7.9, z 147 mm)."
+  },
+  {
+   "type": "question",
+   "id": "pre3",
+   "kind": "pretest",
+   "pairedWith": "post3",
+   "hotSeat": "afterPoll",
+   "image": "img/pre3-pelvis-fdg.png",
+   "imageCaption": "FDG PET/CT pelvis, two patients. A: right pelvic sidewall mass behind the external iliac vessels. B: right groin, at the femoral head.",
+   "disease": "Anal canal squamous cell carcinoma",
+   "correct": 0,
+   "explain": "Both nodes count as regional for anal cancer and both are already inside the standard radiation field.",
+   "source": "AutoPET PETCT_cbbc9e2879, 2006-01-16, Lymphoma. CT series 4.000000-GK p.v.3 s-53013, PET series 8.000000-PET corr.-60905. A: lesion #2 (58.0 mL, SUVmax 16.2, z -889 mm). AutoPET PETCT_335a00191d, 2001-02-16, Lung Cancer. CT series 8.000000-GK p.v.2-14948, PET series 9.000000-PET corr.-84524. B: lesion #10 (7.4 mL, SUVmax 14.3, z -913 mm)."
+  },
+  {
+   "type": "question",
+   "id": "pre4",
+   "kind": "pretest",
+   "pairedWith": "post4",
+   "hotSeat": "afterPoll",
+   "image": "img/pre4-axilla-fdg.png",
+   "imageCaption": "FDG PET/CT axilla. A: level II. B: level III, medial to pectoralis minor.",
+   "disease": "ER-positive HER2-negative breast cancer, ipsilateral",
+   "correct": 2,
+   "explain": "Level II goes to surgery first; a node medial to pectoralis minor sends the patient to systemic therapy before any surgery.",
+   "source": "AutoPET PETCT_f24f3ce1da, 2001-09-14, Melanoma. CT series 5.000000-GK p.v.2-28878, PET series 6.000000-PET corr.-93674. A: lesion #4 (5.8 mL, SUVmax 35.8, z 1156 mm); B: lesion #3 (9.0 mL, SUVmax 56.2, z 1146 mm)."
+  },
+  {
+   "type": "slide",
+   "id": "c1-lazy",
+   "eyebrow": "Case 1 · The common iliac node",
+   "title": "The lazy sentence",
+   "body": [
+    "> PSMA-avid right iliac lymph node, 1.2 cm.",
+    "",
+    "Not wrong. Incomplete for this disease.",
+    "The urologist cannot tell whether this patient gets curative pelvic radiation or starts systemic therapy. They call you, or re-read the scan.",
+    "For lymphoma, the same sentence would have been complete."
+   ],
+   "notes": [
+    "Put the lazy sentence up first. The urologist cannot tell from this whether the patient is a candidate for curative pelvic radiation or needs to start systemic therapy, so they call you or re-read the scan.",
+    "Say this out loud the first time: the sentence is not wrong, it is incomplete for this disease. For lymphoma the same sentence would have been complete."
+   ]
+  },
+  {
+   "type": "slide",
+   "id": "c1-line",
+   "eyebrow": "Case 1 · The common iliac node",
+   "title": "The line: the common iliac bifurcation",
+   "image": "img/dx/line1-pelvis.svg",
+   "caption": "Coronal schematic. Gold line = the common iliac bifurcation, the edge of the pelvis for prostate cancer.",
+   "body": [
+    "- Below the line (external, internal iliac, obturator): N1. Pelvic radiation with the prostate, curative intent.",
+    "- Above the line (common iliac, para-aortic): M1a. Systemic therapy leads.",
+    "- Bladder cancer: common iliac is still regional (N3). Lymphoma: one chain, one region.",
+    "- Report the vessel the node sits on and which side of the bifurcation."
+   ],
+   "notes": [
+    "Teach the line before the image. Walk the vessel tree top down: aorta, aortic bifurcation at L4, common iliac, then the bifurcation into external and internal iliac. The gold line is the common iliac bifurcation.",
+    "For prostate: below is N1 and radiated with the prostate; above is M1a and systemic therapy leads. Then the two contrasts on the right: bladder cancer keeps the common iliac node regional, lymphoma does not care.",
+    "An R1 who has this slide can answer the quick check (bladder, same node): the line does not matter for bladder."
+   ]
+  },
+  {
+   "type": "slide",
+   "id": "c1-pair",
+   "eyebrow": "Case 1 · The common iliac node",
+   "title": "External iliac vs common iliac",
+   "image": "img/case1-pelvis-fdg.png",
+   "caption": "Fresh FDG PET/CT, read it as PSMA. Left: the vessels with bone removed. A sits on the external iliac just past the iliac bifurcation. B sits on the common iliac just past the aortic bifurcation.",
+   "body": [
+    "# Lymphoma (DLBCL)",
+    "One iliac chain is one region. Above or below the bifurcation changes nothing. \"Right iliac\" and stop.",
+    "# Prostate",
+    "The bifurcation is the edge of the pelvis.",
+    "- Below it: radiated with the prostate, curative intent.",
+    "- Above it: counted as metastatic. Hormones and drugs instead.",
+    "The report must say which side of the bifurcation, with the vessel named."
+   ],
+   "notes": [
+    "Fresh study, FDG standing in for PSMA. The left panel is the aorto-iliac tree with bone removed, with a line at each node's level; the axial CT and fused pairs are at those levels. B is the large node anterior-left of L5, just below where the aorta splits: a common iliac node. A is the node lateral to the left common iliac just below where it splits into external and internal: an external iliac node. Draw the bifurcation on the image (Z to zoom).",
+    "**Lymphoma:** the iliac chain on one side is one region. Above or below the bifurcation changes nothing; the report can say \"right iliac\" and stop.",
+    "**Prostate:** the bifurcation is the edge of the pelvis. Below it, the node gets radiated with the prostate. Above it, the node counts as metastatic and the patient goes to hormone therapy and drugs instead. The report has to say which side of the bifurcation, with the vessel named."
+   ],
+   "source": "AutoPET PETCT_791ec15924, 2001-04-16, Melanoma. CT series 5.000000-GK p.v.2-41675, PET series 6.000000-PET corr.-15444. A: lesion #3 (10.6 mL, SUVmax 12.0, z 663 mm); B: lesion #4 (9.3 mL, SUVmax 13.8, z 702 mm)."
+  },
+  {
+   "type": "slide",
+   "id": "c1-nccn",
+   "eyebrow": "Case 1 · The common iliac node",
+   "title": "Same node, different page",
+   "caption": "NCCN Prostate Cancer v1.2027, PROS-7 and PROS-14",
+   "nccn": [
+    "img/nccn/prostate-n1.png",
+    "img/nccn/prostate-m1.png"
+   ],
+   "body": [
+    "- Below the bifurcation: **N1**, the regional page. RT + ADT + abiraterone, curative intent.",
+    "- Above it: **M1a**, the metastatic page. Systemic therapy. RT to the primary only for low-volume disease."
+   ],
+   "notes": [
+    "Prostate guideline, N1 on the regional page (PROS-7) and M1 on the metastatic page (PROS-14). \"Same node, different page.\"",
+    "Verified against v1.2027: RT to the primary is still offered for synchronous low-volume mCSPC, and the low-burden definition explicitly includes nonregional node-only disease, so an M1a patient qualifies."
+   ]
+  },
+  {
+   "type": "question",
+   "id": "qc1",
+   "kind": "quick",
+   "hotSeat": "beforePoll",
+   "image": null,
+   "stem": "Same common iliac node as the prostate case. Now the primary is bladder cancer. Does the bifurcation matter here?",
+   "options": [
+    "No, still regional and still in the plan",
+    "Yes, now metastatic",
+    "Yes, changes the surgery only",
+    "Cannot say without MRI"
+   ],
+   "correct": 0,
+   "explain": "For bladder the common iliac node is still regional (a higher N category, but regional) and still part of the surgical and radiation plan."
+  },
+  {
+   "type": "slide",
+   "id": "c2-lazy",
+   "eyebrow": "Case 2 · The paratracheal node",
+   "title": "The lazy sentence",
+   "body": [
+    "> FDG-avid paratracheal lymph node, 1.5 cm.",
+    "",
+    "The thoracic surgeon cannot tell whether this patient is still theirs.",
+    "Right or left is the whole referral. The report did not say."
+   ],
+   "notes": [
+    "The thoracic surgeon cannot tell whether this patient is still theirs. Right or left is the whole referral, and the report did not say."
+   ]
+  },
+  {
+   "type": "slide",
+   "id": "c2-line",
+   "eyebrow": "Case 2 · The paratracheal node",
+   "title": "The line: the left lateral wall of the trachea",
+   "image": "img/dx/line2-trachea.svg",
+   "caption": "Axial schematic at the lower paratracheal level. Gold line = left tracheal wall, not the midline.",
+   "body": [
+    "- Right and left paratracheal stations are split by the left lateral wall of the trachea.",
+    "- A node left of midline but medial to that wall is still 4R (or 2R).",
+    "- Same side as the tumor: N2, surgery may still be possible. Opposite side: N3, surgery off.",
+    "- Station 7 is midline and always counts as N2."
+   ],
+   "notes": [
+    "Teach the station rule before the image. The IASLC boundary between R and L paratracheal stations is the left lateral wall of the trachea, so a node sitting just left of midline is still right-sided.",
+    "Then the consequence: same side N2, opposite side N3. Name the exception, station 7 (subcarinal) is midline and always N2; that is the quick check.",
+    "If asked about 2 versus 4: the top of the aortic arch on the left, the innominate vein crossing on the right."
+   ]
+  },
+  {
+   "type": "slide",
+   "id": "c2-pair",
+   "eyebrow": "Case 2 · The paratracheal node",
+   "title": "4R vs 4L",
+   "image": "img/case2-chest-fdg.png",
+   "caption": "Fresh FDG PET/CT chest at the thoracic inlet. The teal line is the left lateral wall of the trachea. Not the midline.",
+   "body": [
+    "# Lymphoma",
+    "The whole mediastinum is one region. Right or left changes nothing. The lymphoma team wants the size of the mass.",
+    "# Lung",
+    "- Same side as the tumor (N2): the surgeon is still in the room. Surgery may follow chemo-immunotherapy.",
+    "- Opposite side (N3): surgery is off the table. Chemoradiation.",
+    "A node left of midline but medial to the left tracheal wall is still 4R. Name the station, not the position."
+   ],
+   "notes": [
+    "Fresh FDG PET/CT chest. The teal line is drawn on the left lateral wall of the trachea, on both the CT and the fused panel. Not the midline: the left wall. The node anterior-right of the trachea is 2R; the node lateral to the line is 2L.",
+    "**Lymphoma:** the whole mediastinum is one region. Right or left paratracheal changes nothing; what the lymphoma team wants from the chest is how big the mass is.",
+    "**Lung:** the side of the node relative to the tumor is the decision. Same side, the surgeon is still in the room and the patient may still get an operation after chemo-immunotherapy. Opposite side, surgery is off the table and the patient gets chemoradiation.",
+    "A node just left of midline but medial to the left tracheal wall is still 4R, still same-side for a right lung tumor, so the report has to name the station, not describe the position."
+   ],
+   "source": "AutoPET PETCT_db3daf78d2, 2000-10-30, Lymphoma. CT series 5.000000-GK p.v.2-47450, PET series 10.000000-PET corr.-51485. A: lesion #5 (7.1 mL, SUVmax 10.1, z -459 mm); B: lesion #9 (1.3 mL, SUVmax 8.0, z -453 mm)."
+  },
+  {
+   "type": "slide",
+   "id": "c2-nccn",
+   "eyebrow": "Case 2 · The paratracheal node",
+   "title": "Same side can still reach surgery. Opposite side cannot.",
+   "caption": "NCCN Non-Small Cell Lung Cancer v9.2026",
+   "nccn": [
+    "img/nccn/lung-n2.png",
+    "img/nccn/lung-n3.png"
+   ],
+   "body": [
+    "- **N2** (NSCL-10): chemoradiation, or systemic therapy then surgery if no progression. Fit, single-station, non-bulky N2 only.",
+    "- **N3** (NSCL-13): definitive concurrent chemoradiation."
+   ],
+   "notes": [
+    "NSCLC stage III: the same-side branch (NSCL-10) that still reaches surgery and the opposite-side branch (NSCL-13) that goes to chemoradiation.",
+    "Footnote on NSCL-10: only selected N2 (fit, single-station, non-bulky, lobectomy only) goes systemic therapy then surgery. UCSF-specific practice not verified; say \"may\" not \"will\"."
+   ]
+  },
+  {
+   "type": "question",
+   "id": "qc2",
+   "kind": "quick",
+   "hotSeat": "beforePoll",
+   "image": null,
+   "stem": "Left lower lobe lung cancer, FDG-avid subcarinal node, nothing else. Same-side or opposite-side rule?",
+   "options": [
+    "Same side; surgery still possible",
+    "Opposite side; surgery off the table",
+    "Depends on which side of midline",
+    "Supraclavicular rule applies"
+   ],
+   "correct": 0,
+   "explain": "Station 7 is a midline station and counts as same-side (N2) for every tumor. Station 7 is the exception; every other paired station follows the side rule."
+  },
+  {
+   "type": "slide",
+   "id": "c2-aside",
+   "eyebrow": "Case 2 · Aside, cut first if behind",
+   "title": "One node, three services",
+   "body": [
+    "The same superior mediastinal node is central-compartment disease for thyroid cancer and goes to the thyroid surgeon.",
+    "- Lung: station and side rule",
+    "- Lymphoma: one region, report the size",
+    "- Thyroid: central compartment, neck dissection"
+   ],
+   "notes": [
+    "Cut this first if behind. The same superior mediastinal node is central-compartment disease for thyroid cancer and goes to the thyroid surgeon. One node, three services."
+   ]
+  },
+  {
+   "type": "slide",
+   "id": "c3-lazy",
+   "eyebrow": "Case 3 · The inguinal node",
+   "title": "The lazy sentence",
+   "body": [
+    "> FDG-avid pelvic and inguinal adenopathy.",
+    "",
+    "For an anal primary, a complete report.",
+    "For a rectal primary, a stage IV diagnosis hidden in a phrase. The surgeon goes back to the images to find out which nodes you meant."
+   ],
+   "notes": [
+    "For an anal primary that is a complete report. For a rectal primary it is a stage IV diagnosis hidden in a phrase, and the colorectal surgeon has to go back to the images to find out which nodes you meant."
+   ]
+  },
+  {
+   "type": "slide",
+   "id": "c3-line",
+   "eyebrow": "Case 3 · The inguinal node",
+   "title": "The lines: the dentate line and the mesorectal fascia",
+   "image": "img/dx/line3-anorectal.svg",
+   "caption": "Coronal schematic. Gold line = dentate line; dashed teal = mesorectal fascia.",
+   "body": [
+    "- Anal canal SCC: inguinal, mesorectal and internal iliac are N1a; external iliac is N1b. All regional, all in the field.",
+    "- Rectal adenocarcinoma: mesorectal, internal iliac and obturator are regional. External and common iliac are M1.",
+    "- Inguinal is regional for rectal cancer only if the tumor reaches below the dentate line.",
+    "- Same node, different primary, different page."
+   ],
+   "notes": [
+    "This case flips the pattern: the node stays, the primary moves. Teach both lists before the image.",
+    "Anal cancer drains to the groin, so an inguinal node is part of the disease and already inside the radiation field; external iliac is still regional (N1b).",
+    "Rectal cancer above the dentate line: inguinal and external iliac nodes are distant. The quick check (anal cancer, external iliac node) is answerable from the first list."
+   ]
+  },
+  {
+   "type": "slide",
+   "id": "c3-pair",
+   "eyebrow": "Case 3 · The inguinal node",
+   "title": "Internal iliac vs inguinal",
+   "image": "img/case3-pelvis-fdg.png",
+   "caption": "Fresh FDG PET/CT pelvis, two patients. Top: a right pelvic sidewall mass behind the external iliac vessels, abutting the bladder. Bottom: left inguinal nodes in front of the femoral head. Now move the primary.",
+   "body": [
+    "# Lymphoma",
+    "Pelvis and groin are different regions, but a single node in either is the same stage and the same treatment.",
+    "# Anal cancer",
+    "The groin is where anal cancer drains. An inguinal node is part of the disease and already inside the radiation field. Dose changes, plan does not.",
+    "# Rectal cancer",
+    "The same inguinal node means the cancer has left the pelvis. Treated as metastatic. The curative surgery conversation changes.",
+    "The dentate line, a centimeter of primary location, decides which sentence the report supports."
+   ],
+   "notes": [
+    "Fresh FDG PET/CT pelvis with a low primary, two patients stacked: top, a right pelvic sidewall mass; bottom, left inguinal nodes at the femoral head, in the groin fat beside the femoral vessels. This case flips the pattern: here the node is the same and the primary moves.",
+    "**Lymphoma:** the pelvic nodes and the groin nodes are different regions, but a single node in either is the same stage and the same treatment.",
+    "**Anal cancer:** the groin is where anal cancer drains, so an inguinal node is part of the disease and already inside the radiation field. The report changes the dose, not the plan.",
+    "**Rectal cancer:** the same inguinal node means the cancer has left the pelvis. The patient is treated as metastatic and the curative surgery conversation changes. The dentate line, a centimeter of primary location, decides which of those two sentences the report supports."
+   ],
+   "source": "AutoPET PETCT_d5103c8fbf, 2006-04-14, Melanoma. CT series 6.000000-GK p.v.3 s-60673, PET series 4.000000-PET corr.-56571. A: lesion #1 (119.7 mL, SUVmax 31.6, z 556 mm). AutoPET PETCT_1285b86bea, 2006-02-24, Melanoma. CT series 4.000000-GK p.v.3 s-80878, PET series 9.000000-PET corr.-99271. B: lesion #87 (4.3 mL, SUVmax 47.1, z -956 mm)."
+  },
+  {
+   "type": "slide",
+   "id": "c3-nccn",
+   "eyebrow": "Case 3 · The inguinal node",
+   "title": "Two tables, one node",
+   "caption": "NCCN Anal Carcinoma v3.2026 ST-1 · NCCN Rectal Cancer v2.2026 REC-A",
+   "nccn": [
+    "img/nccn/anal-nodes.png",
+    "img/nccn/rectal-nodes.png"
+   ],
+   "body": [
+    "- **Anal**: inguinal and internal iliac are N1a, external iliac is N1b. All regional, all in the field.",
+    "- **Rectal**: internal iliac, obturator and mesorectal are regional. Common and external iliac are distant. Inguinal is regional only below the dentate line."
+   ],
+   "notes": [
+    "Anal and rectal nodal definitions side by side, inguinal highlighted on each. No regimens; the two tables are the slide.",
+    "Note the rectal staging table itself never names regional nodes; the definition on the slide is from the pelvic MRI reporting principles (REC-A): internal iliac, obturator, mesorectal regional; common and external iliac distant; inguinal regional only below the dentate line."
+   ]
+  },
+  {
+   "type": "question",
+   "id": "qc3",
+   "kind": "quick",
+   "hotSeat": "beforePoll",
+   "image": null,
+   "stem": "Anal cancer, FDG-avid external iliac node. In the plan or out?",
+   "options": [
+    "In; regional, inside the field",
+    "Out; counted as metastatic",
+    "In for anal, in for rectal",
+    "Depends on size"
+   ],
+   "correct": 0,
+   "explain": "External iliac is N1b for anal cancer, still regional and in the field. For a rectal primary above the dentate line the same node is staged as distant."
+  },
+  {
+   "type": "slide",
+   "id": "c3-size",
+   "eyebrow": "Case 3 · Optional",
+   "title": "Regional nodes need a size, not just a location",
+   "body": [
+    "Rectal cancer: pelvic sidewall nodes above about 7 mm short axis change whether the surgeon extends the dissection.",
+    "- Location puts the node in or out of the plan",
+    "- Size decides what the surgeon does inside it"
+   ],
+   "notes": [
+    "Optional. For rectal cancer, pelvic sidewall nodes above about 7 mm short axis change whether the surgeon extends the dissection, so regional nodes need a measurement, not just a location. (Ogura 2019 figures still to verify: 7 mm threshold, 19.5% vs 5.7% lateral local recurrence.)"
+   ]
+  },
+  {
+   "type": "slide",
+   "id": "c4-lazy",
+   "eyebrow": "Case 4 · The axilla",
+   "title": "The lazy sentence",
+   "body": [
+    "> FDG-avid left axillary lymph node, 1.4 cm.",
+    "",
+    "The breast surgeon books a sentinel node procedure.",
+    "If that node was medial to the pectoralis minor, the patient should have gone to medical oncology first. The report is the reason they did not."
+   ],
+   "notes": [
+    "The breast surgeon books a sentinel node procedure. If that node was medial to the pectoralis minor, the patient should have gone to medical oncology first, and the report is the reason they did not."
+   ]
+  },
+  {
+   "type": "slide",
+   "id": "c4-line",
+   "eyebrow": "Case 4 · The axilla",
+   "title": "The line: the pectoralis minor",
+   "image": "img/dx/line4-axilla.svg",
+   "caption": "Axial schematic of the left axilla. Gold = pectoralis minor; levels are named by their relation to it.",
+   "body": [
+    "- Level I lateral, level II behind, level III medial to pectoralis minor. Rotter's sits between the two pectoralis muscles.",
+    "- Level I or II: the surgeon's axilla. Level III (infraclavicular): cN3a, systemic therapy before any surgery.",
+    "- Internal mammary cN3b, supraclavicular cN3c. Rotter's is not reached by a standard dissection.",
+    "- Lymphoma: axillary/pectoral is one region, infraclavicular another."
+   ],
+   "notes": [
+    "Teach the muscle before the image. On an axial, find the pectoralis minor as the oblique band from the coracoid to ribs 3 to 5; everything lateral is level I, deep is level II, medial is level III.",
+    "Consequence for breast cancer: I and II go to the surgeon, III sends the patient to medical oncology first. Rotter's and internal mammary have to be named because the standard operation does not reach them.",
+    "The quick check (node deep to pectoralis minor) is level II, surgeon first, straight from this slide."
+   ]
+  },
+  {
+   "type": "slide",
+   "id": "c4-map",
+   "eyebrow": "Case 4 · The axilla",
+   "title": "One image, two pairs",
+   "image": "img/case4-axilla-fdg.png",
+   "caption": "Fresh FDG PET/CT axilla. Draw the pectoralis minor, then place the levels.",
+   "body": [
+    "- **Level I**: lateral to pectoralis minor",
+    "- **Level II**: behind it",
+    "- **Level III**: medial to it",
+    "- **Rotter's**: between the two pectoralis muscles"
+   ],
+   "notes": [
+    "Two pairs on one image. Fresh FDG PET/CT axilla with the pectoralis minor drawn (Z to zoom). Level I lateral to it, level II behind it, level III medial to it, Rotter's between the two pectoralis muscles."
+   ],
+   "source": "AutoPET PETCT_12025abab5, 2004-11-01, Melanoma. CT series 4.000000-GK p.v.3 s-69307, PET series 8.000000-PET corr.-67190. A: lesion #2 (1.7 mL, SUVmax 21.1, z 172 mm); B: lesion #4 (1.4 mL, SUVmax 6.7, z 182 mm)."
+  },
+  {
+   "type": "slide",
+   "id": "c4-pair1",
+   "eyebrow": "Case 4 · The axilla",
+   "title": "Rotter's vs level II",
+   "body": [
+    "# Lymphoma",
+    "Same region, same stage, same treatment. \"Axillary\" and stop.",
+    "# Breast",
+    "Same stage. Not the same operation.",
+    "A standard axillary dissection does not reach the interpectoral space. An unreported Rotter's node is a node left behind, and radiation has to cover it separately.",
+    "> The stage did not change. The surgeon's plan did."
+   ],
+   "notes": [
+    "**Lymphoma:** same region, same stage, same treatment. The report can say \"axillary\" and stop.",
+    "**Breast:** same stage too, but not the same operation. A standard axillary dissection does not reach the interpectoral space, so an unreported Rotter's node is a node left behind, and radiation planning covers it separately. The stage did not change; the surgeon's plan did.",
+    "(The 8% interpectoral metastasis figure is from a 1984 series; label it as such or leave the number out.)"
+   ]
+  },
+  {
+   "type": "slide",
+   "id": "c4-pair2",
+   "eyebrow": "Case 4 · The axilla",
+   "title": "Level II vs level III",
+   "body": [
+    "# Lymphoma",
+    "Different regions, but one region is one region. A single node at II or at III is the same stage and the same treatment.",
+    "# Breast",
+    "II versus III is the whole decision.",
+    "- Level II: the surgeon.",
+    "- Medial to pectoralis minor: the medical oncologist first. Chemotherapy before any operation, and the radiation plan expands.",
+    "Say which side of the muscle before the case is booked."
+   ],
+   "notes": [
+    "**Lymphoma:** different regions, but one region is one region. A single node at level II or at level III is the same stage and the same treatment, so II versus III does not change the plan.",
+    "**Breast:** II versus III is the whole decision. Level II goes to the surgeon. A node medial to the pectoralis minor sends the patient to the medical oncologist first, for chemotherapy before any operation, and the radiation plan expands. The report has to say which side of the muscle before the case is booked."
+   ]
+  },
+  {
+   "type": "slide",
+   "id": "c4-plus",
+   "eyebrow": "Case 4 · The axilla",
+   "title": "Versus is not plus: II and III together",
+   "body": [
+    "Now both diseases care, for different reasons.",
+    "- **Lymphoma**: two regions instead of one. The stage goes up.",
+    "- **Breast**: level III is involved, so it is the chemo-first pathway. Level II riding along adds nothing.",
+    "",
+    "Versus and plus are different questions, and the two diseases answer them in opposite order."
+   ],
+   "notes": [
+    "Now both diseases care, for different reasons. Lymphoma: two regions instead of one, so the stage goes up. Breast: level III is involved, so it is the chemo-first pathway, and level II riding along adds nothing.",
+    "Versus and plus are different questions, and the two diseases answer them in opposite order."
+   ]
+  },
+  {
+   "type": "slide",
+   "id": "c4-nccn",
+   "eyebrow": "Case 4 · The axilla",
+   "title": "cN3 goes to systemic therapy first",
+   "caption": "NCCN Invasive Breast Cancer v9.2026, BINV-L and ST-2",
+   "nccn": [
+    "img/nccn/breast-preop-criteria.png",
+    "img/nccn/breast-n3a.png"
+   ],
+   "body": [
+    "- Inoperable upfront: inflammatory, bulky or matted cN2, **cN3**, cT4. Preoperative systemic therapy.",
+    "- cN3a is the infraclavicular, level III, node.",
+    "- Operable ER-positive HER2-negative disease at cN1 goes to the surgeon first. HER2-positive and triple-negative at cN1 do not."
+   ],
+   "notes": [
+    "Breast: the candidates for preoperative systemic therapy page (BINV-L). Inoperable upfront includes cN3; cN3a is the infraclavicular, level III, node (ST-2).",
+    "Be precise if asked: for operable disease, preop therapy is *preferred* for HER2-positive and triple-negative at cN1 or larger. The \"level II goes to surgery first\" claim holds because the case is ER-positive HER2-negative."
+   ]
+  },
+  {
+   "type": "question",
+   "id": "qc4",
+   "kind": "quick",
+   "hotSeat": "beforePoll",
+   "image": null,
+   "stem": "Breast cancer. Avid node sits deep to pectoralis minor, not medial to it. Which level, and who sees the patient first?",
+   "options": [
+    "Level II; surgeon first",
+    "Level III; medical oncology first",
+    "Level I; surgeon first",
+    "Rotter's; radiation first"
+   ],
+   "correct": 0,
+   "explain": "Behind the pectoralis minor is level II. Medial to it would be level III and the chemo-first pathway."
+  },
+  {
+   "type": "slide",
+   "id": "c4-aside",
+   "eyebrow": "Case 4 · Aside, cut if behind",
+   "title": "Even lymphoma has more than one map",
+   "body": [
+    "The Hodgkin trial groups count nodal areas differently from the standard regions. The same axilla can be one area on one scheme and two on another.",
+    "The counting rule belongs to the trial, not to anatomy."
+   ],
+   "notes": [
+    "Cut if behind. Even lymphoma has more than one map. The Hodgkin trial groups count nodal areas differently from the standard regions, so the same axilla can be one area on one scheme and two on another. The counting rule belongs to the trial, not to anatomy."
+   ]
+  },
+  {
+   "type": "slide",
+   "id": "close-supraclav",
+   "eyebrow": "Close · The supraclavicular node",
+   "title": "One node, seven labels",
+   "image": "img/close-supraclavicular-fdg.png",
+   "caption": "One FDG-avid left supraclavicular node. Primary withheld.",
+   "body": [
+    "> The node did not move. Only the rulebook did."
+   ],
+   "table": {
+    "head": [
+     "Primary",
+     "This node is",
+     "Consequence"
+    ],
+    "rows": [
+     [
+      "Lung",
+      "N3, even ipsilateral",
+      "Unresectable. Definitive chemoradiation"
+     ],
+     [
+      "Breast",
+      "cN3c, stage IIIC",
+      "Inoperable upfront. Systemic therapy first"
+     ],
+     [
+      "Thyroid",
+      "Lateral neck, N1b",
+      "Lateral neck dissection"
+     ],
+     [
+      "Nasopharynx",
+      "N3 if below the caudal cricoid",
+      "Induction chemotherapy plus chemoradiation"
+     ],
+     [
+      "Gastric or other GI (Virchow)",
+      "M1, stage IV",
+      "Palliative pathway"
+     ],
+     [
+      "Cervix",
+      "FIGO IVB",
+      "Systemic"
+     ],
+     [
+      "Lymphoma",
+      "Part of the cervical/supraclavicular region",
+      "One region. Count the others"
+     ]
+    ]
+   },
+   "tableFirst": true,
+   "notes": [
+    "One FDG-avid left supraclavicular node, primary withheld. Walk the table one row at a time.",
+    "Say it once: the node did not move. Only the rulebook did."
+   ],
+   "source": "AutoPET PETCT_cbbc9e2879, 2006-01-16, Lymphoma. CT series 4.000000-GK p.v.3 s-53013, PET series 8.000000-PET corr.-60905. A: lesion #3 (11.0 mL, SUVmax 10.4, z -415 mm)."
+  },
+  {
+   "type": "slide",
+   "id": "close-rules",
+   "eyebrow": "Close",
+   "title": "Three reporting rules",
+   "body": [
+    "- **Use the disease's own vocabulary.** Station for lung, level for breast and neck, region for lymphoma, named vessel for the pelvis.",
+    "- **Give the short-axis size.**",
+    "- **Say which side of the boundary the node is on, and name the boundary.**",
+    "",
+    "If the history does not tell you the primary, say which classification you used. The same sentence will be read by three services."
+   ],
+   "notes": [
+    "Use the disease's own vocabulary: station for lung, level for breast and neck, region for lymphoma, named vessel for the pelvis. Give the short-axis size. Say explicitly which side of the boundary the node is on, and name the boundary.",
+    "If the clinical history does not tell you the primary, say which classification you used, because the same sentence will be read by three different services.",
+    "Posttest next: same four questions, same images, same order. No hot seat. Open each poll, close after about 45 seconds, move on without revealing. Then V for the pre/post reveal."
+   ]
+  },
+  {
+   "type": "question",
+   "id": "post1",
+   "kind": "posttest",
+   "pairedWith": "pre1",
+   "hotSeat": "none",
+   "image": "img/pre1-pelvis-fdg.png",
+   "imageCaption": "FDG PET/CT pelvis, read it as a PSMA study. Left: the aorto-iliac vessels with bone removed, lines at the levels of A and B. Name each node's station from the vessel it sits on.",
+   "disease": "Prostate cancer, newly diagnosed, no other disease",
+   "correct": 2,
+   "explain": "Below the bifurcation the node is pelvic and gets radiated with the prostate; above it the node counts as metastatic and the patient goes to hormone therapy and drugs instead.",
+   "source": "AutoPET PETCT_d9da6129f8, 2002-04-14, Melanoma. CT series 4.000000-GK p.v.3-98719, PET series 5.000000-PET corr.-53940. A: lesion #4 (3.7 mL, SUVmax 34.9, z 630 mm); B: lesion #6 (1.2 mL, SUVmax 12.6, z 669 mm)."
+  },
+  {
+   "type": "question",
+   "id": "post2",
+   "kind": "posttest",
+   "pairedWith": "pre2",
+   "hotSeat": "none",
+   "image": "img/pre2-chest-fdg.png",
+   "imageCaption": "FDG PET/CT chest, left lung primary. A: 4L. B: 4R.",
+   "disease": "Lung adenocarcinoma, left lung",
+   "correct": 2,
+   "explain": "Same side as the tumor (4L), the surgeon may still operate; opposite side (4R), surgery is off the table and the patient gets chemoradiation.",
+   "source": "AutoPET PETCT_442a09f90e, 2002-03-16, Lung Cancer. CT series 5.000000-GK p.v.2-46154, PET series 9.000000-PET corr.-11580. A: lesion #9 (3.2 mL, SUVmax 5.8, z 174 mm); B: lesion #3 (19.9 mL, SUVmax 7.9, z 147 mm)."
+  },
+  {
+   "type": "question",
+   "id": "post3",
+   "kind": "posttest",
+   "pairedWith": "pre3",
+   "hotSeat": "none",
+   "image": "img/pre3-pelvis-fdg.png",
+   "imageCaption": "FDG PET/CT pelvis, two patients. A: right pelvic sidewall mass behind the external iliac vessels. B: right groin, at the femoral head.",
+   "disease": "Anal canal squamous cell carcinoma",
+   "correct": 0,
+   "explain": "Both nodes count as regional for anal cancer and both are already inside the standard radiation field.",
+   "source": "AutoPET PETCT_cbbc9e2879, 2006-01-16, Lymphoma. CT series 4.000000-GK p.v.3 s-53013, PET series 8.000000-PET corr.-60905. A: lesion #2 (58.0 mL, SUVmax 16.2, z -889 mm). AutoPET PETCT_335a00191d, 2001-02-16, Lung Cancer. CT series 8.000000-GK p.v.2-14948, PET series 9.000000-PET corr.-84524. B: lesion #10 (7.4 mL, SUVmax 14.3, z -913 mm)."
+  },
+  {
+   "type": "question",
+   "id": "post4",
+   "kind": "posttest",
+   "pairedWith": "pre4",
+   "hotSeat": "none",
+   "image": "img/pre4-axilla-fdg.png",
+   "imageCaption": "FDG PET/CT axilla. A: level II. B: level III, medial to pectoralis minor.",
+   "disease": "ER-positive HER2-negative breast cancer, ipsilateral",
+   "correct": 2,
+   "explain": "Level II goes to surgery first; a node medial to pectoralis minor sends the patient to systemic therapy before any surgery.",
+   "source": "AutoPET PETCT_f24f3ce1da, 2001-09-14, Melanoma. CT series 5.000000-GK p.v.2-28878, PET series 6.000000-PET corr.-93674. A: lesion #4 (5.8 mL, SUVmax 35.8, z 1156 mm); B: lesion #3 (9.0 mL, SUVmax 56.2, z 1146 mm)."
+  },
+  {
+   "type": "slide",
+   "id": "end-thesis",
+   "eyebrow": "Wrap",
+   "title": "Ask what disease is being staged. That decides which words matter.",
+   "body": [
+    "You have now seen it work four times. That is the number it takes to become a habit.",
+    "",
+    "Next: Summary shows the pretest beside the posttest."
+   ],
+   "notes": [
+    "Last slide is the thesis sentence, unchanged. The residents have now seen it work four times, which is the number it takes to become a habit.",
+    "Press → or V for the pre/post reveal (one pair per screen), then Summary."
+   ],
+   "caption": "PET/CT images: AutoPET (TCIA FDG-PET-CT-Lesions, Gatidis & Küstner 2022), CC BY 4.0. Guideline crops: NCCN."
+  }
+ ]
+}

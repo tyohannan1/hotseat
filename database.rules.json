@@ -1,0 +1,32 @@
+{
+  "rules": {
+    "sessions": {
+      "$sid": {
+        ".read": "auth != null",
+        ".write": "auth != null && auth.token.email != null && (!data.exists() || data.child('presenterUid').val() == auth.uid)"
+      }
+    },
+    "devices": {
+      "$sid": {
+        ".read": "auth != null && auth.token.email != null && root.child('sessions').child($sid).child('presenterUid').val() == auth.uid",
+        "$did": {
+          ".read": "auth != null && (!data.exists() || data.child('uid').val() == auth.uid)",
+          ".write": "auth != null && (!data.exists() || data.child('uid').val() == auth.uid) && newData.child('uid').val() == auth.uid",
+          ".validate": "newData.hasChildren(['class','uid']) && newData.child('class').val().matches(/^R[1-4]$/)"
+        }
+      }
+    },
+    "votes": {
+      "$sid": {
+        ".read": "auth != null && auth.token.email != null && root.child('sessions').child($sid).child('presenterUid').val() == auth.uid",
+        "$qid": {
+          "$did": {
+            ".read": "auth != null && data.child('uid').val() == auth.uid",
+            ".write": "auth != null && (!data.exists() || data.child('uid').val() == auth.uid) && newData.child('uid').val() == auth.uid && root.child('sessions').child($sid).child('current').child('questionId').val() == $qid && root.child('sessions').child($sid).child('current').child('open').val() == true",
+            ".validate": "newData.hasChildren(['choice','class','uid']) && newData.child('choice').isNumber() && newData.child('choice').val() >= 0 && newData.child('choice').val() <= 3"
+          }
+        }
+      }
+    }
+  }
+}

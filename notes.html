@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Hot Seat — Notes</title>
+<link rel="stylesheet" href="css/style.css">
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-database-compat.js"></script>
+<script src="config.js" onerror="void 0"></script>
+<script src="js/store.js"></script>
+</head>
+<body class="notes">
+<!-- Speaker-notes window. Open it from the presenter page (Notes button) on the laptop screen while the projector shows present.html.
+     It follows the session: current item, its notes, what is projected, the next item, live vote count, hot seat, and a clock against the run of show. -->
+<header class="p-header">
+  <h1><span class="hl">Notes</span> <span id="n-lecture" class="muted"></span></h1>
+  <div class="meta"><span>Session <b id="n-sid">—</b></span><span><b id="n-joined">0</b> joined</span></div>
+</header>
+<p id="n-msg" class="muted"></p>
+<div class="n-grid hidden" id="n-grid">
+  <div class="card">
+    <p class="eyebrow" id="n-eyebrow"></p>
+    <div class="n-title" id="n-title"></div>
+    <div class="n-notes" id="n-notes"></div>
+    <div class="n-proj" id="n-proj"></div>
+  </div>
+  <div style="display:flex;flex-direction:column;gap:12px">
+    <div class="card">
+      <p class="eyebrow">Clock</p>
+      <div class="n-clock" id="n-clock">—</div>
+      <div class="n-seg" id="n-seg">Clock starts when you press Begin.</div>
+    </div>
+    <div class="card" id="n-qcard">
+      <p class="eyebrow">This question</p>
+      <div class="n-big"><span id="n-answered">0</span> answered · <span id="n-state" style="font-size:.6em;font-weight:400;color:var(--muted)"></span></div>
+      <div style="margin-top:6px">Hot seat: <b id="n-hot">—</b></div>
+      <div style="margin-top:6px">Correct: <span class="n-answer" id="n-correct"></span></div>
+      <div class="muted" id="n-explain" style="font-size:.9rem;margin-top:4px"></div>
+    </div>
+    <div class="card">
+      <p class="eyebrow">Next</p>
+      <div class="n-next" id="n-next">—</div>
+    </div>
+    <p class="keys">Keys work on the presenter window, not here. Keep this on the laptop screen.</p>
+  </div>
+</div>
+
+<script>
+(async function () {
+  const $ = id => document.getElementById(id);
+  const LETTERS = "ABCD";
+  const store = HotSeatStore.makeStore();
+  const sid = new URLSearchParams(location.search).get("s");
+  if (!sid) { $("n-msg").textContent = "No session code. Open this from the presenter page's Notes button."; return; }
+  $("n-sid").textContent = sid;
+
+  // Firebase: the presenter is signed in on this origin already; wait for that user. Mock: nothing to do.
+  if (store.kind === "firebase") {
+    const user = await new Promise(res => { const u = firebase.auth().onAuthStateChanged(x => { u(); res(x); }); });
+    if (!user || !user.email) { $("n-msg").textContent = "Sign in on the presenter page first, then reopen Notes."; return; }
+  }
+  const s0 = await store.getSession(sid);
+  if (!s0) { $("n-msg").textContent = "No session with that code."; return; }
+  const idx = await (await fetch("lectures/index.json")).json();
+  const entry = idx.lectures.find(l => l.id === s0.lectureId);
+  const lecture = HotSeatStore.normalizeLecture(await (await fetch(entry ? entry.file : `lectures/${s0.lectureId}.json`)).json());
+  $("n-lecture").textContent = lecture.title;
+  $("n-grid").classList.remove("hidden");
+
+  const esc = s => String(s).replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+  const inline = s => esc(s).replace(/\*\*(.+?)\*\*/g, "<b>$1</b>").replace(/(^|[^*])\*([^*]+)\*/g, "$1<i>$2</i>");
+  function md(lines) {
+    lines = Array.isArray(lines) ? lines : String(lines || "").split("\n");
+    let html = "", inList = false; const close = () => { if (inList) { html += "</ul>"; inList = false; } };
+    lines.forEach(l => {
+      const m = /^-\s+(.*)$/.exec(l); if (m) { if (!inList) { html += "<ul>"; inList = true; } html += `<li>${inline(m[1])}</li>`; return; }
+      close(); if (!l.trim()) return;
+      const h = /^#+\s+(.*)$/.exec(l); if (h) { html += `<h3>${inline(h[1])}</h3>`; return; }
+      const q = /^>\s?(.*)$/.exec(l); if (q) { html += `<blockquote>${inline(q[1])}</blockquote>`; return; }
+      html += `<p>${inline(l)}</p>`;
+    });
+    close(); return html;
+  }
+  const label = it => it.type === "question"
+    ? `${{ pretest: "Pretest", quick: "Quick check", posttest: "Posttest" }[it.kind] || "Question"} ${it.id}${it.disease ? " · " + it.disease : ""}${it.stem ? " · " + it.stem : ""}`
+    : `${it.eyebrow ? it.eyebrow + " · " : ""}${it.title}`;
+
+  let session = s0, curId = null, unsubVotes = null;
+  store.onDeviceCount(sid, n => $("n-joined").textContent = n);
+  store.onSession(sid, s => { session = s; if (!s) return; try { render(); } catch (e) { $("n-msg").textContent = "Notes error: " + e.message; } });
+
+  function render() {
+    const c = session.current || {};
+    const i = lecture.items.findIndex(it => it.id === (c.itemId || c.questionId));
+    const it = lecture.items[i];
+    if (!it) { $("n-eyebrow").textContent = "Lobby"; $("n-title").textContent = "QR is up. Press Begin on the presenter page."; $("n-notes").innerHTML = md(lecture.lobbyNotes || ""); $("n-proj").innerHTML = ""; $("n-next").innerHTML = `<b>${esc(label(lecture.items[0]))}</b>`; $("n-qcard").classList.add("hidden"); tick(); return; }
+    const isQ = it.type === "question";
+    $("n-eyebrow").textContent = isQ ? `${{ pretest: "Pretest", quick: "Quick check", posttest: "Posttest" }[it.kind]} · item ${i + 1} of ${lecture.items.length}` : `${it.eyebrow || "Slide"} · item ${i + 1} of ${lecture.items.length}`;
+    $("n-title").textContent = isQ ? (it.disease || it.stem || it.id) : it.title;
+    $("n-notes").innerHTML = md(it.notes || (isQ ? lecture.questionNotes && lecture.questionNotes[it.kind] : "") || "") + (it.source ? `<div class="n-src">Image: ${esc(it.source)}</div>` : "");
+    // what the room sees
+    if (isQ) {
+      const opts = it.options || lecture.sharedOptions;
+      $("n-proj").innerHTML = `<div>Projected: ${esc(it.stem || lecture.sharedStem)}</div><ul>${opts.map((o, k) => `<li>${LETTERS[k]} · ${esc(o)}</li>`).join("")}</ul>`;
+    } else {
+      $("n-proj").innerHTML = `<div>Projected:</div>${md(it.body)}`;
+    }
+    const nx = lecture.items[i + 1];
+    $("n-next").innerHTML = nx ? `<b>${esc(label(nx))}</b>${nx.type === "question" && nx.hotSeat && nx.hotSeat !== "none" ? `<span class="muted">Hot seat: ${nx.hotSeat === "beforePoll" ? "pick first" : "pick after the poll"}</span>` : ""}` : "<b>Pre/post reveal, then Summary</b>";
+    $("n-qcard").classList.toggle("hidden", !isQ);
+    if (isQ) {
+      $("n-state").textContent = c.revealed ? "revealed" : c.open ? "voting open" : "voting closed";
+      const h = session.hotSeat; $("n-hot").textContent = h ? `${h.name} (${h.cls})${h.answer != null ? " answered " + LETTERS[h.answer] : ""}` : "—";
+      $("n-correct").textContent = LETTERS[it.correct]; $("n-explain").textContent = it.explain || "";
+      if (curId !== it.id) { if (unsubVotes) unsubVotes(); unsubVotes = store.onVotes(sid, it.id, v => $("n-answered").textContent = Object.keys(v || {}).length); }
+    }
+    curId = it.id;
+    tick();
+  }
+
+  // clock against the run of show: segments start at item ids, minutes are planned durations
+  function fmt(ms) { const s = Math.max(0, Math.round(ms / 1000)); const m = Math.floor(s / 60); return `${m}:${String(s % 60).padStart(2, "0")}`; }
+  function tick() {
+    if (!session || !session.beganAt) { $("n-clock").textContent = "—"; $("n-clock").className = "n-clock"; return; }
+    const elapsed = Date.now() - session.beganAt;
+    $("n-clock").textContent = fmt(elapsed);
+    const ros = lecture.runOfShow || [];
+    if (!ros.length) { $("n-seg").textContent = ""; return; }
+    const c = session.current || {}; const i = lecture.items.findIndex(it => it.id === (c.itemId || c.questionId));
+    let start = 0, seg = null, segStart = 0;
+    for (const r of ros) { const j = lecture.items.findIndex(it => it.id === r.from); if (j >= 0 && j <= i) { seg = r; segStart = start; } start += r.minutes * 60000; }
+    if (!seg) { $("n-seg").textContent = `Planned total ${fmt(start)}`; $("n-clock").className = "n-clock"; return; }
+    const delta = elapsed - segStart; // positive = you reached this segment later than planned
+    const late = delta > 60000, early = delta < -60000;
+    $("n-clock").className = "n-clock" + (late ? " late" : early ? " early" : "");
+    $("n-seg").textContent = `${seg.label}: planned ${fmt(segStart)}–${fmt(segStart + seg.minutes * 60000)} · you arrived ${delta >= 0 ? "+" : "−"}${fmt(Math.abs(delta))}${late ? " · behind, cut the asides" : ""}`;
+  }
+  setInterval(tick, 1000);
+  render();
+})();
+</script>
+</body>
+</html>

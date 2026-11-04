@@ -1,0 +1,106 @@
+{
+ "rows": [
+  {
+   "sid": "PETCT_cbbc9e2879_20060116",
+   "diagnosis": "LYMPHOMA",
+   "studyDir": "/Users/tyohannan/AutoPET/FDG-PET-CT-Lesions_v02_20260817/FDG-PET-CT-Lesions/PETCT_cbbc9e2879/01-16-2006-PET-CT (Ganzkoerper  primaer mit KM)-56695",
+   "ct": "4.000000-GK p.v.3 s-53013",
+   "pt": "8.000000-PET corr.-60905",
+   "seg": {
+    "dir": "300.000000-Segmentation-94924",
+    "file": "1-1.dcm"
+   },
+   "crop": "pelvis",
+   "lesions": {
+    "A": {
+     "n": 2,
+     "id": 2,
+     "ml": 57.98759072052122,
+     "suvmax": 16.180810928344727,
+     "centroid": [
+      -30.2,
+      -185.1,
+      -885.1
+     ],
+     "peak": [
+      -42.1,
+      -179.6,
+      -892.0
+     ],
+     "zdraw": -889.0,
+     "extent": [
+      65,
+      77,
+      39
+     ],
+     "place": {
+      "side": "R",
+      "label_at_centroid": "small_bowel",
+      "text": "R internal iliac? (posterior to the iliac vessels)"
+     }
+    }
+   },
+   "landmarks": {
+    "aorticBifZ": -790.5,
+    "commonIliacBifZ_left": -798.0,
+    "femurTopZ_left": -928.0,
+    "clavicleBottomZ_left": -460.5,
+    "commonIliacBifZ_right": -810.5,
+    "femurTopZ_right": -928.0,
+    "clavicleBottomZ_right": -463.0,
+    "midlineX": 10.2
+   }
+  },
+  {
+   "sid": "PETCT_335a00191d_20010216",
+   "diagnosis": "LUNG_CANCER",
+   "studyDir": "/Users/tyohannan/AutoPET/FDG-PET-CT-Lesions_v02_20260817/FDG-PET-CT-Lesions/PETCT_335a00191d/02-16-2001-PET-CT (Ganzkoerper  primaer mit KM)-25682",
+   "ct": "8.000000-GK p.v.2-14948",
+   "pt": "9.000000-PET corr.-84524",
+   "seg": {
+    "dir": "300.000000-Segmentation-06773",
+    "file": "1-1.dcm"
+   },
+   "crop": "pelvis",
+   "lesions": {
+    "B": {
+     "n": 10,
+     "id": 1,
+     "ml": 7.414847472523202,
+     "suvmax": 14.265938758850098,
+     "centroid": [
+      -105.5,
+      -130.1,
+      -910.2
+     ],
+     "peak": [
+      -109.4,
+      -127.8,
+      -913.0
+     ],
+     "zdraw": -913.0,
+     "extent": [
+      20,
+      29,
+      21
+     ],
+     "place": {
+      "side": "R",
+      "label_at_centroid": "femur_right",
+      "text": "R inguinal (at/below the femoral head)"
+     }
+    }
+   },
+   "landmarks": {
+    "aorticBifZ": -756.0,
+    "commonIliacBifZ_left": -796.0,
+    "femurTopZ_left": -869.0,
+    "clavicleBottomZ_left": -405.0,
+    "commonIliacBifZ_right": -836.0,
+    "femurTopZ_right": -869.0,
+    "clavicleBottomZ_right": -408.0,
+    "midlineX": 5.5
+   }
+  }
+ ]
+}

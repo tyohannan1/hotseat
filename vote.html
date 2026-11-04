@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Hot Seat — Vote</title>
+<link rel="stylesheet" href="css/style.css">
+<!-- Firebase compat SDK: harmless if config.js is absent; store falls back to mock -->
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-database-compat.js"></script>
+<script src="config.js" onerror="void 0"></script>
+<script src="js/store.js"></script>
+</head>
+<body class="vote">
+<div class="v-wrap">
+  <div class="v-title" id="title">Hot Seat</div>
+
+  <section id="s-nosession" class="v-wait hidden">No session code in the link. Scan the QR on the screen.</section>
+
+  <section id="s-class" class="hidden">
+    <p class="v-stem">Which year are you?</p>
+    <div class="v-class">
+      <button data-c="R1">R1</button><button data-c="R2">R2</button><button data-c="R3">R3</button><button data-c="R4">R4</button>
+    </div>
+    <p class="v-foot">Asked once. Used only to group answers by year.</p>
+  </section>
+
+  <section id="s-wait" class="v-wait hidden">Waiting for the next question…</section>
+
+  <section id="s-q" class="hidden">
+    <p class="eyebrow" id="q-kind"></p>
+    <p class="v-stem" id="q-stem"></p>
+    <div class="v-opts" id="q-opts"></div>
+    <p class="v-foot" id="q-foot"></p>
+  </section>
+
+  <p class="v-foot" id="foot"></p>
+</div>
+
+<script>
+(async function () {
+  const $ = id => document.getElementById(id);
+  const show = id => { ["s-nosession","s-class","s-wait","s-q"].forEach(s => $(s).classList.toggle("hidden", s !== id)); };
+  const store = HotSeatStore.makeStore();
+  $("foot").textContent = store.kind === "mock" ? "Local test mode (no server)." : "";
+
+  const sid = new URLSearchParams(location.search).get("s");
+  if (!sid) { show("s-nosession"); return; }
+
+  // device id: random token kept in this browser
+  let did; try { did = localStorage.getItem("hs_did"); } catch (e) {}
+  if (!did) { did = Math.random().toString(36).slice(2, 12); try { localStorage.setItem("hs_did", did); } catch (e) {} }
+
+  const uid = await store.signInAnonymous();
+
+  // lecture (for option text) — loaded after session tells us which
+  let lecture = null, session = null, cls = null, currentQ = null, unsubVotes = null, myChoice = null;
+
+  // class: from store (survives refresh), else ask
+  const dev = await store.getDevice(sid, did);
+  if (dev && dev.class) cls = dev.class;
+  if (!cls) {
+    show("s-class");
+    document.querySelectorAll("#s-class button").forEach(b => b.addEventListener("click", async () => {
+      cls = b.dataset.c;
+      await store.setDevice(sid, did, { class: cls, uid });
+      render();
+    }));
+  } else {
+    await store.setDevice(sid, did, { class: cls, uid }); // refresh uid binding
+  }
+
+  store.onSession(sid, async s => {
+    session = s;
+    if (!s) { show("s-nosession"); $("s-nosession").textContent = "Session not found."; return; }
+    if (!lecture || lecture.id !== s.lectureId) {
+      const idx = await (await fetch("lectures/index.json")).json();
+      const entry = idx.lectures.find(l => l.id === s.lectureId);
+      lecture = HotSeatStore.normalizeLecture(await (await fetch(entry ? entry.file : `lectures/${s.lectureId}.json`)).json());
+      $("title").textContent = lecture.title;
+    }
+    render();
+  });
+
+  function qById(id) { return lecture && lecture.questions.find(q => q.id === id); }
+
+  function render() {
+    if (!cls) { show("s-class"); return; }
+    if (!session || !lecture) return;
+    const qid = session.current && session.current.questionId;
+    const q = qid && qById(qid);
+    if (!q) { show("s-wait"); currentQ = null; return; } // slides and the lobby both leave questionId null
+
+    if (currentQ !== q.id) {
+      currentQ = q.id; myChoice = null;
+      if (unsubVotes) unsubVotes();
+      unsubVotes = store.onMyVote(sid, q.id, did, mine => {
+        if (mine) { myChoice = mine.choice; paint(); }
+      });
+      const stem = q.stem || `${q.disease}. ${lecture.sharedStem}`;
+      $("q-kind").textContent = { pretest: "Pretest", quick: "Quick check", posttest: "Posttest" }[q.kind] || "";
+      $("q-stem").textContent = stem;
+      const opts = q.options || lecture.sharedOptions;
+      $("q-opts").innerHTML = opts.map((o, i) =>
+        `<button class="v-opt" data-i="${i}"><span class="letter">${"ABCD"[i]}</span><span>${o}</span></button>`).join("");
+      document.querySelectorAll(".v-opt").forEach(b => b.addEventListener("click", () => vote(+b.dataset.i)));
+    }
+    show("s-q");
+    paint();
+  }
+
+  function paint() {
+    const open = session.current.open;
+    document.querySelectorAll(".v-opt").forEach(b => {
+      b.classList.toggle("chosen", myChoice === +b.dataset.i);
+      b.disabled = !open;
+    });
+    $("q-foot").textContent = !open ? "Voting closed." : (myChoice === null ? "Tap your answer. You can change it until voting closes." : "Answered. You can change it until voting closes.");
+  }
+
+  async function vote(i) {
+    if (!session.current.open) return;
+    myChoice = i; paint();
+    await store.setVote(sid, currentQ, did, { choice: i, class: cls, uid });
+  }
+})();
+</script>
+</body>
+</html>

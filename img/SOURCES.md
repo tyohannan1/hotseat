@@ -1,0 +1,40 @@
+# Image sources
+
+All PET/CT images are FDG studies from AutoPET (TCIA FDG-PET-CT-Lesions v2, CC BY 4.0; Gatidis S, Küstner T. A whole-body FDG-PET/CT dataset with manually annotated tumor lesions. 2022). Local copy: `~/AutoPET/FDG-PET-CT-Lesions_v02_20260817/FDG-PET-CT-Lesions/<patient>/<study>/<series>`. Each PNG has a sidecar `.json` with the study folder, series folders, landmarks and the lesion coordinates (DICOM LPS world mm), and a small provenance line in its bottom-left corner.
+
+There are no PSMA studies in AutoPET. The prostate case (pre1, case 1) uses FDG images and the caption says so.
+
+Lesion numbers are the expert-mask components of that study sorted by volume (the numbering of `nodeshots.py`, not the AutoPET lesion ids). Fused look: the Augmented Workstation fusion (CT soft tissue −160..240 HU, PET SUV 0–5 mim_hot at 50 % opacity). Rendered 2026-11-04 with `tools/nodeshots.py` ( `survey` lists lesions with a proposed anatomic placement from the TotalSegmentator map, `figure` draws the slide image).
+
+Circles are centred on the lesion's own outline on the drawn slice. The prostate images carry a left **Vessels** panel: a coronal projection of contrast-bright voxels in a 64 mm slab around the aorto-iliac arteries, bone and organs removed with the TotalSegmentator map, so the aortic and common iliac bifurcations are visible; a teal line marks each node's level.
+
+Note on the anatomy maps: the NIfTI maps in `~/AutoPET-model/anatomy/` carry a flipped y axis relative to the CT; `nodeshots.py` resamples them onto the CT grid (fixed 2026-11-04). Placement text in sidecars written before that fix mirrored anterior/posterior.
+
+| File | Study | Dx | CT series | PET series | Lesions |
+| --- | --- | --- | --- | --- | --- |
+| `pre1-pelvis-fdg.png` | PETCT_d9da6129f8_20020414 | MELANOMA | `4.000000-GK p.v.3-98719` | `5.000000-PET corr.-53940` | A=#4 3.7 mL SUV 34.9 at (31,-219,628), external iliac just below the left common iliac bifurcation; B=#6 1.2 mL SUV 12.6 at (27,-228,669), common iliac 5 mm below the aortic bifurcation (z 674). Vessels panel. |
+| `pre2-chest-fdg.png` | PETCT_442a09f90e_20020316 | LUNG_CANCER | `5.000000-GK p.v.2-46154` | `9.000000-PET corr.-11580` | A=#9 3.2 mL SUV 5.8 at (9,-183,172); B=#3 19.9 mL SUV 7.9 at (-15,-200,160); one slice z 166 |
+| `pre3-pelvis-fdg.png` | PETCT_cbbc9e2879_20060116 + PETCT_335a00191d_20010216 | LYMPHOMA + LUNG_CANCER | `4.000000-GK p.v.3 s-53013` / `8.000000-GK p.v.2-14948` | `8.000000-PET corr.-60905` / `9.000000-PET corr.-84524` | A=cbbc #2 58.0 mL SUV 16.2 at (-30,-185,-885); B=335a #10 7.4 mL SUV 14.3 at (-106,-130,-910), right groin 41 mm below the femoral head top |
+| `pre4-axilla-fdg.png` | PETCT_f24f3ce1da_20010914 | MELANOMA | `5.000000-GK p.v.2-28878` | `6.000000-PET corr.-93674` | A=#4 5.8 mL SUV 35.8 at (114,-183,1158); B=#3 9.0 mL SUV 56.2 at (83,-220,1152); one slice z 1163 |
+| `case1-pelvis-fdg.png` | PETCT_791ec15924_20010416 | MELANOMA | `5.000000-GK p.v.2-41675` | `6.000000-PET corr.-15444` | A=#3 10.6 mL SUV 12.0 at (24,-161,664), along the left external iliac; B=#4 9.3 mL SUV 13.8 at (14,-178,700), anterior-left of L5 just below the aortic bifurcation (z 710). Vessels panel (HU > 120). |
+| `case2-chest-fdg.png` | PETCT_db3daf78d2_20001030 | LYMPHOMA | `5.000000-GK p.v.2-47450` | `10.000000-PET corr.-51485` | #5 7.1 mL SUV 10.1 at (-4,-186,-463); #9 1.3 mL SUV 8.0 at (25,-170,-454); unlabeled, one slice z -458, teal line on the left tracheal wall |
+| `case3-pelvis-fdg.png` | PETCT_d5103c8fbf_20060414 + PETCT_1285b86bea_20060224 | MELANOMA + MELANOMA | `6.000000-GK p.v.3 s-60673` / see sidecar | `4.000000-PET corr.-56571` / see sidecar | A=d510 #1 119.7 mL SUV 31.6 at (-26,-224,576); B=1285 #87 4.3 mL SUV 47.1 at (120,-131,-957), left groin 9 mm below the femoral head top, other small groin foci in the slice |
+| `case4-axilla-fdg.png` | PETCT_12025abab5_20041101 | MELANOMA | `4.000000-GK p.v.3 s-69307` | `8.000000-PET corr.-67190` | #2 1.7 mL SUV 21.1 at (156,-254,171); #4 1.4 mL SUV 6.7 at (179,-260,182); unlabeled, z 180 |
+| `close-supraclavicular-fdg.png` | PETCT_cbbc9e2879_20060116 | LYMPHOMA | `4.000000-GK p.v.3 s-53013` | `8.000000-PET corr.-60905` | A=#3 11.0 mL SUV 10.4 at (39,-198,-417) |
+| `alt/close-left-neck-levelIV-alt.png` | PETCT_a7b323b3fd_20050401 | LYMPHOMA | `6.000000-GK p.v.1 WF s-99433` | `8.000000-PET corr.-00491` | A=#1 3.5 mL SUV 11.7 at (67,-207,-341) |
+| `alt/case4-axilla-alt.png` | PETCT_ec581d49ef_20020325 | MELANOMA | `15.000000-GK p.v.2-08974` | `7.000000-PET corr.-15938` | A=#1 7.0 mL SUV 11.8 at (134,-222,-611); B=#6 0.4 mL SUV 4.4 at (117,-213,-611) |
+| `alt/case2-chest-alt.png` | PETCT_9aa97cf103_20040718 | LYMPHOMA | `4.000000-GK p.v.3 s-72927` | `7.000000-PET corr.-37043` | A=#2 9.5 mL SUV 17.3 at (15,-178,-646); B=#4 3.3 mL SUV 15.0 at (59,-177,-642) |
+
+## What each image is meant to show (reader to confirm)
+
+- **pre1 / post1** (d9da6129f8): Vessels panel shows the aorta splitting into the common iliacs and each common iliac splitting. B = 1.2 mL node anterior-left of L5, 5 mm below the aortic bifurcation, on the left common iliac. A = 3.7 mL node on the left pelvic sidewall just below the left common iliac bifurcation, on the external iliac. Found by scanning all 106 AutoPET studies with iliac or para-aortic lesions for nodes 3–30 mm below each bifurcation (`tools/pelvis_scan.py`). The earlier 42.8 mL external iliac mass (#1) was dropped.
+- **case1** (791ec15924, melanoma): same layout, labelled. B = 9.3 mL node anterior-left of L5 at the aortic bifurcation; A = 10.6 mL node along the left external iliac. Vessels panel thresholded at 120 HU because this study has more venous and bowel enhancement.
+- **pre2 / post2** (442a09f90e, lung cancer with a left lower lobe primary): one slice. A = 4L (3.2 mL, left of the trachea beside the arch); B = 4R (19.9 mL, right paratracheal). No tracheal line on the pretest.
+- **case2** (db3daf78d2, lymphoma): unlabeled, one slice at the thoracic inlet, teal line on the left lateral tracheal wall (from the TotalSegmentator trachea label on that slice): a 2R node anterior-right of the trachea near midline and a 2L node lateral to the line. Alternative in `alt/case2-chest-alt.png` (9aa97cf103, no line).
+- **pre3 / post3** (two patients stacked): A = right pelvic sidewall (internal iliac/obturator) mass behind the external iliac vessels (cbbc9e2879 #2); B = 7.4 mL right inguinal node in the groin fat in front of the femoral head, beside the femoral vessels (335a00191d #10). The earlier B (cbbc9e2879 #4) sat at the top of the femoral head behind the vessels: external iliac, not inguinal, so it was replaced.
+- **case3** (two patients stacked): top, right pelvic sidewall mass abutting the bladder (d5103c8fbf #1); bottom, left inguinal nodes at the femoral head (1285b86bea #87, a melanoma patient with several small groin foci in the same slice). The earlier "right inguinal" nodes of d5103c8fbf were gluteal soft-tissue deposits, not groin nodes, so they were replaced. Weaker alternative: 335a00191d #12 (1.3 mL, left medial groin).
+- **pre4 / post4** (f24f3ce1da, melanoma): one slice under the left clavicle. B = 9 mL node medial, under the clavicle at the first rib (proposed level III); A = node lateral and posterior (proposed level II). A third bright node (the top of the 162 mL axillary conglomerate) is in the slice unlabeled. The pectoralis minor relation is the reader's call.
+- **case4** (12025abab5, melanoma): unlabeled, two small left level I nodes lateral to the pectoralis minor. Alternative in `alt/case4-axilla-alt.png` (ec581d49ef): a 7 mL left axillary node.
+- **close** (cbbc9e2879 lesion 3): 11 mL left supraclavicular node above the clavicle, lateral to the carotid sheath. Alternative in `alt/close-left-neck-levelIV-alt.png` (a7b323b3fd): a solitary left level IV node at the larynx.
+
+Previous versions of the images (2026-11-04 morning) are not kept in the folder.

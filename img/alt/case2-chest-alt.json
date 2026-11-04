@@ -1,0 +1,76 @@
+{
+ "sid": "PETCT_9aa97cf103_20040718",
+ "diagnosis": "LYMPHOMA",
+ "studyDir": "/Users/tyohannan/AutoPET/FDG-PET-CT-Lesions_v02_20260817/FDG-PET-CT-Lesions/PETCT_9aa97cf103/07-18-2004-PET-CT (Ganzkoerper  primaer mit KM)-81345",
+ "ct": "4.000000-GK p.v.3 s-72927",
+ "pt": "7.000000-PET corr.-37043",
+ "seg": {
+  "dir": "300.000000-Segmentation-79497",
+  "file": "1-1.dcm"
+ },
+ "crop": "chest",
+ "lesions": {
+  "A": {
+   "n": 2,
+   "ml": 9.504938706388803,
+   "suvmax": 17.309188842773438,
+   "centroid": [
+    14.9,
+    -178.0,
+    -646.0
+   ],
+   "peak": [
+    4.6,
+    -190.2,
+    -646.5
+   ],
+   "zdraw": -646.5,
+   "extent": [
+    41,
+    47,
+    15
+   ],
+   "place": {
+    "side": "L",
+    "label_at_centroid": "none",
+    "text": "L other"
+   }
+  },
+  "B": {
+   "n": 4,
+   "ml": 3.321752139536401,
+   "suvmax": 14.966691970825195,
+   "centroid": [
+    59.1,
+    -177.2,
+    -642.1
+   ],
+   "peak": [
+    61.7,
+    -178.0,
+    -643.5
+   ],
+   "zdraw": -646.5,
+   "extent": [
+    20,
+    20,
+    12
+   ],
+   "place": {
+    "side": "L",
+    "label_at_centroid": "none",
+    "text": "L supraclavicular / low neck (above the clavicle)"
+   }
+  }
+ },
+ "landmarks": {
+  "aorticBifZ": -967.5,
+  "commonIliacBifZ_left": null,
+  "femurTopZ_left": -1127.5,
+  "clavicleBottomZ_left": -660.0,
+  "commonIliacBifZ_right": null,
+  "femurTopZ_right": -1120.0,
+  "clavicleBottomZ_right": -655.0,
+  "midlineX": 7.6
+ }
+}

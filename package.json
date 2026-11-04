@@ -1,0 +1,13 @@
+{
+  "name": "hotseat",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Hot Seat audience-response lecture runner. Static site; package.json exists only for the Playwright smoke test.",
+  "scripts": {
+    "serve": "python3 -m http.server 8765",
+    "test": "playwright test"
+  },
+  "devDependencies": {
+    "@playwright/test": "1.49.1"
+  }
+}

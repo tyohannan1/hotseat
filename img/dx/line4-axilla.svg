@@ -1,0 +1,44 @@
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1400 900' width='1400' height='900' font-family='Helvetica Neue, Helvetica, Arial, sans-serif'>
+
+<text x='200' y='120' font-size='20' fill='#9fb3c8' text-anchor='start' font-weight='400' font-style='italic'>medial (sternum)</text>
+<text x='760' y='120' font-size='20' fill='#9fb3c8' text-anchor='end' font-weight='400' font-style='italic'>lateral (arm)</text>
+<text x='480' y='100' font-size='20' fill='#9fb3c8' text-anchor='middle' font-weight='400' font-style='italic'>anterior</text>
+<path d='M120 560 Q420 470 760 560' stroke='#5d7288' stroke-width='8' fill='none' stroke-linejoin='round' stroke-linecap='round' opacity='1'/>
+<text x='440' y='700' font-size='18' fill='#9fb3c8' text-anchor='middle' font-weight='400'>chest wall</text>
+<path d='M130 300 Q450 180 780 330' stroke='#e8eef5' stroke-width='14' fill='none' stroke-linejoin='round' stroke-linecap='round' opacity='0.9'/>
+<text x='450' y='230' font-size='20' fill='#e8eef5' text-anchor='middle' font-weight='400'>pectoralis major</text>
+<path d='M300 470 L620 330' stroke='#FFDD00' stroke-width='12' fill='none' stroke-linejoin='round' stroke-linecap='round' opacity='1'/>
+<text x='470' y='380' font-size='22' fill='#FFDD00' text-anchor='middle' font-weight='700'>pectoralis minor</text>
+<text x='640' y='322' font-size='16' fill='#9fb3c8' text-anchor='start' font-weight='400'>coracoid</text>
+<line x1='620' y1='150' x2='620' y2='560' stroke='#FFDD00' stroke-width='2' stroke-linecap='round' stroke-dasharray='8 8'/>
+<line x1='300' y1='150' x2='300' y2='560' stroke='#FFDD00' stroke-width='2' stroke-linecap='round' stroke-dasharray='8 8'/>
+<ellipse cx='520' cy='440' rx='34' ry='20' fill='none' stroke='#18A3AC' stroke-width='3'/>
+<text x='520' y='447' font-size='14' fill='#18A3AC' text-anchor='middle' font-weight='400'>ax. vein</text>
+<text x='700' y='610' font-size='26' fill='#e8eef5' text-anchor='middle' font-weight='700'>Level I</text>
+<text x='700' y='638' font-size='18' fill='#9fb3c8' text-anchor='middle' font-weight='400'>lateral to pec minor</text>
+<text x='460' y='610' font-size='26' fill='#e8eef5' text-anchor='middle' font-weight='700'>Level II</text>
+<text x='460' y='638' font-size='18' fill='#9fb3c8' text-anchor='middle' font-weight='400'>behind pec minor</text>
+<text x='210' y='610' font-size='26' fill='#e8eef5' text-anchor='middle' font-weight='700'>Level III</text>
+<text x='210' y='638' font-size='18' fill='#9fb3c8' text-anchor='middle' font-weight='400'>medial to pec minor</text>
+<text x='460' y='300' font-size='20' fill='#e8eef5' text-anchor='middle' font-weight='400'>Rotter's (interpectoral)</text>
+<circle cx='460' cy='325' r='9' fill='#ffb000' stroke='#000' stroke-width='1.5'/>
+<circle cx='700' cy='450' r='9' fill='#ffb000' stroke='#000' stroke-width='1.5'/>
+<circle cx='430' cy='440' r='9' fill='#ffb000' stroke='#000' stroke-width='1.5'/>
+<circle cx='210' cy='430' r='9' fill='#ffb000' stroke='#000' stroke-width='1.5'/>
+<circle cx='150' cy='350' r='9' fill='#ffb000' stroke='#000' stroke-width='1.5'/>
+<text x='150' y='380' font-size='16' fill='#9fb3c8' text-anchor='middle' font-weight='400'>internal mammary</text>
+<text x='880' y='150' font-size='30' fill='#e8eef5' text-anchor='start' font-weight='700'>Breast cancer</text>
+<text x='880' y='200' font-size='24' fill='#e8eef5' text-anchor='start' font-weight='400'>Level I or II: the surgeon's axilla.</text>
+<text x='880' y='232' font-size='22' fill='#9fb3c8' text-anchor='start' font-weight='400'>Sentinel node or dissection.</text>
+<text x='880' y='285' font-size='24' fill='#e8eef5' text-anchor='start' font-weight='400'>Level III (infraclavicular): cN3a.</text>
+<text x='880' y='317' font-size='22' fill='#9fb3c8' text-anchor='start' font-weight='400'>Systemic therapy before any surgery.</text>
+<text x='880' y='370' font-size='22' fill='#e8eef5' text-anchor='start' font-weight='400'>Rotter's: not reached by a standard</text>
+<text x='880' y='400' font-size='22' fill='#e8eef5' text-anchor='start' font-weight='400'>dissection; radiation covers it only if named.</text>
+<text x='880' y='450' font-size='22' fill='#e8eef5' text-anchor='start' font-weight='400'>Internal mammary: cN3b. Supraclavicular: cN3c.</text>
+<text x='880' y='540' font-size='30' fill='#e8eef5' text-anchor='start' font-weight='700'>Lymphoma</text>
+<text x='880' y='590' font-size='24' fill='#e8eef5' text-anchor='start' font-weight='400'>Axillary/pectoral is one region;</text>
+<text x='880' y='622' font-size='24' fill='#e8eef5' text-anchor='start' font-weight='400'>infraclavicular is another. Count regions.</text>
+<text x='880' y='720' font-size='22' fill='#18A3AC' text-anchor='start' font-weight='400'>Report: the level by its relation to pectoralis minor,</text>
+<text x='880' y='750' font-size='22' fill='#18A3AC' text-anchor='start' font-weight='400'>and say Rotter's, internal mammary and</text>
+<text x='880' y='780' font-size='22' fill='#18A3AC' text-anchor='start' font-weight='400'>supraclavicular by name.</text>
+</svg>

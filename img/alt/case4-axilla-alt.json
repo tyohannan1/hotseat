@@ -1,0 +1,76 @@
+{
+ "sid": "PETCT_ec581d49ef_20020325",
+ "diagnosis": "MELANOMA",
+ "studyDir": "/Users/tyohannan/AutoPET/FDG-PET-CT-Lesions_v02_20260817/FDG-PET-CT-Lesions/PETCT_ec581d49ef/03-25-2002-PET-CT (Ganzkoerper  primaer mit KM)-41627",
+ "ct": "15.000000-GK p.v.2-08974",
+ "pt": "7.000000-PET corr.-15938",
+ "seg": {
+  "dir": "300.000000-Segmentation-90692",
+  "file": "1-1.dcm"
+ },
+ "crop": "axilla",
+ "lesions": {
+  "A": {
+   "n": 1,
+   "ml": 7.004293837299602,
+   "suvmax": 11.833205223083496,
+   "centroid": [
+    134.0,
+    -221.9,
+    -611.3
+   ],
+   "peak": [
+    135.0,
+    -223.0,
+    -608.0
+   ],
+   "zdraw": -614.0,
+   "extent": [
+    24,
+    22,
+    36
+   ],
+   "place": {
+    "side": "L",
+    "label_at_centroid": "none",
+    "text": "L axillary (lateral chest wall)"
+   }
+  },
+  "B": {
+   "n": 6,
+   "ml": 0.44787669297120014,
+   "suvmax": 4.368800163269043,
+   "centroid": [
+    117.2,
+    -212.8,
+    -610.9
+   ],
+   "peak": [
+    116.7,
+    -212.9,
+    -611.0
+   ],
+   "zdraw": -611.0,
+   "extent": [
+    8,
+    10,
+    9
+   ],
+   "place": {
+    "side": "L",
+    "label_at_centroid": "none",
+    "text": "L axillary (lateral chest wall)"
+   }
+  }
+ },
+ "landmarks": {
+  "aorticBifZ": -946.0,
+  "commonIliacBifZ_left": -1037.0,
+  "femurTopZ_left": -1077.0,
+  "clavicleBottomZ_left": -586.0,
+  "commonIliacBifZ_right": null,
+  "femurTopZ_right": -1080.0,
+  "clavicleBottomZ_right": -577.0,
+  "midlineX": -1.0
+ }
+}

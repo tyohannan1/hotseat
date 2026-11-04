@@ -1,0 +1,78 @@
+{
+ "sid": "PETCT_791ec15924_20010416",
+ "diagnosis": "MELANOMA",
+ "studyDir": "/Users/tyohannan/AutoPET/FDG-PET-CT-Lesions_v02_20260817/FDG-PET-CT-Lesions/PETCT_791ec15924/04-16-2001-PET-CT (Ganzkoerper  primaer mit KM)-50308",
+ "ct": "5.000000-GK p.v.2-41675",
+ "pt": "6.000000-PET corr.-15444",
+ "seg": {
+  "dir": "300.000000-Segmentation-29104",
+  "file": "1-1.dcm"
+ },
+ "crop": "pelvis300",
+ "lesions": {
+  "A": {
+   "n": 3,
+   "id": 8,
+   "ml": 10.574866361820003,
+   "suvmax": 12.00395679473877,
+   "centroid": [
+    24.2,
+    -161.2,
+    664.3
+   ],
+   "peak": [
+    25.9,
+    -160.6,
+    666.0
+   ],
+   "zdraw": 663.0,
+   "extent": [
+    22,
+    43,
+    33
+   ],
+   "place": {
+    "side": "L",
+    "label_at_centroid": "none",
+    "text": "L internal iliac? (posterior to the iliac vessels)"
+   }
+  },
+  "B": {
+   "n": 4,
+   "id": 11,
+   "ml": 9.281000359903203,
+   "suvmax": 13.757288932800293,
+   "centroid": [
+    13.7,
+    -177.8,
+    700.2
+   ],
+   "peak": [
+    15.7,
+    -176.9,
+    693.0
+   ],
+   "zdraw": 702.0,
+   "extent": [
+    22,
+    26,
+    42
+   ],
+   "place": {
+    "side": "L",
+    "label_at_centroid": "none",
+    "text": "L external iliac (along the external iliac vessels)"
+   }
+  }
+ },
+ "landmarks": {
+  "aorticBifZ": 710.0,
+  "commonIliacBifZ_left": 712.0,
+  "femurTopZ_left": 573.0,
+  "clavicleBottomZ_left": 1034.0,
+  "commonIliacBifZ_right": null,
+  "femurTopZ_right": 579.0,
+  "clavicleBottomZ_right": 1037.0,
+  "midlineX": 6.4
+ }
+}
