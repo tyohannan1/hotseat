@@ -66,15 +66,15 @@
 
 <svg x='1800' y='0' viewBox='0 0 900 900' width='900' height='900' font-family='Helvetica Neue, Helvetica, Arial, sans-serif'>
 <text x='450.0' y='46' text-anchor='middle' font-size='34' font-weight='700' fill='#e8eef5' font-family='Helvetica Neue, Helvetica, Arial, sans-serif'>Line 3: the pectoralis minor</text>
-<text x='200' y='120' font-size='20' fill='#9fb3c8' text-anchor='start' font-weight='400' font-style='italic'>medial (sternum)</text>
+<text x='200' y='120' font-size='20' fill='#9fb3c8' text-anchor='start' font-weight='400' font-style='italic'>medial</text>
 <text x='760' y='120' font-size='20' fill='#9fb3c8' text-anchor='end' font-weight='400' font-style='italic'>lateral (arm)</text>
 <text x='480' y='100' font-size='20' fill='#9fb3c8' text-anchor='middle' font-weight='400' font-style='italic'>anterior</text>
 <path d='M120 560 Q420 470 760 560' stroke='#5d7288' stroke-width='8' fill='none' stroke-linejoin='round' stroke-linecap='round' opacity='1'/>
 <text x='440' y='700' font-size='18' fill='#9fb3c8' text-anchor='middle' font-weight='400'>chest wall</text>
 <path d='M130 300 Q450 180 780 330' stroke='#e8eef5' stroke-width='14' fill='none' stroke-linejoin='round' stroke-linecap='round' opacity='0.9'/>
 <text x='450' y='230' font-size='20' fill='#e8eef5' text-anchor='middle' font-weight='400'>pectoralis major</text>
-<path d='M300 470 L620 330' stroke='#FFDD00' stroke-width='12' fill='none' stroke-linejoin='round' stroke-linecap='round' opacity='1'/>
-<text x='470' y='380' font-size='22' fill='#FFDD00' text-anchor='middle' font-weight='700'>pectoralis minor</text>
+<path d='M300 470 Q470 340 620 330' stroke='#FFDD00' stroke-width='12' fill='none' stroke-linejoin='round' stroke-linecap='round' opacity='1'/>
+<text x='470' y='420' font-size='22' fill='#FFDD00' text-anchor='middle' font-weight='700'>pectoralis minor</text>
 <text x='640' y='322' font-size='16' fill='#9fb3c8' text-anchor='start' font-weight='400'>coracoid</text>
 <line x1='620' y1='150' x2='620' y2='560' stroke='#FFDD00' stroke-width='2' stroke-linecap='round' stroke-dasharray='8 8'/>
 <line x1='300' y1='150' x2='300' y2='560' stroke='#FFDD00' stroke-width='2' stroke-linecap='round' stroke-dasharray='8 8'/>
@@ -91,8 +91,6 @@
 <circle cx='700' cy='450' r='9' fill='#ffb000' stroke='#000' stroke-width='1.5'/>
 <circle cx='430' cy='440' r='9' fill='#ffb000' stroke='#000' stroke-width='1.5'/>
 <circle cx='210' cy='430' r='9' fill='#ffb000' stroke='#000' stroke-width='1.5'/>
-<circle cx='150' cy='350' r='9' fill='#ffb000' stroke='#000' stroke-width='1.5'/>
-<text x='150' y='380' font-size='16' fill='#9fb3c8' text-anchor='middle' font-weight='400'>internal mammary</text>
 </svg>
 
 </svg>

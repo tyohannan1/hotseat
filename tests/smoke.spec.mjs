@@ -114,14 +114,14 @@ test("lecture runs end to end: slides, pretest, hot seat, quick check reveal, zo
   // slide with NCCN crops renders images (or labeled placeholders), table slide renders rows
   await page.click('#jump button[title="Same node, different page"]');
   await expect(page.locator("#s-media .nccn")).toHaveCount(2);
-  await page.click('#jump button[title="One node, seven labels"]');
-  await expect(page.locator("#s-body .s-table tr")).toHaveCount(8);
+  await page.click('#jump button[title="Three reporting rules"]');
+  await expect(page.locator("#s-title")).toHaveText("Three reporting rules");
 
   // presenter refresh + resume lands on the same item
   await page.reload();
   await page.fill("#resume", sid);
   await page.click("#btn-resume");
-  await expect(page.locator("#s-title")).toHaveText("One node, seven labels");
+  await expect(page.locator("#s-title")).toHaveText("Three reporting rules");
 
   // image zoom: Z opens the full-bleed overlay on a slide with an image, Esc closes it
   await page.click('#jump button[title="External iliac vs common iliac"]');

@@ -134,13 +134,13 @@ def anorectal(w=900, h=900, standalone=True):
 def axilla(w=900, h=900, standalone=True):
     b = []
     # axial schematic of the left axilla: anterior up, medial (sternum) on the left of the drawing
-    b.append(T(200, 120, "medial (sternum)", 20, DIM, "start", 400, True)); b.append(T(760, 120, "lateral (arm)", 20, DIM, "end", 400, True)); b.append(T(480, 100, "anterior", 20, DIM, "middle", 400, True))
+    b.append(T(200, 120, "medial", 20, DIM, "start", 400, True)); b.append(T(760, 120, "lateral (arm)", 20, DIM, "end", 400, True)); b.append(T(480, 100, "anterior", 20, DIM, "middle", 400, True))
     # chest wall (ribs) curve
     b.append(path("M120 560 Q420 470 760 560", MUTE, 8)); b.append(T(440, 700, "chest wall", 18, DIM, "middle"))
     # pectoralis major (anterior, broad)
     b.append(path("M130 300 Q450 180 780 330", INK, 14, op=0.9)); b.append(T(450, 230, "pectoralis major", 20, INK, "middle"))
     # pectoralis minor (oblique: coracoid lateral-anterior to ribs 3-5 medial-posterior)
-    b.append(path("M300 470 L620 330", GOLD, 12)); b.append(T(470, 380, "pectoralis minor", 22, GOLD, "middle", 700))
+    b.append(path("M300 470 Q470 340 620 330", GOLD, 12)); b.append(T(470, 420, "pectoralis minor", 22, GOLD, "middle", 700))
     b.append(T(640, 322, "coracoid", 16, DIM, "start"))
     # borders of pec minor projected
     b.append(line(620, 150, 620, 560, GOLD, 2, "8 8")); b.append(line(300, 150, 300, 560, GOLD, 2, "8 8"))
@@ -151,7 +151,7 @@ def axilla(w=900, h=900, standalone=True):
     b.append(T(460, 610, "Level II", 26, INK, "middle", 700)); b.append(T(460, 638, "behind pec minor", 18, DIM, "middle"))
     b.append(T(210, 610, "Level III", 26, INK, "middle", 700)); b.append(T(210, 638, "medial to pec minor", 18, DIM, "middle"))
     b.append(T(460, 300, "Rotter's (interpectoral)", 20, INK, "middle")); b.append(node(460, 325))
-    b.append(node(700, 450)); b.append(node(430, 440)); b.append(node(210, 430)); b.append(node(150, 350)); b.append(T(150, 380, "internal mammary", 16, DIM, "middle"))
+    b.append(node(700, 450)); b.append(node(430, 440)); b.append(node(210, 430))
     # right column
     return svg(w, h, "\n".join(b), "Line 3: the pectoralis minor" if standalone else None)
 

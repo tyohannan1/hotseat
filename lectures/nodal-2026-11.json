@@ -119,7 +119,7 @@
   {
    "label": "Close",
    "minutes": 3,
-   "from": "close-supraclav"
+   "from": "close-rules"
   },
   {
    "label": "Posttest",
@@ -1005,69 +1005,6 @@
     "Cut if behind. Even lymphoma has more than one map. The Hodgkin trial groups count nodal areas differently from the standard regions, so the same axilla can be one area on one scheme and two on another. The counting rule belongs to the trial, not to anatomy."
    ],
    "build": true
-  },
-  {
-   "type": "slide",
-   "id": "close-supraclav",
-   "eyebrow": "Close · The supraclavicular node",
-   "title": "One node, seven labels",
-   "image": "img/close-supraclavicular-fdg.png",
-   "caption": "One FDG-avid left supraclavicular node. Primary withheld.",
-   "body": [
-    "> The node did not move. Only the rulebook did."
-   ],
-   "table": {
-    "head": [
-     "Primary",
-     "This node is",
-     "Consequence"
-    ],
-    "rows": [
-     [
-      "Lung",
-      "N3, even ipsilateral",
-      "Unresectable. Definitive chemoradiation"
-     ],
-     [
-      "Breast",
-      "cN3c, stage IIIC",
-      "Inoperable upfront. Systemic therapy first"
-     ],
-     [
-      "Thyroid",
-      "Lateral neck, N1b",
-      "Lateral neck dissection"
-     ],
-     [
-      "Nasopharynx",
-      "N3 if below the caudal cricoid",
-      "Induction chemotherapy plus chemoradiation"
-     ],
-     [
-      "Gastric or other GI (Virchow)",
-      "M1, stage IV",
-      "Palliative pathway"
-     ],
-     [
-      "Cervix",
-      "FIGO IVB",
-      "Systemic"
-     ],
-     [
-      "Lymphoma",
-      "Part of the cervical/supraclavicular region",
-      "One region. Count the others"
-     ]
-    ]
-   },
-   "tableFirst": true,
-   "notes": [
-    "One FDG-avid left supraclavicular node, primary withheld. Walk the table one row at a time.",
-    "Say it once: the node did not move. Only the rulebook did."
-   ],
-   "source": "AutoPET PETCT_cbbc9e2879, 2006-01-16, Lymphoma. CT series 4.000000-GK p.v.3 s-53013, PET series 8.000000-PET corr.-60905. A: lesion #3 (11.0 mL, SUVmax 10.4, z -415 mm).",
-   "imageClean": "img/close-supraclavicular-fdg-clean.png",
-   "imageBare": "img/close-supraclavicular-fdg-bare.png"
   },
   {
    "type": "slide",
