@@ -309,9 +309,9 @@ def vessel_diagram(nodes, W=640, Hh=900):
     # vessel names
     f = font(20)
     d.text((cx + 28, y_top + 60), "aorta", fill=DIM, font=f)
-    d.text((cx + 150, y_ab + 70), "common iliac", fill=DIM, font=f)
-    d.text((cx + 215, y_bot - 90), "external iliac", fill=DIM, font=f)
-    d.text((cx + 20, y_cb + 150), "internal iliac", fill=DIM, font=f)
+    d.text((cx - 240, y_ab + 70), "common iliac", fill=DIM, font=f)
+    d.text((cx - 300, y_bot - 120), "external iliac", fill=DIM, font=f)
+    d.text((cx - 95, y_cb + 215), "internal iliac", fill=DIM, font=f, anchor="ma")
     d.text((40, Hh - 40), "patient's right", fill=DIM, font=font(17)); d.text((W - 170, Hh - 40), "patient's left", fill=DIM, font=font(17))
     for letter, br in nodes:
         x, y = pts[br]; draw_marker(d, (x, y), letter, r=26, f=font(34, True))
