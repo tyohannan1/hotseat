@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>Hot Seat — Presenter</title>
-<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/style.css?v=20261104b">
 <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-database-compat.js"></script>
@@ -353,6 +353,7 @@
         : (s.tableFirst ? tableHtml(s.table) + bodyHtml(s.body) : bodyHtml(s.body) + tableHtml(s.table));
     $("slideview").classList.toggle("titlecard", s.kind === "title");
     $("s-body").classList.toggle("build", !!s.build);
+    $("slideview").classList.toggle("hasbuild", !!s.build);
     $("s-caption").textContent = s.caption || "";
     const nccn = Array.isArray(s.nccn) ? s.nccn : (s.nccn ? [s.nccn] : []);
     let media = "";

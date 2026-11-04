@@ -234,3 +234,5 @@ body.present .slide.titlecard h2{font-size:clamp(3rem,6vw,5.6rem)}
 .s-body.build .frag blockquote{margin:.9em 0 0}
 body.present .s-body.build{font-size:clamp(1.4rem,2.3vw,2.1rem);line-height:1.28}
 body.present .slide.textonly .s-body.build blockquote{font-size:1em;padding:.5em .9em}
+/* build slides: title runs the full width */
+.slide.textonly.hasbuild h2{max-width:none}
