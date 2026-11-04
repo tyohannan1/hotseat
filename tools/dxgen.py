@@ -185,16 +185,17 @@ def axilla(w=1400, h=900, standalone=True):
     b.append(T(x0, 450, "Internal mammary: cN3b. Supraclavicular: cN3c.", 22, INK))
     b.append(T(x0, 540, "Lymphoma", 30, INK, "start", 700)); b.append(T(x0, 590, "Axillary/pectoral is one region;", 24)); b.append(T(x0, 622, "infraclavicular is another. Count regions.", 24))
     b.append(T(x0, 720, "Report: the level by its relation to pectoralis minor,", 22, TEAL)); b.append(T(x0, 750, "and say Rotter's, internal mammary and", 22, TEAL)); b.append(T(x0, 780, "supraclavicular by name.", 22, TEAL))
-    return svg(w, h, "\n".join(b), "Line 4: the pectoralis minor" if standalone else None)
+    return svg(w, h, "\n".join(b), "Line 3: the pectoralis minor" if standalone else None)
 
 def composite():
     # 2x2 of the four lines, each as a nested svg
     parts = []
-    for i, fn in enumerate([pelvis, trachea, anorectal, axilla]):
+    # three lines side by side: prostate, lung, breast (the anorectal line is kept as its own file but is off the deck)
+    for i, fn in enumerate([pelvis, trachea, axilla]):
         inner = fn(standalone=True)
-        inner = inner.replace("<svg xmlns='http://www.w3.org/2000/svg' ", f"<svg x='{(i % 2) * 1400}' y='{(i // 2) * 900}' ")
+        inner = inner.replace("<svg xmlns='http://www.w3.org/2000/svg' ", f"<svg x='{i * 1400}' y='0' ")
         parts.append(inner)
-    return f"<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 2800 1800' width='2800' height='1800'>\n" + "\n".join(parts) + "\n</svg>\n"
+    return f"<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 4200 900' width='4200' height='900'>\n" + "\n".join(parts) + "\n</svg>\n"
 
 os.makedirs(OUT, exist_ok=True)
 for name, fn in [("regions-lymphoma", regions), ("line1-pelvis", pelvis), ("line2-trachea", trachea), ("line3-anorectal", anorectal), ("line4-axilla", axilla)]:

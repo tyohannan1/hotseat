@@ -95,7 +95,7 @@ test("lecture runs end to end: slides, pretest, hot seat, quick check reveal, zo
   await page.keyboard.press("ArrowRight"); await page.keyboard.press("ArrowRight");
   await expect(page.locator("#s-body .frag.shown")).toHaveCount(2);
   await page.keyboard.press("ArrowRight");
-  await expect(page.locator("#s-title")).toHaveText("Four landmarks");
+  await expect(page.locator("#s-title")).toHaveText("Three landmarks");
 
   // jump straight to the first quick check and reveal there
   await page.click('#jump button:text-is("qc1")');

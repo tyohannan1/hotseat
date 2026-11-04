@@ -250,24 +250,23 @@
    "type": "slide",
    "id": "op-landmarks",
    "eyebrow": "Opening",
-   "title": "Four landmarks",
+   "title": "Three landmarks",
    "body": [
     "- The common iliac bifurcation",
     "- The left lateral wall of the trachea",
-    "- The dentate line and the mesorectal fascia",
     "- The pectoralis minor",
     "",
-    "Each one is a line where the same node changes its name and its consequence for at least one disease. For lymphoma, none of them matter.",
-    "",
-    "Pretest next. You were not expected to know these. The next 40 minutes should make the posttest feel obvious."
+    "Each one is a line where the same node changes its name and its consequence for the carcinoma. For lymphoma, none of them matter.",
+    ""
    ],
    "notes": [
-    "These are the four lines you will learn to name today, one per case. Each one is a boundary where the same node changes its name and its consequence for at least one disease, and for lymphoma none of them matter at all.",
+    "These are the three lines you will learn to name today, one per case: prostate, lung, breast. Each is a boundary where the same node changes its name and its consequence, and for lymphoma none of them matter at all.",
     "Say out loud: the pretest answers are coming, they were not expected to know them, and the point of the next 40 minutes is to make the posttest feel obvious.",
-    "Pretest next. Four questions, same stem and options every time, room votes on phones, no answers revealed."
+    "Case 1 next."
    ],
    "image": "img/dx/four-lines.svg",
-   "caption": "The four lines, one per case. Each comes back as its own slide."
+   "caption": "The three lines, one per case. Each comes back as its own slide.",
+   "layout": "stack"
   },
   {
    "type": "slide",
@@ -710,7 +709,7 @@
    "notes": [
     "Use the disease's own vocabulary: station for lung, level for breast and neck, region for lymphoma, named vessel for the pelvis. Give the short-axis size. Say explicitly which side of the boundary the node is on, and name the boundary.",
     "If the clinical history does not tell you the primary, say which classification you used, because the same sentence will be read by three different services.",
-    "Posttest next: same four questions, same images, same order. No hot seat. Open each poll, close after about 45 seconds, move on without revealing. Then V for the pre/post reveal."
+    "Posttest next: same three questions, same images, same order. No hot seat. Open each poll, close after about 45 seconds, move on without revealing. Then V for the pre/post reveal."
    ]
   },
   {
@@ -764,12 +763,12 @@
    "eyebrow": "Wrap",
    "title": "Ask what disease is being staged. That decides which words matter.",
    "body": [
-    "You have now seen it work four times. That is the number it takes to become a habit.",
+    "You have now seen it work three times. That is the number it takes to become a habit.",
     "",
     "Next: Summary shows the pretest beside the posttest."
    ],
    "notes": [
-    "Last slide is the thesis sentence, unchanged. The residents have now seen it work four times, which is the number it takes to become a habit.",
+    "Last slide is the thesis sentence, unchanged. The residents have now seen it work three times, which is the number it takes to become a habit.",
     "Press → or V for the pre/post reveal (one pair per screen), then Summary."
    ],
    "caption": "PET/CT images: AutoPET (TCIA FDG-PET-CT-Lesions, Gatidis & Küstner 2022), CC BY 4.0. Guideline crops: NCCN."
