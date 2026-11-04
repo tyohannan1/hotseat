@@ -236,3 +236,8 @@ body.present .s-body.build{font-size:clamp(1.4rem,2.3vw,2.1rem);line-height:1.28
 body.present .slide.textonly .s-body.build blockquote{font-size:1em;padding:.5em .9em}
 /* build slides: title runs the full width */
 .slide.textonly.hasbuild h2{max-width:none}
+/* bigger type: title card name, build slides */
+.slide.titlecard .t-sub{font-size:clamp(1.6rem,3vw,2.8rem)}
+.slide.titlecard .t-by{font-size:clamp(1.3rem,2.3vw,2.1rem);color:var(--fg);opacity:.85}
+body.present .slide.textonly.hasbuild h2{font-size:clamp(2.2rem,3.9vw,3.7rem)}
+body.present .s-body.build{font-size:clamp(1.55rem,2.65vw,2.45rem);line-height:1.3}
