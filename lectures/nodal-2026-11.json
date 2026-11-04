@@ -192,9 +192,9 @@
    "eyebrow": "Opening",
    "title": "Lymphoma counts regions",
    "image": "img/dx/regions-lymphoma.svg",
-   "caption": "Ann Arbor regions as used by Lugano. The dashed line is the diaphragm.",
+   "caption": "The 17 regions used by the PET/CT workbench. Right and left are counted separately.",
    "body": [
-    "- One region is one area on this map. \"Iliac\" is a complete word; so is \"axillary\".",
+    "- One region is one area on this map, right and left counted separately. \"Right iliac\" is a complete word; so is \"left axillary\".",
     "- Stage counts regions and sides of the diaphragm, not which vessel the node sits on.",
     "- None of today's four lines moves a node between regions."
    ],

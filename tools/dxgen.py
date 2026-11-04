@@ -22,46 +22,39 @@ def path(d, col=INK, w=3, fill="none", dash=None, op=1):
     return f"<path d='{d}' stroke='{col}' stroke-width='{w}' fill='{fill}' stroke-linejoin='round' stroke-linecap='round'{ds} opacity='{op}'/>"
 
 # ------------------------------------------------------------------ lymphoma regions
-def regions(w=1400, h=900, standalone=True):
+def regions(w=1340, h=900, standalone=True):
+    """Lugano / Ann Arbor regions: body silhouette and the 17 region names used by the PET/CT workbench. Nothing else."""
     b = []
-    cx = 540
+    cx = 640
+    b.append(T(cx, 60, "Lugano / Ann Arbor regions", 36, INK, "middle", 700))
     # body silhouette
-    b.append(f"<circle cx='{cx}' cy='120' r='48' fill='none' stroke='{MUTE}' stroke-width='3'/>")
-    b.append(path(f"M{cx-30} 165 L{cx-30} 190 L{cx-150} 215 L{cx-215} 470 L{cx-170} 480 L{cx-125} 300 L{cx-125} 520 L{cx-135} 830 L{cx-75} 830 L{cx-35} 560 L{cx+35} 560 L{cx+75} 830 L{cx+135} 830 L{cx+125} 520 L{cx+125} 300 L{cx+170} 480 L{cx+215} 470 L{cx+150} 215 L{cx+30} 190 L{cx+30} 165 Z", MUTE, 3))
+    b.append(f"<circle cx='{cx}' cy='{150}' r='46' fill='none' stroke='{MUTE}' stroke-width='3'/>")
+    b.append(path(f"M{cx-30} 193 L{cx-30} 215 L{cx-150} 240 L{cx-215} 495 L{cx-170} 505 L{cx-125} 325 L{cx-125} 545 L{cx-135} 855 L{cx-75} 855 L{cx-35} 585 L{cx+35} 585 L{cx+75} 855 L{cx+135} 855 L{cx+125} 545 L{cx+125} 325 L{cx+170} 505 L{cx+215} 495 L{cx+150} 240 L{cx+30} 215 L{cx+30} 193 Z", MUTE, 3))
     # diaphragm
-    b.append(line(cx-130, 400, cx+130, 400, TEAL, 3, "10 8"))
-    b.append(T(cx-262, 380, "diaphragm", 20, TEAL, "end", 400, True))
-    # regions: (x, y, rx, ry, label, label side)
+    b.append(line(cx-130, 425, cx+130, 425, TEAL, 3, "10 8"))
+    b.append(T(cx+262, 432, "diaphragm", 18, TEAL, "start", 400, True))
+    # (x, y, rx, ry, label, label side); patient's right on the viewer's left
     R = [
-        (cx, 150, 26, 14, "Waldeyer's ring", "r"),
-        (cx-62, 185, 26, 18, "cervical / supraclavicular", "l"), (cx+62, 185, 26, 18, "", ""),
-        (cx-85, 235, 22, 12, "infraclavicular", "l"), (cx+85, 235, 22, 12, "", ""),
-        (cx-135, 265, 22, 22, "axillary / pectoral", "l"), (cx+135, 265, 22, 22, "", ""),
-        (cx, 275, 30, 42, "mediastinal", "r"),
-        (cx-48, 320, 16, 16, "hilar", "l"), (cx+48, 320, 16, 16, "", ""),
-        (cx-190, 400, 14, 14, "epitrochlear / brachial", "l"), (cx+190, 400, 14, 14, "", ""),
-        (cx+70, 440, 28, 22, "spleen", "r"),
-        (cx, 470, 20, 40, "para-aortic", "r"),
-        (cx-40, 500, 26, 20, "mesenteric", "l"),
-        (cx-55, 560, 18, 26, "iliac", "l"), (cx+55, 560, 18, 26, "", ""),
-        (cx-75, 630, 20, 20, "inguinal / femoral", "l"), (cx+75, 630, 20, 20, "", ""),
-        (cx-95, 790, 14, 14, "popliteal", "l"), (cx+95, 790, 14, 14, "", ""),
+        (cx, 178, 26, 14, "Waldeyer's ring", "r"),
+        (cx-62, 212, 26, 18, "Right neck", "l"), (cx+62, 212, 26, 18, "Left neck", "r"),
+        (cx-85, 262, 22, 12, "Right infraclavicular", "l"), (cx+85, 262, 22, 12, "Left infraclavicular", "r"),
+        (cx-135, 300, 22, 22, "Right axillary", "l"), (cx+135, 300, 22, 22, "Left axillary", "r"),
+        (cx, 305, 30, 42, "Mediastinal", "r2"),
+        (cx-48, 352, 16, 16, "Right hilar", "l"), (cx+48, 352, 16, 16, "Left hilar", "r"),
+        (cx+70, 468, 28, 22, "Spleen", "r"),
+        (cx, 505, 20, 40, "Para-aortic", "r2"),
+        (cx-40, 535, 26, 20, "Mesenteric", "l"),
+        (cx-55, 598, 18, 26, "Right iliac", "l"), (cx+55, 598, 18, 26, "Left iliac", "r"),
+        (cx-75, 668, 20, 20, "Right inguinal", "l"), (cx+75, 668, 20, 20, "Left inguinal", "r"),
     ]
     for x, y, rx, ry, lab, side in R:
-        b.append(f"<ellipse cx='{x}' cy='{y}' rx='{rx}' ry='{ry}' fill='{NODE}' fill-opacity='0.28' stroke='{NODE}' stroke-width='2.5'/>")
-        if lab:
-            if side == "l": b.append(line(x-rx-4, y, cx-255, y, DIM, 1.5)); b.append(T(cx-262, y+7, lab, 20, INK, "end"))
-            else: b.append(line(x+rx+4, y, cx+255, y, DIM, 1.5)); b.append(T(cx+262, y+7, lab, 20, INK, "start"))
-    b.append(T(cx-262, 213, "occipital / preauricular", 18, DIM, "end"))
-    # right-hand rules
-    x0 = 980
-    b.append(T(x0, 150, "Lymphoma counts regions", 30, INK, "start", 700))
-    rules = ["Inside a region, position does not matter:", "  “iliac” is a complete word,", "  “axillary” is a complete word.", "",
-             "Stage I: one region.", "Stage II: two or more, same side of the diaphragm.", "Stage III: both sides of the diaphragm.", "Stage IV: non-contiguous extranodal disease.", "",
-             "Bulk and the number of regions matter.", "None of today’s four lines moves a node", "between regions."]
-    for i, r in enumerate(rules): b.append(T(x0, 200 + i * 36, r, 24, INK if not r.startswith("  ") else DIM))
-    b.append(T(x0, 700, "Ann Arbor regions as used by the Lugano classification (Cheson 2014).", 18, DIM, "start", 400, True))
-    return svg(w, h, "\n".join(b), "Lymphoma: regions, not boundaries" if standalone else None)
+        b.append(f"<ellipse cx='{x}' cy='{y}' rx='{rx}' ry='{ry}' fill='{NODE}' fill-opacity='0.3' stroke='{NODE}' stroke-width='2.5'/>")
+        if side == "l": b.append(line(x-rx-4, y, cx-255, y, DIM, 1.5)); b.append(T(cx-262, y+7, lab, 21, INK, "end"))
+        elif side == "r": b.append(line(x+rx+4, y, cx+255, y, DIM, 1.5)); b.append(T(cx+262, y+7, lab, 21, INK, "start"))
+        else:  # central structure: label to the right, line drops below the paired labels
+            yy = y + 95 if lab == "Mediastinal" else y + 50
+            b.append(line(x+rx+4, yy, cx+255, yy, DIM, 1.5)); b.append(line(x+rx+4, y, x+rx+4, yy, DIM, 1.5)); b.append(T(cx+262, yy+7, lab, 21, INK, "start"))
+    return svg(w, h, "\n".join(b), None)
 
 # ------------------------------------------------------------------ pelvis: common iliac bifurcation
 def pelvis(w=1400, h=900, standalone=True):
