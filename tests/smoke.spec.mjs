@@ -160,10 +160,10 @@ test("lecture runs end to end: slides, pretest, hot seat, quick check reveal, zo
 
   // pre/post reveal: Next after the last item lands here; pair 1 shows both bar sets and the correct row
   await page.click('#jump button[title="Ask what disease is being staged. That decides which words matter."]:last-child');
-  await page.keyboard.press("ArrowRight");
+  for (let k = 0; k < 3; k++) await page.keyboard.press("ArrowRight");   // build lines, then Next past the last item
   await expect(page.locator("#v-reveal")).toBeVisible();
   await expect(page.locator(".rv-row")).toHaveCount(4);
-  await expect(page.locator('.rv-row.correct .rv-letter')).toHaveText("C");
+  await expect(page.locator('.rv-row.correct .rv-letter')).toHaveText("A");
   await expect(page.locator("#rv-status")).toContainText("0% → 100%");
   await page.keyboard.press("ArrowRight");
   await expect(page.locator(".eyebrow", { hasText: "2 of 18" })).toBeVisible();
