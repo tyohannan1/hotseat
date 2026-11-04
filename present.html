@@ -5,7 +5,7 @@
 <meta http-equiv="Cache-Control" content="no-cache">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>Hot Seat — Presenter</title>
-<link rel="stylesheet" href="css/style.css?v=20261104j">
+<link rel="stylesheet" href="css/style.css?v=20261104k">
 <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-database-compat.js"></script>
@@ -122,8 +122,8 @@
       <div class="jump" id="jump"></div>
     </div>
   </div>
-  <p class="keys" id="keys-q"><kbd>Space</kbd> pick · <kbd>A</kbd>–<kbd>D</kbd> hot seat answer · <kbd>O</kbd> open · <kbd>X</kbd> close · <kbd>R</kbd> reveal · <kbd>←</kbd> <kbd>→</kbd> prev/next · <kbd>Z</kbd> zoom image · <kbd>F</kbd> present · <kbd>Esc</kbd> clear hot seat</p>
-  <p class="keys hidden" id="keys-s"><kbd>←</kbd> <kbd>→</kbd> prev/next · <kbd>Z</kbd> zoom image · <kbd>F</kbd> present · <kbd>V</kbd> pre/post</p>
+  <p class="keys" id="keys-q"><kbd>Space</kbd> pick · <kbd>A</kbd>–<kbd>D</kbd> hot seat answer · <kbd>O</kbd> open · <kbd>X</kbd> close · <kbd>R</kbd> reveal · <kbd>←</kbd> <kbd>→</kbd> prev/next · <kbd>Z</kbd> zoom image · <kbd>C</kbd> circles <span class="circ-state">off</span> · <kbd>F</kbd> present · <kbd>Esc</kbd> clear hot seat</p>
+  <p class="keys hidden" id="keys-s"><kbd>←</kbd> <kbd>→</kbd> prev/next · <kbd>Z</kbd> zoom image · <kbd>C</kbd> circles <span class="circ-state">off</span> · <kbd>F</kbd> present · <kbd>V</kbd> pre/post</p>
 </section>
 
 <!-- PRE/POST REVEAL: one pair per screen, projector sized -->
@@ -310,7 +310,10 @@
     const head = t.head ? `<tr>${t.head.map(h => `<th>${inline(h)}</th>`).join("")}</tr>` : "";
     return `<table class="s-table">${head}${t.rows.map(r => `<tr>${r.map(c => `<td>${inline(c)}</td>`).join("")}</tr>`).join("")}</table>`;
   }
-  const ASSET_V = "20261104i";   // bump when an image or diagram changes under the same file name
+  const ASSET_V = "20261104k";
+  let circlesOn = false;   // C toggles between the letters-only image (imageClean) and the circled one (image)
+  const imgSrcFor = it => (it.imageClean && !circlesOn) ? it.imageClean : it.image;
+  function toggleCircles() { circlesOn = !circlesOn; document.body.classList.toggle("circles", circlesOn); document.querySelectorAll(".circ-state").forEach(el => el.textContent = circlesOn ? "on" : "off"); render(); }   // bump when an image or diagram changes under the same file name
   function imgTag(src, cls) {
     const v = src.includes("?") ? "" : "?v=" + ASSET_V;
     return `<img class="${cls || ""}" src="${esc(src)}${v}" alt="" title="Click or Z to zoom" onclick="window.hsZoom(this.src)" onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'placeholder',textContent:'Image missing: ${esc(src)}'}))">`;
@@ -365,7 +368,7 @@
       : (s.caption || "");
     const nccn = Array.isArray(s.nccn) ? s.nccn : (s.nccn ? [s.nccn] : []);
     let media = "";
-    if (s.image) media += `<div class="imgbox">${imgTag(s.image)}</div>`;
+    if (s.image) media += `<div class="imgbox">${imgTag(imgSrcFor(s))}</div>`;
     nccn.forEach(p => media += `<div class="nccn">${imgTag(p)}</div>`);
     $("s-media").innerHTML = media;
     $("slideview").classList.toggle("nomedia", !media);
@@ -393,7 +396,7 @@
     $("q-disease").textContent = q.disease || "";
     $("q-stem").textContent = stemOf(q);
     $("q-caption").textContent = q.imageCaption || "";
-    if (q.image) $("imgbox").innerHTML = imgTag(q.image);
+    if (q.image) $("imgbox").innerHTML = imgTag(imgSrcFor(q));
     else $("imgbox").innerHTML = `<div class="placeholder">${q.stem ? "Verbal case" : ""}</div>`;
     $("opts").innerHTML = optsOf(q).map((o, i) => `<div class="opt" data-i="${i}"><div class="bar" style="width:0"></div><span class="letter">${LETTERS[i]}</span><span>${esc(o)} <span class="hotbadge">hot seat</span></span><span class="n"></span></div>`).join("");
     $("explain").textContent = q.explain || ""; $("explain").classList.add("hidden");
@@ -504,6 +507,7 @@
     if ($("v-run").classList.contains("hidden")) return;
     if (e.key === "Escape" && zoomOpen()) { zoomClose(); return; }
     if (e.key === "z" || e.key === "Z") { zoomToggle(); return; }
+    if (e.key === "c" || e.key === "C") { toggleCircles(); return; }
     if (e.key === "v" || e.key === "V") { showReveal(0); return; }
     if (e.key === "ArrowRight") { zoomClose(); $("btn-next").click(); return; }
     if (e.key === "ArrowLeft") { zoomClose(); $("btn-prev").click(); return; }

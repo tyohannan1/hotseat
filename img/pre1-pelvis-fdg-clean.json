@@ -1,0 +1,78 @@
+{
+ "sid": "PETCT_d9da6129f8_20020414",
+ "diagnosis": "MELANOMA",
+ "studyDir": "/Users/tyohannan/AutoPET/FDG-PET-CT-Lesions_v02_20260817/FDG-PET-CT-Lesions/PETCT_d9da6129f8/04-14-2002-PET-CT (Ganzkoerper  primaer mit KM)-51600",
+ "ct": "4.000000-GK p.v.3-98719",
+ "pt": "5.000000-PET corr.-53940",
+ "seg": {
+  "dir": "300.000000-Segmentation-33294",
+  "file": "1-1.dcm"
+ },
+ "crop": "pelvis300",
+ "lesions": {
+  "A": {
+   "n": 4,
+   "id": 6,
+   "ml": 3.744746794009201,
+   "suvmax": 34.92637634277344,
+   "centroid": [
+    30.5,
+    -219.3,
+    627.7
+   ],
+   "peak": [
+    29.9,
+    -218.0,
+    627.0
+   ],
+   "zdraw": 630.0,
+   "extent": [
+    18,
+    33,
+    15
+   ],
+   "place": {
+    "side": "L",
+    "label_at_centroid": "iliopsoas_left",
+    "text": "L common iliac (between aortic and common iliac bifurcations)"
+   }
+  },
+  "B": {
+   "n": 6,
+   "id": 7,
+   "ml": 1.1818968286740004,
+   "suvmax": 12.639759063720703,
+   "centroid": [
+    27.1,
+    -227.6,
+    668.9
+   ],
+   "peak": [
+    27.9,
+    -226.1,
+    669.0
+   ],
+   "zdraw": 669.0,
+   "extent": [
+    14,
+    20,
+    9
+   ],
+   "place": {
+    "side": "L",
+    "label_at_centroid": "none",
+    "text": "L common iliac (between aortic and common iliac bifurcations)"
+   }
+  }
+ },
+ "landmarks": {
+  "aorticBifZ": 673.5,
+  "commonIliacBifZ_left": 586.0,
+  "femurTopZ_left": 518.5,
+  "clavicleBottomZ_left": 1018.5,
+  "commonIliacBifZ_right": null,
+  "femurTopZ_right": 526.0,
+  "clavicleBottomZ_right": 1018.5,
+  "midlineX": 10.2
+ }
+}

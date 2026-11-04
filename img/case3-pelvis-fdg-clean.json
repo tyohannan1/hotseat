@@ -1,0 +1,106 @@
+{
+ "rows": [
+  {
+   "sid": "PETCT_d5103c8fbf_20060414",
+   "diagnosis": "MELANOMA",
+   "studyDir": "/Users/tyohannan/AutoPET/FDG-PET-CT-Lesions_v02_20260817/FDG-PET-CT-Lesions/PETCT_d5103c8fbf/04-14-2006-PET-CT (Ganzkoerper  primaer mit KM)-20753",
+   "ct": "6.000000-GK p.v.3 s-60673",
+   "pt": "4.000000-PET corr.-56571",
+   "seg": {
+    "dir": "300.000000-Segmentation-37235",
+    "file": "1-1.dcm"
+   },
+   "crop": "pelvis",
+   "lesions": {
+    "A": {
+     "n": 1,
+     "id": 3,
+     "ml": 119.67016415805483,
+     "suvmax": 31.624595642089844,
+     "centroid": [
+      -25.6,
+      -224.0,
+      575.7
+     ],
+     "peak": [
+      -16.8,
+      -243.2,
+      529.0
+     ],
+     "zdraw": 556.0,
+     "extent": [
+      63,
+      83,
+      120
+     ],
+     "place": {
+      "side": "R",
+      "label_at_centroid": "none",
+      "text": "R internal iliac? (posterior to the iliac vessels)"
+     }
+    }
+   },
+   "landmarks": {
+    "aorticBifZ": 676.0,
+    "commonIliacBifZ_left": null,
+    "femurTopZ_left": 546.0,
+    "clavicleBottomZ_left": 1058.5,
+    "commonIliacBifZ_right": 648.5,
+    "femurTopZ_right": 551.0,
+    "clavicleBottomZ_right": 1053.5,
+    "midlineX": 1.5
+   }
+  },
+  {
+   "sid": "PETCT_1285b86bea_20060224",
+   "diagnosis": "MELANOMA",
+   "studyDir": "/Users/tyohannan/AutoPET/FDG-PET-CT-Lesions_v02_20260817/FDG-PET-CT-Lesions/PETCT_1285b86bea/02-24-2006-PET-CT (Ganzkoerper  primaer mit KM)-49419",
+   "ct": "4.000000-GK p.v.3 s-80878",
+   "pt": "9.000000-PET corr.-99271",
+   "seg": {
+    "dir": "300.000000-Segmentation-66624",
+    "file": "1-1.dcm"
+   },
+   "crop": "pelvis",
+   "lesions": {
+    "B": {
+     "n": 87,
+     "id": 136,
+     "ml": 4.329474698721602,
+     "suvmax": 47.12824630737305,
+     "centroid": [
+      120.2,
+      -131.1,
+      -956.8
+     ],
+     "peak": [
+      124.8,
+      -136.6,
+      -956.5
+     ],
+     "zdraw": -956.5,
+     "extent": [
+      20,
+      29,
+      18
+     ],
+     "place": {
+      "side": "L",
+      "label_at_centroid": "gluteus_maximus_left",
+      "text": "L common iliac (between aortic and common iliac bifurcations)"
+     }
+    }
+   },
+   "landmarks": {
+    "aorticBifZ": -840.0,
+    "commonIliacBifZ_left": null,
+    "femurTopZ_left": -947.5,
+    "clavicleBottomZ_left": -485.0,
+    "commonIliacBifZ_right": null,
+    "femurTopZ_right": -950.0,
+    "clavicleBottomZ_right": -485.0,
+    "midlineX": -2.1
+   }
+  }
+ ]
+}

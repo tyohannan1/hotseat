@@ -33,6 +33,12 @@ test("lecture runs end to end: slides, pretest, hot seat, quick check reveal, zo
   await page.keyboard.press("ArrowRight");
   await expect(page.locator("#runner")).toBeVisible();
   await expect(page.locator("#q-kind")).toContainText("Pretest");
+  // C toggles circles: letters-only image by default, circled image when on
+  await expect(page.locator("#imgbox img")).toHaveAttribute("src", /pre1-pelvis-fdg-clean\.png/);
+  await page.keyboard.press("c");
+  await expect(page.locator("#imgbox img")).toHaveAttribute("src", /pre1-pelvis-fdg\.png/);
+  await page.keyboard.press("c");
+  await expect(page.locator("#imgbox img")).toHaveAttribute("src", /pre1-pelvis-fdg-clean\.png/);
   // pretest: Reveal is hidden and R does nothing
   await expect(page.locator("#btn-reveal")).toBeHidden();
   await page.keyboard.press("r");

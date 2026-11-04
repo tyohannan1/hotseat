@@ -226,7 +226,7 @@ class Study:
         if not len(xs): return None
         return self.ct.TransformIndexToPhysicalPoint((int(xs.max()), 0, 0))[0] + self.ct.GetSpacing()[0] / 2
 
-    def vessel_mip(self, zlo_w, zhi_w, hu_lo=100.0, half_mm=32.0, width_mm=170.0):
+    def vessel_mip(self, zlo_w, zhi_w, hu_lo=100.0, half_mm=32.0, width_mm=150.0):
         """Coronal 'CT angiogram' of the aorto-iliac vessels: contrast-bright voxels in a slab around the labelled vessels, bone and organs removed
         with the TotalSegmentator map, keeping only components connected to the labelled aorta / iliac arteries. Returns (PIL RGB, world->(col,row))."""
         ct, an, sp = self.ctarr, self.an, self.ct.GetSpacing()
@@ -242,7 +242,7 @@ class Study:
         lab, n = ndimage.label(sub); keep = np.unique(lab[vm[zlo:zhi + 1, y0:y1, :] & (lab > 0)]); keep = keep[keep > 0]
         sub2 = np.isin(lab, keep)
         hu = np.where(sub2, ct[zlo:zhi + 1, y0:y1, :], -1000).max(axis=1)
-        g = np.clip((hu - 60) / 320.0, 0, 1) ** 0.8
+        g = np.clip((hu - 70) / 230.0, 0, 1) ** 0.7
         scale = sp[2] / sp[0]
         im = Image.fromarray((g * 255).astype(np.uint8)).resize((g.shape[1], int(g.shape[0] * scale)), Image.BILINEAR).transpose(Image.FLIP_TOP_BOTTOM).convert("RGB")
         mx = self.landmarks["midlineX"]; px = self.ct.TransformPhysicalPointToContinuousIndex((float(mx), 0.0, 0.0))[0]; w = width_mm / 2 / sp[0]
@@ -293,9 +293,10 @@ def crop_region(img, box, S, k, crop, center=None):
         y0, y1 = int(max(0, cy - half * 0.8)), int(min(img.shape[0], cy + half * 0.8))
     return img[y0:y1, x0:x1], (x0, y0)
 
+LETTER_ONLY = False   # set by --letteronly: letters stay where they are, circles are not drawn
 def draw_marker(d, xy, letter, r=22, col=(255, 221, 0), f=None):
     x, y = xy
-    d.ellipse([x - r, y - r, x + r, y + r], outline=col, width=4)
+    if not LETTER_ONLY: d.ellipse([x - r, y - r, x + r, y + r], outline=col, width=4)
     d.text((x + r + 6, y - r - 4), letter, fill=col, font=f or font(34, True), stroke_width=2, stroke_fill=(0, 0, 0))
 
 def survey(sid, out, region=None):
@@ -333,7 +334,7 @@ def survey(sid, out, region=None):
     json.dump(dict(sid=sid, diagnosis=S.row["diagnosis"], studyDir=S.row["studyDir"], ct=S.row["ct"]["dir"], pt=S.row["pt"]["dir"], seg=S.row["seg"], landmarks=S.landmarks, lesions=S.lesions), open(os.path.join(out, f"{sid}-lesions.json"), "w"), indent=1)
     print("wrote", p)
 
-def figure(sid, out, crop, a=None, b=None, coronal=False, title=None, nolabel=False, letters=("A", "B"), zoom=1.0, extra=None, suv_hi=5.0, coronalct=None, lines=None, zforce=None, tline=False, vmip=False, vmip_hu=100.0):
+def figure(sid, out, crop, a=None, b=None, coronal=False, title=None, nolabel=False, letters=("A", "B"), zoom=1.0, extra=None, suv_hi=5.0, coronalct=None, lines=None, zforce=None, tline=False, vmip=False, vmip_hu=100.0, vlabels=None):
     S = Study(sid)
     byn = {L["n"]: L for L in S.lesions}
     def res(v):
@@ -387,6 +388,11 @@ def figure(sid, out, crop, a=None, b=None, coronal=False, title=None, nolabel=Fa
             cx, cy = [v * 2 for v in vmap(L["centroid"])]; r = max(14, L["extent"][0] / 2 / S.ct.GetSpacing()[0] * 2 + 8)
             d.line([(0, cy), (im.width, cy)], fill=(24, 163, 172), width=2)
             if not nolabel: draw_marker(d, (cx, cy), let, r=int(r), f=font(30, True))
+        for zl, txt in (vlabels or []):
+            _, py = [v * 2 for v in vmap((S.landmarks["midlineX"], 0.0, float(zl)))]
+            d.line([(im.width - 150, py), (im.width - 8, py)], fill=(24, 163, 172), width=3)
+            lines_txt = txt.split("\\n")
+            for i, t in enumerate(lines_txt): d.text((im.width - 150, py - 24 * len(lines_txt) - 2 + i * 24), t, fill=(24, 163, 172), font=font(21, True), stroke_width=2, stroke_fill=(0, 0, 0))
         d.text((10, 8), "Vessels", fill=(200, 200, 200), font=font(22), stroke_width=2, stroke_fill=(0, 0, 0))
         vpanel = im
     panels = []   # legacy single-row path keeps working for the coronal options below
@@ -454,8 +460,9 @@ if __name__ == "__main__":
     def opt(n, d=None): return a[a.index(n) + 1] if n in a else d
     if a[0] == "survey": survey(a[1], opt("--out", "."), opt("--region"))
     elif a[0] == "figure":
+        LETTER_ONLY = "--letteronly" in a
         lines = [("z", float(v.split(":")[0]), v.split(":")[1]) for v in opt("--zline", "").split(";") if v]
-        figure(a[1], opt("--out"), opt("--crop", "body"), a=opt("--a"), b=opt("--b"), coronal="--coronal" in a, title=opt("--title"), nolabel="--nolabel" in a, zoom=float(opt("--zoom", "1")), suv_hi=float(opt("--suvhi", "5")), coronalct=opt("--coronalct"), lines=lines, letters=tuple(opt("--letters", "A,B").split(",")), zforce=opt("--z"), tline="--tline" in a, vmip="--vmip" in a, vmip_hu=float(opt("--vmiphu", "100")))
+        figure(a[1], opt("--out"), opt("--crop", "body"), a=opt("--a"), b=opt("--b"), coronal="--coronal" in a, title=opt("--title"), nolabel="--nolabel" in a, zoom=float(opt("--zoom", "1")), suv_hi=float(opt("--suvhi", "5")), coronalct=opt("--coronalct"), lines=lines, letters=tuple(opt("--letters", "A,B").split(",")), zforce=opt("--z"), tline="--tline" in a, vmip="--vmip" in a, vmip_hu=float(opt("--vmiphu", "100")), vlabels=[(float(v.split(":")[0]), v.split(":")[1]) for v in opt("--vlabel", "").split(";") if v])
     elif a[0] == "stack":
         # stack <sid> --lesion n --crop pelvis --out file [--above 30 --below 12 --step 4] : CT-only axial thumbnails from above the lesion down through it, lesion outlined on each slice it touches
         S = Study(a[1]); byn = {L["n"]: L for L in S.lesions}; L = byn[int(opt("--lesion"))] if opt("--lesion") else S.nearest([float(v) for v in opt("--near").split(",")]); crop = opt("--crop", "pelvis")
