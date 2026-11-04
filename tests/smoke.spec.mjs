@@ -45,7 +45,7 @@ test("lecture runs end to end: slides, pretest, hot seat, quick check reveal, zo
   // arrow keys move through items in order; second slide, then pre1
   await page.keyboard.press("ArrowRight");
   await expect(page.locator("#s-title")).toHaveText("Lymphoma counts regions");
-  await expect(page.locator("#s-media img")).toHaveAttribute("src", /regions-lymphoma\.svg$/);
+  await expect(page.locator("#s-media img")).toHaveAttribute("src", /regions-lymphoma\.svg(\?v=\w+)?$/);
   // title builds in too: 1 title + 2 lines, then the next item
   await expect(page.locator("#s-title")).not.toHaveClass(/shown/);
   await page.keyboard.press("ArrowRight");
