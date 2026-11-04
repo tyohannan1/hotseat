@@ -1,0 +1,64 @@
+{
+ "sid": "PETCT_0143bab87a_20050717",
+ "ox": 232,
+ "oy": 144,
+ "k": 253,
+ "z": -553.5,
+ "size": [
+  268,
+  214
+ ],
+ "studyDir": "/Users/tyohannan/AutoPET/FDG-PET-CT-Lesions_v02_20260817/FDG-PET-CT-Lesions/PETCT_0143bab87a/07-17-2005-PET-CT (Ganzkoerper  primaer mit KM)-33529",
+ "ct": "5.000000-GK p.v.3 s-43532",
+ "medialBorder": [
+  [
+   127,
+   66
+  ],
+  [
+   116,
+   112
+  ]
+ ],
+ "lateralBorder": [
+  [
+   178,
+   66
+  ],
+  [
+   194,
+   112
+  ]
+ ],
+ "nodes": [
+  [
+   "Level I",
+   [
+    207,
+    96
+   ]
+  ],
+  [
+   "Level II",
+   [
+    152,
+    98
+   ]
+  ],
+  [
+   "Level III",
+   [
+    104,
+    94
+   ]
+  ],
+  [
+   "Rotter's",
+   [
+    152,
+    70
+   ]
+  ]
+ ],
+ "note": "crop-pixel coords at 1x; lines and node positions placed by eye, reader to confirm"
+}
