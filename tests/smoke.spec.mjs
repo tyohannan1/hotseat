@@ -144,7 +144,7 @@ test("lecture runs end to end: slides, pretest, hot seat, quick check reveal, zo
   await expect(notes.locator("#n-title")).toHaveText("External iliac vs common iliac");
   await expect(notes.locator("#n-notes")).toContainText(/draw the bifurcation/i);
   await expect(notes.locator("#n-notes .n-src")).toContainText("AutoPET PETCT_791ec15924");
-  await expect(notes.locator("#n-next")).toContainText("Same node, different page");
+  await expect(notes.locator("#n-next")).toContainText("describe node A");
   await expect(notes.locator("#n-clock")).toHaveText(/^\d+:\d\d$/);
 
   // posttest: no Reveal button, vote on post1; notes shows the live count and the correct letter
@@ -169,7 +169,7 @@ test("lecture runs end to end: slides, pretest, hot seat, quick check reveal, zo
   await expect(page.locator(".eyebrow", { hasText: "2 of 3" })).toBeVisible();
   await page.click("#btn-rv-summary");
   await expect(page.locator("#v-summary")).toBeVisible();
-  await expect(page.locator("#sum-table tr")).toHaveCount(10); // header + 12 question items, no slides
+  await expect(page.locator("#sum-table tr")).toHaveCount(28); // header + 12 question items, no slides
   await expect(page.locator("#sum-pairs")).toContainText("pre1 → post1");
   await expect(page.locator("#sum-pairs")).toContainText("Paired devices: 1 · improved 1");
 });
