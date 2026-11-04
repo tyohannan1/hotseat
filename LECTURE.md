@@ -189,3 +189,8 @@ The Open Evidence summary in this project has the references for every claim abo
 - Pretest 3 and case 3 now show true inguinal nodes (in the groin fat in front of the femoral head). Each is a two-patient composite: a sidewall mass on top, the groin node below. Say so when it comes up.
 - Circles are centred on the node's own outline on the drawn slice.
 - Pretest 1 caption no longer names the stations; the resident reads them from the vessels.
+
+
+### 2026-11-04, late morning: order
+
+The four pretest questions now come straight after the title card, before the opening thesis and the region map. Run of show: Pretest (7 min), Opening (3 min), then the four cases, close, posttest.

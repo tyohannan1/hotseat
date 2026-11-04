@@ -29,31 +29,7 @@ test("lecture runs end to end: slides, pretest, hot seat, quick check reveal, zo
   await expect(page.locator("#s-title")).toHaveText("Disease-Specific Reporting");
   await expect(page.locator("#s-body .t-by")).toHaveText("Thomas Yohannan, MD");
   await expect(phone.locator("#s-wait")).toBeVisible();
-  await page.keyboard.press("ArrowRight");
-  await expect(page.locator("#s-title")).toContainText("ask what disease");
-  // build slide: each ArrowRight reveals one line; the 8 body lines, then the next item
-  await expect(page.locator("#s-body .frag")).toHaveCount(8);
-  await expect(page.locator("#s-body .frag.shown")).toHaveCount(0);
-  await page.keyboard.press("ArrowRight");
-  await expect(page.locator("#s-body .frag.shown")).toHaveCount(1);
-  for (let k = 0; k < 7; k++) await page.keyboard.press("ArrowRight");
-  await expect(page.locator("#s-body .frag.shown")).toHaveCount(8);
-  await page.keyboard.press("ArrowLeft");
-  await expect(page.locator("#s-body .frag.shown")).toHaveCount(7);
-  await page.keyboard.press("ArrowRight");
-
-  // arrow keys move through items in order; second slide, then pre1
-  await page.keyboard.press("ArrowRight");
-  await expect(page.locator("#s-title")).toHaveText("Lymphoma counts regions");
-  await expect(page.locator("#s-media img")).toHaveAttribute("src", /regions-lymphoma\.svg(\?v=\w+)?$/);
-  // title builds in too: 1 title + 2 lines, then the next item
-  await expect(page.locator("#s-title")).not.toHaveClass(/shown/);
-  await page.keyboard.press("ArrowRight");
-  await expect(page.locator("#s-title")).toHaveClass(/shown/);
-  await page.keyboard.press("ArrowRight"); await page.keyboard.press("ArrowRight");
-  await expect(page.locator("#s-body .frag.shown")).toHaveCount(2);
-  await page.keyboard.press("ArrowRight");
-  await expect(page.locator("#s-title")).toHaveText("Four landmarks");
+  // pretest comes right after the title card
   await page.keyboard.press("ArrowRight");
   await expect(page.locator("#runner")).toBeVisible();
   await expect(page.locator("#q-kind")).toContainText("Pretest");
@@ -84,6 +60,36 @@ test("lecture runs end to end: slides, pretest, hot seat, quick check reveal, zo
   await expect(page.locator("#pool")).toContainText("29 of 30 not yet called");
   await page.keyboard.press("c");
   await expect(page.locator('#hot-answer button[data-a="2"]')).toHaveClass(/chosen/);
+
+
+  // pre2..pre4, then the opening slides
+  for (let k = 0; k < 3; k++) await page.keyboard.press("ArrowRight");
+  await expect(page.locator("#q-kind")).toContainText("Pretest");
+  await page.keyboard.press("ArrowRight");
+  await expect(page.locator("#s-title")).toContainText("ask what disease");
+  // build slide: each ArrowRight reveals one line; the 8 body lines, then the next item
+  await expect(page.locator("#s-body .frag")).toHaveCount(8);
+  await expect(page.locator("#s-body .frag.shown")).toHaveCount(0);
+  await page.keyboard.press("ArrowRight");
+  await expect(page.locator("#s-body .frag.shown")).toHaveCount(1);
+  for (let k = 0; k < 7; k++) await page.keyboard.press("ArrowRight");
+  await expect(page.locator("#s-body .frag.shown")).toHaveCount(8);
+  await page.keyboard.press("ArrowLeft");
+  await expect(page.locator("#s-body .frag.shown")).toHaveCount(7);
+  await page.keyboard.press("ArrowRight");
+
+  // arrow keys move through items in order; second slide, then pre1
+  await page.keyboard.press("ArrowRight");
+  await expect(page.locator("#s-title")).toHaveText("Lymphoma counts regions");
+  await expect(page.locator("#s-media img")).toHaveAttribute("src", /regions-lymphoma\.svg(\?v=\w+)?$/);
+  // title builds in too: 1 title + 2 lines, then the next item
+  await expect(page.locator("#s-title")).not.toHaveClass(/shown/);
+  await page.keyboard.press("ArrowRight");
+  await expect(page.locator("#s-title")).toHaveClass(/shown/);
+  await page.keyboard.press("ArrowRight"); await page.keyboard.press("ArrowRight");
+  await expect(page.locator("#s-body .frag.shown")).toHaveCount(2);
+  await page.keyboard.press("ArrowRight");
+  await expect(page.locator("#s-title")).toHaveText("Four landmarks");
 
   // jump straight to the first quick check and reveal there
   await page.click('#jump button:text-is("qc1")');

@@ -92,14 +92,14 @@
  },
  "runOfShow": [
   {
-   "label": "Opening",
-   "minutes": 3,
-   "from": "op-thesis"
-  },
-  {
    "label": "Pretest",
    "minutes": 7,
    "from": "pre1"
+  },
+  {
+   "label": "Opening",
+   "minutes": 3,
+   "from": "op-thesis"
   },
   {
    "label": "Case 1 · common iliac",
@@ -162,6 +162,58 @@
     "Title card. Leave it up while the last people scan the QR; the session code is still on the lobby screen if you go back one step.",
     "Then Begin: ask what disease is being staged."
    ]
+  },
+  {
+   "type": "question",
+   "id": "pre1",
+   "kind": "pretest",
+   "pairedWith": "post1",
+   "hotSeat": "afterPoll",
+   "image": "img/pre1-pelvis-fdg.png",
+   "imageCaption": "FDG PET/CT pelvis, read it as a PSMA study. Left: the aorto-iliac vessels with bone removed, lines at the levels of A and B. Name each node's station from the vessel it sits on.",
+   "disease": "Prostate cancer, newly diagnosed, no other disease",
+   "correct": 2,
+   "explain": "Below the bifurcation the node is pelvic and gets radiated with the prostate; above it the node counts as metastatic and the patient goes to hormone therapy and drugs instead.",
+   "source": "AutoPET PETCT_d9da6129f8, 2002-04-14, Melanoma. CT series 4.000000-GK p.v.3-98719, PET series 5.000000-PET corr.-53940. A: lesion #4 (3.7 mL, SUVmax 34.9, z 630 mm); B: lesion #6 (1.2 mL, SUVmax 12.6, z 669 mm)."
+  },
+  {
+   "type": "question",
+   "id": "pre2",
+   "kind": "pretest",
+   "pairedWith": "post2",
+   "hotSeat": "afterPoll",
+   "image": "img/pre2-chest-fdg.png",
+   "imageCaption": "FDG PET/CT chest, left lung primary. A: 4L. B: 4R.",
+   "disease": "Lung adenocarcinoma, left lung",
+   "correct": 2,
+   "explain": "Same side as the tumor (4L), the surgeon may still operate; opposite side (4R), surgery is off the table and the patient gets chemoradiation.",
+   "source": "AutoPET PETCT_442a09f90e, 2002-03-16, Lung Cancer. CT series 5.000000-GK p.v.2-46154, PET series 9.000000-PET corr.-11580. A: lesion #9 (3.2 mL, SUVmax 5.8, z 174 mm); B: lesion #3 (19.9 mL, SUVmax 7.9, z 147 mm)."
+  },
+  {
+   "type": "question",
+   "id": "pre3",
+   "kind": "pretest",
+   "pairedWith": "post3",
+   "hotSeat": "afterPoll",
+   "image": "img/pre3-pelvis-fdg.png",
+   "imageCaption": "FDG PET/CT pelvis, two patients. A: right pelvic sidewall mass behind the external iliac vessels. B: right groin, at the femoral head.",
+   "disease": "Anal canal squamous cell carcinoma",
+   "correct": 0,
+   "explain": "Both nodes count as regional for anal cancer and both are already inside the standard radiation field.",
+   "source": "AutoPET PETCT_cbbc9e2879, 2006-01-16, Lymphoma. CT series 4.000000-GK p.v.3 s-53013, PET series 8.000000-PET corr.-60905. A: lesion #2 (58.0 mL, SUVmax 16.2, z -889 mm). AutoPET PETCT_335a00191d, 2001-02-16, Lung Cancer. CT series 8.000000-GK p.v.2-14948, PET series 9.000000-PET corr.-84524. B: lesion #10 (7.4 mL, SUVmax 14.3, z -913 mm)."
+  },
+  {
+   "type": "question",
+   "id": "pre4",
+   "kind": "pretest",
+   "pairedWith": "post4",
+   "hotSeat": "afterPoll",
+   "image": "img/pre4-axilla-fdg.png",
+   "imageCaption": "FDG PET/CT axilla. A: level II. B: level III, medial to pectoralis minor.",
+   "disease": "ER-positive HER2-negative breast cancer, ipsilateral",
+   "correct": 2,
+   "explain": "Level II goes to surgery first; a node medial to pectoralis minor sends the patient to systemic therapy before any surgery.",
+   "source": "AutoPET PETCT_f24f3ce1da, 2001-09-14, Melanoma. CT series 5.000000-GK p.v.2-28878, PET series 6.000000-PET corr.-93674. A: lesion #4 (5.8 mL, SUVmax 35.8, z 1156 mm); B: lesion #3 (9.0 mL, SUVmax 56.2, z 1146 mm)."
   },
   {
    "type": "slide",
@@ -228,58 +280,6 @@
    ],
    "image": "img/dx/four-lines.svg",
    "caption": "The four lines, one per case. Each comes back as its own slide."
-  },
-  {
-   "type": "question",
-   "id": "pre1",
-   "kind": "pretest",
-   "pairedWith": "post1",
-   "hotSeat": "afterPoll",
-   "image": "img/pre1-pelvis-fdg.png",
-   "imageCaption": "FDG PET/CT pelvis, read it as a PSMA study. Left: the aorto-iliac vessels with bone removed, lines at the levels of A and B. Name each node's station from the vessel it sits on.",
-   "disease": "Prostate cancer, newly diagnosed, no other disease",
-   "correct": 2,
-   "explain": "Below the bifurcation the node is pelvic and gets radiated with the prostate; above it the node counts as metastatic and the patient goes to hormone therapy and drugs instead.",
-   "source": "AutoPET PETCT_d9da6129f8, 2002-04-14, Melanoma. CT series 4.000000-GK p.v.3-98719, PET series 5.000000-PET corr.-53940. A: lesion #4 (3.7 mL, SUVmax 34.9, z 630 mm); B: lesion #6 (1.2 mL, SUVmax 12.6, z 669 mm)."
-  },
-  {
-   "type": "question",
-   "id": "pre2",
-   "kind": "pretest",
-   "pairedWith": "post2",
-   "hotSeat": "afterPoll",
-   "image": "img/pre2-chest-fdg.png",
-   "imageCaption": "FDG PET/CT chest, left lung primary. A: 4L. B: 4R.",
-   "disease": "Lung adenocarcinoma, left lung",
-   "correct": 2,
-   "explain": "Same side as the tumor (4L), the surgeon may still operate; opposite side (4R), surgery is off the table and the patient gets chemoradiation.",
-   "source": "AutoPET PETCT_442a09f90e, 2002-03-16, Lung Cancer. CT series 5.000000-GK p.v.2-46154, PET series 9.000000-PET corr.-11580. A: lesion #9 (3.2 mL, SUVmax 5.8, z 174 mm); B: lesion #3 (19.9 mL, SUVmax 7.9, z 147 mm)."
-  },
-  {
-   "type": "question",
-   "id": "pre3",
-   "kind": "pretest",
-   "pairedWith": "post3",
-   "hotSeat": "afterPoll",
-   "image": "img/pre3-pelvis-fdg.png",
-   "imageCaption": "FDG PET/CT pelvis, two patients. A: right pelvic sidewall mass behind the external iliac vessels. B: right groin, at the femoral head.",
-   "disease": "Anal canal squamous cell carcinoma",
-   "correct": 0,
-   "explain": "Both nodes count as regional for anal cancer and both are already inside the standard radiation field.",
-   "source": "AutoPET PETCT_cbbc9e2879, 2006-01-16, Lymphoma. CT series 4.000000-GK p.v.3 s-53013, PET series 8.000000-PET corr.-60905. A: lesion #2 (58.0 mL, SUVmax 16.2, z -889 mm). AutoPET PETCT_335a00191d, 2001-02-16, Lung Cancer. CT series 8.000000-GK p.v.2-14948, PET series 9.000000-PET corr.-84524. B: lesion #10 (7.4 mL, SUVmax 14.3, z -913 mm)."
-  },
-  {
-   "type": "question",
-   "id": "pre4",
-   "kind": "pretest",
-   "pairedWith": "post4",
-   "hotSeat": "afterPoll",
-   "image": "img/pre4-axilla-fdg.png",
-   "imageCaption": "FDG PET/CT axilla. A: level II. B: level III, medial to pectoralis minor.",
-   "disease": "ER-positive HER2-negative breast cancer, ipsilateral",
-   "correct": 2,
-   "explain": "Level II goes to surgery first; a node medial to pectoralis minor sends the patient to systemic therapy before any surgery.",
-   "source": "AutoPET PETCT_f24f3ce1da, 2001-09-14, Melanoma. CT series 5.000000-GK p.v.2-28878, PET series 6.000000-PET corr.-93674. A: lesion #4 (5.8 mL, SUVmax 35.8, z 1156 mm); B: lesion #3 (9.0 mL, SUVmax 56.2, z 1146 mm)."
   },
   {
    "type": "slide",
