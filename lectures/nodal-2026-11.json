@@ -870,32 +870,6 @@
   },
   {
    "type": "slide",
-   "id": "c4-map",
-   "eyebrow": "Case 3 · The axilla",
-   "title": "Two lines on the pectoralis minor",
-   "caption": "Normal CT at the glenoid. Gold: the medial and lateral borders of the pectoralis minor.",
-   "body": [
-    "- **Level I**: lateral to the pectoralis minor",
-    "- **Level II**: behind it, between the two lines",
-    "- **Level III**: medial to it, under the clavicle",
-    "- **Rotter’s**: between pectoralis major and minor. A different name, and a different problem."
-   ],
-   "notes": [
-    "Build: the CT with the two lines comes up alone. Press 1: a node lateral to the lateral line is level I. Press 2: a node behind the muscle, between the lines, is level II. Press 3: medial to the medial line is level III. Press 4: a node between pectoralis major and minor is Rotter’s.",
-    "The circles mark positions, not real nodes; this is a normal axilla."
-   ],
-   "source": "AutoPET PETCT_0143bab87a, 2005-07-17, negative study, contrast CT. Lines and circle positions drawn by eye on the crop; see img/breast/levels.json.",
-   "build": true,
-   "frames": [
-    "img/breast/levels-0.png",
-    "img/breast/levels-1.png",
-    "img/breast/levels-2.png",
-    "img/breast/levels-3.png",
-    "img/breast/levels-4.png"
-   ]
-  },
-  {
-   "type": "slide",
    "id": "c4-pair1",
    "eyebrow": "Case 3 · The axilla",
    "title": "Rotter's vs level II",
