@@ -140,18 +140,18 @@ def axilla(w=900, h=900, standalone=True):
     # pectoralis major (anterior, broad)
     b.append(path("M130 300 Q450 180 780 330", INK, 14, op=0.9)); b.append(T(450, 230, "pectoralis major", 20, INK, "middle"))
     # pectoralis minor (oblique: coracoid lateral-anterior to ribs 3-5 medial-posterior)
-    b.append(path("M280 440 Q460 330 640 410", GOLD, 12)); b.append(T(470, 430, "pectoralis minor", 22, GOLD, "middle", 700))
+    b.append(path("M280 440 Q460 330 640 410", GOLD, 12)); b.append(T(470, 478, "pectoralis minor", 22, GOLD, "middle", 700))
     b.append(T(655, 418, "coracoid", 16, DIM, "start"))
     # borders of pec minor projected
     b.append(line(620, 150, 620, 560, GOLD, 2, "8 8")); b.append(line(300, 150, 300, 560, GOLD, 2, "8 8"))
     # axillary vein
-    b.append(f"<ellipse cx='520' cy='440' rx='34' ry='20' fill='none' stroke='{TEAL}' stroke-width='3'/>"); b.append(T(520, 447, "ax. vein", 14, TEAL, "middle"))
+    b.append(f"<ellipse cx='575' cy='450' rx='34' ry='20' fill='none' stroke='{TEAL}' stroke-width='3'/>"); b.append(T(575, 457, "ax. vein", 14, TEAL, "middle"))
     # level labels
     b.append(T(700, 610, "Level I", 26, INK, "middle", 700)); b.append(T(700, 638, "lateral to pec minor", 18, DIM, "middle"))
     b.append(T(460, 610, "Level II", 26, INK, "middle", 700)); b.append(T(460, 638, "behind pec minor", 18, DIM, "middle"))
     b.append(T(210, 610, "Level III", 26, INK, "middle", 700)); b.append(T(210, 638, "medial to pec minor", 18, DIM, "middle"))
     b.append(T(460, 300, "Rotter's (interpectoral)", 20, INK, "middle")); b.append(node(460, 325))
-    b.append(node(700, 450)); b.append(node(430, 440)); b.append(node(210, 430))
+    b.append(node(700, 450)); b.append(node(380, 445)); b.append(node(210, 430))
     # right column
     return svg(w, h, "\n".join(b), "Line 3: the pectoralis minor" if standalone else None)
 
