@@ -224,3 +224,13 @@ body.present .slide.titlecard h2{font-size:clamp(3rem,6vw,5.6rem)}
 /* build slides: lines appear one keypress at a time, space reserved so nothing jumps */
 .frag{opacity:0;transform:translateY(8px);transition:opacity .4s ease,transform .4s ease}
 .frag.shown{opacity:1;transform:none}
+
+/* build slides: full width, bullets with sub-bullets */
+.slide.textonly .s-body.build{max-width:none}
+.s-body.build .frag ul{margin:0;padding-left:1.1em}
+.s-body.build .frag li{margin:.3em 0}
+.s-body.build .frag li.sub{list-style:none;margin-left:1.3em;position:relative;color:var(--fg);opacity:.92}
+.s-body.build .frag li.sub::before{content:"–";position:absolute;left:-1em;color:var(--teal)}
+.s-body.build .frag blockquote{margin:.9em 0 0}
+body.present .s-body.build{font-size:clamp(1.4rem,2.3vw,2.1rem);line-height:1.28}
+body.present .slide.textonly .s-body.build blockquote{font-size:1em;padding:.5em .9em}

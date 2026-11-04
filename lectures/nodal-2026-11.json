@@ -169,13 +169,13 @@
    "eyebrow": "Opening",
    "title": "For an FDG PET/CT, first ask what disease is being staged.",
    "body": [
-    "That decides which words matter.",
-    "**Lymphoma:** nodal disease is defined by regions, the Ann Arbor classification.",
-    "More specific language beyond the region is not needed.",
-    "What counts is how many regions, and which side of the diaphragm.",
-    "**Carcinomas:** nodal nomenclature is defined by a boundary.",
-    "The boundary is different for different diseases.",
-    "The nomenclature dictates the staging, which dictates the treatment.",
+    "- That decides which words matter.",
+    "- **Lymphoma:** nodal disease is defined by regions, the Ann Arbor classification.",
+    "  - More specific language beyond the region is not needed.",
+    "  - What counts is how many regions, and which side of the diaphragm.",
+    "- **Carcinomas:** nodal nomenclature is defined by a boundary.",
+    "  - The boundary is different for different diseases.",
+    "  - The nomenclature dictates the staging, which dictates the treatment.",
     "> Lazy wording can unintentionally change the course of a patient's treatment."
    ],
    "notes": [

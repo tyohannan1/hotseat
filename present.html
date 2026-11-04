@@ -291,8 +291,8 @@
     let html = "", inList = false;
     const closeList = () => { if (inList) { html += "</ul>"; inList = false; } };
     lines.forEach(line => {
-      const m = /^-\s+(.*)$/.exec(line);
-      if (m) { if (!inList) { html += "<ul>"; inList = true; } html += `<li>${inline(m[1])}</li>`; return; }
+      const m = /^(\s*)-\s+(.*)$/.exec(line);
+      if (m) { if (!inList) { html += "<ul>"; inList = true; } html += `<li${m[1].length >= 2 ? ' class="sub"' : ""}>${inline(m[2])}</li>`; return; }
       closeList();
       if (!line.trim()) { html += `<div class="s-gap"></div>`; return; }
       const h = /^#+\s+(.*)$/.exec(line);
@@ -352,6 +352,7 @@
         ? s.body.map((line, i) => `<div class="frag${i < stepShown ? " shown" : ""}">${bodyHtml([line])}</div>`).join("")
         : (s.tableFirst ? tableHtml(s.table) + bodyHtml(s.body) : bodyHtml(s.body) + tableHtml(s.table));
     $("slideview").classList.toggle("titlecard", s.kind === "title");
+    $("s-body").classList.toggle("build", !!s.build);
     $("s-caption").textContent = s.caption || "";
     const nccn = Array.isArray(s.nccn) ? s.nccn : (s.nccn ? [s.nccn] : []);
     let media = "";
