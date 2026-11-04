@@ -32,7 +32,7 @@ def regions(w=1740, h=1190, standalone=True):
             "L 138 29 C 142 27, 154 23, 154 17 L 154 0 Z")
     REG = [(1, "Waldeyer's ring", 115, 13, "r", 13), (2, "Right neck", 103, 33, "l", 33), (3, "Left neck", 127, 33, "r", 33),
            (5, "Right infraclavicular", 90, 53, "l", 53), (6, "Left infraclavicular", 140, 53, "r", 53),
-           (4, "Right axillary", 76, 75, "l", 75), (7, "Left axillary", 154, 75, "r", 75), (8, "Mediastinal", 115, 72, "r", 64),
+           (4, "Right axillary", 76, 75, "l", 75), (7, "Left axillary", 154, 75, "r", 75), (8, "Mediastinal", 115, 72, "r", 62),
            (9, "Right hilar", 100, 97, "l", 97), (10, "Left hilar", 130, 97, "r", 97), (11, "Spleen", 140, 142, "r", 142),
            (12, "Mesenteric", 115, 157, "l", 157), (13, "Para-aortic", 115, 182, "r", 182), (14, "Right iliac", 100, 207, "l", 207),
            (15, "Left iliac", 130, 207, "r", 207), (16, "Right inguinal", 95, 232, "l", 232), (17, "Left inguinal", 135, 232, "r", 232)]

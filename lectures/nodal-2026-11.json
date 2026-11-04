@@ -203,7 +203,8 @@
     "Then the contrast: carcinomas do not use this map. They use a line, and the line is different for every disease. That is the next slide."
    ],
    "build": true,
-   "buildTitle": true
+   "buildTitle": true,
+   "wide": true
   },
   {
    "type": "slide",
