@@ -22,17 +22,17 @@ def path(d, col=INK, w=3, fill="none", dash=None, op=1):
     return f"<path d='{d}' stroke='{col}' stroke-width='{w}' fill='{fill}' stroke-linejoin='round' stroke-linecap='round'{ds} opacity='{op}'/>"
 
 # ------------------------------------------------------------------ lymphoma regions
-def regions(w=1340, h=900, standalone=True):
+def regions(w=1060, h=900, standalone=True):
     """Lugano / Ann Arbor regions: body silhouette and the 17 region names used by the PET/CT workbench. Nothing else."""
     b = []
-    cx = 640
+    cx = 530
     b.append(T(cx, 60, "Lugano / Ann Arbor regions", 36, INK, "middle", 700))
     # body silhouette
     b.append(f"<circle cx='{cx}' cy='{150}' r='46' fill='none' stroke='{MUTE}' stroke-width='3'/>")
     b.append(path(f"M{cx-30} 193 L{cx-30} 215 L{cx-150} 240 L{cx-215} 495 L{cx-170} 505 L{cx-125} 325 L{cx-125} 545 L{cx-135} 855 L{cx-75} 855 L{cx-35} 585 L{cx+35} 585 L{cx+75} 855 L{cx+135} 855 L{cx+125} 545 L{cx+125} 325 L{cx+170} 505 L{cx+215} 495 L{cx+150} 240 L{cx+30} 215 L{cx+30} 193 Z", MUTE, 3))
     # diaphragm
     b.append(line(cx-130, 425, cx+130, 425, TEAL, 3, "10 8"))
-    b.append(T(cx+262, 432, "diaphragm", 18, TEAL, "start", 400, True))
+    b.append(T(cx+228, 432, "diaphragm", 18, TEAL, "start", 400, True))
     # (x, y, rx, ry, label, label side); patient's right on the viewer's left
     R = [
         (cx, 178, 26, 14, "Waldeyer's ring", "r"),
@@ -49,11 +49,11 @@ def regions(w=1340, h=900, standalone=True):
     ]
     for x, y, rx, ry, lab, side in R:
         b.append(f"<ellipse cx='{x}' cy='{y}' rx='{rx}' ry='{ry}' fill='{NODE}' fill-opacity='0.3' stroke='{NODE}' stroke-width='2.5'/>")
-        if side == "l": b.append(line(x-rx-4, y, cx-255, y, DIM, 1.5)); b.append(T(cx-262, y+7, lab, 21, INK, "end"))
-        elif side == "r": b.append(line(x+rx+4, y, cx+255, y, DIM, 1.5)); b.append(T(cx+262, y+7, lab, 21, INK, "start"))
+        if side == "l": b.append(line(x-rx-4, y, cx-222, y, DIM, 1.5)); b.append(T(cx-228, y+7, lab, 21, INK, "end"))
+        elif side == "r": b.append(line(x+rx+4, y, cx+222, y, DIM, 1.5)); b.append(T(cx+228, y+7, lab, 21, INK, "start"))
         else:  # central structure: label to the right, line drops below the paired labels
             yy = y + 95 if lab == "Mediastinal" else y + 50
-            b.append(line(x+rx+4, yy, cx+255, yy, DIM, 1.5)); b.append(line(x+rx+4, y, x+rx+4, yy, DIM, 1.5)); b.append(T(cx+262, yy+7, lab, 21, INK, "start"))
+            b.append(line(x+rx+4, yy, cx+222, yy, DIM, 1.5)); b.append(line(x+rx+4, y, x+rx+4, yy, DIM, 1.5)); b.append(T(cx+228, yy+7, lab, 21, INK, "start"))
     return svg(w, h, "\n".join(b), None)
 
 # ------------------------------------------------------------------ pelvis: common iliac bifurcation
