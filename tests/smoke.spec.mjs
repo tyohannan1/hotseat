@@ -166,7 +166,7 @@ test("lecture runs end to end: slides, pretest, hot seat, quick check reveal, zo
   await expect(page.locator('.rv-row.correct .rv-letter')).toHaveText("C");
   await expect(page.locator("#rv-status")).toContainText("0% → 100%");
   await page.keyboard.press("ArrowRight");
-  await expect(page.locator(".eyebrow", { hasText: "2 of 4" })).toBeVisible();
+  await expect(page.locator(".eyebrow", { hasText: "2 of 3" })).toBeVisible();
   await page.click("#btn-rv-summary");
   await expect(page.locator("#v-summary")).toBeVisible();
   await expect(page.locator("#sum-table tr")).toHaveCount(13); // header + 12 question items, no slides
