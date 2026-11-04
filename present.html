@@ -241,7 +241,7 @@
 
   async function goTo(i) {
     if (!lecture || i < 0 || i >= lecture.items.length) return;
-    iIndex = i;
+    iIndex = i; stepShown = 0;
     const it = lecture.items[i];
     await store.updateSession(sid, {
       current: { itemId: it.id, questionId: it.type === "question" ? it.id : null, open: false, revealed: false },
@@ -249,8 +249,17 @@
     });
     show("v-run"); render();
   }
-  $("btn-prev").addEventListener("click", () => goTo(iIndex - 1));
-  $("btn-next").addEventListener("click", () => { if (iIndex + 1 >= lecture.items.length) showReveal(0); else goTo(iIndex + 1); });
+  let stepShown = 0;   // build slides: how many body lines are revealed
+  const buildLen = it => (it && it.type === "slide" && it.build && Array.isArray(it.body)) ? it.body.length : 0;
+  $("btn-prev").addEventListener("click", () => {
+    if (buildLen(curItem()) && stepShown > 0) { stepShown--; renderSlide(); return; }
+    goTo(iIndex - 1);
+  });
+  $("btn-next").addEventListener("click", () => {
+    const n = buildLen(curItem());
+    if (n && stepShown < n) { stepShown++; renderSlide(); return; }
+    if (iIndex + 1 >= lecture.items.length) showReveal(0); else goTo(iIndex + 1);
+  });
   $("btn-open").addEventListener("click", () => isQuestion() && store.updateSession(sid, { current: { open: true } }));
   $("btn-close").addEventListener("click", () => isQuestion() && store.updateSession(sid, { current: { open: false } }));
   const noReveal = q => q.kind === "pretest" || q.kind === "posttest";
@@ -338,7 +347,9 @@
     $("s-title").textContent = s.title || "";
     $("s-body").innerHTML = s.kind === "title"
       ? `<p class="t-sub">${esc(s.subtitle || "")}</p><p class="t-by">${esc(s.byline || "")}</p>`
-      : (s.tableFirst ? tableHtml(s.table) + bodyHtml(s.body) : bodyHtml(s.body) + tableHtml(s.table));
+      : s.build && Array.isArray(s.body)
+        ? s.body.map((line, i) => `<div class="frag${i < stepShown ? " shown" : ""}">${bodyHtml([line])}</div>`).join("")
+        : (s.tableFirst ? tableHtml(s.table) + bodyHtml(s.body) : bodyHtml(s.body) + tableHtml(s.table));
     $("slideview").classList.toggle("titlecard", s.kind === "title");
     $("s-caption").textContent = s.caption || "";
     const nccn = Array.isArray(s.nccn) ? s.nccn : (s.nccn ? [s.nccn] : []);

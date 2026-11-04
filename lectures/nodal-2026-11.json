@@ -167,19 +167,24 @@
    "type": "slide",
    "id": "op-thesis",
    "eyebrow": "Opening",
-   "title": "Ask what disease is being staged. That decides which words matter.",
+   "title": "For an FDG PET/CT, first ask what disease is being staged.",
    "body": [
-    "**Lymphoma** reads nodes by region. Inside a region, \"iliac\" or \"axillary\" is enough. What counts is how many regions, and which side of the diaphragm.",
-    "**Carcinomas** read nodes against a boundary, and the boundary is different for every disease.",
-    "Same scan: \"common iliac\" for prostate, \"4R\" for lung, \"medial to pectoralis minor\" for breast.",
-    "> A lazy word quietly changes what the oncologist does."
+    "That decides which words matter.",
+    "**Lymphoma:** nodal disease is defined by regions, the Ann Arbor classification.",
+    "More specific language beyond the region is not needed.",
+    "What counts is how many regions, and which side of the diaphragm.",
+    "**Carcinomas:** nodal nomenclature is defined by a boundary.",
+    "The boundary is different for different diseases.",
+    "The nomenclature dictates the staging, which dictates the treatment.",
+    "> Lazy wording can unintentionally change the course of a patient's treatment."
    ],
    "notes": [
-    "Before you describe a node, ask what disease is being staged, because that decides which words matter.",
-    "Lymphoma reads nodes by region, so inside a region you can say \"iliac\" or \"axillary\" and stop; what lymphoma counts is how many regions and which side of the diaphragm.",
-    "Carcinomas read nodes against a boundary that is different for every disease, so the same scan demands \"common iliac\" for prostate, \"4R\" for lung, \"medial to pectoralis minor\" for breast. A lazy word quietly changes what the oncologist does.",
-    "This talk is four of those boundaries. The staging letters are the reason the words matter; the words are the point."
-   ]
+    "Build slide: each Next or right arrow reveals one line (8 presses), then moves on. Left arrow steps back a line.",
+    "Lymphoma reads nodes by region (Ann Arbor), so inside a region 'iliac' or 'axillary' is enough; what counts is how many regions and which side of the diaphragm.",
+    "Carcinomas read nodes against a boundary that differs by disease; the nomenclature sets the stage and the stage sets the treatment. Same scan: 'common iliac' for prostate, '4R' for lung, 'medial to pectoralis minor' for breast.",
+    "Land the last line: lazy wording quietly changes what the oncologist does."
+   ],
+   "build": true
   },
   {
    "type": "slide",

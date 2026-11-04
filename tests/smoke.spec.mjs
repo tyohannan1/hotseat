@@ -30,7 +30,17 @@ test("lecture runs end to end: slides, pretest, hot seat, quick check reveal, zo
   await expect(page.locator("#s-body .t-by")).toHaveText("Thomas Yohannan, MD");
   await expect(phone.locator("#s-wait")).toBeVisible();
   await page.keyboard.press("ArrowRight");
-  await expect(page.locator("#s-title")).toContainText("Ask what disease");
+  await expect(page.locator("#s-title")).toContainText("ask what disease");
+  // build slide: each ArrowRight reveals one line; the 8 body lines, then the next item
+  await expect(page.locator("#s-body .frag")).toHaveCount(8);
+  await expect(page.locator("#s-body .frag.shown")).toHaveCount(0);
+  await page.keyboard.press("ArrowRight");
+  await expect(page.locator("#s-body .frag.shown")).toHaveCount(1);
+  for (let k = 0; k < 7; k++) await page.keyboard.press("ArrowRight");
+  await expect(page.locator("#s-body .frag.shown")).toHaveCount(8);
+  await page.keyboard.press("ArrowLeft");
+  await expect(page.locator("#s-body .frag.shown")).toHaveCount(7);
+  await page.keyboard.press("ArrowRight");
 
   // arrow keys move through items in order; second slide, then pre1
   await page.keyboard.press("ArrowRight");

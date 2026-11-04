@@ -220,3 +220,7 @@ body.notes{overflow:auto;padding:16px}
 .slide.titlecard .t-sub{font-family:var(--display);font-size:clamp(1.4rem,2.6vw,2.4rem);color:var(--fg);opacity:.9;margin:0 0 1.6em}
 .slide.titlecard .t-by{font-size:clamp(1.1rem,1.9vw,1.7rem);color:var(--muted);letter-spacing:.02em;margin:0}
 body.present .slide.titlecard h2{font-size:clamp(3rem,6vw,5.6rem)}
+
+/* build slides: lines appear one keypress at a time, space reserved so nothing jumps */
+.frag{opacity:0;transform:translateY(8px);transition:opacity .4s ease,transform .4s ease}
+.frag.shown{opacity:1;transform:none}
