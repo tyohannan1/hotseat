@@ -140,8 +140,8 @@ def axilla(w=900, h=900, standalone=True):
     # pectoralis major (anterior, broad)
     b.append(path("M130 300 Q450 180 780 330", INK, 14, op=0.9)); b.append(T(450, 230, "pectoralis major", 20, INK, "middle"))
     # pectoralis minor (oblique: coracoid lateral-anterior to ribs 3-5 medial-posterior)
-    b.append(path("M300 470 Q470 340 620 330", GOLD, 12)); b.append(T(470, 420, "pectoralis minor", 22, GOLD, "middle", 700))
-    b.append(T(640, 322, "coracoid", 16, DIM, "start"))
+    b.append(path("M280 440 Q460 330 640 410", GOLD, 12)); b.append(T(470, 430, "pectoralis minor", 22, GOLD, "middle", 700))
+    b.append(T(655, 418, "coracoid", 16, DIM, "start"))
     # borders of pec minor projected
     b.append(line(620, 150, 620, 560, GOLD, 2, "8 8")); b.append(line(300, 150, 300, 560, GOLD, 2, "8 8"))
     # axillary vein

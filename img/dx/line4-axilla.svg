@@ -7,9 +7,9 @@
 <text x='440' y='700' font-size='18' fill='#9fb3c8' text-anchor='middle' font-weight='400'>chest wall</text>
 <path d='M130 300 Q450 180 780 330' stroke='#e8eef5' stroke-width='14' fill='none' stroke-linejoin='round' stroke-linecap='round' opacity='0.9'/>
 <text x='450' y='230' font-size='20' fill='#e8eef5' text-anchor='middle' font-weight='400'>pectoralis major</text>
-<path d='M300 470 Q470 340 620 330' stroke='#FFDD00' stroke-width='12' fill='none' stroke-linejoin='round' stroke-linecap='round' opacity='1'/>
-<text x='470' y='420' font-size='22' fill='#FFDD00' text-anchor='middle' font-weight='700'>pectoralis minor</text>
-<text x='640' y='322' font-size='16' fill='#9fb3c8' text-anchor='start' font-weight='400'>coracoid</text>
+<path d='M280 440 Q460 330 640 410' stroke='#FFDD00' stroke-width='12' fill='none' stroke-linejoin='round' stroke-linecap='round' opacity='1'/>
+<text x='470' y='430' font-size='22' fill='#FFDD00' text-anchor='middle' font-weight='700'>pectoralis minor</text>
+<text x='655' y='418' font-size='16' fill='#9fb3c8' text-anchor='start' font-weight='400'>coracoid</text>
 <line x1='620' y1='150' x2='620' y2='560' stroke='#FFDD00' stroke-width='2' stroke-linecap='round' stroke-dasharray='8 8'/>
 <line x1='300' y1='150' x2='300' y2='560' stroke='#FFDD00' stroke-width='2' stroke-linecap='round' stroke-dasharray='8 8'/>
 <ellipse cx='520' cy='440' rx='34' ry='20' fill='none' stroke='#18A3AC' stroke-width='3'/>
