@@ -329,6 +329,7 @@ def crop_region(img, box, S, k, crop, center=None):
         y0, y1 = int(max(0, cy - half * 0.8)), int(min(img.shape[0], cy + half * 0.8))
     return img[y0:y1, x0:x1], (x0, y0)
 
+RMAX = 10000
 LETTER_ONLY = False   # set by --letteronly: letters stay where they are, circles are not drawn
 def draw_marker(d, xy, letter, r=22, col=(255, 221, 0), f=None):
     x, y = xy
@@ -404,7 +405,7 @@ def figure(sid, out, crop, a=None, b=None, coronal=False, title=None, nolabel=Fa
                 for let, L in g["items"]:
                     cx, cy, ext = S.slice_centroid(L, z)
                     px, py = S.xy_ct(cx, cy)
-                    r = max(16, int(ext / 2 / S.ct.GetSpacing()[0] * zoom) + 8)
+                    r = min(RMAX, max(16, int(ext / 2 / S.ct.GetSpacing()[0] * zoom) + 8))
                     draw_marker(d, ((px - ox) * zoom, (py - oy) * zoom), let, r=r)
             if tline:
                 xw = S.trachea_left_wall_x(z)
@@ -498,7 +499,7 @@ if __name__ == "__main__":
     def opt(n, d=None): return a[a.index(n) + 1] if n in a else d
     if a[0] == "survey": survey(a[1], opt("--out", "."), opt("--region"))
     elif a[0] == "figure":
-        LETTER_ONLY = "--letteronly" in a
+        LETTER_ONLY = "--letteronly" in a; RMAX = int(opt("--rmax", "10000"))
         lines = [("z", float(v.split(":")[0]), v.split(":")[1]) for v in opt("--zline", "").split(";") if v]
         figure(a[1], opt("--out"), opt("--crop", "body"), a=opt("--a"), b=opt("--b"), coronal="--coronal" in a, title=opt("--title"), nolabel="--nolabel" in a, zoom=float(opt("--zoom", "1")), suv_hi=float(opt("--suvhi", "5")), coronalct=opt("--coronalct"), lines=lines, letters=tuple(opt("--letters", "A,B").split(",")), zforce=opt("--z"), tline="--tline" in a, vmip="--vmip" in a, vmip_hu=float(opt("--vmiphu", "100")), vlabels=[(float(v.split(":")[0]), v.split(":")[1]) for v in opt("--vlabel", "").split(";") if v], vdiag=opt("--vdiag"))
     elif a[0] == "stack":
