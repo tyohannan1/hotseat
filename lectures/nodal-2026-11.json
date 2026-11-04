@@ -93,8 +93,8 @@
  "runOfShow": [
   {
    "label": "Pretest",
-   "minutes": 7,
-   "from": "pre1"
+   "minutes": 12,
+   "from": "p1-a"
   },
   {
    "label": "Opening",
@@ -123,8 +123,8 @@
   },
   {
    "label": "Posttest",
-   "minutes": 5,
-   "from": "post1"
+   "minutes": 8,
+   "from": "t1-a"
   }
  ],
  "lobbyNotes": [
@@ -160,48 +160,381 @@
   },
   {
    "type": "question",
-   "id": "pre1",
+   "id": "p1-a",
    "kind": "pretest",
-   "pairedWith": "post1",
+   "pairedWith": "t1-a",
    "hotSeat": "afterPoll",
    "image": "img/pre1-pelvis-fdg.png",
-   "imageCaption": "FDG PET/CT pelvis, read it as a PSMA study. Left: the aorto-iliac vessels with bone removed, lines at the levels of A and B. Name each node's station from the vessel it sits on.",
-   "disease": "Prostate cancer, newly diagnosed, no other disease",
-   "correct": 2,
-   "explain": "Below the bifurcation the node is pelvic and gets radiated with the prostate; above it the node counts as metastatic and the patient goes to hormone therapy and drugs instead.",
-   "source": "AutoPET PETCT_d9da6129f8, 2002-04-14, Melanoma. CT series 4.000000-GK p.v.3-98719, PET series 5.000000-PET corr.-53940. A: lesion #4 (3.7 mL, SUVmax 34.9, z 630 mm); B: lesion #6 (1.2 mL, SUVmax 12.6, z 669 mm).",
+   "imageCaption": "FDG PET/CT, read it as a PSMA study. Left: the vessel tree with the bifurcations. A and B on the axial pairs.",
+   "stem": "New diagnosis of prostate cancer. How would you describe node A?",
+   "options": [
+    "Left external iliac node, below the common iliac bifurcation",
+    "Left common iliac node, above the bifurcation",
+    "Left internal iliac node",
+    "Left para-aortic node"
+   ],
+   "correct": 0,
+   "explain": "A sits on the external iliac just past the common iliac bifurcation: a pelvic node, inside the curative radiation field.",
    "imageClean": "img/pre1-pelvis-fdg-clean.png",
-   "imageBare": "img/pre1-pelvis-fdg-bare.png"
+   "imageBare": "img/pre1-pelvis-fdg-bare.png",
+   "source": "AutoPET PETCT_d9da6129f8, 2002-04-14, Melanoma. CT series 4.000000-GK p.v.3-98719, PET series 5.000000-PET corr.-53940. A: lesion #4 (3.7 mL, SUVmax 34.9, z 630 mm); B: lesion #6 (1.2 mL, SUVmax 12.6, z 669 mm)."
   },
   {
    "type": "question",
-   "id": "pre2",
+   "id": "p1-b",
    "kind": "pretest",
-   "pairedWith": "post2",
+   "pairedWith": "t1-b",
+   "hotSeat": "afterPoll",
+   "image": "img/pre1-pelvis-fdg.png",
+   "imageCaption": "FDG PET/CT, read it as a PSMA study. Left: the vessel tree with the bifurcations. A and B on the axial pairs.",
+   "stem": "New diagnosis of prostate cancer. How would you describe node B?",
+   "options": [
+    "Left common iliac node, just below the aortic bifurcation",
+    "Left external iliac node",
+    "Para-aortic node",
+    "Left internal iliac node"
+   ],
+   "correct": 0,
+   "explain": "B sits on the common iliac just below where the aorta splits: above the edge of the pelvis, counted as metastatic for prostate.",
+   "imageClean": "img/pre1-pelvis-fdg-clean.png",
+   "imageBare": "img/pre1-pelvis-fdg-bare.png",
+   "source": "AutoPET PETCT_d9da6129f8, 2002-04-14, Melanoma. CT series 4.000000-GK p.v.3-98719, PET series 5.000000-PET corr.-53940. A: lesion #4 (3.7 mL, SUVmax 34.9, z 630 mm); B: lesion #6 (1.2 mL, SUVmax 12.6, z 669 mm)."
+  },
+  {
+   "type": "question",
+   "id": "p1-m",
+   "kind": "pretest",
+   "pairedWith": "t1-m",
+   "hotSeat": "afterPoll",
+   "image": "img/pre1-pelvis-fdg.png",
+   "imageCaption": "FDG PET/CT, read it as a PSMA study. Left: the vessel tree with the bifurcations. A and B on the axial pairs.",
+   "stem": "New diagnosis of prostate cancer. Does node A versus node B change management?",
+   "options": [
+    "No, same management either way",
+    "Yes, changes how much the surgeon takes or how much the radiation field covers",
+    "Yes, takes surgery off the table or puts systemic therapy before surgery",
+    "Yes, changes intent from curative to palliative"
+   ],
+   "correct": 2,
+   "explain": "A is pelvic and radiated with the prostate. B is a common iliac node, counted as metastatic: hormones and drugs instead of curative radiation.",
+   "imageClean": "img/pre1-pelvis-fdg-clean.png",
+   "imageBare": "img/pre1-pelvis-fdg-bare.png",
+   "source": "AutoPET PETCT_d9da6129f8, 2002-04-14, Melanoma. CT series 4.000000-GK p.v.3-98719, PET series 5.000000-PET corr.-53940. A: lesion #4 (3.7 mL, SUVmax 34.9, z 630 mm); B: lesion #6 (1.2 mL, SUVmax 12.6, z 669 mm)."
+  },
+  {
+   "type": "question",
+   "id": "p1-la",
+   "kind": "pretest",
+   "pairedWith": "t1-la",
+   "hotSeat": "afterPoll",
+   "image": "img/pre1-pelvis-fdg.png",
+   "imageCaption": "FDG PET/CT, read it as a PSMA study. Left: the vessel tree with the bifurcations. A and B on the axial pairs.",
+   "stem": "If this patient had lymphoma, how would the Lugano criteria describe node A?",
+   "options": [
+    "Left iliac",
+    "Left external iliac",
+    "Left pelvic sidewall",
+    "Depends on the vessel"
+   ],
+   "correct": 0,
+   "explain": "For lymphoma the whole iliac chain on one side is one region: left iliac.",
+   "imageClean": "img/pre1-pelvis-fdg-clean.png",
+   "imageBare": "img/pre1-pelvis-fdg-bare.png",
+   "source": "AutoPET PETCT_d9da6129f8, 2002-04-14, Melanoma. CT series 4.000000-GK p.v.3-98719, PET series 5.000000-PET corr.-53940. A: lesion #4 (3.7 mL, SUVmax 34.9, z 630 mm); B: lesion #6 (1.2 mL, SUVmax 12.6, z 669 mm)."
+  },
+  {
+   "type": "question",
+   "id": "p1-lb",
+   "kind": "pretest",
+   "pairedWith": "t1-lb",
+   "hotSeat": "afterPoll",
+   "image": "img/pre1-pelvis-fdg.png",
+   "imageCaption": "FDG PET/CT, read it as a PSMA study. Left: the vessel tree with the bifurcations. A and B on the axial pairs.",
+   "stem": "If this patient had lymphoma, how would the Lugano criteria describe node B?",
+   "options": [
+    "Left iliac",
+    "Left common iliac",
+    "Para-aortic",
+    "Retroperitoneal"
+   ],
+   "correct": 0,
+   "explain": "Still left iliac. Above or below the bifurcation changes nothing for Lugano.",
+   "imageClean": "img/pre1-pelvis-fdg-clean.png",
+   "imageBare": "img/pre1-pelvis-fdg-bare.png",
+   "source": "AutoPET PETCT_d9da6129f8, 2002-04-14, Melanoma. CT series 4.000000-GK p.v.3-98719, PET series 5.000000-PET corr.-53940. A: lesion #4 (3.7 mL, SUVmax 34.9, z 630 mm); B: lesion #6 (1.2 mL, SUVmax 12.6, z 669 mm)."
+  },
+  {
+   "type": "question",
+   "id": "p1-lm",
+   "kind": "pretest",
+   "pairedWith": "t1-lm",
+   "hotSeat": "afterPoll",
+   "image": "img/pre1-pelvis-fdg.png",
+   "imageCaption": "FDG PET/CT, read it as a PSMA study. Left: the vessel tree with the bifurcations. A and B on the axial pairs.",
+   "stem": "Lymphoma. Does node A versus node B change staging or management?",
+   "options": [
+    "No, same stage and same treatment either way",
+    "Yes, B is a different region so the stage changes",
+    "Yes, B is outside the radiation field",
+    "Yes, B means systemic therapy instead of radiation"
+   ],
+   "correct": 0,
+   "explain": "Both nodes are in the same region, left iliac. One region, same stage, same treatment.",
+   "imageClean": "img/pre1-pelvis-fdg-clean.png",
+   "imageBare": "img/pre1-pelvis-fdg-bare.png",
+   "source": "AutoPET PETCT_d9da6129f8, 2002-04-14, Melanoma. CT series 4.000000-GK p.v.3-98719, PET series 5.000000-PET corr.-53940. A: lesion #4 (3.7 mL, SUVmax 34.9, z 630 mm); B: lesion #6 (1.2 mL, SUVmax 12.6, z 669 mm)."
+  },
+  {
+   "type": "question",
+   "id": "p2-a",
+   "kind": "pretest",
+   "pairedWith": "t2-a",
    "hotSeat": "afterPoll",
    "image": "img/pre2-chest-fdg.png",
-   "imageCaption": "FDG PET/CT chest, left lung primary. A: 4L. B: 4R.",
-   "disease": "Lung adenocarcinoma, left lung",
-   "correct": 2,
-   "explain": "Same side as the tumor (4L), the surgeon may still operate; opposite side (4R), surgery is off the table and the patient gets chemoradiation.",
-   "source": "AutoPET PETCT_442a09f90e, 2002-03-16, Lung Cancer. CT series 5.000000-GK p.v.2-46154, PET series 9.000000-PET corr.-11580. A: lesion #9 (3.2 mL, SUVmax 5.8, z 174 mm); B: lesion #3 (19.9 mL, SUVmax 7.9, z 147 mm).",
+   "imageCaption": "FDG PET/CT chest, left lung primary. A and B beside the trachea.",
+   "stem": "Adenocarcinoma of the left lung. How would you describe node A?",
+   "options": [
+    "Left lower paratracheal node, 4L",
+    "Right lower paratracheal node, 4R",
+    "Aortopulmonary node, 5",
+    "Subcarinal node, 7"
+   ],
+   "correct": 0,
+   "explain": "A is lateral to the left tracheal wall, beside the arch: 4L, same side as a left lung tumor.",
    "imageClean": "img/pre2-chest-fdg-clean.png",
-   "imageBare": "img/pre2-chest-fdg-bare.png"
+   "imageBare": "img/pre2-chest-fdg-bare.png",
+   "source": "AutoPET PETCT_442a09f90e, 2002-03-16, Lung Cancer. CT series 5.000000-GK p.v.2-46154, PET series 9.000000-PET corr.-11580. A: lesion #9 (3.2 mL, SUVmax 5.8, z 174 mm); B: lesion #3 (19.9 mL, SUVmax 7.9, z 147 mm)."
   },
   {
    "type": "question",
-   "id": "pre4",
+   "id": "p2-b",
    "kind": "pretest",
-   "pairedWith": "post4",
+   "pairedWith": "t2-b",
+   "hotSeat": "afterPoll",
+   "image": "img/pre2-chest-fdg.png",
+   "imageCaption": "FDG PET/CT chest, left lung primary. A and B beside the trachea.",
+   "stem": "Adenocarcinoma of the left lung. How would you describe node B?",
+   "options": [
+    "Right lower paratracheal node, 4R",
+    "Left lower paratracheal node, 4L",
+    "Prevascular node, 3A",
+    "Right hilar node, 10R"
+   ],
+   "correct": 0,
+   "explain": "B is right of the left tracheal wall: 4R. For a left lung tumor that is the opposite side.",
+   "imageClean": "img/pre2-chest-fdg-clean.png",
+   "imageBare": "img/pre2-chest-fdg-bare.png",
+   "source": "AutoPET PETCT_442a09f90e, 2002-03-16, Lung Cancer. CT series 5.000000-GK p.v.2-46154, PET series 9.000000-PET corr.-11580. A: lesion #9 (3.2 mL, SUVmax 5.8, z 174 mm); B: lesion #3 (19.9 mL, SUVmax 7.9, z 147 mm)."
+  },
+  {
+   "type": "question",
+   "id": "p2-m",
+   "kind": "pretest",
+   "pairedWith": "t2-m",
+   "hotSeat": "afterPoll",
+   "image": "img/pre2-chest-fdg.png",
+   "imageCaption": "FDG PET/CT chest, left lung primary. A and B beside the trachea.",
+   "stem": "Adenocarcinoma of the left lung. Does node A versus node B change management?",
+   "options": [
+    "No, same management either way",
+    "Yes, changes how much the surgeon takes or how much the radiation field covers",
+    "Yes, takes surgery off the table or puts systemic therapy before surgery",
+    "Yes, changes intent from curative to palliative"
+   ],
+   "correct": 2,
+   "explain": "A (4L) is same-side, N2: surgery may still follow chemo-immunotherapy. B (4R) is opposite-side, N3: surgery is off the table.",
+   "imageClean": "img/pre2-chest-fdg-clean.png",
+   "imageBare": "img/pre2-chest-fdg-bare.png",
+   "source": "AutoPET PETCT_442a09f90e, 2002-03-16, Lung Cancer. CT series 5.000000-GK p.v.2-46154, PET series 9.000000-PET corr.-11580. A: lesion #9 (3.2 mL, SUVmax 5.8, z 174 mm); B: lesion #3 (19.9 mL, SUVmax 7.9, z 147 mm)."
+  },
+  {
+   "type": "question",
+   "id": "p2-la",
+   "kind": "pretest",
+   "pairedWith": "t2-la",
+   "hotSeat": "afterPoll",
+   "image": "img/pre2-chest-fdg.png",
+   "imageCaption": "FDG PET/CT chest, left lung primary. A and B beside the trachea.",
+   "stem": "If this patient had lymphoma, how would the Lugano criteria describe node A?",
+   "options": [
+    "Mediastinal",
+    "Left paratracheal",
+    "4L",
+    "Left hilar"
+   ],
+   "correct": 0,
+   "explain": "For lymphoma the whole mediastinum is one region.",
+   "imageClean": "img/pre2-chest-fdg-clean.png",
+   "imageBare": "img/pre2-chest-fdg-bare.png",
+   "source": "AutoPET PETCT_442a09f90e, 2002-03-16, Lung Cancer. CT series 5.000000-GK p.v.2-46154, PET series 9.000000-PET corr.-11580. A: lesion #9 (3.2 mL, SUVmax 5.8, z 174 mm); B: lesion #3 (19.9 mL, SUVmax 7.9, z 147 mm)."
+  },
+  {
+   "type": "question",
+   "id": "p2-lb",
+   "kind": "pretest",
+   "pairedWith": "t2-lb",
+   "hotSeat": "afterPoll",
+   "image": "img/pre2-chest-fdg.png",
+   "imageCaption": "FDG PET/CT chest, left lung primary. A and B beside the trachea.",
+   "stem": "If this patient had lymphoma, how would the Lugano criteria describe node B?",
+   "options": [
+    "Mediastinal",
+    "Right paratracheal",
+    "4R",
+    "Right hilar"
+   ],
+   "correct": 0,
+   "explain": "Same region: mediastinal. Right or left paratracheal changes nothing.",
+   "imageClean": "img/pre2-chest-fdg-clean.png",
+   "imageBare": "img/pre2-chest-fdg-bare.png",
+   "source": "AutoPET PETCT_442a09f90e, 2002-03-16, Lung Cancer. CT series 5.000000-GK p.v.2-46154, PET series 9.000000-PET corr.-11580. A: lesion #9 (3.2 mL, SUVmax 5.8, z 174 mm); B: lesion #3 (19.9 mL, SUVmax 7.9, z 147 mm)."
+  },
+  {
+   "type": "question",
+   "id": "p2-lm",
+   "kind": "pretest",
+   "pairedWith": "t2-lm",
+   "hotSeat": "afterPoll",
+   "image": "img/pre2-chest-fdg.png",
+   "imageCaption": "FDG PET/CT chest, left lung primary. A and B beside the trachea.",
+   "stem": "Lymphoma. Does node A versus node B change staging or management?",
+   "options": [
+    "No, same stage and same treatment either way",
+    "Yes, B is a different region so the stage changes",
+    "Yes, B is outside the radiation field",
+    "Yes, B means systemic therapy instead of radiation"
+   ],
+   "correct": 0,
+   "explain": "Both nodes are mediastinal, one region. Same stage, same treatment.",
+   "imageClean": "img/pre2-chest-fdg-clean.png",
+   "imageBare": "img/pre2-chest-fdg-bare.png",
+   "source": "AutoPET PETCT_442a09f90e, 2002-03-16, Lung Cancer. CT series 5.000000-GK p.v.2-46154, PET series 9.000000-PET corr.-11580. A: lesion #9 (3.2 mL, SUVmax 5.8, z 174 mm); B: lesion #3 (19.9 mL, SUVmax 7.9, z 147 mm)."
+  },
+  {
+   "type": "question",
+   "id": "p3-a",
+   "kind": "pretest",
+   "pairedWith": "t3-a",
    "hotSeat": "afterPoll",
    "image": "img/pre4-axilla-fdg.png",
-   "imageCaption": "FDG PET/CT axilla. A: level II. B: level III, medial to pectoralis minor.",
-   "disease": "ER-positive HER2-negative breast cancer, ipsilateral",
+   "imageCaption": "FDG PET/CT under the left clavicle. The pectoralis minor is the landmark.",
+   "stem": "Left-sided breast cancer. How would you describe node A?",
+   "options": [
+    "Left axillary level II, behind the pectoralis minor",
+    "Left axillary level I, lateral to the pectoralis minor",
+    "Left axillary level III, medial to the pectoralis minor",
+    "Left supraclavicular node"
+   ],
+   "correct": 0,
+   "explain": "A lies behind the pectoralis minor: level II, still the surgeon's axilla.",
+   "imageClean": "img/pre4-axilla-fdg-clean.png",
+   "imageBare": "img/pre4-axilla-fdg-bare.png",
+   "source": "AutoPET PETCT_f24f3ce1da, 2001-09-14, Melanoma. CT series 5.000000-GK p.v.2-28878, PET series 6.000000-PET corr.-93674. A: lesion #4 (5.8 mL, SUVmax 35.8, z 1156 mm); B: lesion #3 (9.0 mL, SUVmax 56.2, z 1146 mm)."
+  },
+  {
+   "type": "question",
+   "id": "p3-b",
+   "kind": "pretest",
+   "pairedWith": "t3-b",
+   "hotSeat": "afterPoll",
+   "image": "img/pre4-axilla-fdg.png",
+   "imageCaption": "FDG PET/CT under the left clavicle. The pectoralis minor is the landmark.",
+   "stem": "Left-sided breast cancer. How would you describe node B?",
+   "options": [
+    "Left axillary level III, medial to the pectoralis minor (infraclavicular)",
+    "Left axillary level II",
+    "Left axillary level I",
+    "Internal mammary node"
+   ],
+   "correct": 0,
+   "explain": "B is medial to the pectoralis minor, under the clavicle: level III, infraclavicular, cN3a.",
+   "imageClean": "img/pre4-axilla-fdg-clean.png",
+   "imageBare": "img/pre4-axilla-fdg-bare.png",
+   "source": "AutoPET PETCT_f24f3ce1da, 2001-09-14, Melanoma. CT series 5.000000-GK p.v.2-28878, PET series 6.000000-PET corr.-93674. A: lesion #4 (5.8 mL, SUVmax 35.8, z 1156 mm); B: lesion #3 (9.0 mL, SUVmax 56.2, z 1146 mm)."
+  },
+  {
+   "type": "question",
+   "id": "p3-m",
+   "kind": "pretest",
+   "pairedWith": "t3-m",
+   "hotSeat": "afterPoll",
+   "image": "img/pre4-axilla-fdg.png",
+   "imageCaption": "FDG PET/CT under the left clavicle. The pectoralis minor is the landmark.",
+   "stem": "Left-sided breast cancer. Does node A versus node B change management?",
+   "options": [
+    "No, same management either way",
+    "Yes, changes how much the surgeon takes or how much the radiation field covers",
+    "Yes, takes surgery off the table or puts systemic therapy before surgery",
+    "Yes, changes intent from curative to palliative"
+   ],
    "correct": 2,
    "explain": "Level II goes to surgery first; a node medial to pectoralis minor sends the patient to systemic therapy before any surgery.",
-   "source": "AutoPET PETCT_f24f3ce1da, 2001-09-14, Melanoma. CT series 5.000000-GK p.v.2-28878, PET series 6.000000-PET corr.-93674. A: lesion #4 (5.8 mL, SUVmax 35.8, z 1156 mm); B: lesion #3 (9.0 mL, SUVmax 56.2, z 1146 mm).",
    "imageClean": "img/pre4-axilla-fdg-clean.png",
-   "imageBare": "img/pre4-axilla-fdg-bare.png"
+   "imageBare": "img/pre4-axilla-fdg-bare.png",
+   "source": "AutoPET PETCT_f24f3ce1da, 2001-09-14, Melanoma. CT series 5.000000-GK p.v.2-28878, PET series 6.000000-PET corr.-93674. A: lesion #4 (5.8 mL, SUVmax 35.8, z 1156 mm); B: lesion #3 (9.0 mL, SUVmax 56.2, z 1146 mm)."
+  },
+  {
+   "type": "question",
+   "id": "p3-la",
+   "kind": "pretest",
+   "pairedWith": "t3-la",
+   "hotSeat": "afterPoll",
+   "image": "img/pre4-axilla-fdg.png",
+   "imageCaption": "FDG PET/CT under the left clavicle. The pectoralis minor is the landmark.",
+   "stem": "If this patient had lymphoma, how would the Lugano criteria describe node A?",
+   "options": [
+    "Left axillary",
+    "Left level II",
+    "Left pectoral",
+    "Left infraclavicular"
+   ],
+   "correct": 0,
+   "explain": "Lugano calls the axillary and pectoral nodes one region: left axillary.",
+   "imageClean": "img/pre4-axilla-fdg-clean.png",
+   "imageBare": "img/pre4-axilla-fdg-bare.png",
+   "source": "AutoPET PETCT_f24f3ce1da, 2001-09-14, Melanoma. CT series 5.000000-GK p.v.2-28878, PET series 6.000000-PET corr.-93674. A: lesion #4 (5.8 mL, SUVmax 35.8, z 1156 mm); B: lesion #3 (9.0 mL, SUVmax 56.2, z 1146 mm)."
+  },
+  {
+   "type": "question",
+   "id": "p3-lb",
+   "kind": "pretest",
+   "pairedWith": "t3-lb",
+   "hotSeat": "afterPoll",
+   "image": "img/pre4-axilla-fdg.png",
+   "imageCaption": "FDG PET/CT under the left clavicle. The pectoralis minor is the landmark.",
+   "stem": "If this patient had lymphoma, how would the Lugano criteria describe node B?",
+   "options": [
+    "Left infraclavicular",
+    "Left axillary",
+    "Left level III",
+    "Left neck"
+   ],
+   "correct": 0,
+   "explain": "Infraclavicular is its own Lugano region, separate from axillary.",
+   "imageClean": "img/pre4-axilla-fdg-clean.png",
+   "imageBare": "img/pre4-axilla-fdg-bare.png",
+   "source": "AutoPET PETCT_f24f3ce1da, 2001-09-14, Melanoma. CT series 5.000000-GK p.v.2-28878, PET series 6.000000-PET corr.-93674. A: lesion #4 (5.8 mL, SUVmax 35.8, z 1156 mm); B: lesion #3 (9.0 mL, SUVmax 56.2, z 1146 mm)."
+  },
+  {
+   "type": "question",
+   "id": "p3-lm",
+   "kind": "pretest",
+   "pairedWith": "t3-lm",
+   "hotSeat": "afterPoll",
+   "image": "img/pre4-axilla-fdg.png",
+   "imageCaption": "FDG PET/CT under the left clavicle. The pectoralis minor is the landmark.",
+   "stem": "Lymphoma. Does node A versus node B change staging or management?",
+   "options": [
+    "No, same stage and same treatment either way",
+    "Yes, B is a different region so the stage changes",
+    "Yes, B is outside the radiation field",
+    "Yes, B means systemic therapy instead of radiation"
+   ],
+   "correct": 0,
+   "explain": "Two regions on the same side of the diaphragm instead of one: still early stage, same treatment. Lugano counts regions; it does not care which level.",
+   "imageClean": "img/pre4-axilla-fdg-clean.png",
+   "imageBare": "img/pre4-axilla-fdg-bare.png",
+   "source": "AutoPET PETCT_f24f3ce1da, 2001-09-14, Melanoma. CT series 5.000000-GK p.v.2-28878, PET series 6.000000-PET corr.-93674. A: lesion #4 (5.8 mL, SUVmax 35.8, z 1156 mm); B: lesion #3 (9.0 mL, SUVmax 56.2, z 1146 mm)."
   },
   {
    "type": "slide",
@@ -255,9 +588,7 @@
     "- The common iliac bifurcation",
     "- The left lateral wall of the trachea",
     "- The pectoralis minor",
-    "",
-    "Each one is a line where the same node changes its name and its consequence for the carcinoma. For lymphoma, none of them matter.",
-    ""
+    "Each one is a line where the same node changes its name and its consequence for the carcinoma. For lymphoma, none of them matter."
    ],
    "notes": [
     "These are the three lines you will learn to name today, one per case: prostate, lung, breast. Each is a boundary where the same node changes its name and its consequence, and for lymphoma none of them matter at all.",
@@ -266,7 +597,8 @@
    ],
    "image": "img/dx/four-lines.svg",
    "caption": "The three lines, one per case. Each comes back as its own slide.",
-   "layout": "stack"
+   "layout": "stack",
+   "build": true
   },
   {
    "type": "slide",
@@ -275,7 +607,6 @@
    "title": "The lazy sentence",
    "body": [
     "> PSMA-avid right iliac lymph node, 1.2 cm.",
-    "",
     "Not wrong. Incomplete for this disease.",
     "The urologist cannot tell whether this patient gets curative pelvic radiation or starts systemic therapy. They call you, or re-read the scan.",
     "For lymphoma, the same sentence would have been complete."
@@ -283,7 +614,8 @@
    "notes": [
     "Put the lazy sentence up first. The urologist cannot tell from this whether the patient is a candidate for curative pelvic radiation or needs to start systemic therapy, so they call you or re-read the scan.",
     "Say this out loud the first time: the sentence is not wrong, it is incomplete for this disease. For lymphoma the same sentence would have been complete."
-   ]
+   ],
+   "build": true
   },
   {
    "type": "slide",
@@ -304,7 +636,8 @@
     "For prostate: below is N1 and radiated with the prostate; above is M1a and systemic therapy leads. Then the two contrasts on the right: bladder cancer keeps the common iliac node regional, lymphoma does not care.",
     "An R1 who has this slide can answer the quick check (bladder, same node): the line does not matter for bladder.",
     "Aside, said once: for M1a limited to the common iliac nodes, radiation plus ADT may do about as well as for pelvic N1; the field is extended rather than abandoned. Verify the trial you want to cite before naming it."
-   ]
+   ],
+   "build": true
   },
   {
    "type": "slide",
@@ -329,127 +662,8 @@
    ],
    "source": "AutoPET PETCT_791ec15924, 2001-04-16, Melanoma. CT series 5.000000-GK p.v.2-41675, PET series 6.000000-PET corr.-15444. A: lesion #3 (10.6 mL, SUVmax 12.0, z 663 mm); B: lesion #4 (9.3 mL, SUVmax 13.8, z 702 mm).",
    "imageClean": "img/case1-pelvis-fdg-clean.png",
-   "imageBare": "img/case1-pelvis-fdg-bare.png"
-  },
-  {
-   "type": "question",
-   "id": "q1-a",
-   "kind": "quick",
-   "hotSeat": "beforePoll",
-   "image": "img/case1-pelvis-fdg.png",
-   "imageCaption": "FDG PET/CT, read it as PSMA. Left: the vessel tree. A and B on the axial pairs.",
-   "stem": "New diagnosis of prostate cancer. How would you describe node A?",
-   "options": [
-    "Left external iliac node, below the common iliac bifurcation",
-    "Left common iliac node, above the bifurcation",
-    "Left internal iliac node",
-    "Left para-aortic node"
-   ],
-   "correct": 0,
-   "explain": "A sits on the external iliac just past the common iliac bifurcation: a pelvic node, inside the curative radiation field.",
-   "imageClean": "img/case1-pelvis-fdg-clean.png",
    "imageBare": "img/case1-pelvis-fdg-bare.png",
-   "source": "AutoPET PETCT_791ec15924, 2001-04-16, Melanoma. CT series 5.000000-GK p.v.2-41675, PET series 6.000000-PET corr.-15444. A: lesion #3 (10.6 mL, SUVmax 12.0, z 663 mm); B: lesion #4 (9.3 mL, SUVmax 13.8, z 702 mm)."
-  },
-  {
-   "type": "question",
-   "id": "q1-b",
-   "kind": "quick",
-   "hotSeat": "beforePoll",
-   "image": "img/case1-pelvis-fdg.png",
-   "imageCaption": "FDG PET/CT, read it as PSMA. Left: the vessel tree. A and B on the axial pairs.",
-   "stem": "New diagnosis of prostate cancer. How would you describe node B?",
-   "options": [
-    "Left common iliac node, just below the aortic bifurcation",
-    "Left external iliac node",
-    "Para-aortic node",
-    "Left internal iliac node"
-   ],
-   "correct": 0,
-   "explain": "B sits on the common iliac just below where the aorta splits: above the edge of the pelvis, counted as metastatic for prostate.",
-   "imageClean": "img/case1-pelvis-fdg-clean.png",
-   "imageBare": "img/case1-pelvis-fdg-bare.png",
-   "source": "AutoPET PETCT_791ec15924, 2001-04-16, Melanoma. CT series 5.000000-GK p.v.2-41675, PET series 6.000000-PET corr.-15444. A: lesion #3 (10.6 mL, SUVmax 12.0, z 663 mm); B: lesion #4 (9.3 mL, SUVmax 13.8, z 702 mm)."
-  },
-  {
-   "type": "question",
-   "id": "q1-m",
-   "kind": "quick",
-   "hotSeat": "beforePoll",
-   "image": "img/case1-pelvis-fdg.png",
-   "imageCaption": "FDG PET/CT, read it as PSMA. Left: the vessel tree. A and B on the axial pairs.",
-   "stem": "New diagnosis of prostate cancer. Does node A versus node B change management?",
-   "options": [
-    "No, same management either way",
-    "Yes, changes how much the surgeon takes or how much the radiation field covers",
-    "Yes, takes surgery off the table or puts systemic therapy before surgery",
-    "Yes, changes intent from curative to palliative"
-   ],
-   "correct": 2,
-   "explain": "A is pelvic and radiated with the prostate. B is a common iliac node, counted as metastatic: hormones and drugs instead of curative radiation.",
-   "imageClean": "img/case1-pelvis-fdg-clean.png",
-   "imageBare": "img/case1-pelvis-fdg-bare.png",
-   "source": "AutoPET PETCT_791ec15924, 2001-04-16, Melanoma. CT series 5.000000-GK p.v.2-41675, PET series 6.000000-PET corr.-15444. A: lesion #3 (10.6 mL, SUVmax 12.0, z 663 mm); B: lesion #4 (9.3 mL, SUVmax 13.8, z 702 mm)."
-  },
-  {
-   "type": "question",
-   "id": "q1-la",
-   "kind": "quick",
-   "hotSeat": "beforePoll",
-   "image": "img/case1-pelvis-fdg.png",
-   "imageCaption": "FDG PET/CT, read it as PSMA. Left: the vessel tree. A and B on the axial pairs.",
-   "stem": "If this patient had lymphoma, how would the Lugano criteria describe node A?",
-   "options": [
-    "Left iliac",
-    "Left external iliac",
-    "Left pelvic sidewall",
-    "Depends on the vessel"
-   ],
-   "correct": 0,
-   "explain": "For lymphoma the whole iliac chain on one side is one region: left iliac.",
-   "imageClean": "img/case1-pelvis-fdg-clean.png",
-   "imageBare": "img/case1-pelvis-fdg-bare.png",
-   "source": "AutoPET PETCT_791ec15924, 2001-04-16, Melanoma. CT series 5.000000-GK p.v.2-41675, PET series 6.000000-PET corr.-15444. A: lesion #3 (10.6 mL, SUVmax 12.0, z 663 mm); B: lesion #4 (9.3 mL, SUVmax 13.8, z 702 mm)."
-  },
-  {
-   "type": "question",
-   "id": "q1-lb",
-   "kind": "quick",
-   "hotSeat": "beforePoll",
-   "image": "img/case1-pelvis-fdg.png",
-   "imageCaption": "FDG PET/CT, read it as PSMA. Left: the vessel tree. A and B on the axial pairs.",
-   "stem": "If this patient had lymphoma, how would the Lugano criteria describe node B?",
-   "options": [
-    "Left iliac",
-    "Left common iliac",
-    "Para-aortic",
-    "Retroperitoneal"
-   ],
-   "correct": 0,
-   "explain": "Still left iliac. Above or below the bifurcation changes nothing for Lugano.",
-   "imageClean": "img/case1-pelvis-fdg-clean.png",
-   "imageBare": "img/case1-pelvis-fdg-bare.png",
-   "source": "AutoPET PETCT_791ec15924, 2001-04-16, Melanoma. CT series 5.000000-GK p.v.2-41675, PET series 6.000000-PET corr.-15444. A: lesion #3 (10.6 mL, SUVmax 12.0, z 663 mm); B: lesion #4 (9.3 mL, SUVmax 13.8, z 702 mm)."
-  },
-  {
-   "type": "question",
-   "id": "q1-lm",
-   "kind": "quick",
-   "hotSeat": "beforePoll",
-   "image": "img/case1-pelvis-fdg.png",
-   "imageCaption": "FDG PET/CT, read it as PSMA. Left: the vessel tree. A and B on the axial pairs.",
-   "stem": "Lymphoma. Does node A versus node B change staging or management?",
-   "options": [
-    "No, same stage and same treatment either way",
-    "Yes, B is a different region so the stage changes",
-    "Yes, B is outside the radiation field",
-    "Yes, B means systemic therapy instead of radiation"
-   ],
-   "correct": 0,
-   "explain": "Both nodes are in the same region, left iliac. One region, same stage, same treatment.",
-   "imageClean": "img/case1-pelvis-fdg-clean.png",
-   "imageBare": "img/case1-pelvis-fdg-bare.png",
-   "source": "AutoPET PETCT_791ec15924, 2001-04-16, Melanoma. CT series 5.000000-GK p.v.2-41675, PET series 6.000000-PET corr.-15444. A: lesion #3 (10.6 mL, SUVmax 12.0, z 663 mm); B: lesion #4 (9.3 mL, SUVmax 13.8, z 702 mm)."
+   "build": true
   },
   {
    "type": "slide",
@@ -468,7 +682,8 @@
    "notes": [
     "Prostate guideline, N1 on the regional page (PROS-7) and M1 on the metastatic page (PROS-14). \"Same node, different page.\"",
     "Verified against v1.2027: RT to the primary is still offered for synchronous low-volume mCSPC, and the low-burden definition explicitly includes nonregional node-only disease, so an M1a patient qualifies."
-   ]
+   ],
+   "build": true
   },
   {
    "type": "question",
@@ -494,13 +709,13 @@
    "title": "The lazy sentence",
    "body": [
     "> FDG-avid paratracheal lymph node, 1.5 cm.",
-    "",
     "The thoracic surgeon cannot tell whether this patient is still theirs.",
     "Right or left is the whole referral. The report did not say."
    ],
    "notes": [
     "The thoracic surgeon cannot tell whether this patient is still theirs. Right or left is the whole referral, and the report did not say."
-   ]
+   ],
+   "build": true
   },
   {
    "type": "slide",
@@ -521,7 +736,8 @@
     "Teach the station rule before the image. The IASLC boundary between R and L paratracheal stations is the left lateral wall of the trachea, so a node sitting just left of midline is still right-sided.",
     "Then the consequence: same side N2, opposite side N3. Name the exception, station 7 (subcarinal) is midline and always N2; that is the quick check.",
     "If asked about 2 versus 4: the top of the aortic arch on the left, the innominate vein crossing on the right."
-   ]
+   ],
+   "build": true
   },
   {
    "type": "slide",
@@ -536,7 +752,7 @@
     "# Lung",
     "- Same side as the tumor (N2): the surgeon is still in the room. Surgery may follow chemo-immunotherapy.",
     "- Opposite side (N3): surgery is off the table. Chemoradiation.",
-    "A node left of midline but medial to the left tracheal wall is still 4R. Name the station, not the position."
+    "A node left of midline but medial to the left tracheal wall is still 4R."
    ],
    "notes": [
     "Fresh FDG PET/CT chest. The teal line is drawn on the left lateral wall of the trachea, on both the CT and the fused panel. Not the midline: the left wall. The node anterior-right of the trachea is 2R; the node lateral to the line is 2L.",
@@ -546,127 +762,8 @@
    ],
    "source": "AutoPET PETCT_db3daf78d2, 2000-10-30, Lymphoma. CT series 5.000000-GK p.v.2-47450, PET series 10.000000-PET corr.-51485. A: lesion #5 (7.1 mL, SUVmax 10.1, z -459 mm); B: lesion #9 (1.3 mL, SUVmax 8.0, z -453 mm).",
    "imageClean": "img/case2-chest-fdg-clean.png",
-   "imageBare": "img/case2-chest-fdg-bare.png"
-  },
-  {
-   "type": "question",
-   "id": "q2-a",
-   "kind": "quick",
-   "hotSeat": "beforePoll",
-   "image": "img/case2-chest-fdg.png",
-   "imageCaption": "FDG PET/CT at the thoracic inlet. The teal line is the left lateral tracheal wall.",
-   "stem": "Adenocarcinoma of the left lung. How would you describe node A?",
-   "options": [
-    "Right upper paratracheal node, 2R",
-    "Left upper paratracheal node, 2L",
-    "Prevascular node, 3A",
-    "Right lower paratracheal node, 4R"
-   ],
-   "correct": 0,
-   "explain": "A is right of the left tracheal wall: 2R. For a left lung tumor that is the opposite side.",
-   "imageClean": "img/case2-chest-fdg-clean.png",
    "imageBare": "img/case2-chest-fdg-bare.png",
-   "source": "AutoPET PETCT_db3daf78d2, 2000-10-30, Lymphoma. CT series 5.000000-GK p.v.2-47450, PET series 10.000000-PET corr.-51485. A: lesion #5 (7.1 mL, SUVmax 10.1, z -459 mm); B: lesion #9 (1.3 mL, SUVmax 8.0, z -453 mm)."
-  },
-  {
-   "type": "question",
-   "id": "q2-b",
-   "kind": "quick",
-   "hotSeat": "beforePoll",
-   "image": "img/case2-chest-fdg.png",
-   "imageCaption": "FDG PET/CT at the thoracic inlet. The teal line is the left lateral tracheal wall.",
-   "stem": "Adenocarcinoma of the left lung. How would you describe node B?",
-   "options": [
-    "Left upper paratracheal node, 2L",
-    "Right upper paratracheal node, 2R",
-    "Left supraclavicular node",
-    "Aortopulmonary node, 5"
-   ],
-   "correct": 0,
-   "explain": "B is lateral to the left tracheal wall: 2L, same side as the tumor.",
-   "imageClean": "img/case2-chest-fdg-clean.png",
-   "imageBare": "img/case2-chest-fdg-bare.png",
-   "source": "AutoPET PETCT_db3daf78d2, 2000-10-30, Lymphoma. CT series 5.000000-GK p.v.2-47450, PET series 10.000000-PET corr.-51485. A: lesion #5 (7.1 mL, SUVmax 10.1, z -459 mm); B: lesion #9 (1.3 mL, SUVmax 8.0, z -453 mm)."
-  },
-  {
-   "type": "question",
-   "id": "q2-m",
-   "kind": "quick",
-   "hotSeat": "beforePoll",
-   "image": "img/case2-chest-fdg.png",
-   "imageCaption": "FDG PET/CT at the thoracic inlet. The teal line is the left lateral tracheal wall.",
-   "stem": "Adenocarcinoma of the left lung. Does node A versus node B change management?",
-   "options": [
-    "No, same management either way",
-    "Yes, changes how much the surgeon takes or how much the radiation field covers",
-    "Yes, takes surgery off the table or puts systemic therapy before surgery",
-    "Yes, changes intent from curative to palliative"
-   ],
-   "correct": 2,
-   "explain": "B (2L) is same-side, N2: surgery may still follow chemo-immunotherapy. A (2R) is opposite-side, N3: surgery is off the table.",
-   "imageClean": "img/case2-chest-fdg-clean.png",
-   "imageBare": "img/case2-chest-fdg-bare.png",
-   "source": "AutoPET PETCT_db3daf78d2, 2000-10-30, Lymphoma. CT series 5.000000-GK p.v.2-47450, PET series 10.000000-PET corr.-51485. A: lesion #5 (7.1 mL, SUVmax 10.1, z -459 mm); B: lesion #9 (1.3 mL, SUVmax 8.0, z -453 mm)."
-  },
-  {
-   "type": "question",
-   "id": "q2-la",
-   "kind": "quick",
-   "hotSeat": "beforePoll",
-   "image": "img/case2-chest-fdg.png",
-   "imageCaption": "FDG PET/CT at the thoracic inlet. The teal line is the left lateral tracheal wall.",
-   "stem": "If this patient had lymphoma, how would the Lugano criteria describe node A?",
-   "options": [
-    "Mediastinal",
-    "Right paratracheal",
-    "2R",
-    "Right neck"
-   ],
-   "correct": 0,
-   "explain": "For lymphoma the whole mediastinum is one region.",
-   "imageClean": "img/case2-chest-fdg-clean.png",
-   "imageBare": "img/case2-chest-fdg-bare.png",
-   "source": "AutoPET PETCT_db3daf78d2, 2000-10-30, Lymphoma. CT series 5.000000-GK p.v.2-47450, PET series 10.000000-PET corr.-51485. A: lesion #5 (7.1 mL, SUVmax 10.1, z -459 mm); B: lesion #9 (1.3 mL, SUVmax 8.0, z -453 mm)."
-  },
-  {
-   "type": "question",
-   "id": "q2-lb",
-   "kind": "quick",
-   "hotSeat": "beforePoll",
-   "image": "img/case2-chest-fdg.png",
-   "imageCaption": "FDG PET/CT at the thoracic inlet. The teal line is the left lateral tracheal wall.",
-   "stem": "If this patient had lymphoma, how would the Lugano criteria describe node B?",
-   "options": [
-    "Mediastinal",
-    "Left paratracheal",
-    "2L",
-    "Left neck"
-   ],
-   "correct": 0,
-   "explain": "Same region: mediastinal. Right or left paratracheal changes nothing.",
-   "imageClean": "img/case2-chest-fdg-clean.png",
-   "imageBare": "img/case2-chest-fdg-bare.png",
-   "source": "AutoPET PETCT_db3daf78d2, 2000-10-30, Lymphoma. CT series 5.000000-GK p.v.2-47450, PET series 10.000000-PET corr.-51485. A: lesion #5 (7.1 mL, SUVmax 10.1, z -459 mm); B: lesion #9 (1.3 mL, SUVmax 8.0, z -453 mm)."
-  },
-  {
-   "type": "question",
-   "id": "q2-lm",
-   "kind": "quick",
-   "hotSeat": "beforePoll",
-   "image": "img/case2-chest-fdg.png",
-   "imageCaption": "FDG PET/CT at the thoracic inlet. The teal line is the left lateral tracheal wall.",
-   "stem": "Lymphoma. Does node A versus node B change staging or management?",
-   "options": [
-    "No, same stage and same treatment either way",
-    "Yes, B is a different region so the stage changes",
-    "Yes, B is outside the radiation field",
-    "Yes, B means systemic therapy instead of radiation"
-   ],
-   "correct": 0,
-   "explain": "Both nodes are mediastinal, one region. Same stage, same treatment.",
-   "imageClean": "img/case2-chest-fdg-clean.png",
-   "imageBare": "img/case2-chest-fdg-bare.png",
-   "source": "AutoPET PETCT_db3daf78d2, 2000-10-30, Lymphoma. CT series 5.000000-GK p.v.2-47450, PET series 10.000000-PET corr.-51485. A: lesion #5 (7.1 mL, SUVmax 10.1, z -459 mm); B: lesion #9 (1.3 mL, SUVmax 8.0, z -453 mm)."
+   "build": true
   },
   {
    "type": "slide",
@@ -685,7 +782,8 @@
    "notes": [
     "NSCLC stage III: the same-side branch (NSCL-10) that still reaches surgery and the opposite-side branch (NSCL-13) that goes to chemoradiation.",
     "Footnote on NSCL-10: only selected N2 (fit, single-station, non-bulky, lobectomy only) goes systemic therapy then surgery. UCSF-specific practice not verified; say \"may\" not \"will\"."
-   ]
+   ],
+   "build": true
   },
   {
    "type": "question",
@@ -717,7 +815,8 @@
    ],
    "notes": [
     "Cut this first if behind. The same superior mediastinal node is central-compartment disease for thyroid cancer and goes to the thyroid surgeon. One node, three services."
-   ]
+   ],
+   "build": true
   },
   {
    "type": "slide",
@@ -726,13 +825,13 @@
    "title": "The lazy sentence",
    "body": [
     "> FDG-avid left axillary lymph node, 1.4 cm.",
-    "",
     "The breast surgeon books a sentinel node procedure.",
     "If that node was medial to the pectoralis minor, the patient should have gone to medical oncology first. The report is the reason they did not."
    ],
    "notes": [
     "The breast surgeon books a sentinel node procedure. If that node was medial to the pectoralis minor, the patient should have gone to medical oncology first, and the report is the reason they did not."
-   ]
+   ],
+   "build": true
   },
   {
    "type": "slide",
@@ -751,7 +850,8 @@
     "Teach the muscle before the image. On an axial, find the pectoralis minor as the oblique band from the coracoid to ribs 3 to 5; everything lateral is level I, deep is level II, medial is level III.",
     "Consequence for breast cancer: I and II go to the surgeon, III sends the patient to medical oncology first. Rotter's and internal mammary have to be named because the standard operation does not reach them.",
     "The quick check (node deep to pectoralis minor) is level II, surgeon first, straight from this slide."
-   ]
+   ],
+   "build": true
   },
   {
    "type": "slide",
@@ -771,7 +871,8 @@
    ],
    "source": "AutoPET PETCT_12025abab5, 2004-11-01, Melanoma. CT series 4.000000-GK p.v.3 s-69307, PET series 8.000000-PET corr.-67190. A: lesion #2 (1.7 mL, SUVmax 21.1, z 172 mm); B: lesion #4 (1.4 mL, SUVmax 6.7, z 182 mm).",
    "imageClean": "img/case4-axilla-fdg-clean.png",
-   "imageBare": "img/case4-axilla-fdg-bare.png"
+   "imageBare": "img/case4-axilla-fdg-bare.png",
+   "build": true
   },
   {
    "type": "slide",
@@ -791,7 +892,8 @@
     "**Breast:** same stage too, but not the same operation. A standard axillary dissection does not reach the interpectoral space, so an unreported Rotter's node is a node left behind, and radiation planning covers it separately. The stage did not change; the surgeon's plan did.",
     "(The 8% interpectoral metastasis figure is from a 1984 series; label it as such or leave the number out.)"
    ],
-   "image": "img/dx/line4-axilla.svg"
+   "image": "img/dx/line4-axilla.svg",
+   "build": true
   },
   {
    "type": "slide",
@@ -811,127 +913,8 @@
     "**Lymphoma:** different regions, but one region is one region. A single node at level II or at level III is the same stage and the same treatment, so II versus III does not change the plan.",
     "**Breast:** II versus III is the whole decision. Level II goes to the surgeon. A node medial to the pectoralis minor sends the patient to the medical oncologist first, for chemotherapy before any operation, and the radiation plan expands. The report has to say which side of the muscle before the case is booked."
    ],
-   "image": "img/dx/line4-axilla.svg"
-  },
-  {
-   "type": "question",
-   "id": "q3-a",
-   "kind": "quick",
-   "hotSeat": "beforePoll",
-   "image": "img/pre4-axilla-fdg.png",
-   "imageCaption": "FDG PET/CT under the left clavicle. The pectoralis minor is the landmark.",
-   "stem": "Left-sided breast cancer. How would you describe node A?",
-   "options": [
-    "Left axillary level II, behind the pectoralis minor",
-    "Left axillary level I, lateral to the pectoralis minor",
-    "Left axillary level III, medial to the pectoralis minor",
-    "Left supraclavicular node"
-   ],
-   "correct": 0,
-   "explain": "A lies behind the pectoralis minor: level II, still the surgeon's axilla.",
-   "imageClean": "img/pre4-axilla-fdg-clean.png",
-   "imageBare": "img/pre4-axilla-fdg-bare.png",
-   "source": "AutoPET PETCT_f24f3ce1da, 2001-09-14, Melanoma. CT series 5.000000-GK p.v.2-28878, PET series 6.000000-PET corr.-93674. A: lesion #4 (5.8 mL, SUVmax 35.8, z 1156 mm); B: lesion #3 (9.0 mL, SUVmax 56.2, z 1146 mm)."
-  },
-  {
-   "type": "question",
-   "id": "q3-b",
-   "kind": "quick",
-   "hotSeat": "beforePoll",
-   "image": "img/pre4-axilla-fdg.png",
-   "imageCaption": "FDG PET/CT under the left clavicle. The pectoralis minor is the landmark.",
-   "stem": "Left-sided breast cancer. How would you describe node B?",
-   "options": [
-    "Left axillary level III, medial to the pectoralis minor (infraclavicular)",
-    "Left axillary level II",
-    "Left axillary level I",
-    "Internal mammary node"
-   ],
-   "correct": 0,
-   "explain": "B is medial to the pectoralis minor, under the clavicle: level III, infraclavicular, cN3a.",
-   "imageClean": "img/pre4-axilla-fdg-clean.png",
-   "imageBare": "img/pre4-axilla-fdg-bare.png",
-   "source": "AutoPET PETCT_f24f3ce1da, 2001-09-14, Melanoma. CT series 5.000000-GK p.v.2-28878, PET series 6.000000-PET corr.-93674. A: lesion #4 (5.8 mL, SUVmax 35.8, z 1156 mm); B: lesion #3 (9.0 mL, SUVmax 56.2, z 1146 mm)."
-  },
-  {
-   "type": "question",
-   "id": "q3-m",
-   "kind": "quick",
-   "hotSeat": "beforePoll",
-   "image": "img/pre4-axilla-fdg.png",
-   "imageCaption": "FDG PET/CT under the left clavicle. The pectoralis minor is the landmark.",
-   "stem": "Left-sided breast cancer. Does node A versus node B change management?",
-   "options": [
-    "No, same management either way",
-    "Yes, changes how much the surgeon takes or how much the radiation field covers",
-    "Yes, takes surgery off the table or puts systemic therapy before surgery",
-    "Yes, changes intent from curative to palliative"
-   ],
-   "correct": 2,
-   "explain": "Level II goes to surgery first; a node medial to pectoralis minor sends the patient to systemic therapy before any surgery.",
-   "imageClean": "img/pre4-axilla-fdg-clean.png",
-   "imageBare": "img/pre4-axilla-fdg-bare.png",
-   "source": "AutoPET PETCT_f24f3ce1da, 2001-09-14, Melanoma. CT series 5.000000-GK p.v.2-28878, PET series 6.000000-PET corr.-93674. A: lesion #4 (5.8 mL, SUVmax 35.8, z 1156 mm); B: lesion #3 (9.0 mL, SUVmax 56.2, z 1146 mm)."
-  },
-  {
-   "type": "question",
-   "id": "q3-la",
-   "kind": "quick",
-   "hotSeat": "beforePoll",
-   "image": "img/pre4-axilla-fdg.png",
-   "imageCaption": "FDG PET/CT under the left clavicle. The pectoralis minor is the landmark.",
-   "stem": "If this patient had lymphoma, how would the Lugano criteria describe node A?",
-   "options": [
-    "Left axillary",
-    "Left level II",
-    "Left pectoral",
-    "Left infraclavicular"
-   ],
-   "correct": 0,
-   "explain": "Lugano calls the axillary and pectoral nodes one region: left axillary.",
-   "imageClean": "img/pre4-axilla-fdg-clean.png",
-   "imageBare": "img/pre4-axilla-fdg-bare.png",
-   "source": "AutoPET PETCT_f24f3ce1da, 2001-09-14, Melanoma. CT series 5.000000-GK p.v.2-28878, PET series 6.000000-PET corr.-93674. A: lesion #4 (5.8 mL, SUVmax 35.8, z 1156 mm); B: lesion #3 (9.0 mL, SUVmax 56.2, z 1146 mm)."
-  },
-  {
-   "type": "question",
-   "id": "q3-lb",
-   "kind": "quick",
-   "hotSeat": "beforePoll",
-   "image": "img/pre4-axilla-fdg.png",
-   "imageCaption": "FDG PET/CT under the left clavicle. The pectoralis minor is the landmark.",
-   "stem": "If this patient had lymphoma, how would the Lugano criteria describe node B?",
-   "options": [
-    "Left infraclavicular",
-    "Left axillary",
-    "Left level III",
-    "Left neck"
-   ],
-   "correct": 0,
-   "explain": "Infraclavicular is its own Lugano region, separate from axillary.",
-   "imageClean": "img/pre4-axilla-fdg-clean.png",
-   "imageBare": "img/pre4-axilla-fdg-bare.png",
-   "source": "AutoPET PETCT_f24f3ce1da, 2001-09-14, Melanoma. CT series 5.000000-GK p.v.2-28878, PET series 6.000000-PET corr.-93674. A: lesion #4 (5.8 mL, SUVmax 35.8, z 1156 mm); B: lesion #3 (9.0 mL, SUVmax 56.2, z 1146 mm)."
-  },
-  {
-   "type": "question",
-   "id": "q3-lm",
-   "kind": "quick",
-   "hotSeat": "beforePoll",
-   "image": "img/pre4-axilla-fdg.png",
-   "imageCaption": "FDG PET/CT under the left clavicle. The pectoralis minor is the landmark.",
-   "stem": "Lymphoma. Does node A versus node B change staging or management?",
-   "options": [
-    "No, same stage and same treatment either way",
-    "Yes, B is a different region so the stage changes",
-    "Yes, B is outside the radiation field",
-    "Yes, B means systemic therapy instead of radiation"
-   ],
-   "correct": 0,
-   "explain": "Two regions on the same side of the diaphragm instead of one: still early stage, same treatment. Lugano counts regions; it does not care which level.",
-   "imageClean": "img/pre4-axilla-fdg-clean.png",
-   "imageBare": "img/pre4-axilla-fdg-bare.png",
-   "source": "AutoPET PETCT_f24f3ce1da, 2001-09-14, Melanoma. CT series 5.000000-GK p.v.2-28878, PET series 6.000000-PET corr.-93674. A: lesion #4 (5.8 mL, SUVmax 35.8, z 1156 mm); B: lesion #3 (9.0 mL, SUVmax 56.2, z 1146 mm)."
+   "image": "img/dx/line4-axilla.svg",
+   "build": true
   },
   {
    "type": "slide",
@@ -942,14 +925,14 @@
     "Now both diseases care, for different reasons.",
     "- **Lymphoma**: two regions instead of one. The stage goes up.",
     "- **Breast**: level III is involved, so it is the chemo-first pathway. Level II riding along adds nothing.",
-    "",
     "Versus and plus are different questions, and the two diseases answer them in opposite order."
    ],
    "notes": [
     "Now both diseases care, for different reasons. Lymphoma: two regions instead of one, so the stage goes up. Breast: level III is involved, so it is the chemo-first pathway, and level II riding along adds nothing.",
     "Versus and plus are different questions, and the two diseases answer them in opposite order."
    ],
-   "image": "img/dx/line4-axilla.svg"
+   "image": "img/dx/line4-axilla.svg",
+   "build": true
   },
   {
    "type": "slide",
@@ -969,7 +952,8 @@
    "notes": [
     "Breast: the candidates for preoperative systemic therapy page (BINV-L). Inoperable upfront includes cN3; cN3a is the infraclavicular, level III, node (ST-2).",
     "Be precise if asked: for operable disease, preop therapy is *preferred* for HER2-positive and triple-negative at cN1 or larger. The \"level II goes to surgery first\" claim holds because the case is ER-positive HER2-negative."
-   ]
+   ],
+   "build": true
   },
   {
    "type": "question",
@@ -999,7 +983,8 @@
    ],
    "notes": [
     "Cut if behind. Even lymphoma has more than one map. The Hodgkin trial groups count nodal areas differently from the standard regions, so the same axilla can be one area on one scheme and two on another. The counting rule belongs to the trial, not to anatomy."
-   ]
+   ],
+   "build": true
   },
   {
    "type": "slide",
@@ -1073,59 +1058,392 @@
     "- **Use the disease's own vocabulary.** Station for lung, level for breast and neck, region for lymphoma, named vessel for the pelvis.",
     "- **Give the short-axis size.**",
     "- **Say which side of the boundary the node is on, and name the boundary.**",
-    "",
     "If the history does not tell you the primary, say which classification you used. The same sentence will be read by three services."
    ],
    "notes": [
     "Use the disease's own vocabulary: station for lung, level for breast and neck, region for lymphoma, named vessel for the pelvis. Give the short-axis size. Say explicitly which side of the boundary the node is on, and name the boundary.",
     "If the clinical history does not tell you the primary, say which classification you used, because the same sentence will be read by three different services.",
     "Posttest next: same three questions, same images, same order. No hot seat. Open each poll, close after about 45 seconds, move on without revealing. Then V for the pre/post reveal."
-   ]
+   ],
+   "build": true
   },
   {
    "type": "question",
-   "id": "post1",
+   "id": "t1-a",
    "kind": "posttest",
-   "pairedWith": "pre1",
+   "pairedWith": "p1-a",
    "hotSeat": "none",
    "image": "img/pre1-pelvis-fdg.png",
-   "imageCaption": "FDG PET/CT pelvis, read it as a PSMA study. Left: the aorto-iliac vessels with bone removed, lines at the levels of A and B. Name each node's station from the vessel it sits on.",
-   "disease": "Prostate cancer, newly diagnosed, no other disease",
-   "correct": 2,
-   "explain": "Below the bifurcation the node is pelvic and gets radiated with the prostate; above it the node counts as metastatic and the patient goes to hormone therapy and drugs instead.",
-   "source": "AutoPET PETCT_d9da6129f8, 2002-04-14, Melanoma. CT series 4.000000-GK p.v.3-98719, PET series 5.000000-PET corr.-53940. A: lesion #4 (3.7 mL, SUVmax 34.9, z 630 mm); B: lesion #6 (1.2 mL, SUVmax 12.6, z 669 mm).",
+   "imageCaption": "FDG PET/CT, read it as a PSMA study. Left: the vessel tree with the bifurcations. A and B on the axial pairs.",
+   "stem": "New diagnosis of prostate cancer. How would you describe node A?",
+   "options": [
+    "Left external iliac node, below the common iliac bifurcation",
+    "Left common iliac node, above the bifurcation",
+    "Left internal iliac node",
+    "Left para-aortic node"
+   ],
+   "correct": 0,
+   "explain": "A sits on the external iliac just past the common iliac bifurcation: a pelvic node, inside the curative radiation field.",
    "imageClean": "img/pre1-pelvis-fdg-clean.png",
-   "imageBare": "img/pre1-pelvis-fdg-bare.png"
+   "imageBare": "img/pre1-pelvis-fdg-bare.png",
+   "source": "AutoPET PETCT_d9da6129f8, 2002-04-14, Melanoma. CT series 4.000000-GK p.v.3-98719, PET series 5.000000-PET corr.-53940. A: lesion #4 (3.7 mL, SUVmax 34.9, z 630 mm); B: lesion #6 (1.2 mL, SUVmax 12.6, z 669 mm)."
   },
   {
    "type": "question",
-   "id": "post2",
+   "id": "t1-b",
    "kind": "posttest",
-   "pairedWith": "pre2",
+   "pairedWith": "p1-b",
+   "hotSeat": "none",
+   "image": "img/pre1-pelvis-fdg.png",
+   "imageCaption": "FDG PET/CT, read it as a PSMA study. Left: the vessel tree with the bifurcations. A and B on the axial pairs.",
+   "stem": "New diagnosis of prostate cancer. How would you describe node B?",
+   "options": [
+    "Left common iliac node, just below the aortic bifurcation",
+    "Left external iliac node",
+    "Para-aortic node",
+    "Left internal iliac node"
+   ],
+   "correct": 0,
+   "explain": "B sits on the common iliac just below where the aorta splits: above the edge of the pelvis, counted as metastatic for prostate.",
+   "imageClean": "img/pre1-pelvis-fdg-clean.png",
+   "imageBare": "img/pre1-pelvis-fdg-bare.png",
+   "source": "AutoPET PETCT_d9da6129f8, 2002-04-14, Melanoma. CT series 4.000000-GK p.v.3-98719, PET series 5.000000-PET corr.-53940. A: lesion #4 (3.7 mL, SUVmax 34.9, z 630 mm); B: lesion #6 (1.2 mL, SUVmax 12.6, z 669 mm)."
+  },
+  {
+   "type": "question",
+   "id": "t1-m",
+   "kind": "posttest",
+   "pairedWith": "p1-m",
+   "hotSeat": "none",
+   "image": "img/pre1-pelvis-fdg.png",
+   "imageCaption": "FDG PET/CT, read it as a PSMA study. Left: the vessel tree with the bifurcations. A and B on the axial pairs.",
+   "stem": "New diagnosis of prostate cancer. Does node A versus node B change management?",
+   "options": [
+    "No, same management either way",
+    "Yes, changes how much the surgeon takes or how much the radiation field covers",
+    "Yes, takes surgery off the table or puts systemic therapy before surgery",
+    "Yes, changes intent from curative to palliative"
+   ],
+   "correct": 2,
+   "explain": "A is pelvic and radiated with the prostate. B is a common iliac node, counted as metastatic: hormones and drugs instead of curative radiation.",
+   "imageClean": "img/pre1-pelvis-fdg-clean.png",
+   "imageBare": "img/pre1-pelvis-fdg-bare.png",
+   "source": "AutoPET PETCT_d9da6129f8, 2002-04-14, Melanoma. CT series 4.000000-GK p.v.3-98719, PET series 5.000000-PET corr.-53940. A: lesion #4 (3.7 mL, SUVmax 34.9, z 630 mm); B: lesion #6 (1.2 mL, SUVmax 12.6, z 669 mm)."
+  },
+  {
+   "type": "question",
+   "id": "t1-la",
+   "kind": "posttest",
+   "pairedWith": "p1-la",
+   "hotSeat": "none",
+   "image": "img/pre1-pelvis-fdg.png",
+   "imageCaption": "FDG PET/CT, read it as a PSMA study. Left: the vessel tree with the bifurcations. A and B on the axial pairs.",
+   "stem": "If this patient had lymphoma, how would the Lugano criteria describe node A?",
+   "options": [
+    "Left iliac",
+    "Left external iliac",
+    "Left pelvic sidewall",
+    "Depends on the vessel"
+   ],
+   "correct": 0,
+   "explain": "For lymphoma the whole iliac chain on one side is one region: left iliac.",
+   "imageClean": "img/pre1-pelvis-fdg-clean.png",
+   "imageBare": "img/pre1-pelvis-fdg-bare.png",
+   "source": "AutoPET PETCT_d9da6129f8, 2002-04-14, Melanoma. CT series 4.000000-GK p.v.3-98719, PET series 5.000000-PET corr.-53940. A: lesion #4 (3.7 mL, SUVmax 34.9, z 630 mm); B: lesion #6 (1.2 mL, SUVmax 12.6, z 669 mm)."
+  },
+  {
+   "type": "question",
+   "id": "t1-lb",
+   "kind": "posttest",
+   "pairedWith": "p1-lb",
+   "hotSeat": "none",
+   "image": "img/pre1-pelvis-fdg.png",
+   "imageCaption": "FDG PET/CT, read it as a PSMA study. Left: the vessel tree with the bifurcations. A and B on the axial pairs.",
+   "stem": "If this patient had lymphoma, how would the Lugano criteria describe node B?",
+   "options": [
+    "Left iliac",
+    "Left common iliac",
+    "Para-aortic",
+    "Retroperitoneal"
+   ],
+   "correct": 0,
+   "explain": "Still left iliac. Above or below the bifurcation changes nothing for Lugano.",
+   "imageClean": "img/pre1-pelvis-fdg-clean.png",
+   "imageBare": "img/pre1-pelvis-fdg-bare.png",
+   "source": "AutoPET PETCT_d9da6129f8, 2002-04-14, Melanoma. CT series 4.000000-GK p.v.3-98719, PET series 5.000000-PET corr.-53940. A: lesion #4 (3.7 mL, SUVmax 34.9, z 630 mm); B: lesion #6 (1.2 mL, SUVmax 12.6, z 669 mm)."
+  },
+  {
+   "type": "question",
+   "id": "t1-lm",
+   "kind": "posttest",
+   "pairedWith": "p1-lm",
+   "hotSeat": "none",
+   "image": "img/pre1-pelvis-fdg.png",
+   "imageCaption": "FDG PET/CT, read it as a PSMA study. Left: the vessel tree with the bifurcations. A and B on the axial pairs.",
+   "stem": "Lymphoma. Does node A versus node B change staging or management?",
+   "options": [
+    "No, same stage and same treatment either way",
+    "Yes, B is a different region so the stage changes",
+    "Yes, B is outside the radiation field",
+    "Yes, B means systemic therapy instead of radiation"
+   ],
+   "correct": 0,
+   "explain": "Both nodes are in the same region, left iliac. One region, same stage, same treatment.",
+   "imageClean": "img/pre1-pelvis-fdg-clean.png",
+   "imageBare": "img/pre1-pelvis-fdg-bare.png",
+   "source": "AutoPET PETCT_d9da6129f8, 2002-04-14, Melanoma. CT series 4.000000-GK p.v.3-98719, PET series 5.000000-PET corr.-53940. A: lesion #4 (3.7 mL, SUVmax 34.9, z 630 mm); B: lesion #6 (1.2 mL, SUVmax 12.6, z 669 mm)."
+  },
+  {
+   "type": "question",
+   "id": "t2-a",
+   "kind": "posttest",
+   "pairedWith": "p2-a",
    "hotSeat": "none",
    "image": "img/pre2-chest-fdg.png",
-   "imageCaption": "FDG PET/CT chest, left lung primary. A: 4L. B: 4R.",
-   "disease": "Lung adenocarcinoma, left lung",
-   "correct": 2,
-   "explain": "Same side as the tumor (4L), the surgeon may still operate; opposite side (4R), surgery is off the table and the patient gets chemoradiation.",
-   "source": "AutoPET PETCT_442a09f90e, 2002-03-16, Lung Cancer. CT series 5.000000-GK p.v.2-46154, PET series 9.000000-PET corr.-11580. A: lesion #9 (3.2 mL, SUVmax 5.8, z 174 mm); B: lesion #3 (19.9 mL, SUVmax 7.9, z 147 mm).",
+   "imageCaption": "FDG PET/CT chest, left lung primary. A and B beside the trachea.",
+   "stem": "Adenocarcinoma of the left lung. How would you describe node A?",
+   "options": [
+    "Left lower paratracheal node, 4L",
+    "Right lower paratracheal node, 4R",
+    "Aortopulmonary node, 5",
+    "Subcarinal node, 7"
+   ],
+   "correct": 0,
+   "explain": "A is lateral to the left tracheal wall, beside the arch: 4L, same side as a left lung tumor.",
    "imageClean": "img/pre2-chest-fdg-clean.png",
-   "imageBare": "img/pre2-chest-fdg-bare.png"
+   "imageBare": "img/pre2-chest-fdg-bare.png",
+   "source": "AutoPET PETCT_442a09f90e, 2002-03-16, Lung Cancer. CT series 5.000000-GK p.v.2-46154, PET series 9.000000-PET corr.-11580. A: lesion #9 (3.2 mL, SUVmax 5.8, z 174 mm); B: lesion #3 (19.9 mL, SUVmax 7.9, z 147 mm)."
   },
   {
    "type": "question",
-   "id": "post4",
+   "id": "t2-b",
    "kind": "posttest",
-   "pairedWith": "pre4",
+   "pairedWith": "p2-b",
+   "hotSeat": "none",
+   "image": "img/pre2-chest-fdg.png",
+   "imageCaption": "FDG PET/CT chest, left lung primary. A and B beside the trachea.",
+   "stem": "Adenocarcinoma of the left lung. How would you describe node B?",
+   "options": [
+    "Right lower paratracheal node, 4R",
+    "Left lower paratracheal node, 4L",
+    "Prevascular node, 3A",
+    "Right hilar node, 10R"
+   ],
+   "correct": 0,
+   "explain": "B is right of the left tracheal wall: 4R. For a left lung tumor that is the opposite side.",
+   "imageClean": "img/pre2-chest-fdg-clean.png",
+   "imageBare": "img/pre2-chest-fdg-bare.png",
+   "source": "AutoPET PETCT_442a09f90e, 2002-03-16, Lung Cancer. CT series 5.000000-GK p.v.2-46154, PET series 9.000000-PET corr.-11580. A: lesion #9 (3.2 mL, SUVmax 5.8, z 174 mm); B: lesion #3 (19.9 mL, SUVmax 7.9, z 147 mm)."
+  },
+  {
+   "type": "question",
+   "id": "t2-m",
+   "kind": "posttest",
+   "pairedWith": "p2-m",
+   "hotSeat": "none",
+   "image": "img/pre2-chest-fdg.png",
+   "imageCaption": "FDG PET/CT chest, left lung primary. A and B beside the trachea.",
+   "stem": "Adenocarcinoma of the left lung. Does node A versus node B change management?",
+   "options": [
+    "No, same management either way",
+    "Yes, changes how much the surgeon takes or how much the radiation field covers",
+    "Yes, takes surgery off the table or puts systemic therapy before surgery",
+    "Yes, changes intent from curative to palliative"
+   ],
+   "correct": 2,
+   "explain": "A (4L) is same-side, N2: surgery may still follow chemo-immunotherapy. B (4R) is opposite-side, N3: surgery is off the table.",
+   "imageClean": "img/pre2-chest-fdg-clean.png",
+   "imageBare": "img/pre2-chest-fdg-bare.png",
+   "source": "AutoPET PETCT_442a09f90e, 2002-03-16, Lung Cancer. CT series 5.000000-GK p.v.2-46154, PET series 9.000000-PET corr.-11580. A: lesion #9 (3.2 mL, SUVmax 5.8, z 174 mm); B: lesion #3 (19.9 mL, SUVmax 7.9, z 147 mm)."
+  },
+  {
+   "type": "question",
+   "id": "t2-la",
+   "kind": "posttest",
+   "pairedWith": "p2-la",
+   "hotSeat": "none",
+   "image": "img/pre2-chest-fdg.png",
+   "imageCaption": "FDG PET/CT chest, left lung primary. A and B beside the trachea.",
+   "stem": "If this patient had lymphoma, how would the Lugano criteria describe node A?",
+   "options": [
+    "Mediastinal",
+    "Left paratracheal",
+    "4L",
+    "Left hilar"
+   ],
+   "correct": 0,
+   "explain": "For lymphoma the whole mediastinum is one region.",
+   "imageClean": "img/pre2-chest-fdg-clean.png",
+   "imageBare": "img/pre2-chest-fdg-bare.png",
+   "source": "AutoPET PETCT_442a09f90e, 2002-03-16, Lung Cancer. CT series 5.000000-GK p.v.2-46154, PET series 9.000000-PET corr.-11580. A: lesion #9 (3.2 mL, SUVmax 5.8, z 174 mm); B: lesion #3 (19.9 mL, SUVmax 7.9, z 147 mm)."
+  },
+  {
+   "type": "question",
+   "id": "t2-lb",
+   "kind": "posttest",
+   "pairedWith": "p2-lb",
+   "hotSeat": "none",
+   "image": "img/pre2-chest-fdg.png",
+   "imageCaption": "FDG PET/CT chest, left lung primary. A and B beside the trachea.",
+   "stem": "If this patient had lymphoma, how would the Lugano criteria describe node B?",
+   "options": [
+    "Mediastinal",
+    "Right paratracheal",
+    "4R",
+    "Right hilar"
+   ],
+   "correct": 0,
+   "explain": "Same region: mediastinal. Right or left paratracheal changes nothing.",
+   "imageClean": "img/pre2-chest-fdg-clean.png",
+   "imageBare": "img/pre2-chest-fdg-bare.png",
+   "source": "AutoPET PETCT_442a09f90e, 2002-03-16, Lung Cancer. CT series 5.000000-GK p.v.2-46154, PET series 9.000000-PET corr.-11580. A: lesion #9 (3.2 mL, SUVmax 5.8, z 174 mm); B: lesion #3 (19.9 mL, SUVmax 7.9, z 147 mm)."
+  },
+  {
+   "type": "question",
+   "id": "t2-lm",
+   "kind": "posttest",
+   "pairedWith": "p2-lm",
+   "hotSeat": "none",
+   "image": "img/pre2-chest-fdg.png",
+   "imageCaption": "FDG PET/CT chest, left lung primary. A and B beside the trachea.",
+   "stem": "Lymphoma. Does node A versus node B change staging or management?",
+   "options": [
+    "No, same stage and same treatment either way",
+    "Yes, B is a different region so the stage changes",
+    "Yes, B is outside the radiation field",
+    "Yes, B means systemic therapy instead of radiation"
+   ],
+   "correct": 0,
+   "explain": "Both nodes are mediastinal, one region. Same stage, same treatment.",
+   "imageClean": "img/pre2-chest-fdg-clean.png",
+   "imageBare": "img/pre2-chest-fdg-bare.png",
+   "source": "AutoPET PETCT_442a09f90e, 2002-03-16, Lung Cancer. CT series 5.000000-GK p.v.2-46154, PET series 9.000000-PET corr.-11580. A: lesion #9 (3.2 mL, SUVmax 5.8, z 174 mm); B: lesion #3 (19.9 mL, SUVmax 7.9, z 147 mm)."
+  },
+  {
+   "type": "question",
+   "id": "t3-a",
+   "kind": "posttest",
+   "pairedWith": "p3-a",
    "hotSeat": "none",
    "image": "img/pre4-axilla-fdg.png",
-   "imageCaption": "FDG PET/CT axilla. A: level II. B: level III, medial to pectoralis minor.",
-   "disease": "ER-positive HER2-negative breast cancer, ipsilateral",
+   "imageCaption": "FDG PET/CT under the left clavicle. The pectoralis minor is the landmark.",
+   "stem": "Left-sided breast cancer. How would you describe node A?",
+   "options": [
+    "Left axillary level II, behind the pectoralis minor",
+    "Left axillary level I, lateral to the pectoralis minor",
+    "Left axillary level III, medial to the pectoralis minor",
+    "Left supraclavicular node"
+   ],
+   "correct": 0,
+   "explain": "A lies behind the pectoralis minor: level II, still the surgeon's axilla.",
+   "imageClean": "img/pre4-axilla-fdg-clean.png",
+   "imageBare": "img/pre4-axilla-fdg-bare.png",
+   "source": "AutoPET PETCT_f24f3ce1da, 2001-09-14, Melanoma. CT series 5.000000-GK p.v.2-28878, PET series 6.000000-PET corr.-93674. A: lesion #4 (5.8 mL, SUVmax 35.8, z 1156 mm); B: lesion #3 (9.0 mL, SUVmax 56.2, z 1146 mm)."
+  },
+  {
+   "type": "question",
+   "id": "t3-b",
+   "kind": "posttest",
+   "pairedWith": "p3-b",
+   "hotSeat": "none",
+   "image": "img/pre4-axilla-fdg.png",
+   "imageCaption": "FDG PET/CT under the left clavicle. The pectoralis minor is the landmark.",
+   "stem": "Left-sided breast cancer. How would you describe node B?",
+   "options": [
+    "Left axillary level III, medial to the pectoralis minor (infraclavicular)",
+    "Left axillary level II",
+    "Left axillary level I",
+    "Internal mammary node"
+   ],
+   "correct": 0,
+   "explain": "B is medial to the pectoralis minor, under the clavicle: level III, infraclavicular, cN3a.",
+   "imageClean": "img/pre4-axilla-fdg-clean.png",
+   "imageBare": "img/pre4-axilla-fdg-bare.png",
+   "source": "AutoPET PETCT_f24f3ce1da, 2001-09-14, Melanoma. CT series 5.000000-GK p.v.2-28878, PET series 6.000000-PET corr.-93674. A: lesion #4 (5.8 mL, SUVmax 35.8, z 1156 mm); B: lesion #3 (9.0 mL, SUVmax 56.2, z 1146 mm)."
+  },
+  {
+   "type": "question",
+   "id": "t3-m",
+   "kind": "posttest",
+   "pairedWith": "p3-m",
+   "hotSeat": "none",
+   "image": "img/pre4-axilla-fdg.png",
+   "imageCaption": "FDG PET/CT under the left clavicle. The pectoralis minor is the landmark.",
+   "stem": "Left-sided breast cancer. Does node A versus node B change management?",
+   "options": [
+    "No, same management either way",
+    "Yes, changes how much the surgeon takes or how much the radiation field covers",
+    "Yes, takes surgery off the table or puts systemic therapy before surgery",
+    "Yes, changes intent from curative to palliative"
+   ],
    "correct": 2,
    "explain": "Level II goes to surgery first; a node medial to pectoralis minor sends the patient to systemic therapy before any surgery.",
-   "source": "AutoPET PETCT_f24f3ce1da, 2001-09-14, Melanoma. CT series 5.000000-GK p.v.2-28878, PET series 6.000000-PET corr.-93674. A: lesion #4 (5.8 mL, SUVmax 35.8, z 1156 mm); B: lesion #3 (9.0 mL, SUVmax 56.2, z 1146 mm).",
    "imageClean": "img/pre4-axilla-fdg-clean.png",
-   "imageBare": "img/pre4-axilla-fdg-bare.png"
+   "imageBare": "img/pre4-axilla-fdg-bare.png",
+   "source": "AutoPET PETCT_f24f3ce1da, 2001-09-14, Melanoma. CT series 5.000000-GK p.v.2-28878, PET series 6.000000-PET corr.-93674. A: lesion #4 (5.8 mL, SUVmax 35.8, z 1156 mm); B: lesion #3 (9.0 mL, SUVmax 56.2, z 1146 mm)."
+  },
+  {
+   "type": "question",
+   "id": "t3-la",
+   "kind": "posttest",
+   "pairedWith": "p3-la",
+   "hotSeat": "none",
+   "image": "img/pre4-axilla-fdg.png",
+   "imageCaption": "FDG PET/CT under the left clavicle. The pectoralis minor is the landmark.",
+   "stem": "If this patient had lymphoma, how would the Lugano criteria describe node A?",
+   "options": [
+    "Left axillary",
+    "Left level II",
+    "Left pectoral",
+    "Left infraclavicular"
+   ],
+   "correct": 0,
+   "explain": "Lugano calls the axillary and pectoral nodes one region: left axillary.",
+   "imageClean": "img/pre4-axilla-fdg-clean.png",
+   "imageBare": "img/pre4-axilla-fdg-bare.png",
+   "source": "AutoPET PETCT_f24f3ce1da, 2001-09-14, Melanoma. CT series 5.000000-GK p.v.2-28878, PET series 6.000000-PET corr.-93674. A: lesion #4 (5.8 mL, SUVmax 35.8, z 1156 mm); B: lesion #3 (9.0 mL, SUVmax 56.2, z 1146 mm)."
+  },
+  {
+   "type": "question",
+   "id": "t3-lb",
+   "kind": "posttest",
+   "pairedWith": "p3-lb",
+   "hotSeat": "none",
+   "image": "img/pre4-axilla-fdg.png",
+   "imageCaption": "FDG PET/CT under the left clavicle. The pectoralis minor is the landmark.",
+   "stem": "If this patient had lymphoma, how would the Lugano criteria describe node B?",
+   "options": [
+    "Left infraclavicular",
+    "Left axillary",
+    "Left level III",
+    "Left neck"
+   ],
+   "correct": 0,
+   "explain": "Infraclavicular is its own Lugano region, separate from axillary.",
+   "imageClean": "img/pre4-axilla-fdg-clean.png",
+   "imageBare": "img/pre4-axilla-fdg-bare.png",
+   "source": "AutoPET PETCT_f24f3ce1da, 2001-09-14, Melanoma. CT series 5.000000-GK p.v.2-28878, PET series 6.000000-PET corr.-93674. A: lesion #4 (5.8 mL, SUVmax 35.8, z 1156 mm); B: lesion #3 (9.0 mL, SUVmax 56.2, z 1146 mm)."
+  },
+  {
+   "type": "question",
+   "id": "t3-lm",
+   "kind": "posttest",
+   "pairedWith": "p3-lm",
+   "hotSeat": "none",
+   "image": "img/pre4-axilla-fdg.png",
+   "imageCaption": "FDG PET/CT under the left clavicle. The pectoralis minor is the landmark.",
+   "stem": "Lymphoma. Does node A versus node B change staging or management?",
+   "options": [
+    "No, same stage and same treatment either way",
+    "Yes, B is a different region so the stage changes",
+    "Yes, B is outside the radiation field",
+    "Yes, B means systemic therapy instead of radiation"
+   ],
+   "correct": 0,
+   "explain": "Two regions on the same side of the diaphragm instead of one: still early stage, same treatment. Lugano counts regions; it does not care which level.",
+   "imageClean": "img/pre4-axilla-fdg-clean.png",
+   "imageBare": "img/pre4-axilla-fdg-bare.png",
+   "source": "AutoPET PETCT_f24f3ce1da, 2001-09-14, Melanoma. CT series 5.000000-GK p.v.2-28878, PET series 6.000000-PET corr.-93674. A: lesion #4 (5.8 mL, SUVmax 35.8, z 1156 mm); B: lesion #3 (9.0 mL, SUVmax 56.2, z 1146 mm)."
   },
   {
    "type": "slide",
@@ -1134,14 +1452,14 @@
    "title": "Ask what disease is being staged. That decides which words matter.",
    "body": [
     "You have now seen it work three times. That is the number it takes to become a habit.",
-    "",
     "Next: Summary shows the pretest beside the posttest."
    ],
    "notes": [
     "Last slide is the thesis sentence, unchanged. The residents have now seen it work three times, which is the number it takes to become a habit.",
     "Press → or V for the pre/post reveal (one pair per screen), then Summary."
    ],
-   "caption": "PET/CT images: AutoPET (TCIA FDG-PET-CT-Lesions, Gatidis & Küstner 2022), CC BY 4.0. Guideline crops: NCCN."
+   "caption": "PET/CT images: AutoPET (TCIA FDG-PET-CT-Lesions, Gatidis & Küstner 2022), CC BY 4.0. Guideline crops: NCCN.",
+   "build": true
   }
  ]
 }

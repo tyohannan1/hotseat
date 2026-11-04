@@ -68,8 +68,8 @@ test("lecture runs end to end: slides, pretest, hot seat, quick check reveal, zo
   await expect(page.locator('#hot-answer button[data-a="2"]')).toHaveClass(/chosen/);
 
 
-  // pre2..pre4, then the opening slides
-  for (let k = 0; k < 2; k++) await page.keyboard.press("ArrowRight");
+  // the remaining 17 pretest questions, then the opening slides
+  for (let k = 0; k < 17; k++) await page.keyboard.press("ArrowRight");
   await expect(page.locator("#q-kind")).toContainText("Pretest");
   await page.keyboard.press("ArrowRight");
   await expect(page.locator("#s-title")).toContainText("ask what disease");
@@ -144,11 +144,11 @@ test("lecture runs end to end: slides, pretest, hot seat, quick check reveal, zo
   await expect(notes.locator("#n-title")).toHaveText("External iliac vs common iliac");
   await expect(notes.locator("#n-notes")).toContainText(/draw the bifurcation/i);
   await expect(notes.locator("#n-notes .n-src")).toContainText("AutoPET PETCT_791ec15924");
-  await expect(notes.locator("#n-next")).toContainText("describe node A");
+  await expect(notes.locator("#n-next")).toContainText("Same node, different page");
   await expect(notes.locator("#n-clock")).toHaveText(/^\d+:\d\d$/);
 
   // posttest: no Reveal button, vote on post1; notes shows the live count and the correct letter
-  await page.click('#jump button:text-is("post1")');
+  await page.click('#jump button:text-is("t1-a")');
   await expect(page.locator("#hotbox")).toBeHidden();
   await expect(page.locator("#btn-reveal")).toBeHidden();
   await page.keyboard.press("o");
@@ -156,7 +156,7 @@ test("lecture runs end to end: slides, pretest, hot seat, quick check reveal, zo
   await phone.click('.v-opt[data-i="2"]');
   await expect(page.locator("#st-n")).toHaveText("1");
   await expect(notes.locator("#n-answered")).toHaveText("1");
-  await expect(notes.locator("#n-correct")).toHaveText("C");
+  await expect(notes.locator("#n-correct")).toHaveText("A");
 
   // pre/post reveal: Next after the last item lands here; pair 1 shows both bar sets and the correct row
   await page.click('#jump button[title="Ask what disease is being staged. That decides which words matter."]:last-child');
@@ -166,10 +166,10 @@ test("lecture runs end to end: slides, pretest, hot seat, quick check reveal, zo
   await expect(page.locator('.rv-row.correct .rv-letter')).toHaveText("C");
   await expect(page.locator("#rv-status")).toContainText("0% → 100%");
   await page.keyboard.press("ArrowRight");
-  await expect(page.locator(".eyebrow", { hasText: "2 of 3" })).toBeVisible();
+  await expect(page.locator(".eyebrow", { hasText: "2 of 18" })).toBeVisible();
   await page.click("#btn-rv-summary");
   await expect(page.locator("#v-summary")).toBeVisible();
-  await expect(page.locator("#sum-table tr")).toHaveCount(28); // header + 12 question items, no slides
-  await expect(page.locator("#sum-pairs")).toContainText("pre1 → post1");
+  await expect(page.locator("#sum-table tr")).toHaveCount(40); // header + 12 question items, no slides
+  await expect(page.locator("#sum-pairs")).toContainText("p1-a → t1-a");
   await expect(page.locator("#sum-pairs")).toContainText("Paired devices: 1 · improved 1");
 });
