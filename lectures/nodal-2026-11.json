@@ -256,7 +256,7 @@
    ],
    "build": true,
    "buildTitle": true,
-   "wide": true
+   "layout": "stack"
   },
   {
    "type": "slide",

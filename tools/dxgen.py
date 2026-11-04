@@ -22,7 +22,7 @@ def path(d, col=INK, w=3, fill="none", dash=None, op=1):
     return f"<path d='{d}' stroke='{col}' stroke-width='{w}' fill='{fill}' stroke-linejoin='round' stroke-linecap='round'{ds} opacity='{op}'/>"
 
 # ------------------------------------------------------------------ lymphoma regions
-def regions(w=1740, h=1190, standalone=True):
+def regions(w=1740, h=1030, standalone=True):
     """The Augmented Workstation's lymphoma body diagram (luganoRegions.ts, 230 x 287 silhouette, 17 region dots,
     diaphragm at y 127), scaled 4x, with the region names on either side. Nothing else."""
     K = 4; ox, oy = 410, 20
@@ -37,7 +37,7 @@ def regions(w=1740, h=1190, standalone=True):
            (12, "Mesenteric", 115, 157, "l", 157), (13, "Para-aortic", 115, 182, "r", 182), (14, "Right iliac", 100, 207, "l", 207),
            (15, "Left iliac", 130, 207, "r", 207), (16, "Right inguinal", 95, 232, "l", 232), (17, "Left inguinal", 135, 232, "r", 232)]
     b = []
-    b.append(f"<g transform='translate({ox} {oy}) scale({K})'><path d='{BODY}' fill='none' stroke='{MUTE}' stroke-width='0.9' stroke-linejoin='round'/>"
+    b.append(f"<defs><clipPath id='thigh'><rect x='0' y='0' width='230' height='250'/></clipPath></defs><g transform='translate({ox} {oy}) scale({K})' clip-path='url(#thigh)'><path d='{BODY}' fill='none' stroke='{MUTE}' stroke-width='0.9' stroke-linejoin='round'/>"
              f"<line x1='50' y1='127' x2='180' y2='127' stroke='{TEAL}' stroke-width='0.8' stroke-dasharray='3 2.5'/></g>")
     XL, XR = ox - 30, ox + 230 * K + 30
     for rid, name, x, y, side, ly in REG:
