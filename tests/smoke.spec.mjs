@@ -153,7 +153,7 @@ test("lecture runs end to end: slides, pretest, hot seat, quick check reveal, zo
   await expect(page.locator("#btn-reveal")).toBeHidden();
   await page.keyboard.press("o");
   await expect(phone.locator('.v-opt[data-i="2"]')).toBeEnabled();
-  await phone.click('.v-opt[data-i="2"]');
+  await phone.click('.v-opt[data-i="0"]');
   await expect(page.locator("#st-n")).toHaveText("1");
   await expect(notes.locator("#n-answered")).toHaveText("1");
   await expect(notes.locator("#n-correct")).toHaveText("A");
